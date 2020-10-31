@@ -17,5 +17,11 @@ This repository digitizes the NIST 800-171 regulation using the following method
 - JSON file with an easily parsible representation of the spreadsheet above
 - Example Python code for parsing the Python to integrate with Atlasity
 
+## Pre-Requisites
+
+- Install external libraries using PIP
+
+`pip install requests`
+
 ## Running the Python Script
 
