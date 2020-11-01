@@ -64,6 +64,7 @@ for i in data["ITS-Managed"]:
     "mappings": "",
     "assessmentPlan": "",
     "weight": i["Weight"],
+    "practiceLevel": "",
     "catalogueID": intCat,
     "createdById": "8d8d5468-74f8-499d-976c-bca671e19b14",
     "lastUpdatedById": "8d8d5468-74f8-499d-976c-bca671e19b14" }
@@ -74,12 +75,64 @@ for i in data["ITS-Managed"]:
     # increment the count
     intTotal += 1
 
-    # create the security control
-    response = requests.request("POST", url_sc, headers=headers, json=sc)
-    jsonResponse = response.json()
-    print("\n\nSuccess - " + sc["title"])
-
-# print(controls)
+    # attempt to create the security control
+    try:
+        response = requests.request("POST", url_sc, headers=headers, json=sc)
+        jsonResponse = response.json()
+        print("\n\nSuccess - " + sc["title"])
+    except requests.exceptions.HTTPError as errh:
+        print ("Http Error:",errh)
+        print("\n\nError - " + sc["title"])
+    except requests.exceptions.ConnectionError as errc:
+        print ("Error Connecting:",errc)
+        print("\n\nError - " + sc["title"])
+    except requests.exceptions.Timeout as errt:
+        print ("Timeout Error:",errt)
+        print("\n\nError - " + sc["title"])
+    except requests.exceptions.RequestException as err:
+        print ("OOps: Something Else",err)
+        print("\n\nError - " + sc["title"])
 
 # output total controls created
 print(intTotal)
+
+# retrieve full list created
+url_allcats = "http://localhost:5000/api/SecurityControls/filterSecurityControlsByCatalogue/" + str(intCat)
+
+headers_allcats = {
+   "Accept": "application/json",
+   'Authorization': 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJob3dpZWF2cCIsImp0aSI6ImJkZGM0ZDQ5LTdjZjMtNDcwNS04YjNjLTkwZDg0ODAyOTdhYSIsImlhdCI6MTYwNDI0Mjc2MywiaHR0cDovL3NjaGVtYXMueG1sc29hcC5vcmcvd3MvMjAwNS8wNS9pZGVudGl0eS9jbGFpbXMvbmFtZWlkZW50aWZpZXIiOiI4ZDhkNTQ2OC03NGY4LTQ5OWQtOTc2Yy1iY2E2NzFlMTliMTQiLCJodHRwOi8vc2NoZW1hcy54bWxzb2FwLm9yZy93cy8yMDA1LzA1L2lkZW50aXR5L2NsYWltcy9uYW1lIjoiaG93aWVhdnAiLCJodHRwOi8vc2NoZW1hcy5taWNyb3NvZnQuY29tL3dzLzIwMDgvMDYvaWRlbnRpdHkvY2xhaW1zL3JvbGUiOiJBZG1pbmlzdHJhdG9yIiwibmJmIjoxNjA0MjQyNzYzLCJleHAiOjE2MDQzMjkxNjMsImlzcyI6IkF0bGFzIiwiYXVkIjoiaHR0cDovL2xvY2FsaG9zdDo1MDAwLyJ9.0PNlLKFJ9UUQaQnLTmQ_w-vtTxEpq0C0mH-QPYZeqJA'
+}
+
+allcats = requests.request(
+   "GET",
+   url_allcats,
+   headers=headers_allcats,
+)
+catsArray = allcats.json()
+
+# loop through and compare arrays, see if anything is missing (validation check)
+intMatch = 0
+for y in controls:
+    bMatch = False
+    # make sure each control in the raw JSON was returned from Atlasity
+    for z in catsArray:
+        if z["title"] == y["title"] :
+            bMatch = True
+            break
+    #make sure they match or throw error in console if missing
+    if bMatch == True :
+        intMatch += 1
+    else:
+        # ones that didn't upload
+        print("ERROR: " + y["title"] + " is missing.")
+        # see if it was length related
+        print(len(y["title"] ))
+
+# validate all were loaded
+if intMatch == intTotal :
+    print("SUCCESS: Verified all controls were successfully created.")
+
+
+
+
