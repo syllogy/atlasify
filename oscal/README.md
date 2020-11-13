@@ -18,4 +18,4 @@ A large number of Atlasity customers, especially government, rely on publication
 
 ## Useful Tools
 
-The JSON files generate by the OSCAL team are large and need easy to visually parse by humans.  We leveraged a free online tool - [JSON Viewer](http://jsonviewer.stack.hu/) - that allows you interactively drill into the data.  This tool was a nice complement for our developers to assist with working on this large data set.
+The JSON files generate by the OSCAL team are large and need easy to visually parse by humans.  We leveraged a free online tool - [JSON Viewer](http://jsonviewer.stack.hu/) - that allows you interactively drill into the data.  This tool was a nice complement for our developers to assist with working on this large data set.  In addition, we used the [Beautify Tools](http://beautifytools.com/excel-to-json-converter.php) to do an Excel to JSON conversion to allow for easier programmatic manipulation of the data.
