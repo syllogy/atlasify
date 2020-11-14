@@ -39,15 +39,14 @@ cat = {
     "lastUpdatedById": "8d8d5468-74f8-499d-976c-bca671e19b14" }
 
 # create the catalog and print success result
-#response = requests.request("POST", url_cats, headers=headers, json=cat)
-#jsonResponse = response.json()
-#print("\n\nAtlasity Output\n")
-#print(response.text.encode('utf8'))
-#print("\nCatalog ID: " + str(jsonResponse["id"]))
+response = requests.request("POST", url_cats, headers=headers, json=cat)
+jsonResponse = response.json()
+print("\n\nAtlasity Output\n")
+print(response.text.encode('utf8'))
+print("\nCatalog ID: " + str(jsonResponse["id"]))
 
 # get the catalog ID
-#intCat = jsonResponse["id"]
-intCat = 1
+intCat = jsonResponse["id"]
 
 # load translated Excel file (cleaned and converted to JSON)
 excel = open('80053rev5-excelConversion.json', 'r', encoding='utf-8-sig')
@@ -85,6 +84,10 @@ for i in arrL2["resources"]:
     }
     resources.append(res)
 
+# Write to file to visualize the output
+with open("OSCALParsedResources.json", "w") as outfile: 
+    outfile.write(json.dumps(resources, indent=4)) 
+
 #process NIST families of controls
 families = []
 oscalControls = []
@@ -103,7 +106,12 @@ for i in arrL1["groups"]:
         #process control links
         if ("links" in ctrl):
             for l in ctrl["links"]:
-                strLinks += l["text"]
+                #lookup the OSCAL control to enrich the data
+                linkLookup = next((item for item in resources if item["short"] == l["text"]), None)
+                if (linkLookup != None):
+                    strLinks += linkLookup["title"] + "<br/>"
+                else: 
+                    strLinks += l["text"] + "<br/>"
         #add control
         newCTRL = {
             "id": ctrl["id"],
@@ -112,8 +120,32 @@ for i in arrL1["groups"]:
             "links": strLinks
         }
         oscalControls.append(newCTRL)
+        #check for child controls or enhancements
+        if ("controls" in ctrl):
+            childCTRLs = ctrl["controls"]
+            for childCTRL in childCTRLs:
+                strChildLinks = ""
+                if ("links" in childCTRL):
+                    childLinks = childCTRL["links"]
+                    #print(childLinks)
+                    for cl in childLinks:
+                            strChildLinks += cl["text"] + "<br/>"
+                #add control
+                newChildCTRL = {
+                    "id": childCTRL["id"],
+                    "title": childCTRL["title"],
+                    "family": strFamily,
+                    "links": strChildLinks
+                }
+                oscalControls.append(newChildCTRL)
 
-print(oscalControls)
+# Write to file to visualize the output
+with open("OSCALParsedFamilies.json", "w") as outfile: 
+    outfile.write(json.dumps(families, indent=4)) 
+
+# Write to file to visualize the output
+with open("OSCALParsedControls.json", "w") as outfile: 
+    outfile.write(json.dumps(oscalControls, indent=4)) 
 
 # create controls array
 controls = []
@@ -141,22 +173,33 @@ for i in excelData["SP 800-53 Revision 5"]:
     else:
         strDiscussion = ""
 
+    #lookup the OSCAL control to enrich the data
+    oscalLookup = next((item for item in oscalControls if item["id"] == i["Control Number"].lower()), None)
+
+    #process description (handle encoding issues and optimize for HTML rendering)
+    strDescription = strControl + "<br/><h3>Discussion</h3>" + strDiscussion
+    strDescription = strDescription.replace("\r\n", "<br/>")
+    strDescription = strDescription.replace("\u2019", "'")
+    strDescription = strDescription.replace("\u201c", "")
+    strDescription = strDescription.replace("\u201d", "")
+    strDescription = strDescription.replace("\u2014", "-")
+    strDescription = strDescription.replace("\u2013", "-")
+
     # create each security control
     # NOTE: Use your user ID in Atlasity which you can find under your user profile
     sc = {
     "title": i["Control Number"] + " - " + i["Control (or Control Enhancement) Name"],
-    "description": strControl + "<br/><h3>Discussion</h3>" + strDiscussion,
-    "references": "",
+    "description": strDescription,
+    "references": oscalLookup["links"],
     "relatedControls": strRelated,
     "subControls": "",
     "enhancements": "",
-    "family": "",
+    "family": oscalLookup["family"],
     "mappings": "",
     "assessmentPlan": "",
     "weight": 0,
     "practiceLevel": "",
     "catalogueID": intCat,
-    "UUID": strUUID,
     "createdById": "8d8d5468-74f8-499d-976c-bca671e19b14",
     "lastUpdatedById": "8d8d5468-74f8-499d-976c-bca671e19b14" }
 
@@ -166,63 +209,66 @@ for i in excelData["SP 800-53 Revision 5"]:
     # increment the count
     intTotal += 1
 
-    # # attempt to create the security control
-    # try:
-    #     response = requests.request("POST", url_sc, headers=headers, json=sc)
-    #     jsonResponse = response.json()
-    #     print("\n\nSuccess - " + sc["title"])
-    # except requests.exceptions.HTTPError as errh:
-    #     print ("Http Error:",errh)
-    #     print("\n\nError - " + sc["title"])
-    # except requests.exceptions.ConnectionError as errc:
-    #     print ("Error Connecting:",errc)
-    #     print("\n\nError - " + sc["title"])
-    # except requests.exceptions.Timeout as errt:
-    #     print ("Timeout Error:",errt)
-    #     print("\n\nError - " + sc["title"])
-    # except requests.exceptions.RequestException as err:
-    #     print ("OOps: Something Else",err)
-    #     print("\n\nError - " + sc["title"])
+    # attempt to create the security control
+    try:
+        response = requests.request("POST", url_sc, headers=headers, json=sc)
+        jsonResponse = response.json()
+        print("\n\nSuccess - " + sc["title"])
+    except requests.exceptions.HTTPError as errh:
+        print ("Http Error:",errh)
+        print("\n\nError - " + sc["title"])
+    except requests.exceptions.ConnectionError as errc:
+        print ("Error Connecting:",errc)
+        print("\n\nError - " + sc["title"])
+    except requests.exceptions.Timeout as errt:
+        print ("Timeout Error:",errt)
+        print("\n\nError - " + sc["title"])
+    except requests.exceptions.RequestException as err:
+        print ("OOps: Something Else",err)
+        print("\n\nError - " + sc["title"])
 
-# # output total controls created
-# print(intTotal)
+# Write to file to visualize the output
+with open("AtlasityControls.json", "w") as outfile: 
+    outfile.write(json.dumps(controls, indent=4)) 
 
-# # retrieve full list created
-# url_allcats = "http://localhost:5000/api/SecurityControls/filterSecurityControlsByCatalogue/" + str(intCat)
+# retrieve full list created
+url_allcats = "http://localhost:5000/api/SecurityControls/filterSecurityControlsByCatalogue/" + str(intCat)
 
-# headers_allcats = {
-#    "Accept": "application/json",
-#    'Authorization': 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJob3dpZWF2cCIsImp0aSI6ImJkZGM0ZDQ5LTdjZjMtNDcwNS04YjNjLTkwZDg0ODAyOTdhYSIsImlhdCI6MTYwNDI0Mjc2MywiaHR0cDovL3NjaGVtYXMueG1sc29hcC5vcmcvd3MvMjAwNS8wNS9pZGVudGl0eS9jbGFpbXMvbmFtZWlkZW50aWZpZXIiOiI4ZDhkNTQ2OC03NGY4LTQ5OWQtOTc2Yy1iY2E2NzFlMTliMTQiLCJodHRwOi8vc2NoZW1hcy54bWxzb2FwLm9yZy93cy8yMDA1LzA1L2lkZW50aXR5L2NsYWltcy9uYW1lIjoiaG93aWVhdnAiLCJodHRwOi8vc2NoZW1hcy5taWNyb3NvZnQuY29tL3dzLzIwMDgvMDYvaWRlbnRpdHkvY2xhaW1zL3JvbGUiOiJBZG1pbmlzdHJhdG9yIiwibmJmIjoxNjA0MjQyNzYzLCJleHAiOjE2MDQzMjkxNjMsImlzcyI6IkF0bGFzIiwiYXVkIjoiaHR0cDovL2xvY2FsaG9zdDo1MDAwLyJ9.0PNlLKFJ9UUQaQnLTmQ_w-vtTxEpq0C0mH-QPYZeqJA'
-# }
+headers_allcats = {
+   "Accept": "application/json",
+   'Authorization': 'Bearer ' + token
+}
 
-# allcats = requests.request(
-#    "GET",
-#    url_allcats,
-#    headers=headers_allcats,
-# )
-# catsArray = allcats.json()
+allcats = requests.request(
+   "GET",
+   url_allcats,
+   headers=headers_allcats,
+)
+catsArray = allcats.json()
 
-# # loop through and compare arrays, see if anything is missing (validation check)
-# intMatch = 0
-# for y in controls:
-#     bMatch = False
-#     # make sure each control in the raw JSON was returned from Atlasity
-#     for z in catsArray:
-#         if z["title"] == y["title"] :
-#             bMatch = True
-#             break
-#     #make sure they match or throw error in console if missing
-#     if bMatch == True :
-#         intMatch += 1
-#     else:
-#         # ones that didn't upload
-#         print("ERROR: " + y["title"] + " is missing.")
-#         # see if it was length related
-#         print(len(y["title"] ))
+# loop through and compare arrays, see if anything is missing (validation check)
+intMatch = 0
+for y in controls:
+    bMatch = False
+    # make sure each control in the raw JSON was returned from Atlasity
+    for z in catsArray:
+        if z["title"] == y["title"] :
+            bMatch = True
+            break
+    #make sure they match or throw error in console if missing
+    if bMatch == True :
+        intMatch += 1
+    else:
+        # ones that didn't upload
+        print("ERROR: " + y["title"] + " is missing.")
+        # see if it was length related
+        print(len(y["title"] ))
 
-# # validate all were loaded
-# if intMatch == intTotal :
-#     print("SUCCESS: Verified all controls were successfully created.")
+# validate all were loaded
+if intMatch == intTotal :
+    print("SUCCESS: Verified all controls were successfully created.")
+else:
+    print("ERROR: Some controls were not created successfully.")
 
 
 
