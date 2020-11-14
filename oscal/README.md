@@ -1,20 +1,31 @@
 # OSCAL Integration - Catalog and Profile Importer
 
-This repository contains example Python scripts for processing NIST OSCAL artficacts and parsing and loading them into Atlasity as catalogues and controls.
+This repository contains example Python scripts for processing NIST OSCAL artifacts and parsing and loading them into Atlasity as catalogues and controls.
 
 ## Purpose
 
-A large number of Atlasity customers, especially government, rely on publications for NIST to build their cyber security programs.  Many Information System Security Plans (ISSPs) are based on NIST related publications.  In this case, this repository is focused on processing NIST 800-53 Rev 5 using the tooling published by the NIST OSCAL team.  Our goals included:
+A large number of Atlasity customers, especially government, rely on publications from NIST to build their cyber security programs.  Many Information System Security Plans (ISSPs) are based on NIST related publications.  In this case, this repository is focused on processing NIST 800-53 Rev 5 using the tooling published by the NIST OSCAL team.  Our goals included:
 
 - Create Atlasity catalogs using automation to parse NIST OSCAL files for NIST 800-53 Rev 5
 - Create catalogs for Low, Moderate, High, and Privacy using the same tool
 - Fuse data from multiple sources to enrich the catalogs prior to loading (i.e. OSCAL files, 800-53 rev 5 spreadsheet, etc.)
+- Publish derived artifacts based on NIST OSCAL that might be useful in assisting other tools in ingesting NIST 800-53 data
+
+## Background
+
+This work was performed using Open Source code and tooling in support of the [ATARC Cloud Security Working Group](https://atarc.org/working-groups/cloud-working-group/#:~:text=The%20ATARC%20Cloud%20Working%20Group,the%20Federal%20cloud%20%26%20infrastructure%20community.)
 
 ## Process
 
 - Downloaded the Excel version of 800-53 rev5 from the NIST website
-- Download the NIST OSCAL versions of 800-53 from their GitHub site
+- Downloaded the NIST OSCAL versions of 800-53 from their GitHub site
 - Cleaned the Excel file - control numbers did not match in format between the Excel version and JSON.  Did some substitution string manipulation to make the control numbers exactly match so the data could be programmatically merged
+- Converted the Excel file to JSON using free online tools
+- Enriched the Excel file data with additional data from the NIST OSCAL JSON
+- Loaded the full catalog from NIST 800-53 Rev 5 into Atlasity
+- Loaded the Low, Moderate, High, and Privacy baselines into Atlasity based on the OSCAL profiles
+- Published derived JSON files for further use by others
+- Documented issues encountered in the process to provide feedback to the NIST OSCAL team and ATARC
 
 ## Run the Script
 
@@ -34,11 +45,11 @@ Once this tool runs, it outputs a set of files that can be used with the profile
 
 These scripts provide feedback in the terminal to monitor progress on parsing and uploading.  It also performs validation at the end to ensure that all parsed controls are uploaded successfully into Atlasity.
 
-NOTE: This script is a proof of concept for parsing OSCAL content to load it into an external tool.  Atlasity customers will not need to use this script.  Atlasity has internal mechanisms for importing and exporting catalogs that do not rely on any external tools/scripts.  
+NOTE: This script is a proof of concept for parsing OSCAL content to load it into an external tool.  Atlasity customers will not need to use this script.  Atlasity has internal mechanisms for importing and exporting catalogs that do not rely on any external tools/scripts. We used this script internally to C2 Labs to load the NIST OSCAL data but have published relevant catalogues within Atlasity for ease of customer use.
 
 ## Output Files
 
-As part of that process, we generated some new versions of JSON that are flattened and cleaned across multiple sources.  These raw artifacts are shown below and provided for others use where there is a desire to leverage this data programatically without dealing with the complexity of parsing OSCAL:
+As part of that process, we generated some new versions of JSON that are flattened and cleaned across multiple sources.  These raw artifacts are shown below and provided for others to use where there is a desire to leverage this data programatically without dealing with the complexity of parsing OSCAL:
 
 - `AtlasityControls.json` - the full NIST 800-53 catalog in a flat JSON file
 - `OSCALParsedControls.json` - full list of controls parsed from OSCAL; mostly used to normalize families and links for controls in a flat format
@@ -58,7 +69,7 @@ As part of that process, we generated some new versions of JSON that are flatten
 
 ## Useful Tools
 
-The JSON files generate by the OSCAL team are large and need easy to visually parse by humans.  We leveraged a free online tool - [JSON Viewer](http://jsonviewer.stack.hu/) - that allows you interactively drill into the data.  This tool was a nice complement for our developers to assist with working on this large data set.  In addition, we used the [Beautify Tools](http://beautifytools.com/excel-to-json-converter.php) to do an Excel to JSON conversion to allow for easier programmatic manipulation of the data.
+The JSON files generate by the OSCAL team are large and not easy to visually parse by humans.  We leveraged a free online tool - [JSON Viewer](http://jsonviewer.stack.hu/) - that allows you to interactively drill into the data.  This tool was a nice complement for our developers to assist with working on this large data set.  In addition, we used the [Beautify Tools](http://beautifytools.com/excel-to-json-converter.php) to do an Excel to JSON conversion to allow for easier programmatic manipulation of the data.
 
 ## OSCAL Feedback
 
@@ -76,3 +87,4 @@ Below is a running log of feedback on enhancements to OSCAL that would have made
     - NIST 800-53 Rev. 5 - Security and Privacy Controls for Information Systems and Organizations - PRIVACY Baseline - pt-8.1 not found.
     - NIST 800-53 Rev. 5 - Security and Privacy Controls for Information Systems and Organizations - PRIVACY Baseline - pt-8.2 not found.
     - NIST 800-53 Rev. 5 - Security and Privacy Controls for Information Systems and Organizations - PRIVACY Baseline - pt-9 not found.
+- For the base control metadata, the Excel file published by NIST was a lot easier to manipulate and parse than the OSCAL.  For that reason, we chose to use the Excel file as the base of our work, convert it to JSON using free tools, and then enrich it with additional data available in the OSCAL.
