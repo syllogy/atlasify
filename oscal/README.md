@@ -88,3 +88,4 @@ Below is a running log of feedback on enhancements to OSCAL that would have made
     - NIST 800-53 Rev. 5 - Security and Privacy Controls for Information Systems and Organizations - PRIVACY Baseline - pt-8.2 not found.
     - NIST 800-53 Rev. 5 - Security and Privacy Controls for Information Systems and Organizations - PRIVACY Baseline - pt-9 not found.
 - For the base control metadata, the Excel file published by NIST was a lot easier to manipulate and parse than the OSCAL.  For that reason, we chose to use the Excel file as the base of our work, convert it to JSON using free tools, and then enrich it with additional data available in the OSCAL.
+- Controls do not have GUIDS where you can cross-reference betwen the catalog and baselines.  Ran into issues with case sensitivity that required some additional processing.  Also, found some items in the baselines that don't exist in the catalog as shown above.  
