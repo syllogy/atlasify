@@ -177,7 +177,7 @@ for i in excelData["SP 800-53 Revision 5"]:
     oscalLookup = next((item for item in oscalControls if item["id"] == i["Control Number"].lower()), None)
 
     #process description (handle encoding issues and optimize for HTML rendering)
-    strDescription = strControl + "<br/><h3>Discussion</h3>" + strDiscussion
+    strDescription = strControl + "<br/><br/><h3>Discussion</h3><br/><br/>" + strDiscussion
     strDescription = strDescription.replace("\r\n", "<br/>")
     strDescription = strDescription.replace("\u2019", "'")
     strDescription = strDescription.replace("\u201c", "")
