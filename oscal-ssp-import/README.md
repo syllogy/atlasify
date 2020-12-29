@@ -55,6 +55,7 @@ The following feedback is provided to NIST and GovReady for continuous improveme
 - System Implementation - users should be an array of objects, also uses UUIDs as object names versus properties
 - System Implementation - components should be an array of objects, also uses UUIDs as object names versus properties
 - System Implementation - system inventory should have inventory items be an array, also uses UUIDs as object names versus properties.  'system-inventory' and 'inventory-items' seem redundant.  Unless some metadata is provided at the system inventory level, don't see the distinction being necessary.
+- System Implementation - status and state appear redundant for components.  Same issue with with the need for an array and GUID as a property.
 
 **BOTTOM LINE:** We were able to successfully load a SSP into Atlasity using the OSCAL SSP file.  However, there are still data consistency issues and and some variability that result in a high degree of custom mapping work.
 

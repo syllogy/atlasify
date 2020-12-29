@@ -45,7 +45,7 @@ headers = {
 oscal = open('ssp_v1_oscal_json.json', 'r', encoding='utf-8-sig')
 oscalData = json.load(oscal)
 
-# create the ssp object
+# create the ssp object schema for Atlasity
 ssp = {
     "UUID": "",
     "SystemName": "",
@@ -227,7 +227,7 @@ for i in impProps:
 # process users
 scUsers = imps["users"]
 ssp["Environment"] += "<h4>Users</h4>"
-userTable = "<table border=\"1\"><tr><td>User</td><td>Properties</td><td>Roles</td><td>Privileges</td></tr>"
+userTable = "<table border=\"1\"><tr style=\"font-weight: bold\"><td>User</td><td>Properties</td><td>Roles</td><td>Privileges</td></tr>"
 for i in scUsers:
     # get the user
     userTable += "<tr>"
@@ -265,6 +265,79 @@ for i in scUsers:
 #close the table
 userTable += "</table><br/>"
 ssp["Environment"] += userTable
+# process components
+scComps = imps["components"]
+ssp["Environment"] += "<h4>Components</h4>"
+compTable = "<table border=\"1\"><tr style=\"font-weight: bold\"><td>Title</td><td>Type</td><td>Description</td><td>Properties</td><td>Links</td><td>Protocols</td><td>Roles</td><td>Status</td></tr>"
+for i in scComps:
+    # get the user
+    userTable += "<tr>"
+    scComp = scComps[i]
+    compTable += "<td>" + scComp["title"] + " (GUID: " + i + ")</td>"
+    compTable += "<td>" + scComp["component-type"] + "</td>"
+    compTable += "<td>" + scComp["description"]
+    if "remarks" in scComp:
+        compTable += "<br/>" + scComp["remarks"]
+    compTable += "</td>"
+    # process properties and annotations
+    compTable += "<td>"
+    if "properties" in scComp:
+        compProps = scComp["properties"]
+        for x in compProps:
+            if "remarks" in x:
+                compTable += x["name"] + ": " + x["value"] + "(Remarks: " + x["remarks"] + ")<br/>"
+            else:
+                compTable += x["name"] + ": " + x["value"] + "<br/>"
+        if "annotations" in scComp:
+            for x in scComp["annotations"]:
+                if "remarks" in x:
+                    compTable += x["name"] + ": " + x["value"] + "(Remarks: " + x["remarks"] + ")<br/>"
+                else:
+                    compTable += x["name"] + ": " + x["value"] + "<br/>"
+    else:
+        compTable += "N/A"
+    compTable += "</td><td>"
+    # process links
+    if "links" in scComp:
+        compLink = scComp["links"]
+        for x in compLink:
+            if "rel" in x:
+                compTable += x["text"] + " (Link: " + x["href"] + ", Type: " + x["rel"] + ")<br/>"
+            else:
+                compTable += x["text"] + " (Link: " + x["href"] + ")<br/>"
+    else:
+        compTable += "N/A"
+    compTable += "</td><td>"
+    #process ports and protocols
+    if "protocols" in scComp:
+        compPorts = scComp["protocols"]
+        for x in compPorts:
+            compTable += "<strong>Name: " + x["name"] + "</strong></br>"
+            ranges = x["port-ranges"]
+            for y in ranges:
+                if y["start"] == y["end"]:
+                    compTable += "Transport: " + y["transport"] + ", Port: " + str(y["start"]) + "<br/>"
+                else:
+                    compTable += "Transport: " + y["transport"] + ", Port Range: " + str(y["start"]) + " - " + str(y["end"]) + "<br/>"
+    else:
+        compTable += "N/A"
+    compTable += "</td><td>"
+    #process roles
+    if "responsible-roles" in scComp:
+        scRoles = scComp["responsible-roles"]
+        for i in scRoles:
+            compTable += i + "<br/>"
+    else:
+        compTable += "N/A"
+    compTable += "</td><td>"
+    #process status
+    compTable += scComp["status"]["state"] + "</td>"
+    #close the row
+    compTable += "</tr>"
+#close the table
+compTable += "</table><br/>"
+ssp["Environment"] += compTable
+
 print(ssp["Environment"])
 
 #############################################################################################
@@ -278,7 +351,7 @@ ctrls = L1["control-implementation"]
 back = L1["back-matter"]
 resources = back["resources"]
 ssp["Description"] += "<h4>Back Matter and Related Resources</h4>"
-resourceTable = "<table border=\"1\"><tr><td>UUID</td><td>Title</td><td>Description</td><td>Properties</td><td>Links</td><td>Attachments</td><td>Remarks</td></tr>"
+resourceTable = "<table border=\"1\"><tr style=\"font-weight: bold\"><td>UUID</td><td>Title</td><td>Description</td><td>Properties</td><td>Links</td><td>Attachments</td><td>Remarks</td></tr>"
 for i in resources:
     resourceTable += "<tr>"
     if "uuid" in i:
