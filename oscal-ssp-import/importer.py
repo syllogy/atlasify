@@ -219,6 +219,53 @@ ssp["DataFlow"] += df["description"]
 # SYSTEM IMPLEMENTATION
 #############################################################################################
 imps = L1["system-implementation"]
+# process properties
+impProps = imps["properties"]
+ssp["Environment"] += "<h4>System Properties</h4>"
+for i in impProps:
+    ssp["Environment"] += i["name"] + ": " + i["value"] + "<br/>"
+# process users
+scUsers = imps["users"]
+ssp["Environment"] += "<h4>Users</h4>"
+userTable = "<table border=\"1\"><tr><td>User</td><td>Properties</td><td>Roles</td><td>Privileges</td></tr>"
+for i in scUsers:
+    # get the user
+    userTable += "<tr>"
+    scUser = scUsers[i]
+    userTable += "<td>" + scUser["title"] + " (GUID: " + i + ")</td>"
+    # get user properties
+    strUserProp = "<td>"
+    scUserProps = scUser["properties"]
+    for i in scUserProps:
+        strUserProp += i["name"] + ": " + i["value"] + "<br/>"
+    scUserAnno = scUser["annotations"]
+    for i in scUserAnno:
+        strUserProp += i["name"] + ": " + i["value"] + "<br/>"
+    strUserProp += "</td>"
+    userTable += strUserProp
+    # get user roles
+    scRoles = scUser["role-ids"]
+    strUserRoles = "<td>"
+    for i in scRoles:
+        strUserRoles += i + "<br/>"
+    strUserRoles += "</td>"
+    userTable += strUserRoles
+    # get privileges
+    scPrivs = scUser["authorized-privileges"]
+    strPrivs = "<td>"
+    for i in scPrivs:
+        strPrivs += i["title"] + ", including the following functions: <br/>"
+        scFunctions = i["functions-performed"]
+        for x in scFunctions:
+            strPrivs += "- " + x + "<br/>"
+    strPrivs += "</td>"
+    userTable += strPrivs
+    #close the row
+    userTable += "</tr>"
+#close the table
+userTable += "</table><br/>"
+ssp["Environment"] += userTable
+print(ssp["Environment"])
 
 #############################################################################################
 # CONTROL IMPLEMENTATION
@@ -276,7 +323,7 @@ resourceTable += "</table><br/>"
 ssp["Description"] += resourceTable
 
 # print the SSP results
-print("Raw SSP JSON")
+#print("Raw SSP JSON")
 #print(ssp["Description"])
-print(ssp)
+#print(ssp)
 

@@ -52,6 +52,9 @@ The following feedback is provided to NIST and GovReady for continuous improveme
 - Unclear what to do with "New Control Stuff" in the metadata section.  Does not feel like part of OSCAL but a ton of content is in there.
 - UUIDs are not handled consistently.  On most areas of the ISSP, the 'uuid' is a field with a value.  In system characteristics, for authorization boundary and network architecture assign the guids as the name of the object.  This results in increased nesting and code to parse.
 - Authorization Boundary, Network Architecture, and Data Flow present their 'diagrams' property as an object.  Recommend that it be an array of objects and flatten by having each diagram have a UUID property (as noted in feedback item above).  Also, caption seems redundant to the description field on each diagram.
+- System Implementation - users should be an array of objects, also uses UUIDs as object names versus properties
+- System Implementation - components should be an array of objects, also uses UUIDs as object names versus properties
+- System Implementation - system inventory should have inventory items be an array, also uses UUIDs as object names versus properties.  'system-inventory' and 'inventory-items' seem redundant.  Unless some metadata is provided at the system inventory level, don't see the distinction being necessary.
 
 **BOTTOM LINE:** We were able to successfully load a SSP into Atlasity using the OSCAL SSP file.  However, there are still data consistency issues and and some variability that result in a high degree of custom mapping work.
 
