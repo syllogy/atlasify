@@ -32,12 +32,14 @@ This work was performed using Open Source code and tooling in support of the [AT
 Setup - you will need the following Atlasity items to run this script:
 
 - You must have a running version of Atlasity and have created a user with the appropriate permissions to create security plans
+- You must update the URL in the script to point to your running instance of Atlasity
 - Verify you are able to log into Atlasity using your username and password
 - Ensure you have Python installed on your machine and use `pip` to install the required packages
+- You must have loaded a catalog into Atlasity containing the security controls that are relevant for this ISSP (replace the `00` below with the actual catalog number within Atlasity)
 
 To load the SSP using OSCAL, run the script below:
 
-`py importer.py --user 'howieavp' --password 'myPassword'`
+`py importer.py --user 'howieavp' --password 'myPassword' --catalog 00`
 
 As this tool runs, it will provide logs as telemetry to show progress as the job completes.  Depending on the size of the SSP, this process could take several minutes to complete.
 
@@ -56,6 +58,7 @@ The following feedback is provided to NIST and GovReady for continuous improveme
 - System Implementation - components should be an array of objects, also uses UUIDs as object names versus properties
 - System Implementation - system inventory should have inventory items be an array, also uses UUIDs as object names versus properties.  'system-inventory' and 'inventory-items' seem redundant.  Unless some metadata is provided at the system inventory level, don't see the distinction being necessary.
 - System Implementation - status and state appear redundant for components.  Same issue with with the need for an array and GUID as a property.
+- Control Implementation - UUIDs for the controls are not found in components or inventory.
 
 **BOTTOM LINE:** We were able to successfully load a SSP into Atlasity using the OSCAL SSP file.  However, there are still data consistency issues and and some variability that result in a high degree of custom mapping work.
 

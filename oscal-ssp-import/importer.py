@@ -10,17 +10,25 @@ import argparse
 parser = argparse.ArgumentParser(description='Atlasity parser for NIST 800-53 OSCAL')
 parser.add_argument('--user', metavar='path', type=str, help='Atlasity username')
 parser.add_argument('--pwd', metavar='path', type=str, help='Atlasity password')
+parser.add_argument('--catalog', metavar='path', type=str, help='Atlasity catalog containing security controls for this SSP')
 
 # get the argument from the command line
 args = parser.parse_args()
 if (args.user == ''):
     print('ERROR: No username provided.')
+    exit
 else:
     strUser = args.user
 if (args.pwd == ''):
     print('ERROR: No password provided.')
+    exit
 else:
     strPWD = args.pwd
+if (args.pwd == ''):
+    print('ERROR: No password provided.')
+    exit
+else:
+    intCatalog = args.catalog
 
 # set the catalog URL for your Atlasity instance
 url_login = "http://localhost:5000/api/authentication/login"
