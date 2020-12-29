@@ -78,5 +78,10 @@ The following future enhancements might be considered:
 - Add a step up front to validate the OSCAL file against the standard prior to import
 - Add an Atlasity OSCAL export option and validate that OSCAL file against the standard
 - Processing strategy for authorization boundary, network architecture, and data flow
+- Lookup component name via GUID for inventory table
+- Metadata - process stakeholders and responsible parties
+- Figure out what to do with "new-control-stuff" array in metadata
+- Process location data
+- Replace \n with <br/>
 
 

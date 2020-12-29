@@ -224,6 +224,7 @@ impProps = imps["properties"]
 ssp["Environment"] += "<h4>System Properties</h4>"
 for i in impProps:
     ssp["Environment"] += i["name"] + ": " + i["value"] + "<br/>"
+
 # process users
 scUsers = imps["users"]
 ssp["Environment"] += "<h4>Users</h4>"
@@ -265,6 +266,7 @@ for i in scUsers:
 #close the table
 userTable += "</table><br/>"
 ssp["Environment"] += userTable
+
 # process components
 scComps = imps["components"]
 ssp["Environment"] += "<h4>Components</h4>"
@@ -337,6 +339,59 @@ for i in scComps:
 #close the table
 compTable += "</table><br/>"
 ssp["Environment"] += compTable
+
+# process inventory
+scInvs = imps["system-inventory"]
+scItems = scInvs["inventory-items"]
+ssp["Environment"] += "<h4>System Inventory</h4>"
+invTable = "<table border=\"1\"><tr style=\"font-weight: bold\"><td>ID</td><td>Description</td><td>Properties</td><td>Roles</td><td>Component</td></tr>"
+for i in scItems:
+    # get the user
+    userTable += "<tr>"
+    scItem = scItems[i]
+    invTable += "<td>" + scItem["asset-id"] + " (GUID: " + i + ")</td>"
+    invTable += "<td>" + scItem["description"]
+    if "remarks" in scItem:
+        invTable += "<br/>" + scItem["remarks"]
+    invTable += "</td>"
+    # process properties and annotations
+    invTable += "<td>"
+    if "properties" in scItem:
+        invProps = scItem["properties"]
+        for x in invProps:
+            if "remarks" in x:
+                invTable += x["name"] + ": " + x["value"] + "(Remarks: " + x["remarks"] + ")<br/>"
+            else:
+                invTable += x["name"] + ": " + x["value"] + "<br/>"
+        if "annotations" in scItem:
+            for x in scItem["annotations"]:
+                if "remarks" in x:
+                    invTable += x["name"] + ": " + x["value"] + "(Remarks: " + x["remarks"] + ")<br/>"
+                else:
+                    invTable += x["name"] + ": " + x["value"] + "<br/>"
+    else:
+        invTable += "N/A"
+    invTable += "</td><td>"
+    #process roles
+    if "responsible-parties" in scItem:
+        invRoles = scItem["responsible-parties"]
+        for i in invRoles:
+            invTable += i + "<br/>"
+    else:
+        invTable += "N/A"
+    invTable += "</td><td>"
+    #process component
+    if "implemented-components" in scItem:
+        for z in scItem["implemented-components"]:
+            invTable += i + "<br/>"
+        invTable += "</td>"
+    else:
+        invTable += "N/A</td>"
+    #close the row
+    invTable += "</tr>"
+#close the table
+invTable += "</table><br/>"
+ssp["Environment"] += invTable
 
 print(ssp["Environment"])
 
