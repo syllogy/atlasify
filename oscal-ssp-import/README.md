@@ -50,8 +50,12 @@ The following feedback is provided to NIST and GovReady for continuous improveme
 - Some of the type and key value pair data would be better if they were enums, especially for components.  A lot of the information provided is relevant to the Atlasity assets module but a lot of fragile custom coding would be required to map the properties of each component.
 - In the back matter, most of the links use relative pathing which will not resolve from an external system.  Also, could not load them in Atlasity since they are not valid URLs which is required in Atlasity for validation of Links.  Attachments do not contain any data, just a string of zeros.
 - Unclear what to do with "New Control Stuff" in the metadata section.  Does not feel like part of OSCAL but a ton of content is in there.
+- UUIDs are not handled consistently.  On most areas of the ISSP, the 'uuid' is a field with a value.  In system characteristics, for authorization boundary and network architecture assign the guids as the name of the object.  This results in increased nesting and code to parse.
+- Authorization Boundary, Network Architecture, and Data Flow present their 'diagrams' property as an object.  Recommend that it be an array of objects and flatten by having each diagram have a UUID property (as noted in feedback item above).  Also, caption seems redundant to the description field on each diagram.
 
-NOTE: This is a limited scope test performed using a GovReady output with a small amount of sample data versus a full SSP.
+**BOTTOM LINE:** We were able to successfully load a SSP into Atlasity using the OSCAL SSP file.  However, there are still data consistency issues and and some variability that result in a high degree of custom mapping work.
+
+**NOTE:** This is a limited scope test performed using a GovReady output with a small amount of sample data versus a full SSP.
 
 ## Atlasity Gaps for OSCAL
 
@@ -69,5 +73,6 @@ The following future enhancements might be considered:
 
 - Add a step up front to validate the OSCAL file against the standard prior to import
 - Add an Atlasity OSCAL export option and validate that OSCAL file against the standard
+- Processing strategy for authorization boundary, network architecture, and data flow
 
 

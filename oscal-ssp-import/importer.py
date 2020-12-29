@@ -69,8 +69,8 @@ ssp = {
     "DataFlow": "",
     "OverallCategorization": "",
     "FacilityId": None,
-    "ParentId": 0,
-    "ParentModule": "",
+    "ParentId": 49,
+    "ParentModule": "securityplans",
     "CreatedById": userId,
     "DateCreated": None,
     "LastUpdatedById": userId,
@@ -99,6 +99,7 @@ meta = L1["metadata"]
 ssp["SystemName"] = meta["title"]
 ssp["DateCreated"] = meta["published"]
 ssp["DateLastUpdated"] = meta["last-modified"]
+ssp["Description"] += "<h4>System Metadata</h4>"
 ssp["Description"] += "Version: " + meta["version"] + "<br/>"
 ssp["Description"] += "Imported Using OSCAL Version: " + meta["oscal-version"] + "<br/>"
 ssp["Description"] += "Remarks: " + meta["remarks"] + "<br/>"
@@ -106,12 +107,12 @@ ssp["Description"] += "Remarks: " + meta["remarks"] + "<br/>"
 props = meta["properties"]
 ssp["Description"] += "<h4>System Properties</h4>"
 for i in props:
-    ssp["Description"] += "Property Name: " + i["name"] + ", Property Value: " + i["value"]
+    ssp["Description"] += i["name"] + ": " + i["value"]
 # get the revision history
 hist = meta["revision-history"]
 ssp["Description"] += "<h4>Revision History</h4>"
 for i in hist:
-    ssp["Description"] += "Version: " + i["version"] + ", Date Published: " + i["published"] + ", OSCAL Version: " + i["oscal-version"] + ", Remarks: " + i["remarks"]
+    ssp["Description"] += "Version: " + i["version"] + ", Date Published: " + i["published"] + ", OSCAL Version: " + i["oscal-version"] + ", Remarks: " + i["remarks"] + "<br/>"
 # get the roles
 roles = meta["roles"]
 ssp["Description"] += "<h4>Relevant Roles for this SSP</h4>"
@@ -127,12 +128,92 @@ locations = meta["locations"]
 # PROFILE SECTION
 #############################################################################################
 prof = L1["import-profile"]
-ssp["Description"] += "OSCAL Profile Imported: " + i["href"] + "<br/>"
+ssp["Description"] += "<h4>OSCAL Profile</h4>"
+for i in prof:
+    ssp["Description"] += "Imported: " + prof["href"] + "<br/>"
 
 #############################################################################################
 # SYSTEM CHARACTERISTICS
 #############################################################################################
 chars = L1["system-characteristics"]
+otherIDs = chars["system-ids"]
+intLoop = 0
+for i in otherIDs:
+    if intLoop != 0:
+        ssp["OtherIdentifier"] += ", "
+    ssp["OtherIdentifier"] +=  i["id"]
+    intLoop += 1
+# process properties
+scProps = chars["properties"]
+ssp["Description"] += "<h4>System Properties</h4>"
+for i in scProps:
+    ssp["Description"] += i["name"] + ": " + i["value"] + "<br/>"
+# process annotations
+scAnn = chars["annotations"]
+ssp["Description"] += "<h4>System Annotations</h4>"
+for i in scAnn:
+    ssp["Description"] += i["name"] + ": " + i["value"] + " (Remarks: " + i["remarks"]  + ")<br/>"
+# process system information
+scInfo = chars["system-information"]
+scInfoProps = scInfo["properties"]
+ssp["Description"] += "<h4>System Sensitivity and Privacy</h4>"
+ssp["Description"] += "Security Sensitivity Level: " + chars["security-sensitivity-level"] + "<br/>"
+for i in scInfoProps:
+    if "class" in i:
+        ssp["Description"] += i["name"] + ": " + i["value"] + "(Class: " + i["class"] + ")<br/>"
+    else:
+        ssp["Description"] += i["name"] + ": " + i["value"] + "<br/>"
+# process information types
+scInfoTypes = scInfo["information-types"]
+ssp["Description"] += "<h4>Information Types and System Classification</h4>"
+for i in scInfoTypes:
+    ssp["Description"] += "Type: " + i["title"] + "(GUID: " + i["uuid"] + ")<br/>"
+    ssp["Description"] += "Description: " + i["description"] + "<br/>"
+    ssp["Description"] += "InfoType ID (From - https://doi.org/10.6028/NIST.SP.800-60v2r1): " + i["information-type-ids"]["https://doi.org/10.6028/NIST.SP.800-60v2r1"]["id"] + "<br/>"
+    ssp["Description"] += "Confidentiality Impact - Base: " + i["confidentiality-impact"]["base"] + ", Selected: " + i["confidentiality-impact"]["selected"]  + "<br/>"
+    ssp["Description"] += "Integrity Impact - Base: " + i["integrity-impact"]["base"] + ", Selected: " + i["integrity-impact"]["selected"]  + "<br/>"
+    ssp["Description"] += "Availability Impact - Base: " + i["availability-impact"]["base"] + ", Selected: " + i["availability-impact"]["selected"]  + "<br/>"
+# process security impact level
+scLevels = chars["security-impact-level"]
+ssp["Description"] += "<h4>Security Impact Levels</h4>"
+if scLevels["security-objective-confidentiality"] == "fips-199-high":
+    ssp["Confidentiality"] = "High"
+elif scLevels["security-objective-confidentiality"] == "fips-199-moderate":
+    ssp["Confidentiality"] = "Moderate"
+else:
+    ssp["Confidentiality"] = "Low"
+if scLevels["security-objective-integrity"] == "fips-199-high":
+    ssp["Integrity"] = "High"
+elif scLevels["security-objective-integrity"] == "fips-199-moderate":
+    ssp["Integrity"] = "Moderate"
+else:
+    ssp["Integrity"] = "Low"
+if scLevels["security-objective-availability"] == "fips-199-high":
+    ssp["Availability"] = "High"
+elif scLevels["security-objective-availability"] == "fips-199-moderate":
+    ssp["Availability"] = "Moderate"
+else:
+    ssp["Availability"] = "Low"
+#get overall categorization using the system high approach
+if ssp["Confidentiality"] == "High" or ssp["Integrity"] == "High" or ssp["Availability"] == "High":
+    ssp["OverallCategorization"] = "High"
+elif ssp["Confidentiality"] == "Moderate" or ssp["Integrity"] == "Moderate" or ssp["Availability"] == "Moderate":
+    ssp["OverallCategorization"] = "Moderate"
+else:
+    ssp["OverallCategorization"] = "Low"
+# get the status
+stat = chars["status"]
+if stat["state"] == "operational":
+    ssp["Status"] = "Operational"
+else:
+    ssp["Status"] = "Under Development"
+# process authorization boundary, network architecture, and data flow
+authb = chars["authorization-boundary"]
+ssp["AuthorizationBoundary"] += authb["description"]
+netx = chars["network-architecture"]
+ssp["NetworkArchitecture"] += netx["description"]
+df = chars["data-flow"]
+ssp["DataFlow"] += df["description"]
 
 #############################################################################################
 # SYSTEM IMPLEMENTATION
@@ -196,5 +277,6 @@ ssp["Description"] += resourceTable
 
 # print the SSP results
 print("Raw SSP JSON")
+#print(ssp["Description"])
 print(ssp)
 
