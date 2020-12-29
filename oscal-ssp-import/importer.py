@@ -49,6 +49,11 @@ headers = {
    'Authorization': jwt
 }
 
+# get the list of controls for this catalog
+url_cats = "http://localhost:5000/api/SecurityControls/filterSecurityControlsByCatalogue/" + intCatalog
+responseCats = requests.request("GET", url_cats, headers=headers)
+scDict = json.loads(responseCats.text)
+
 # load the OSCAL SSP JSON
 oscal = open('ssp_v1_oscal_json.json', 'r', encoding='utf-8-sig')
 oscalData = json.load(oscal)
@@ -400,8 +405,6 @@ for i in scItems:
 #close the table
 invTable += "</table><br/>"
 ssp["Environment"] += invTable
-
-print(ssp["Environment"])
 
 #############################################################################################
 # CONTROL IMPLEMENTATION
