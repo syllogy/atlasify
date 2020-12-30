@@ -471,7 +471,7 @@ ssp["Description"] += resourceTable
 ssp["Description"] = ssp["Description"].replace("\n", "<br/>")
 ssp["Environment"] = ssp["Environment"].replace("\n", "<br/>")
 
-# create the catalog and print success result
+# create the security plan and print success result
 url_ssp = "http://localhost:5000/api/securityplans"
 response = requests.request("POST", url_ssp, headers=headers, json=ssp)
 jsonResponse = response.json()
@@ -510,11 +510,11 @@ for i in ctrls:
     ctrlimp = {
         "Id": 0,
         "UUID": "",
-        "ControlOwnerId": strUser,
+        "ControlOwnerId": userId,
         "Policy": "",
         "Implementation": "",
         "Status": "",
-        "SecurityPlanID": 0,
+        "SecurityPlanID": intSecurityPlanID,
         "DateLastAssessed": None,
         "LastAssessmentResult": "",
         "ControlID": 0,
@@ -522,9 +522,9 @@ for i in ctrls:
         "ProcessLevel": "",
         "ParentID": intSecurityPlanID,
         "ParentModule": "securityplans",
-        "CreatedById": strUser,
+        "CreatedById": userId,
         "DateCreated": None,
-        "LastUpdatedById": strUser,
+        "LastUpdatedById": userId,
         "DateLastUpdated": None,
         "Weight": 0
     }
@@ -554,7 +554,7 @@ for i in ctrls:
                     if "rel" in z:
                         ctrlimp["Policy"] += " (Type: " + z["rel"] + ")<br/>"
                     if "href" in z:
-                        ctrlimp["Policy"] += " (Link: " + z["href"] + ")<br/>7"
+                        ctrlimp["Policy"] += " (Link: " + z["href"] + ")<br/>"
             if "by-components" in st:
                 ciComps = st["by-components"]
                 ctrlimp["Policy"] += "<h5>Components</h5>"
@@ -627,12 +627,6 @@ for i in ctrls:
 
     # add to the list to process
     atlasityCTRLs.append(ctrlimp)
-    
-# for z in atlasityCTRLs:
-#     print(Logger.WARNING + "Policy HTML" + Logger.END)
-#     print(z["Policy"])
-#     print(Logger.WARNING + "Implementation HTML" + Logger.END)
-#     print(z["Implementation"])
 
 #troubleshooting
 if intMisses > 0:
@@ -640,8 +634,29 @@ if intMisses > 0:
 else:
     print(Logger.OK + "SUCCESS: All controls were found and mapped correctly for this catalog." + Logger.END)
 
-# print the SSP results
-#print("Raw SSP JSON")
-#print(ssp["Description"])
-#print(ssp)
+#############################################################################################
+# CREATE THE CONTROL IMPLEMENTATIONS IN ATLASITY
+#############################################################################################
 
+#tracking variables
+intTotal = 0
+url_sc = "http://localhost:5000/api/controlimplementation"
+
+# create each security control implementation
+for sc in atlasityCTRLs:
+    try:
+        response = requests.request("POST", url_sc, headers=headers, json=sc)
+        scJsonResponse = response.json()
+        print(Logger.OK + "Success - " + str(scJsonResponse["id"]) + Logger.END)
+        intTotal += 1
+    except requests.exceptions.HTTPError as errh:
+        print (Logger.ERROR + "Http Error:", errh  + Logger.END)
+    except requests.exceptions.ConnectionError as errc:
+        print (Logger.ERROR + "Error Connecting:", errc + Logger.END)
+    except requests.exceptions.Timeout as errt:
+        print (Logger.ERROR + "Timeout Error:",errt + Logger.END)
+    except requests.exceptions.RequestException as err:
+        print (Logger.ERROR + "OOps: Something Else", err + Logger.END)
+
+# Wrap Up
+print(str(intTotal) + " controls uploaded to Atlasity.")
