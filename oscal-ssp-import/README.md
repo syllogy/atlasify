@@ -84,4 +84,11 @@ The following future enhancements might be considered for future work based on c
 - Replace \n with <br/>
 - Add component lookup for control implementations
 
+## Results
+
+The following file is offered showing the results of the OSCAL SSP import into Atlasity:
+
+- See [Atlasity Imported OSCAL SSP](Atlasity-SSP-Imported.pdf)
+- Local file name: `Atlasity-SSP-Imported.pdf`
+
 
