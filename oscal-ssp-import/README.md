@@ -59,6 +59,7 @@ The following feedback is provided to NIST and GovReady for continuous improveme
 - System Implementation - system inventory should have inventory items be an array, also uses UUIDs as object names versus properties.  'system-inventory' and 'inventory-items' seem redundant.  Unless some metadata is provided at the system inventory level, don't see the distinction being necessary.
 - System Implementation - status and state appear redundant for components.  Same issue with with the need for an array and GUID as a property.
 - Control Implementation - UUIDs for the controls are not found in components or inventory.
+- Control Implementation - for the "by-components" section, it is confusing why the object name is a UUID then the object has a different UUID within it.  
 
 **BOTTOM LINE:** We were able to successfully load a SSP into Atlasity using the OSCAL SSP file.  However, there are still data consistency issues and and some variability that result in a high degree of custom mapping work.
 
@@ -86,5 +87,6 @@ The following future enhancements might be considered:
 - Figure out what to do with "new-control-stuff" array in metadata
 - Process location data
 - Replace \n with <br/>
+- Add component lookup for control implementations
 
 

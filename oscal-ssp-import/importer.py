@@ -6,6 +6,12 @@ from requests.auth import HTTPBasicAuth
 import json
 import argparse
 
+class Logger:
+    OK = '\033[92m'
+    WARNING = '\033[93m'
+    ERROR = '\033[91m'
+    END = '\033[0m'
+
 # setup parser for command line arguments
 parser = argparse.ArgumentParser(description='Atlasity parser for NIST 800-53 OSCAL')
 parser.add_argument('--user', metavar='path', type=str, help='Atlasity username')
@@ -62,9 +68,9 @@ oscalData = json.load(oscal)
 ssp = {
     "UUID": "",
     "SystemName": "",
-    "PlanInformationSystemSecurityOfficerId": "",
-    "PlanAuthorizingOfficialId": "",
-    "SystemOwnerId": "",
+    "PlanInformationSystemSecurityOfficerId": userId,
+    "PlanAuthorizingOfficialId": userId,
+    "SystemOwnerId": userId,
     "OtherIdentifier": "",
     "Confidentiality": "",
     "Integrity": "",
@@ -74,7 +80,7 @@ ssp = {
     "DateSubmitted": None,
     "ApprovalDate": None,
     "ExpirationDate": None,
-    "SystemType": "",
+    "SystemType": "General Support System",
     "Environment": "",
     "LawsAndRegulations": "",
     "AuthorizationBoundary": "",
@@ -118,17 +124,17 @@ ssp["Description"] += "Imported Using OSCAL Version: " + meta["oscal-version"] +
 ssp["Description"] += "Remarks: " + meta["remarks"] + "<br/>"
 # get the properties
 props = meta["properties"]
-ssp["Description"] += "<h4>System Properties</h4>"
+ssp["Description"] += "<br/><h4>System Properties</h4>"
 for i in props:
-    ssp["Description"] += i["name"] + ": " + i["value"]
+    ssp["Description"] += i["name"] + ": " + i["value"] + "<br/>"
 # get the revision history
 hist = meta["revision-history"]
-ssp["Description"] += "<h4>Revision History</h4>"
+ssp["Description"] += "<br/><h4>Revision History</h4>"
 for i in hist:
     ssp["Description"] += "Version: " + i["version"] + ", Date Published: " + i["published"] + ", OSCAL Version: " + i["oscal-version"] + ", Remarks: " + i["remarks"] + "<br/>"
 # get the roles
 roles = meta["roles"]
-ssp["Description"] += "<h4>Relevant Roles for this SSP</h4>"
+ssp["Description"] += "<br/><h4>Relevant Roles for this SSP</h4>"
 for i in roles:
     if "desc" in i:
         ssp["Description"] += i["title"] + "(ID: " + i["id"] + ") - " + i["desc"] + "<br/>"
@@ -141,7 +147,7 @@ locations = meta["locations"]
 # PROFILE SECTION
 #############################################################################################
 prof = L1["import-profile"]
-ssp["Description"] += "<h4>OSCAL Profile</h4>"
+ssp["Description"] += "<br/><h4>OSCAL Profile</h4>"
 for i in prof:
     ssp["Description"] += "Imported: " + prof["href"] + "<br/>"
 
@@ -158,18 +164,18 @@ for i in otherIDs:
     intLoop += 1
 # process properties
 scProps = chars["properties"]
-ssp["Description"] += "<h4>System Properties</h4>"
+ssp["Description"] += "<br/><h4>System Properties</h4>"
 for i in scProps:
     ssp["Description"] += i["name"] + ": " + i["value"] + "<br/>"
 # process annotations
 scAnn = chars["annotations"]
-ssp["Description"] += "<h4>System Annotations</h4>"
+ssp["Description"] += "<br/><h4>System Annotations</h4>"
 for i in scAnn:
     ssp["Description"] += i["name"] + ": " + i["value"] + " (Remarks: " + i["remarks"]  + ")<br/>"
 # process system information
 scInfo = chars["system-information"]
 scInfoProps = scInfo["properties"]
-ssp["Description"] += "<h4>System Sensitivity and Privacy</h4>"
+ssp["Description"] += "<br/><h4>System Sensitivity and Privacy</h4>"
 ssp["Description"] += "Security Sensitivity Level: " + chars["security-sensitivity-level"] + "<br/>"
 for i in scInfoProps:
     if "class" in i:
@@ -178,7 +184,7 @@ for i in scInfoProps:
         ssp["Description"] += i["name"] + ": " + i["value"] + "<br/>"
 # process information types
 scInfoTypes = scInfo["information-types"]
-ssp["Description"] += "<h4>Information Types and System Classification</h4>"
+ssp["Description"] += "<br/><h4>Information Types and System Classification</h4>"
 for i in scInfoTypes:
     ssp["Description"] += "Type: " + i["title"] + "(GUID: " + i["uuid"] + ")<br/>"
     ssp["Description"] += "Description: " + i["description"] + "<br/>"
@@ -188,7 +194,6 @@ for i in scInfoTypes:
     ssp["Description"] += "Availability Impact - Base: " + i["availability-impact"]["base"] + ", Selected: " + i["availability-impact"]["selected"]  + "<br/>"
 # process security impact level
 scLevels = chars["security-impact-level"]
-ssp["Description"] += "<h4>Security Impact Levels</h4>"
 if scLevels["security-objective-confidentiality"] == "fips-199-high":
     ssp["Confidentiality"] = "High"
 elif scLevels["security-objective-confidentiality"] == "fips-199-moderate":
@@ -234,14 +239,14 @@ ssp["DataFlow"] += df["description"]
 imps = L1["system-implementation"]
 # process properties
 impProps = imps["properties"]
-ssp["Environment"] += "<h4>System Properties</h4>"
+ssp["Environment"] += "<br/><h4>System Properties</h4>"
 for i in impProps:
     ssp["Environment"] += i["name"] + ": " + i["value"] + "<br/>"
 
 # process users
 scUsers = imps["users"]
-ssp["Environment"] += "<h4>Users</h4>"
-userTable = "<table border=\"1\"><tr style=\"font-weight: bold\"><td>User</td><td>Properties</td><td>Roles</td><td>Privileges</td></tr>"
+ssp["Environment"] += "<br/><h4>Users</h4>"
+userTable = "<table border=\"1\" style=\"width: 100%;\"><tr style=\"font-weight: bold\"><td>User</td><td>Properties</td><td>Roles</td><td>Privileges</td></tr>"
 for i in scUsers:
     # get the user
     userTable += "<tr>"
@@ -282,8 +287,8 @@ ssp["Environment"] += userTable
 
 # process components
 scComps = imps["components"]
-ssp["Environment"] += "<h4>Components</h4>"
-compTable = "<table border=\"1\"><tr style=\"font-weight: bold\"><td>Title</td><td>Type</td><td>Description</td><td>Properties</td><td>Links</td><td>Protocols</td><td>Roles</td><td>Status</td></tr>"
+ssp["Environment"] += "<br/><h4>Components</h4>"
+compTable = "<table border=\"1\" style=\"width: 100%;\"><tr style=\"font-weight: bold\"><td>Title</td><td>Type</td><td>Description</td><td>Properties</td><td>Links</td><td>Protocols</td><td>Roles</td><td>Status</td></tr>"
 for i in scComps:
     # get the user
     userTable += "<tr>"
@@ -356,8 +361,8 @@ ssp["Environment"] += compTable
 # process inventory
 scInvs = imps["system-inventory"]
 scItems = scInvs["inventory-items"]
-ssp["Environment"] += "<h4>System Inventory</h4>"
-invTable = "<table border=\"1\"><tr style=\"font-weight: bold\"><td>ID</td><td>Description</td><td>Properties</td><td>Roles</td><td>Component</td></tr>"
+ssp["Environment"] += "<br/><h4>System Inventory</h4>"
+invTable = "<table border=\"1\" style=\"width: 100%;\"><tr style=\"font-weight: bold\"><td>ID</td><td>Description</td><td>Properties</td><td>Roles</td><td>Component</td></tr>"
 for i in scItems:
     # get the user
     userTable += "<tr>"
@@ -407,17 +412,12 @@ invTable += "</table><br/>"
 ssp["Environment"] += invTable
 
 #############################################################################################
-# CONTROL IMPLEMENTATION
-#############################################################################################
-ctrls = L1["control-implementation"]
-
-#############################################################################################
 # BACK MATTER SECTION
 #############################################################################################
 back = L1["back-matter"]
 resources = back["resources"]
-ssp["Description"] += "<h4>Back Matter and Related Resources</h4>"
-resourceTable = "<table border=\"1\"><tr style=\"font-weight: bold\"><td>UUID</td><td>Title</td><td>Description</td><td>Properties</td><td>Links</td><td>Attachments</td><td>Remarks</td></tr>"
+ssp["Description"] += "<br/><h4>Back Matter and Related Resources</h4>"
+resourceTable = "<table border=\"1\" style=\"width: 100%;\"><tr style=\"font-weight: bold\"><td>UUID</td><td>Title</td><td>Properties</td><td>Links</td><td>Remarks</td></tr>"
 for i in resources:
     resourceTable += "<tr>"
     if "uuid" in i:
@@ -425,10 +425,11 @@ for i in resources:
     else:
         resourceTable += "<td>N/A</td>"
     if "title" in i:
-        resourceTable += "<td>" + i["title"] + "</td>"
-    else:
-        resourceTable += "<td>N/A</td>"
-    if "desc" in i:
+        if "desc" in i:
+            resourceTable += "<td>" + i["title"] + " - " + i["desc"]  + "</td>"
+        else:
+            resourceTable += "<td>" + i["title"] + "</td>"
+    elif "desc" in i:
         resourceTable += "<td>" + i["desc"] + "</td>"
     else:
         resourceTable += "<td>N/A</td>"
@@ -446,13 +447,14 @@ for i in resources:
         resourceTable += "<td>" + zLinks + "</td>"
     else:
         resourceTable += "<td>N/A</td>"
-    if "attachments" in i:
-        zATT = ""
-        for z in i["attachments"]:
-            zATT += z["value"] + "<br/>"
-        resourceTable += "<td>" + zATT + "</td>"
-    else:
-        resourceTable += "<td>N/A</td>"
+    #no data right now, commenting out
+    # if "attachments" in i:
+    #     zATT = ""
+    #     for z in i["attachments"]:
+    #         zATT += z["value"] + "<br/>"
+    #     resourceTable += "<td>" + zATT + "</td>"
+    # else:
+    #     resourceTable += "<td>N/A</td>"
     if "remarks" in i:
         resourceTable += "<td>" + i["remarks"] + "</td>"
     else:
@@ -460,6 +462,183 @@ for i in resources:
     resourceTable += "</tr>"
 resourceTable += "</table><br/>"
 ssp["Description"] += resourceTable
+
+#############################################################################################
+# CREATE THE SSP IN ATLASITY
+#############################################################################################
+
+# replace bad characters
+ssp["Description"] = ssp["Description"].replace("\n", "<br/>")
+ssp["Environment"] = ssp["Environment"].replace("\n", "<br/>")
+
+# create the catalog and print success result
+url_ssp = "http://localhost:5000/api/securityplans"
+response = requests.request("POST", url_ssp, headers=headers, json=ssp)
+jsonResponse = response.json()
+print("\n\nAtlasity Output\n")
+print("\nSecurity Plan ID: " + str(jsonResponse["id"]))
+intSecurityPlanID = jsonResponse["id"]
+
+#############################################################################################
+# CONTROL IMPLEMENTATION
+#############################################################################################
+ctrlOBJ = L1["control-implementation"]
+ctrls = ctrlOBJ["implemented-requirements"]
+
+#create an array to hold the new Atlasity controls
+atlasityCTRLs = []
+
+#loop through the requirements
+for i in ctrls:
+    bMatch = False
+    intAtlasityControl = 0
+    intMisses = 0
+    #loop through the Atlasity controls to find a match within this catalog
+    for x in scDict:
+        if x["title"].lower().startswith(i["control-id"]) == True:
+            bMatch = True
+            print(Logger.OK + "Atlasity " + str(x["id"]) + " - " + x["title"] + " matches OSCAL " + i["control-id"] + Logger.END)
+            intAtlasityControl = x["id"]
+            break
+    #break loop if no match
+    if bMatch == False:
+        print(Logger.ERROR + i["control-id"] + " has no match" + Logger.END)
+        intMisses += 1
+        break
+
+    #define Atlasity Control Implementation structure
+    ctrlimp = {
+        "Id": 0,
+        "UUID": "",
+        "ControlOwnerId": strUser,
+        "Policy": "",
+        "Implementation": "",
+        "Status": "",
+        "SecurityPlanID": 0,
+        "DateLastAssessed": None,
+        "LastAssessmentResult": "",
+        "ControlID": 0,
+        "PracticeLevel": "",
+        "ProcessLevel": "",
+        "ParentID": intSecurityPlanID,
+        "ParentModule": "securityplans",
+        "CreatedById": strUser,
+        "DateCreated": None,
+        "LastUpdatedById": strUser,
+        "DateLastUpdated": None,
+        "Weight": 0
+    }
+
+    # assign the parent control
+    ctrlimp["ControlID"] = intAtlasityControl
+    ctrlimp["UUID"] = i["uuid"]
+
+    #process statements
+    if "statements" in i:
+        ciState = i["statements"]
+        ctrlimp["Policy"] += "<br/><h4>Statements</h4>"
+        for x in ciState:
+            st = ciState[x]
+            ctrlimp["Policy"] += "<strong>" + x + "</strong><br/>"
+            if "uuid" in st:
+                ctrlimp["Policy"] += "UUID: " + st["uuid"] + "<br/>"
+            if "description" in st:
+                ctrlimp["Policy"] += "Description: " + st["description"] + "<br/>"
+            if "remarks" in st:
+                ctrlimp["Policy"] += "Remarks: " + st["remarks"] + "<br/>"
+            if "links" in st:
+                ciLinks = st["links"]
+                ctrlimp["Policy"] += "<h5>Links</h5>"
+                for z in ciLinks:
+                    ctrlimp["Policy"] += z["text"]
+                    if "rel" in z:
+                        ctrlimp["Policy"] += " (Type: " + z["rel"] + ")<br/>"
+                    if "href" in z:
+                        ctrlimp["Policy"] += " (Link: " + z["href"] + ")<br/>7"
+            if "by-components" in st:
+                ciComps = st["by-components"]
+                ctrlimp["Policy"] += "<h5>Components</h5>"
+                idvTable = "<table border=\"1\" style=\"width: 100%;\"><tr style=\"font-weight: bold\"><td>Component ID</td><td>UUID</td><td>Description</td><td>Annotations</td></tr>"
+                for z in ciComps:
+                    idv = ciComps[z]
+                    idvTable += "<tr>"
+                    idvTable += "<td>" + z + "</td>"
+                    idvTable += "<td>" + idv["uuid"] + "</td>"
+                    idvTable += "<td>" + idv["description"] 
+                    if "remarks" in idv:
+                        idvTable += "<br/>" + idv["remarks"] 
+                    idvTable += "</td>"
+                    if "annotations" in idv:
+                        idvAnno = idv["annotations"]
+                        idvTable += "<td>"
+                        for t in idvAnno:
+                            idvTable += t["name"] + ": " + t["value"]
+                            if "remarks" in t:
+                                idvTable += " (Remarks: " + t["remarks"] + ")"
+                        idvTable += "</td>"
+                    else:
+                        idvTable += "<td>N/A</td>"
+                    idvTable += "</tr>"
+                idvTable += "</table><br/>"
+                ctrlimp["Policy"] += idvTable
+    
+    #process annotations
+    if "annotations" in i:
+        ciAnno = i["annotations"]
+        ctrlimp["Policy"] += "<br/><h4>Annotations</h4>"
+        for x in ciAnno:
+            if "remarks" in x:
+                ctrlimp["Policy"] += x["name"] + ": " + x["value"] + "(Remarks: " + x["remarks"] + ")<br/>"
+            else:
+                ctrlimp["Policy"] += x["name"] + ": " + x["value"] + "<br/>"
+            #check status
+            if x["name"] == "implementation-status":
+                if x["value"] == "planned":
+                    ctrlimp["Status"] = "Not Implemented"
+                elif x["value"] == "partial":
+                    ctrlimp["Status"] = "Partially Implemented"
+                elif x["value"] == "not-applicable":
+                    ctrlimp["Status"] = "Not Applicable"
+                elif x["value"] == "implemented":
+                    ctrlimp["Status"] = "Fully Implemented"
+                else:
+                    print("Uknown Control Status: " + x["value"])
+
+    # process properties 
+    if "properties" in i:
+        ciProps = i["properties"]
+        ctrlimp["Implementation"] += "<br/><h4>Properties</h4>"
+        for x in ciProps:
+            ctrlimp["Implementation"] += x["name"] + ": " + x["value"] + "<br/>"
+
+    #process parameters
+    if "parameter-settings" in i:
+        ciParams = i["parameter-settings"]
+        ctrlimp["Implementation"] += "<br/><h4>Parameter Settings</h4>"
+        for x in ciParams:
+            ctrlimp["Implementation"] += x + ": " + ciParams[x]["value"] + "<br/>"
+
+    # process roles
+    if "responsible-roles" in i:
+        ciRoles = i["responsible-roles"]
+        ctrlimp["Implementation"] += "<br/><h4>Responsible Roles</h4>"
+        for x in ciRoles:
+            ctrlimp["Implementation"] += x + "<br/>"
+
+    # add to the list to process
+    atlasityCTRLs.append(ctrlimp)
+    
+# for z in atlasityCTRLs:
+#     print(Logger.WARNING + "Policy HTML" + Logger.END)
+#     print(z["Policy"])
+#     print(Logger.WARNING + "Implementation HTML" + Logger.END)
+#     print(z["Implementation"])
+
+#troubleshooting
+if intMisses > 0:
+    print(Logger.ERROR + str(intMisses) + " total controls missing in this catalog." + Logger.END)
+else:
+    print(Logger.OK + "SUCCESS: All controls were found and mapped correctly for this catalog." + Logger.END)
 
 # print the SSP results
 #print("Raw SSP JSON")
