@@ -17,15 +17,9 @@ This work was performed using Open Source code and tooling in support of the [AT
 
 ## Process
 
-- Downloaded the Excel version of 800-53 rev5 from the NIST website
-- Downloaded the NIST OSCAL versions of 800-53 from their GitHub site
-- Cleaned the Excel file - control numbers did not match in format between the Excel version and JSON.  Did some substitution string manipulation to make the control numbers exactly match so the data could be programmatically merged
-- Converted the Excel file to JSON using free online tools
-- Enriched the Excel file data with additional data from the NIST OSCAL JSON
-- Loaded the full catalog from NIST 800-53 Rev 5 into Atlasity
-- Loaded the Low, Moderate, High, and Privacy baselines into Atlasity based on the OSCAL profiles
-- Published derived JSON files for further use by others
-- Documented issues encountered in the process to provide feedback to the NIST OSCAL team and ATARC
+- Obtained an example SSP from GovReady as a JSON file in OSCAL format
+- Parsed the file with a Python script to map the data to the Atlasity schema
+- Uploaded the SSP and control implementations to Atlasity leveraging the platform's REST APIs
 
 ## Run the Script
 
@@ -50,41 +44,42 @@ The following feedback is provided to NIST and GovReady for continuous improveme
 - Missing important date information such as date submitted, authorization date, and expiration date
 - Roles do not have GUIDs so they cannot easily be related to the responsible parties
 - Some of the type and key value pair data would be better if they were enums, especially for components.  A lot of the information provided is relevant to the Atlasity assets module but a lot of fragile custom coding would be required to map the properties of each component.
-- In the back matter, most of the links use relative pathing which will not resolve from an external system.  Also, could not load them in Atlasity since they are not valid URLs which is required in Atlasity for validation of Links.  Attachments do not contain any data, just a string of zeros.
+- In the back matter, most of the links use relative pathing which will not resolve from an external system.  Also, could not load them in Atlasity since they are not valid URLs which is required in Atlasity for validation of Links.  Attachments do not contain any data, just a string of zeros.  If relative URLs, the files should be provided as well with the OSCAL file (maybe in a ZIP file) for bulk processing.
 - Unclear what to do with "New Control Stuff" in the metadata section.  Does not feel like part of OSCAL but a ton of content is in there.
-- UUIDs are not handled consistently.  On most areas of the ISSP, the 'uuid' is a field with a value.  In system characteristics, for authorization boundary and network architecture assign the guids as the name of the object.  This results in increased nesting and code to parse.
+- UUIDs are not handled consistently.  On some areas of the ISSP, the 'uuid' is a field with a value.  In system characteristics and other areas of the SSP, it assigns the guids as the name of the object.  This results in increased nesting and code to parse.  You can't just count on the structure to be there so each section required coding to process how it was setup versus a generally processing routing.
 - Authorization Boundary, Network Architecture, and Data Flow present their 'diagrams' property as an object.  Recommend that it be an array of objects and flatten by having each diagram have a UUID property (as noted in feedback item above).  Also, caption seems redundant to the description field on each diagram.
 - System Implementation - users should be an array of objects, also uses UUIDs as object names versus properties
 - System Implementation - components should be an array of objects, also uses UUIDs as object names versus properties
 - System Implementation - system inventory should have inventory items be an array, also uses UUIDs as object names versus properties.  'system-inventory' and 'inventory-items' seem redundant.  Unless some metadata is provided at the system inventory level, don't see the distinction being necessary.
 - System Implementation - status and state appear redundant for components.  Same issue with with the need for an array and GUID as a property.
 - Control Implementation - UUIDs for the controls are not found in components or inventory.
-- Control Implementation - for the "by-components" section, it is confusing why the object name is a UUID then the object has a different UUID within it.  
+- Control Implementation - for the "by-components" section, it is confusing why the object name is a UUID then the object has a different UUID within it that doesn't tie to any actual component or inventory item.  
+- OSCAL file references an import profile but we didn't have access to it.  We did a soft mapping against a plan that leveraged the NIST 800-53 Rev5 Moderate baseline (which was previously imported via OSCAL).  All controls resolved using this catalog.
+- Metadata and System Characteristics have different system names and descriptions.  Used the metadata section as it seemed more accurate.
 
-**BOTTOM LINE:** We were able to successfully load a SSP into Atlasity using the OSCAL SSP file.  However, there are still data consistency issues and and some variability that result in a high degree of custom mapping work.
+**BOTTOM LINE:** We were able to successfully load a SSP into Atlasity using the OSCAL SSP file.  However, there are still data consistency issues and and some variability that result in a high degree of custom mapping work for the portability use case.
+
+**LOE:** ~30 hours to complete the mapping from GovReady to Atlasity using the OSCAL SSP format.
 
 **NOTE:** This is a limited scope test performed using a GovReady output with a small amount of sample data versus a full SSP.
 
 ## Atlasity Gaps for OSCAL
 
-- Move Created By fields into the API versus as part of the client application
-- No logical representation of locations in the system
-- Loading responsible parties is difficult.  Atlasity responsible parties (AO, System Owner, ISSO, etc.) are licensed users in our system.  In the provided OSCAL, there is no good way to map those users as there are no primary keys that match and they may not be actual users of the system.  
+- No logical representation of multiple locations in the system (only a single location per SSP)
+- Loading responsible parties is difficult.  Atlasity responsible parties (AO, System Owner, ISSO, etc.) are licensed users in our system.  In the provided OSCAL, there is no good way to map those users as there are no primary keys that match and they may not be actual users of the system.  In addition, may users are listed as roles versus actual people.
 - Need a concept in Atlasity for components to allow the grouping of assets to the system inventory
-- OSCAL file references an import profile but we didn't have access to it.  We did a soft mapping against a plan that leverage the NIST 800-53 Rev5 Moderate baseline (which was previously imported via OSCAL)
-- We didn't have another OSCAL file for the leveraged authorization.  We mocked that up by hard coding a parent SSP in Atlasity to mimic the effect of a leveraged authorization.
-- Metadata and System Characteristics have different system names and descriptions.  Used the metadata section as it seemed more accurate.
+- We didn't have another OSCAL file for the leveraged authorization.  We mocked that up by hard coding a parent SSP in Atlasity to mimic the effect of a leveraged authorization.  Atlasity leverage inheritance natively to model leveraged authorizations.
 
 ## To Do List
 
-The following future enhancements might be considered:
+The following future enhancements might be considered for future work based on community interest:
 
 - Add a step up front to validate the OSCAL file against the standard prior to import
-- Add an Atlasity OSCAL export option and validate that OSCAL file against the standard
+- Add an Atlasity OSCAL export option and validate that OSCAL file against the standard (round trip eventually)
 - Processing strategy for authorization boundary, network architecture, and data flow
 - Lookup component name via GUID for inventory table
 - Metadata - process stakeholders and responsible parties
-- Figure out what to do with "new-control-stuff" array in metadata
+- Figure out what to do with "new-control-stuff" array in metadata - unclear what that is or what to do with it
 - Process location data
 - Replace \n with <br/>
 - Add component lookup for control implementations
