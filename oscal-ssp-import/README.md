@@ -33,7 +33,7 @@ Setup - you will need the following Atlasity items to run this script:
 
 To load the SSP using OSCAL, run the script below:
 
-`py importer.py --user 'howieavp' --password 'myPassword' --catalog 00`
+`py importer.py --user 'yourusername' --pwd 'myPassword' --catalog 00`
 
 As this tool runs, it will provide logs as telemetry to show progress as the job completes.  Depending on the size of the SSP, this process could take several minutes to complete.
 
