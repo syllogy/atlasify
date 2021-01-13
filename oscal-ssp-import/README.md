@@ -41,6 +41,7 @@ As this tool runs, it will provide logs as telemetry to show progress as the job
 
 The following feedback is provided to NIST and GovReady for continuous improvement:
 
+- The `import-profile` passed is a UUID which does not resolve to anything in the document.  Did not have the profile that this SSP was built from.  We mapped it to our 800-53 Rev 5 Moderate baseline that was a release candidate that we imported from the NIST OSCAL Release Candidate.  
 - Missing important date information such as date submitted, authorization date, and expiration date
 - Roles do not have GUIDs so they cannot easily be related to the responsible parties
 - Some of the type and key value pair data would be better if they were enums, especially for components.  A lot of the information provided is relevant to the Atlasity assets module but a lot of fragile custom coding would be required to map the properties of each component.
