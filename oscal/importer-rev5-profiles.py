@@ -60,22 +60,27 @@ allcats = requests.request(
 )
 atlasity = allcats.json()
 
-with open("rev4artifacts/fullAtlasityCatalog.json", "w") as outfile: 
+with open("rev5artifacts/fullAtlasityCatalog.json", "w") as outfile: 
     outfile.write(json.dumps(atlasity, indent=4)) 
 
 # create array of profiles to iterate through
 profiles = [
     {
-        "title": "NIST 800-53 Rev. 4 - Security and Privacy Controls for Information Systems and Organizations - HIGH Baseline",
-        "fileName": "nist.gov/SP800-53/rev4/json/NIST_SP-800-53_rev4_HIGH-baseline_profile.json",
+        "title": "NIST 800-53 Rev. 5 - Security and Privacy Controls for Information Systems and Organizations - HIGH Baseline",
+        "fileName": "nist.gov/SP800-53/rev5/json/NIST_SP-800-53_rev5_HIGH-baseline_profile.json",
     },
     {
-        "title": "NIST 800-53 Rev. 4 - Security and Privacy Controls for Information Systems and Organizations - MODERATE Baseline",
-        "fileName": "nist.gov/SP800-53/rev4/json/NIST_SP-800-53_rev4_MODERATE-baseline_profile.json",
+        "title": "NIST 800-53 Rev. 5 - Security and Privacy Controls for Information Systems and Organizations - MODERATE Baseline",
+        "fileName": "nist.gov/SP800-53/rev5/json/NIST_SP-800-53_rev5_MODERATE-baseline_profile.json",
     },
     {
-        "title": "NIST 800-53 Rev. 4 - Security and Privacy Controls for Information Systems and Organizations - LOW Baseline",
-        "fileName": "nist.gov/SP800-53/rev4/json/NIST_SP-800-53_rev4_LOW-baseline_profile.json",
+        "title": "NIST 800-53 Rev. 5 - Security and Privacy Controls for Information Systems and Organizations - LOW Baseline",
+        "fileName": "nist.gov/SP800-53/rev5/json/NIST_SP-800-53_rev5_LOW-baseline_profile.json",
+    },
+    {
+        "title": "NIST 800-53 Rev. 5 - Security and Privacy Controls for Information Systems and Organizations - PRIVACY Baseline",
+        "fileName": "nist.gov/SP800-53/rev5/json/NIST_SP-800-53_rev5_PRIVACY-baseline_profile.json",
+        "export": "OSCALParsedControls-Privacy.json"
     }
 ]
 

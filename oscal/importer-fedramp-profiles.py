@@ -66,16 +66,20 @@ with open("rev4artifacts/fullAtlasityCatalog.json", "w") as outfile:
 # create array of profiles to iterate through
 profiles = [
     {
-        "title": "NIST 800-53 Rev. 4 - Security and Privacy Controls for Information Systems and Organizations - HIGH Baseline",
-        "fileName": "nist.gov/SP800-53/rev4/json/NIST_SP-800-53_rev4_HIGH-baseline_profile.json",
+        "title": "NIST 800-53 Rev. 4 - Security and Privacy Controls for Information Systems and Organizations - FedRAMP HIGH Baseline",
+        "fileName": "fedramp.gov/json/FedRAMP_HIGH-baseline_profile.json",
     },
     {
-        "title": "NIST 800-53 Rev. 4 - Security and Privacy Controls for Information Systems and Organizations - MODERATE Baseline",
-        "fileName": "nist.gov/SP800-53/rev4/json/NIST_SP-800-53_rev4_MODERATE-baseline_profile.json",
+        "title": "NIST 800-53 Rev. 4 - Security and Privacy Controls for Information Systems and Organizations - FedRAMP MODERATE Baseline",
+        "fileName": "fedramp.gov/json/FedRAMP_MODERATE-baseline_profile.json",
     },
     {
-        "title": "NIST 800-53 Rev. 4 - Security and Privacy Controls for Information Systems and Organizations - LOW Baseline",
-        "fileName": "nist.gov/SP800-53/rev4/json/NIST_SP-800-53_rev4_LOW-baseline_profile.json",
+        "title": "NIST 800-53 Rev. 4 - Security and Privacy Controls for Information Systems and Organizations - FedRAMP LOW Baseline",
+        "fileName": "fedramp.gov/json/FedRAMP_LOW-baseline_profile.json",
+    },
+    {
+        "title": "NIST 800-53 Rev. 4 - Security and Privacy Controls for Information Systems and Organizations - Tailored Low Impact Software as a Service (LI-SaaS) Baseline",
+        "fileName": "fedramp.gov/json/FedRAMP_LI-SaaS-baseline_profile.json",
     }
 ]
 
