@@ -1,0 +1,74 @@
+[
+    {
+        "id": "ac",
+        "title": "Access Control"
+    },
+    {
+        "id": "at",
+        "title": "Awareness and Training"
+    },
+    {
+        "id": "au",
+        "title": "Audit and Accountability"
+    },
+    {
+        "id": "ca",
+        "title": "Security Assessment and Authorization"
+    },
+    {
+        "id": "cm",
+        "title": "Configuration Management"
+    },
+    {
+        "id": "cp",
+        "title": "Contingency Planning"
+    },
+    {
+        "id": "ia",
+        "title": "Identification and Authentication"
+    },
+    {
+        "id": "ir",
+        "title": "Incident Response"
+    },
+    {
+        "id": "ma",
+        "title": "Maintenance"
+    },
+    {
+        "id": "mp",
+        "title": "Media Protection"
+    },
+    {
+        "id": "pe",
+        "title": "Physical and Environmental Protection"
+    },
+    {
+        "id": "pl",
+        "title": "Planning"
+    },
+    {
+        "id": "ps",
+        "title": "Personnel Security"
+    },
+    {
+        "id": "ra",
+        "title": "Risk Assessment"
+    },
+    {
+        "id": "sa",
+        "title": "System and Services Acquisition"
+    },
+    {
+        "id": "sc",
+        "title": "System and Communications Protection"
+    },
+    {
+        "id": "si",
+        "title": "System and Information Integrity"
+    },
+    {
+        "id": "pm",
+        "title": "Program Management"
+    }
+]

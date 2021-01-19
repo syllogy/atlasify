@@ -30,8 +30,8 @@ if (args.pwd == ''):
     exit
 else:
     strPWD = args.pwd
-if (args.pwd == ''):
-    print('ERROR: No password provided.')
+if (args.catalog == ''):
+    print('ERROR: No catalog provided.')
     exit
 else:
     intCatalog = args.catalog
