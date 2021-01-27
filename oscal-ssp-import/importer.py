@@ -122,7 +122,7 @@ ssp["SystemName"] = meta["title"]
 if "published" in meta:
     ssp["DateCreated"] = meta["published"]
 else:
-    ssp["DateCreated"] = datetime.date.today()
+    ssp["DateCreated"] = datetime.date.today().strftime("%m/%d/%Y")
 ssp["DateLastUpdated"] = meta["last-modified"]
 ssp["Description"] += "<h4>System Metadata</h4>"
 ssp["Description"] += "Version: " + meta["version"] + "<br/>"
@@ -336,7 +336,7 @@ for i in scComps:
         "Purpose": "",
         "ComponentType": "",
         "ComponentOwnerId": userId,
-        "SecurityPlanId": 0,
+        "SecurityPlansId": 0,
         "Status": "",
         "CreatedById": userId,
         "DateCreated": None,
@@ -351,6 +351,8 @@ for i in scComps:
     atlComp["UUID"] = i
     atlComp["Title"] = scComps[i]["title"]
     atlComp["Description"] = scComps[i]["description"]
+    if atlComp["Description"] == "":
+        atlComp["Description"] = scComps[i]["title"]
     atlComp["Status"] = scComps[i]["status"]["state"]
     if "remarks" in scComps[i]:
         atlComp["Purpose"] += scComps[i]["remarks"] + "<br/>" 
@@ -507,13 +509,31 @@ if "back-matter" in L1:
 ssp["Description"] = ssp["Description"].replace("\n", "<br/>")
 ssp["Environment"] = ssp["Environment"].replace("\n", "<br/>")
 
-# # create the security plan and print success result
-# url_ssp = "http://localhost:5000/api/securityplans"
-# response = requests.request("POST", url_ssp, headers=headers, json=ssp)
-# jsonResponse = response.json()
-# print("\n\nAtlasity Output\n")
-# print("\nSecurity Plan ID: " + str(jsonResponse["id"]))
-# intSecurityPlanID = jsonResponse["id"]
+# create the security plan and print success result
+url_ssp = "http://localhost:5000/api/securityplans"
+response = requests.request("POST", url_ssp, headers=headers, json=ssp)
+jsonResponse = response.json()
+print("\n\nAtlasity Output\n")
+print("\nSecurity Plan ID: " + str(jsonResponse["id"]))
+intSecurityPlanID = jsonResponse["id"]
+
+#############################################################################################
+# CREATE THE COMPONENTS IN ATLASITY
+#############################################################################################
+
+intCompTotal = 0
+url_comp = "http://localhost:5000/api/components"
+#loop through each component
+for xComp in atlasityCOMPS:
+    xComp["SecurityPlansId"] = intSecurityPlanID
+    response = requests.request("POST", url_comp, headers=headers, json=xComp)
+    jsonResponse = response.json()
+    if "id" in jsonResponse:
+        print("Component: " + str(jsonResponse["id"]) + " - " + xComp["Title"])
+        intCompTotal += 1
+    else:
+        print(xComp)
+        print(Logger.ERROR + str(xComp["Title"]) + " component was unable to upload." + Logger.END)
 
 #############################################################################################
 # CONTROL IMPLEMENTATION
@@ -524,6 +544,11 @@ ctrls = ctrlOBJ["implemented-requirements"]
 #create an array to hold the new Atlasity controls and parameters
 atlasityCTRLs = []
 atlasityParams = []
+#tracking variables
+intTotal = 0
+intParamTotal = 0
+url_sc = "http://localhost:5000/api/controlimplementation"
+url_param = "http://localhost:5000/api/parameters"
 
 #loop through the requirements
 for i in ctrls:
@@ -551,13 +576,13 @@ for i in ctrls:
         "Policy": "",
         "Implementation": "",
         "Status": "",
-        "SecurityPlanID": 14,
+        "SecurityPlanID": intSecurityPlanID,
         "DateLastAssessed": None,
         "LastAssessmentResult": "",
         "ControlID": 0,
         "PracticeLevel": "",
         "ProcessLevel": "",
-        "ParentID": 14,
+        "ParentID": intSecurityPlanID,
         "ParentModule": "securityplans",
         "CreatedById": userId,
         "DateCreated": None,
@@ -639,32 +664,6 @@ for i in ctrls:
                 else:
                     print("Uknown Control Status: " + x["value"])
 
-    # process parameters
-    if "parameter-settings" in i:
-        ciParams = i["parameter-settings"]
-        # print(ciParams)
-        for x in ciParams:
-            ctrlparam = {
-                "Id": 0,
-                "UUID": "",
-                "Name": "",
-                "Value": "",
-                "ControlImplementationID": 14,
-                "CreatedById": userId,
-                "DateCreated": None,
-                "LastUpdatedById": userId,
-                "DateLastUpdated": None,
-            }
-            ctrlparam["Name"] = x
-            if "values" in ciParams[x]:
-                ctrlValues = ciParams[x]["values"]
-                strValue = ""
-                for y in ctrlValues:
-                    print(y)
-                    strValue += y
-                ctrlparam["Value"] = strValue
-            atlasityParams.append(ctrlparam)
-
     # process properties 
     if "props" in i:
         ciProps = i["props"]
@@ -685,11 +684,74 @@ for i in ctrls:
     # add to the list to process
     atlasityCTRLs.append(ctrlimp)
 
+    # create the control
+    try:
+        response = requests.request("POST", url_sc, headers=headers, json=ctrlimp)
+        scJsonResponse = response.json()
+        print(Logger.OK + "Success - " + str(scJsonResponse["id"]) + Logger.END)
+        intControl = scJsonResponse["id"]
+        intTotal += 1
+    except requests.exceptions.HTTPError as errh:
+        print (Logger.ERROR + "Http Error:", errh  + Logger.END)
+    except requests.exceptions.ConnectionError as errc:
+        print (Logger.ERROR + "Error Connecting:", errc + Logger.END)
+    except requests.exceptions.Timeout as errt:
+        print (Logger.ERROR + "Timeout Error:",errt + Logger.END)
+    except requests.exceptions.RequestException as err:
+        print (Logger.ERROR + "OOps: Something Else", err + Logger.END)
+
+
+#############################################################################################
+# CREATE THE PARAMETERS IN ATLASITY
+#############################################################################################
+
+    # process parameters
+    if "parameter-settings" in i:
+        ciParams = i["parameter-settings"]
+        for x in ciParams:
+            ctrlparam = {
+                "Id": 0,
+                "UUID": "",
+                "Name": "",
+                "Value": "",
+                "ControlImplementationId": intControl,
+                "CreatedById": userId,
+                "DateCreated": None,
+                "LastUpdatedById": userId,
+                "DateLastUpdated": None,
+            }
+            ctrlparam["Name"] = x
+            if "values" in ciParams[x]:
+                ctrlValues = ciParams[x]["values"]
+                strValue = ""
+                for y in ctrlValues:
+
+                    strValue += y
+                ctrlparam["Value"] = strValue
+            # add the parameter
+            atlasityParams.append(ctrlparam)
+            # create the parameter
+            try:
+                response = requests.request("POST", url_param, headers=headers, json=ctrlparam)
+                scJsonResponse = response.json()
+                print(Logger.OK + "Parameter Success - " + ctrlparam["Name"] + " - " + str(scJsonResponse["id"]) + Logger.END)
+                intParamTotal += 1
+            except requests.exceptions.HTTPError as errh:
+                print (Logger.ERROR + "Http Error:", errh  + Logger.END)
+            except requests.exceptions.ConnectionError as errc:
+                print (Logger.ERROR + "Error Connecting:", errc + Logger.END)
+            except requests.exceptions.Timeout as errt:
+                print (Logger.ERROR + "Timeout Error:",errt + Logger.END)
+            except requests.exceptions.RequestException as err:
+                print (Logger.ERROR + "OOps: Something Else", err + Logger.END)
+
+
 #troubleshooting
 if intMisses > 0:
     print(Logger.ERROR + str(intMisses) + " total controls missing in this catalog." + Logger.END)
-else:
-    print(Logger.OK + "SUCCESS: All controls were found and mapped correctly for this catalog." + Logger.END)
+print(Logger.OK + "SUCCESS: " + str(intTotal) + " controls were found and mapped correctly for this SSP." + Logger.END)
+print(Logger.OK + "SUCCESS: " + str(intCompTotal) + " components were uploaded for this SSP." + Logger.END)
+print(Logger.OK + "SUCCESS: " + str(intParamTotal) + " parameters were uploaded for this SSP." + Logger.END)
 
 #artifacts for troubleshooting/verifications
 with open("artifacts/controls.json", "w") as outfile: 
@@ -698,30 +760,3 @@ with open("artifacts/components.json", "w") as outfile:
     outfile.write(json.dumps(atlasityCOMPS, indent=4)) 
 with open("artifacts/parameters.json", "w") as outfile: 
     outfile.write(json.dumps(atlasityParams, indent=4)) 
-
-#############################################################################################
-# CREATE THE CONTROL IMPLEMENTATIONS IN ATLASITY
-#############################################################################################
-
-# #tracking variables
-# intTotal = 0
-# url_sc = "http://localhost:5000/api/controlimplementation"
-
-# # create each security control implementation
-# for sc in atlasityCTRLs:
-#     try:
-#         response = requests.request("POST", url_sc, headers=headers, json=sc)
-#         scJsonResponse = response.json()
-#         print(Logger.OK + "Success - " + str(scJsonResponse["id"]) + Logger.END)
-#         intTotal += 1
-#     except requests.exceptions.HTTPError as errh:
-#         print (Logger.ERROR + "Http Error:", errh  + Logger.END)
-#     except requests.exceptions.ConnectionError as errc:
-#         print (Logger.ERROR + "Error Connecting:", errc + Logger.END)
-#     except requests.exceptions.Timeout as errt:
-#         print (Logger.ERROR + "Timeout Error:",errt + Logger.END)
-#     except requests.exceptions.RequestException as err:
-#         print (Logger.ERROR + "OOps: Something Else", err + Logger.END)
-
-# # Wrap Up
-# print(str(intTotal) + " controls uploaded to Atlasity.")
