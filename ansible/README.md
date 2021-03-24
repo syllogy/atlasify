@@ -30,3 +30,5 @@ There are certainly a few edits and settings that will need to take place. While
     - You also have the ability to put your bearer token in this file if you don't want to read it from an environment variable.
 6. Take a look through `compliance.yml`. This file uses the IDs of several control implementations, the desired settings, and more. It has been made very modular, so that it can be used over and over. However, you will need to edit these for your desired use cases. We are running against Security Control Implementations with IDs: 1109, 1110, 1111, and 1113.
 7. Peruse some of the other files. They may need some modifications as well, but these should get you well on your way to running and logging assessments from Ansible to Atlasity.
+
+Finally, run `./compliance.sh` to get the assets and run the playbook.
