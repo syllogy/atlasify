@@ -1,0 +1,210 @@
+---
+
+- name: Compliance Playbook 1109
+  gather_facts: true
+  hosts: managed-hosts
+
+  # become: yes ###Need to install sudo
+
+  # vars:
+  pre_tasks:
+    - name: Initialize facts
+      set_fact:
+        HOST_COUNT: "{{ ansible_play_hosts | length }}"
+        cacheable: yes
+
+  tasks:
+    - include_role:
+        name: prep_files
+    - include_role:
+        name: initialize_vars
+    - include_role:
+        name: check_for_setting
+      vars:
+        setting_text: "MaxSessions"
+        setting_file: "/etc/ssh/sshd_config"
+        control_id: "1109"
+        expected_result: "Expected Result: MaxSessions present and not commented out"
+        num_lines: "1"
+
+- name: Update Count Playbook
+  gather_facts: false
+  hosts: managed-hosts
+
+  serial: 1
+
+  tasks:
+    - include_role:
+        name: count
+      vars:
+        num_lines: "1"
+
+- name: Compliance Playbook 3
+  gather_facts: false
+  hosts: managed-hosts
+
+  vars_files:
+    - vars/api_info.yml
+
+  tasks: 
+    - include_role:
+        name: read_and_write
+      vars:
+        control_id: "1109"
+
+
+- name: Compliance Playbook 1113
+  gather_facts: true
+  hosts: managed-hosts
+
+  # become: yes ###Need to install sudo
+
+  # vars:
+  pre_tasks:
+    - name: Initialize facts
+      set_fact:
+        HOST_COUNT: "{{ ansible_play_hosts | length }}"
+        cacheable: yes
+
+  tasks:
+    - include_role:
+        name: prep_files
+    - include_role:
+        name: initialize_vars
+    - include_role:
+        name: check_for_setting
+      vars:
+        setting_text: "MaxAuthTries"
+        setting_file: "/etc/ssh/sshd_config"
+        control_id: "1113"
+        expected_result: "Expected Result: MaxAuthTries present and not commented out"
+        num_lines: "1"
+
+- name: Update Count Playbook 1113
+  gather_facts: false
+  hosts: managed-hosts
+
+  serial: 1
+
+  tasks:
+    - include_role:
+        name: count
+      vars:
+        num_lines: "1"
+
+- name: Compliance Playbook 3 1113
+  gather_facts: false
+  hosts: managed-hosts
+
+  vars_files:
+    - vars/api_info.yml
+
+  tasks: 
+    - include_role:
+        name: read_and_write
+      vars:
+        control_id: "1113"
+
+- name: Compliance Playbook 1110
+  gather_facts: true
+  hosts: managed-hosts
+
+  # become: yes ###Need to install sudo
+
+  # vars:
+  pre_tasks:
+    - name: Initialize facts
+      set_fact:
+        HOST_COUNT: "{{ ansible_play_hosts | length }}"
+        cacheable: yes
+
+  tasks:
+    - include_role:
+        name: prep_files
+    - include_role:
+        name: initialize_vars
+    - include_role:
+        name: check_for_setting
+      vars:
+        setting_text: "ClientAlive"
+        setting_file: "/etc/ssh/sshd_config"
+        control_id: "1110"
+        expected_result: "Expected Result: 2 ClientAlive lines are present and not commented out"
+        num_lines: "2"
+
+- name: Update Count Playbook 1110
+  gather_facts: false
+  hosts: managed-hosts
+
+  serial: 1
+
+  tasks:
+    - include_role:
+        name: count
+      vars:
+        num_lines: "2"
+
+- name: Compliance Playbook 3 1110
+  gather_facts: false
+  hosts: managed-hosts
+
+  vars_files:
+    - vars/api_info.yml
+
+  tasks: 
+    - include_role:
+        name: read_and_write
+      vars:
+        control_id: "1110"
+
+- name: Compliance Playbook 1111
+  gather_facts: true
+  hosts: managed-hosts
+
+  # become: yes ###Need to install sudo
+
+  # vars:
+  pre_tasks:
+    - name: Initialize facts
+      set_fact:
+        HOST_COUNT: "{{ ansible_play_hosts | length }}"
+        cacheable: yes
+
+  tasks:
+    - include_role:
+        name: prep_files
+    - include_role:
+        name: initialize_vars
+    - include_role:
+        name: check_for_setting
+      vars:
+        setting_text: "PrintMotd"
+        setting_file: "/etc/ssh/sshd_config"
+        control_id: "1111"
+        expected_result: "Expected Result: PrintMotd line is present and not commented out"
+        num_lines: "1"
+
+- name: Update Count Playbook 1111
+  gather_facts: false
+  hosts: managed-hosts
+
+  serial: 1
+
+  tasks:
+    - include_role:
+        name: count
+      vars:
+        num_lines: "1"
+
+- name: Compliance Playbook 3 1111
+  gather_facts: false
+  hosts: managed-hosts
+
+  vars_files:
+    - vars/api_info.yml
+
+  tasks: 
+    - include_role:
+        name: read_and_write
+      vars:
+        control_id: "1111"

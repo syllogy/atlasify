@@ -1,0 +1,54 @@
+- name: Read in file for Report
+  set_fact:
+    assessment_report_total: "{{ lookup('file', '/tmp/output.txt') }}"
+  delegate_to: localhost
+  run_once: true
+
+- name: Read in file for Count
+  set_fact:
+    total_result: "{{ lookup('file', '/tmp/count.txt') }}"
+  delegate_to: localhost
+  run_once: true
+
+- name: Set Fact for Pass Fail
+  set_fact:
+    total_pass: "<div>Total Hosts: {{ HOST_COUNT }}</div><div>Pass: {{ total_result }}</div><div>Fail: {{ HOST_COUNT|int - total_result|int }}</div><div>Percentage: {{ total_result|int / HOST_COUNT|int * 100}}</div><div>---------</div>"
+  run_once: true
+
+- name: Set overall_result to Partial Pass
+  set_fact:
+    overall_result: "Partial Pass"
+    cacheable: yes
+  run_once: true
+
+- name: Set sessions_result to Pass, conditionally
+  set_fact:
+    overall_result: "Pass"
+    cacheable: yes
+  when: (total_result|int / HOST_COUNT|int) == 1
+  run_once: true
+
+- name: Set sessions_result to Fail, conditionally
+  set_fact:
+    overall_result: "Fail"
+    cacheable: yes
+  when: (total_result|int / HOST_COUNT|int) == 0
+  run_once: true
+
+- name: Display Pass Out of Total
+  debug:
+    msg: "{{ total_pass }}"
+  run_once: true
+
+- name: Display Body
+  debug:
+    msg: "{{ total_pass + assessment_report_total }}"
+  run_once: true
+
+- name: Display Overall Result
+  debug:
+    msg: "Overall Result: {{ overall_result }}"
+  run_once: true
+
+- include_role:
+    name: atlas_assessment

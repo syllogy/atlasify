@@ -16,3 +16,4 @@ Check back often as our list of example code for integrations is expanding rapid
 - Parser for NIST 800-171
 - OSCAL Parser for NIST 800-53 Rev5
 - Integration for JIRA
+- Ansible Playbooks to read in a list of assets, run compliance checks against those assets, and log an assessment against a given security plan.

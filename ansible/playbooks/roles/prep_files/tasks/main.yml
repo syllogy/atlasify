@@ -1,0 +1,36 @@
+- name: Remove output file, if it exists
+  file:
+    path: /tmp/output.txt
+    state: absent
+  delegate_to: localhost
+  run_once: true
+
+- name: Create output file
+  file:
+    path: "/tmp/output.txt"
+    state: touch
+  delegate_to: localhost
+  run_once: true
+
+- name: Remove count file, if it exists
+  file:
+    path: /tmp/count.txt
+    state: absent
+  delegate_to: localhost
+  run_once: true
+
+- name: Create count file
+  file:
+    path: "/tmp/count.txt"
+    state: touch
+  delegate_to: localhost
+  run_once: true
+
+- name: Initialize count file to 0
+  lineinfile:
+    dest: /tmp/count.txt
+    line: "0"
+    state: present
+    create: yes
+  delegate_to: localhost
+  run_once: true

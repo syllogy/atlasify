@@ -1,0 +1,8 @@
+- name: Initialize facts
+  set_fact:
+    current_total: 0
+    new_total: 0
+    total_result: 0
+    cacheable: yes
+  # delegate_to: localhost
+  # run_once: true
