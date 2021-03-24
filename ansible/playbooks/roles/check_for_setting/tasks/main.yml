@@ -1,0 +1,47 @@
+#### REFACTOR THIS USING LINEINFILE MODULE
+- name: Check for MaxSessions
+  shell: "grep {{ setting_text }} {{ setting_file }}"
+  # shell: grep MaxSessions /etc/ssh/sshd_config
+  register: sessions_out
+
+#### REFACTOR THIS USING LINEINFILE MODULE    
+- name: Check for MaxSessions not commented
+  # shell: grep '\^{{ setting_text }}' {{ setting_file }} | wc -l
+  shell: grep ^{{ setting_text }} {{ setting_file }} | wc -l
+  # shell: "grep ^MaxSessions /etc/ssh/sshd_config | wc -l"
+  register: sessions_yes
+
+- name: Set sessions_result to Fail as default
+  set_fact:
+    sessions_result: "Fail"
+    cacheable: yes
+
+- name: Set sessions_result to Pass, conditionally
+  set_fact:
+    sessions_result: "Pass"
+    cacheable: yes
+  when: sessions_yes.stdout == num_lines
+  # when: sessions_yes.stdout == "1"
+
+- name: Print results from each hosts
+  debug:
+    msg: "{{ ansible_hostname }} - {{ sessions_out.stdout }} - {{ sessions_yes.stdout }} - {{ sessions_result }}"
+
+- name: Set Session Report
+  set_fact:
+    assessment_report: "<div><b>Hostname: {{ ansible_hostname }}</b></div><div>{{ expected_result }}</div><div>Actual Setting: {{ sessions_out.stdout }}</div><div>Pass/Fail: {{ sessions_result }}</div><div>---------</div>"
+    cacheable: yes
+
+- name: Print out assessment_report for host
+  debug:
+    msg="{{ assessment_report }}"
+
+- name: Loop through all the hosts and write the Assessment_Report to the output file
+  lineinfile:
+    dest: /tmp/output.txt
+    line: "{{ hostvars[item]['ansible_facts']['assessment_report'] }}"
+    state: present
+    create: yes
+  loop: "{{ ansible_play_hosts }}"
+  delegate_to: localhost
+  run_once: true

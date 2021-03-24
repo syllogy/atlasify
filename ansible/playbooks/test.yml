@@ -1,0 +1,50 @@
+---
+
+- name: Compliance Playbook 1
+  gather_facts: true
+  hosts: managed-hosts
+  # hosts: localhost
+
+  # serial: 1
+
+  vars_files:
+    - vars/api_info.yml
+  vars:
+      total_result: 0
+  pre_tasks:
+    - name: set host count
+      set_fact:
+        HOST_COUNT: "{{ ansible_play_hosts | length }}"
+
+  tasks:
+    - name: Get hostname
+      shell: hostname
+      register: hn
+    - debug: msg="Hostname- {{ hn.stdout }}"
+    - debug: msg="Number of hosts- {{ HOST_COUNT }}"
+    - debug: msg="Bearer Token- {{ bearer_token }}"
+
+- name: Compliance Playbook 2
+  gather_facts: true
+  hosts: managed-hosts
+
+  serial: 1
+
+  vars_files:
+    - vars/api_info.yml
+
+  tasks:
+    - name: Get date
+      shell: date
+      register: dt
+    - debug: msg="Hostname- {{ hn.stdout }}"
+    - debug: msg="Date- {{ dt.stdout }}"
+    - debug: msg="Number of hosts- {{ HOST_COUNT }}"
+
+    - name: Get whoami
+      shell: whoami
+      register: wai
+    - debug: msg="Whoami- {{ wai.stdout }}"
+
+    - include_role:
+        name: atlas_testapi

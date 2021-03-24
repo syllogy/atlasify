@@ -1,0 +1,22 @@
+- name: Read in count value
+  set_fact:
+    current_total: "{{ lookup('file', '/tmp/count.txt') }}"
+  delegate_to: localhost
+  # when: sessions_yes.stdout == "1"
+  when: sessions_yes.stdout == num_lines
+
+- name: Update new total
+  set_fact:
+    new_total: "{{ current_total|int + 1 }}"
+  delegate_to: localhost
+  # when: sessions_yes.stdout == "1"
+  when: sessions_yes.stdout == num_lines
+
+- name: Update count value
+  replace:
+    path: /tmp/count.txt
+    regexp: '{{ current_total }}'
+    replace: "{{ new_total }}"
+  delegate_to: localhost
+  # when: sessions_yes.stdout == "1"
+  when: sessions_yes.stdout == num_lines

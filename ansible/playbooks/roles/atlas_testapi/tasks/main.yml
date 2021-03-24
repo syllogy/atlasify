@@ -1,0 +1,16 @@
+- name: API - Create Assessment
+  uri:
+    # url: "{{ api_baseurl }}/api/securityplans/getAll"
+    url: "{{ api_baseurl }}/api/assets/getAll"
+    method: GET
+    headers:
+      Authorization: Bearer {{ bearer_token }}
+      accept: application/json
+    return_content: yes
+    # status_code: 200
+    body_format: json
+  register: secplans
+  delegate_to: localhost
+  run_once: true
+
+- debug: msg="{{ secplans }}"

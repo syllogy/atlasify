@@ -1,0 +1,4 @@
+#PROD
+bearer_token: "{{ lookup('env','BEARER_TOKEN') }}"
+assessor_id: "44f8b777-1647-4b73-933d-b3e9135c1c52"
+api_baseurl: "https://atlas.c2labs.com"
