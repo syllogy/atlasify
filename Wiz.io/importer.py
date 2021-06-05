@@ -56,6 +56,9 @@ headers = {
    'Authorization': jwt
 }
 
+# master list of controls
+ctrlList = []
+
 # get all security controls for the plan provided
 url_getPlans = "https://atlas-dev.c2labs.com/api/controlImplementation/getAllByPlan/" + intPlan
 responseSC = requests.request("GET", url_getPlans, headers=headers)
@@ -63,14 +66,46 @@ scDict = json.loads(responseSC.text)
 
 #loop through the security controls
 for sc in scDict:
-    print(sc["controlTitle"])
+    # new model for controls
+    ctrlModel = {
+        "atlasID": 0,
+        "title": '',
+        "wizID": '',
+        "wizParentID": '',
+        "wizParentName": ''
+    }
+    ctrlModel["atlasID"] = sc["id"]
+    ctrlModel["title"] = sc["controlTitle"]
+    ctrlList.append(ctrlModel)
 
 #loop through the NIST CSF controls
 nistCSF = open('wiz-results/frameworks_result_file.json', 'r', encoding='utf-8-sig')
 nistCSFData = json.load(nistCSF)
 
-#loop through the security controls
+#loop through the Wiz security controls
 for sc in nistCSFData["securityFrameworks"]["nodes"]:
     if sc["name"] == 'NIST CSF':
         for cat in sc["categories"]:
-            print(cat["name"])
+            parentName = cat["name"]
+            parentID = cat["id"]
+            # get the substring with just the abbreviation between parenthesis
+            intStart = cat["name"].index('(') + 1
+            intEnd = cat["name"].index(')')
+            subStringID = cat["name"][intStart:intEnd]
+            # get subcategory controls
+            for subCat in cat["subCategories"]:
+                wizID = subCat["id"]
+                lookupID = subStringID + '-' + subCat["externalId"]
+                bCTRLMatch = False
+                for item in ctrlList:
+                    if item["title"].startswith(lookupID) == True:
+                        item["wizID"] = wizID
+                        item["wizParentID"] = parentID
+                        item["wizParentName"] = parentName
+                        bCTRLMatch = True
+                if (bCTRLMatch == False):
+                    print (Logger.ERROR + "OOps: " + lookupID + " not found." + Logger.END)
+
+#output consolidated list
+for item in ctrlList:
+    print(item)

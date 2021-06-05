@@ -25,5 +25,6 @@ Wiz is a new approach to cloud security that finds the most critical risks and i
 
 To process the Wiz.io files and upload to Atlasity, run the following script:
 
-- `py importer.py --user 'howieavp' --pwd 'TH95nana$$24' --planID 107`
+- `py importer.py --user 'AtlasityUserName' --pwd 'YourPassword' --planID 107`
 - NOTE: Source files from Wiz must be in the wiz-results folder
+- NOTE: Log in with your Atlasity credentials and provide the relevant security plan ID
