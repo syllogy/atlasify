@@ -107,5 +107,39 @@ for sc in nistCSFData["securityFrameworks"]["nodes"]:
                     print (Logger.ERROR + "OOps: " + lookupID + " not found." + Logger.END)
 
 #output consolidated list
-for item in ctrlList:
-    print(item)
+#for item in ctrlList:
+    #print(item)
+
+# get the control results
+wizCTRLS = open('wiz-results/controls_result_file.json', 'r', encoding='utf-8-sig')
+wisCTRLSData = json.load(wizCTRLS)
+
+#loop through the Wiz controls
+wizControls = []
+for sc in wisCTRLSData["controls"]["nodes"]:
+    # new model for controls
+    wizCTRLModel = {
+        "id": 0,
+        "name": '',
+        "description": '',
+        "type": '',
+        "severity": ''
+    }
+    # map fields
+    wizCTRLModel["id"] = sc["id"]
+    wizCTRLModel["name"] = sc["name"]
+    wizCTRLModel["description"] = sc["description"]
+    wizCTRLModel["type"] = sc["type"]
+    wizCTRLModel["severity"] = sc["severity"]
+    wizControls.append(wizCTRLModel)
+
+#output Wiz controls
+for item in wizControls:
+    print(item["id"] + ": " + item["name"])
+
+#artifacts for troubleshooting/verifications
+with open("wiz-results/consolidatedFrameworks.json", "w") as outfile: 
+    outfile.write(json.dumps(ctrlList, indent=4)) 
+with open("wiz-results/wizControls-flat.json", "w") as outfile: 
+    outfile.write(json.dumps(wizControls, indent=4)) 
+
