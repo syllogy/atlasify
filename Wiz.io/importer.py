@@ -133,13 +133,59 @@ for sc in wisCTRLSData["controls"]["nodes"]:
     wizCTRLModel["severity"] = sc["severity"]
     wizControls.append(wizCTRLModel)
 
-#output Wiz controls
-for item in wizControls:
-    print(item["id"] + ": " + item["name"])
+# #output Wiz controls
+# for item in wizControls:
+#     print(item["id"] + ": " + item["name"])
+
+# get the Wiz issues
+wizISS = open('wiz-results/issues_result_file.json', 'r', encoding='utf-8-sig')
+wisIssues = json.load(wizISS)
+
+#loop through the Wiz issues
+wizIssueList = []
+for iss in wisIssues["issues"]["nodes"]:
+    # new model for issues
+    wizIssueModel = {
+        "id": 0,
+        "controlId": '',
+        "controlName": '',
+        "createdAt": '',
+        "updatedAt": '',
+        "status": '',
+        "severity": '',
+        "entityId": '',
+        "entityName": '',
+        "entityType": '',
+        "ticketId": '',
+        "ticketURL": ''
+    }
+    #map the fields
+    wizIssueModel["id"] = iss["id"]
+    wizIssueModel["createdAt"] = iss["createdAt"]
+    wizIssueModel["updatedAt"] = iss["updatedAt"]
+    wizIssueModel["status"] = iss["status"]
+    wizIssueModel["severity"] = iss["severity"]
+    if not iss["control"] is None:
+        if "control" in iss:
+            wizIssueModel["controlId"] = iss["control"]["id"]
+            wizIssueModel["controlName"] = iss["control"]["name"]
+    if not iss["entity"] is None:
+        if "entity" in iss:
+            wizIssueModel["entityId"] = iss["entity"]["id"]
+            wizIssueModel["entityName"] = iss["entity"]["name"]
+            wizIssueModel["entityType"] = iss["entity"]["type"]
+    if not iss["serviceTicket"] is None:
+        if "name" in iss["serviceTicket"]:
+            wizIssueModel["ticketId"] = iss["serviceTicket"]["name"]
+        if "url" in iss["serviceTicket"]:
+            wizIssueModel["ticketURL"] = iss["serviceTicket"]["url"]
+    wizIssueList.append(wizIssueModel)
 
 #artifacts for troubleshooting/verifications
 with open("wiz-results/consolidatedFrameworks.json", "w") as outfile: 
     outfile.write(json.dumps(ctrlList, indent=4)) 
-with open("wiz-results/wizControls-flat.json", "w") as outfile: 
+with open("wiz-results/wizControls.json", "w") as outfile: 
     outfile.write(json.dumps(wizControls, indent=4)) 
+with open("wiz-results/wizIssues.json", "w") as outfile: 
+    outfile.write(json.dumps(wizIssueList, indent=4)) 
 
