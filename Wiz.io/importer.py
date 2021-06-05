@@ -64,3 +64,13 @@ scDict = json.loads(responseSC.text)
 #loop through the security controls
 for sc in scDict:
     print(sc["controlTitle"])
+
+#loop through the NIST CSF controls
+nistCSF = open('wiz-results/frameworks_result_file.json', 'r', encoding='utf-8-sig')
+nistCSFData = json.load(nistCSF)
+
+#loop through the security controls
+for sc in nistCSFData["securityFrameworks"]["nodes"]:
+    if sc["name"] == 'NIST CSF':
+        for cat in sc["categories"]:
+            print(cat["name"])
