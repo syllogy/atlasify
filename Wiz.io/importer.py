@@ -232,6 +232,68 @@ for iss in wisIssues["issues"]["nodes"]:
             wizIssueModel["ticketURL"] = iss["serviceTicket"]["url"]
     wizIssueList.append(wizIssueModel)
 
+#loop through issues and see which ones relate to NIST CSF
+intLoop = 0
+atlasityIssues = []
+for iss in wizIssueList:
+    #get the record based on control ID
+    found = list(filter(lambda x: x["id"] == iss["controlId"], wizControls))
+    #get first item in the list
+    found = found[0]
+    #see if it has a corresponding NIST CSF ID (ignore others)
+    if (found["nist-csf-id"] != ""):
+        # increment counter for number of issues
+        intLoop += 1
+        # create an issue
+        atlasityIssueModel = {
+            "id": 0,
+            "uuid": '',
+            "title": '',
+            "description": '',
+            "severityLevel": '',
+            "issueOwnerId": userId,
+            "orgId": 0,
+            "facilityId": 0,
+            "costEstimate": 0,
+            "dueDate": None,
+            "identification": 'Security Control Assessment',
+            "sourceReport": '',
+            "status": 'Open',
+            "dateCompleted": None,
+            "createdById": userId,
+            "dateCreated": None,
+            "lastUpdatedById": userId,
+            "dateLastUpdated": ''
+        }
+        #map attributes to the issue
+        atlasityIssueModel["title"] = iss["entityName"] + " - " + iss["controlName"]
+        atlasityIssueModel["description"] = "Wiz Control ID: " + iss["controlId"] + "<br/>"
+        atlasityIssueModel["description"] += "First Detected: " + iss["createdAt"] + "<br/>"
+        atlasityIssueModel["description"] += "Last Scanned: " + iss["updatedAt"] + "<br/>"
+        atlasityIssueModel["description"] += "Wiz Severity: " + iss["severity"] + "<br/>"
+        atlasityIssueModel["description"] += "Wiz Entity ID: " + iss["entityId"] + "<br/>"
+        atlasityIssueModel["description"] += "Wiz Entity Type: " + iss["entityType"] + "<br/>"
+        if iss["ticketId"] != '':
+            atlasityIssueModel["description"] += "Jira Ticket #: " + iss["ticketId"] + "<br/>"
+        if iss["ticketURL"] != '':
+            atlasityIssueModel["description"] += "Jira Ticket URL: " + iss["ticketURL"] + "<br/>"
+        atlasityIssueModel["sourceReport"] = "Wiz.io Issue #: " + iss["id"]
+        #status mapping
+        if iss["status"] == 'CRITICAL':
+            atlasityIssueModel["dueDate"] = (datetime.date.today() + datetime.timedelta(days=30)).strftime("%m/%d/%Y")
+            atlasityIssueModel["severityLevel"] = "I - High - Significant Deficiency"
+        elif iss["status"] == "HIGH":
+            atlasityIssueModel["dueDate"] = (datetime.date.today() + datetime.timedelta(days=90)).strftime("%m/%d/%Y")
+            atlasityIssueModel["severityLevel"] = "II - Moderate - Reportable Condition"
+        else:
+            atlasityIssueModel["dueDate"] = (datetime.date.today() + datetime.timedelta(days=365)).strftime("%m/%d/%Y")
+            atlasityIssueModel["severityLevel"] = "III - Low - Other Weakness"
+        # add to the list
+        atlasityIssues.append(atlasityIssueModel)
+
+# output the result
+print(Logger.OK + "SUCCESS: " + str(intLoop) + " issues related to NIST CSF were identified." + Logger.END)
+
 #artifacts for troubleshooting/verifications
 with open("wiz-results/frameworkList.json", "w") as outfile: 
     outfile.write(json.dumps(frameworks, indent=4)) 
@@ -241,4 +303,6 @@ with open("wiz-results/wizControls.json", "w") as outfile:
     outfile.write(json.dumps(wizControls, indent=4)) 
 with open("wiz-results/wizIssues.json", "w") as outfile: 
     outfile.write(json.dumps(wizIssueList, indent=4)) 
+with open("wiz-results/atlasityIssues.json", "w") as outfile: 
+    outfile.write(json.dumps(atlasityIssues, indent=4)) 
 
