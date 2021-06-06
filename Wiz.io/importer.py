@@ -279,10 +279,10 @@ for iss in wizIssueList:
             atlasityIssueModel["description"] += "Jira Ticket URL: " + iss["ticketURL"] + "<br/>"
         atlasityIssueModel["sourceReport"] = "Wiz.io Issue #: " + iss["id"]
         #status mapping
-        if iss["status"] == 'CRITICAL':
+        if iss["severity"] == 'CRITICAL':
             atlasityIssueModel["dueDate"] = (datetime.date.today() + datetime.timedelta(days=30)).strftime("%m/%d/%Y")
             atlasityIssueModel["severityLevel"] = "I - High - Significant Deficiency"
-        elif iss["status"] == "HIGH":
+        elif iss["severity"] == "HIGH":
             atlasityIssueModel["dueDate"] = (datetime.date.today() + datetime.timedelta(days=90)).strftime("%m/%d/%Y")
             atlasityIssueModel["severityLevel"] = "II - Moderate - Reportable Condition"
         else:
