@@ -58,6 +58,8 @@ headers = {
 
 # master list of controls
 ctrlList = []
+# master list of frameworks
+frameworks = []
 
 # get all security controls for the plan provided
 url_getPlans = "https://atlas-dev.c2labs.com/api/controlImplementation/getAllByPlan/" + intPlan
@@ -84,6 +86,7 @@ nistCSFData = json.load(nistCSF)
 
 #loop through the Wiz security controls
 for sc in nistCSFData["securityFrameworks"]["nodes"]:
+    #process NIST CSF
     if sc["name"] == 'NIST CSF':
         for cat in sc["categories"]:
             parentName = cat["name"]
@@ -105,10 +108,12 @@ for sc in nistCSFData["securityFrameworks"]["nodes"]:
                         bCTRLMatch = True
                 if (bCTRLMatch == False):
                     print (Logger.ERROR + "OOps: " + lookupID + " not found." + Logger.END)
-
-#output consolidated list
-#for item in ctrlList:
-    #print(item)
+    #full mapping to build framework list
+    fwkModel = {
+        "id": sc["id"],
+        "name": sc["name"]
+    }
+    frameworks.append(fwkModel)
 
 # get the control results
 wizCTRLS = open('wiz-results/controls_result_file.json', 'r', encoding='utf-8-sig')
@@ -123,19 +128,65 @@ for sc in wisCTRLSData["controls"]["nodes"]:
         "name": '',
         "description": '',
         "type": '',
-        "severity": ''
+        "severity": '',
+        "nist-csf-id": '',
+        "cis-aws-120-id": '',
+        "pci-dss-id": '',
+        "hipaa-id": '',
+        "cis-aws-130-id": '',
+        "nist-800-171-id": '',
+        "gdpr-id": '',
+        "wiz-id": '',
+        "cis-71-id": '',
+        "iso-27001-id": '',
+        "cis-gcp-110-id": ''
     }
+
     # map fields
     wizCTRLModel["id"] = sc["id"]
     wizCTRLModel["name"] = sc["name"]
     wizCTRLModel["description"] = sc["description"]
     wizCTRLModel["type"] = sc["type"]
     wizCTRLModel["severity"] = sc["severity"]
-    wizControls.append(wizCTRLModel)
 
-# #output Wiz controls
-# for item in wizControls:
-#     print(item["id"] + ": " + item["name"])
+    # evaluate frameworks to map
+    for scat in sc["securitySubCategories"]:
+        # match NIST CSF
+        if scat["category"]["framework"]["id"] == "wf-id-13":
+            wizCTRLModel["nist-csf-id"]= scat["category"]["id"]
+        # match CIS AWS 1.2.0
+        if scat["category"]["framework"]["id"] == "wf-id-6":
+            wizCTRLModel["cis-aws-120-id"]= scat["category"]["id"]
+        # match PCI DSS
+        if scat["category"]["framework"]["id"] == "wf-id-12":
+            wizCTRLModel["pci-dss-id"]= scat["category"]["id"]
+        # match HIPAA
+        if scat["category"]["framework"]["id"] == "wf-id-2":
+            wizCTRLModel["hipaa-id"]= scat["category"]["id"]
+        # match CIS AWS 1.3.0
+        if scat["category"]["framework"]["id"] == "wf-id-7":
+            wizCTRLModel["cis-aws-130-id"]= scat["category"]["id"]
+        # match NIST 800-171
+        if scat["category"]["framework"]["id"] == "wf-id-21":
+            wizCTRLModel["nist-800-171-id"]= scat["category"]["id"]
+        # match GDPR
+        if scat["category"]["framework"]["id"] == "wf-id-10":
+            wizCTRLModel["gdpr-id"]= scat["category"]["id"]
+        # match Wiz
+        if scat["category"]["framework"]["id"] == "wf-id-1":
+            wizCTRLModel["wiz-id"]= scat["category"]["id"]
+        # match CIS Control v7.1
+        if scat["category"]["framework"]["id"] == "wf-id-17":
+            wizCTRLModel["cis-71-id"]= scat["category"]["id"]
+        # match ISO/IEC 27001
+        if scat["category"]["framework"]["id"] == "wf-id-3":
+            wizCTRLModel["iso-27001-id"]= scat["category"]["id"]
+        # match CIS GCP 1.1.0
+        if scat["category"]["framework"]["id"] == "wf-id-9":
+            wizCTRLModel["cis-gcp-110-id"]= scat["category"]["id"]
+
+    #add to the array
+    wizControls.append(wizCTRLModel)
 
 # get the Wiz issues
 wizISS = open('wiz-results/issues_result_file.json', 'r', encoding='utf-8-sig')
@@ -182,6 +233,8 @@ for iss in wisIssues["issues"]["nodes"]:
     wizIssueList.append(wizIssueModel)
 
 #artifacts for troubleshooting/verifications
+with open("wiz-results/frameworkList.json", "w") as outfile: 
+    outfile.write(json.dumps(frameworks, indent=4)) 
 with open("wiz-results/consolidatedFrameworks.json", "w") as outfile: 
     outfile.write(json.dumps(ctrlList, indent=4)) 
 with open("wiz-results/wizControls.json", "w") as outfile: 
