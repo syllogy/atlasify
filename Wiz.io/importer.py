@@ -38,7 +38,7 @@ else:
     intPlan = args.planID
 
 # login to your Atlasity instance
-url_login = "http://atlas-dev.c2labs.com/api/authentication/login"
+url_login = "https://atlas-dev.c2labs.com/api/authentication/login"
 
 # setup the authentication object
 auth = {
@@ -234,6 +234,9 @@ for iss in wisIssues["issues"]["nodes"]:
 
 #loop through issues and see which ones relate to NIST CSF
 intLoop = 0
+intL1 = 0
+intL2 = 0
+intL3 = 0
 atlasityIssues = []
 for iss in wizIssueList:
     #get the record based on control ID
@@ -252,8 +255,8 @@ for iss in wizIssueList:
             "description": '',
             "severityLevel": '',
             "issueOwnerId": userId,
-            "orgId": 0,
-            "facilityId": 0,
+            "orgId": None,
+            "facilityId": None,
             "costEstimate": 0,
             "dueDate": None,
             "identification": 'Security Control Assessment',
@@ -263,7 +266,9 @@ for iss in wizIssueList:
             "createdById": userId,
             "dateCreated": None,
             "lastUpdatedById": userId,
-            "dateLastUpdated": ''
+            "dateLastUpdated": '',
+            "parentId": intPlan,
+            "parentModule": 'securityplans'
         }
         #map attributes to the issue
         atlasityIssueModel["title"] = iss["entityName"] + " - " + iss["controlName"]
@@ -282,17 +287,41 @@ for iss in wizIssueList:
         if iss["severity"] == 'CRITICAL':
             atlasityIssueModel["dueDate"] = (datetime.date.today() + datetime.timedelta(days=30)).strftime("%m/%d/%Y")
             atlasityIssueModel["severityLevel"] = "I - High - Significant Deficiency"
+            intL1 += 1
         elif iss["severity"] == "HIGH":
             atlasityIssueModel["dueDate"] = (datetime.date.today() + datetime.timedelta(days=90)).strftime("%m/%d/%Y")
             atlasityIssueModel["severityLevel"] = "II - Moderate - Reportable Condition"
+            intL2 += 1
         else:
             atlasityIssueModel["dueDate"] = (datetime.date.today() + datetime.timedelta(days=365)).strftime("%m/%d/%Y")
             atlasityIssueModel["severityLevel"] = "III - Low - Other Weakness"
+            intL3 += 1
         # add to the list
         atlasityIssues.append(atlasityIssueModel)
 
 # output the result
 print(Logger.OK + "SUCCESS: " + str(intLoop) + " issues related to NIST CSF were identified." + Logger.END)
+print(Logger.OK + "SUCCESS: " + str(intL1) + " Level 1 issues related to NIST CSF were identified." + Logger.END)
+print(Logger.OK + "SUCCESS: " + str(intL2) + " Level 2 issues related to NIST CSF were identified." + Logger.END)
+print(Logger.OK + "SUCCESS: " + str(intL3) + " Level 3 issues related to NIST CSF were identified." + Logger.END)
+
+# loop through Atlasity issues
+url_issues = "http://localhost:5000/api/issues"
+for iss in atlasityIssues:
+    if iss["severityLevel"] == "I - High - Significant Deficiency":
+        # create the control
+        try:
+            response = requests.request("POST", url_issues, headers=headers, json=iss)
+            scJsonResponse = response.json()
+            print(Logger.OK + "Success - " + str(scJsonResponse["id"]) + Logger.END)
+        except requests.exceptions.HTTPError as errh:
+            print (Logger.ERROR + "Http Error:", errh  + Logger.END)
+        except requests.exceptions.ConnectionError as errc:
+            print (Logger.ERROR + "Error Connecting:", errc + Logger.END)
+        except requests.exceptions.Timeout as errt:
+            print (Logger.ERROR + "Timeout Error:",errt + Logger.END)
+        except requests.exceptions.RequestException as err:
+            print (Logger.ERROR + "OOps: Something Else", err + Logger.END)
 
 #artifacts for troubleshooting/verifications
 with open("wiz-results/frameworkList.json", "w") as outfile: 
