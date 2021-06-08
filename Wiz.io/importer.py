@@ -194,6 +194,7 @@ wisIssues = json.load(wizISS)
 
 #loop through the Wiz issues
 wizIssueList = []
+assetList = []
 for iss in wisIssues["issues"]["nodes"]:
     # new model for issues
     wizIssueModel = {
@@ -225,6 +226,22 @@ for iss in wisIssues["issues"]["nodes"]:
             wizIssueModel["entityId"] = iss["entity"]["id"]
             wizIssueModel["entityName"] = iss["entity"]["name"]
             wizIssueModel["entityType"] = iss["entity"]["type"]
+            #process the asset
+            assetModel = {
+                "id": '',
+                "name": '',
+                "type": ''
+            }
+            #assign asset values
+            assetModel["id"] = iss["entity"]["id"]
+            assetModel["name"] = iss["entity"]["name"]
+            assetModel["type"] = iss["entity"]["type"]
+            bAssetExists = False
+            for ast in assetList:
+                if ast["id"] == assetModel["id"]:
+                    bAssetExists = True
+            if bAssetExists == False:
+                assetList.append(assetModel)
     if not iss["serviceTicket"] is None:
         if "name" in iss["serviceTicket"]:
             wizIssueModel["ticketId"] = iss["serviceTicket"]["name"]
@@ -307,13 +324,16 @@ print(Logger.OK + "SUCCESS: " + str(intL3) + " Level 3 issues related to NIST CS
 
 # loop through Atlasity issues
 url_issues = "http://localhost:5000/api/issues"
+intControlCount = 0
 for iss in atlasityIssues:
     if iss["severityLevel"] == "I - High - Significant Deficiency":
         # create the control
         try:
-            response = requests.request("POST", url_issues, headers=headers, json=iss)
-            scJsonResponse = response.json()
-            print(Logger.OK + "Success - " + str(scJsonResponse["id"]) + Logger.END)
+            #response = requests.request("POST", url_issues, headers=headers, json=iss)
+            #scJsonResponse = response.json()
+            #print(Logger.OK + "Success - " + str(scJsonResponse["id"]) + Logger.END)
+            intControlCount += 1
+            print(Logger.OK + "Success - " + str(intControlCount) + Logger.END)
         except requests.exceptions.HTTPError as errh:
             print (Logger.ERROR + "Http Error:", errh  + Logger.END)
         except requests.exceptions.ConnectionError as errc:
@@ -326,6 +346,8 @@ for iss in atlasityIssues:
 #artifacts for troubleshooting/verifications
 with open("wiz-results/frameworkList.json", "w") as outfile: 
     outfile.write(json.dumps(frameworks, indent=4)) 
+with open("wiz-results/assets.json", "w") as outfile: 
+    outfile.write(json.dumps(assetList, indent=4)) 
 with open("wiz-results/consolidatedFrameworks.json", "w") as outfile: 
     outfile.write(json.dumps(ctrlList, indent=4)) 
 with open("wiz-results/wizControls.json", "w") as outfile: 
