@@ -10,6 +10,8 @@ Atlasity is being adapted to allow its use as a free, community publishing platf
 
 - [NIST OSCAL GitHub Repository](https://github.com/usnistgov/OSCAL)
 - [AJV Schema Validator CLI](https://www.npmjs.com/package/ajv-cli)
+- [ATARC OSCAL Working Files](https://github.com/GovReady/oscal-lifecycle-examples)
+- [ATARC GitLab](https://gitlab.com/atarc/orion)
 
 ## Validation Steps and Commands
 
