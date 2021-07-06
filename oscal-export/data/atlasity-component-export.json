@@ -1,0 +1,1187 @@
+{
+    "component-definition": {
+        "uuid": "35b94d8a-a943-47b3-8fdb-aeccbc55dcbf",
+        "metadata": {
+            "title": "Load Balancer (F5)",
+            "published": "2021-02-26T14:19:28.8068631",
+            "last-modified": "2021-02-26T14:19:28.806897",
+            "version": "Version 1",
+            "oscal-version": "1.0.0"
+        },
+        "components": [
+            {
+                "uuid": "35b94d8a-a943-47b3-8fdb-aeccbc55dcbf",
+                "type": "hardware",
+                "title": "Load Balancer (F5)",
+                "description": "Balances traffic across instances on 443",
+                "purpose": "Resiliency",
+                "props": [
+                    {
+                        "name": "Atlasity ID",
+                        "uuid": "260cbf04-6cf5-42b5-b7c4-a25a60088090",
+                        "value": 44
+                    },
+                    {
+                        "name": "Parent Security Plan ID",
+                        "uuid": "cdd2715d-f4b4-4aac-875d-b57ebd84cbd3",
+                        "value": 39
+                    },
+                    {
+                        "name": "Component Owner",
+                        "uuid": "09ea7a8d-012f-4b2c-80c6-26c483389374",
+                        "value": "Bruce, Brandon"
+                    },
+                    {
+                        "name": "Status",
+                        "uuid": "7056359a-e2dd-4dd9-a343-137d8eecf18d",
+                        "value": "Active"
+                    },
+                    {
+                        "name": "Date Created",
+                        "uuid": "64965fb2-97b6-479f-baf0-447bd4f5c436",
+                        "value": "2021-02-26T14:19:28.8068631"
+                    },
+                    {
+                        "name": "Date Last Updated",
+                        "uuid": "5716131d-40fc-4cdc-a5b7-80cd20e647d8",
+                        "value": "2021-02-26T14:19:28.806897"
+                    }
+                ],
+                "control-implementations": [
+                    {
+                        "uuid": "dc1bd94c-256a-4605-80a5-a0c7de627b5a",
+                        "source": "https://atlas-dev.c2labs.com//catalogues/form/107",
+                        "description": "A Day in the Life of Marlon Bundo",
+                        "implemented-requirements": [
+                            {
+                                "uuid": "a82227d3-7a48-46c3-9687-451534ffc724",
+                                "control-id": "",
+                                "description": "Policy: ",
+                                "statements": [
+                                    {
+                                        "statement-id": "Implementation",
+                                        "uuid": "b17717c6-733f-43bd-b599-a5db2f6d303c",
+                                        "description": ""
+                                    },
+                                    {
+                                        "statement-id": "Status",
+                                        "uuid": "e4d937ec-8715-4e16-92a4-a8d14987b783",
+                                        "description": "Not Implemented"
+                                    },
+                                    {
+                                        "statement-id": "Weight",
+                                        "uuid": "1837cf4d-46ae-4cad-9343-bcd9a1ae6283",
+                                        "description": 0
+                                    },
+                                    {
+                                        "statement-id": "CMMC Practice Level",
+                                        "uuid": "01236a71-962b-4272-bdc4-ca33cae44257",
+                                        "description": ""
+                                    },
+                                    {
+                                        "statement-id": "CMMC Process Level",
+                                        "uuid": "ab4eccdf-8c8d-4eb3-ad6d-4425b1a82579",
+                                        "description": ""
+                                    },
+                                    {
+                                        "statement-id": "Control Owner",
+                                        "uuid": "9bf94515-1f03-467f-bf8a-c1124f4a0ad2",
+                                        "description": "Bruce, Brandon"
+                                    },
+                                    {
+                                        "statement-id": "Created By",
+                                        "uuid": "56186068-a514-4775-a2d3-73ec2b617efe",
+                                        "description": "Easley, Juliette"
+                                    },
+                                    {
+                                        "statement-id": "Last Updated By",
+                                        "uuid": "2a3a34c2-67b6-4295-ae8b-e46ac1c6dcc0",
+                                        "description": "Easley, Juliette"
+                                    }
+                                ]
+                            }
+                        ]
+                    },
+                    {
+                        "uuid": "60d6f101-efe0-415b-b30c-3404f6363191",
+                        "source": "https://atlas-dev.c2labs.com//catalogues/form/6",
+                        "description": "RS.AN-1: Notifications from detection systems are investigated",
+                        "implemented-requirements": [
+                            {
+                                "uuid": "E2A998D9-EA1B-480C-BDA5-B4181DE58D11",
+                                "description": "Policy: ",
+                                "statements": [
+                                    {
+                                        "statement-id": "Implementation",
+                                        "uuid": "a47f93f2-e74a-463e-a490-fc1a9111d26b",
+                                        "description": ""
+                                    },
+                                    {
+                                        "statement-id": "Status",
+                                        "uuid": "43a85c43-e1b8-4a12-9145-058552d0d243",
+                                        "description": "Not Implemented"
+                                    },
+                                    {
+                                        "statement-id": "Weight",
+                                        "uuid": "23ec0f6e-77d3-49ea-864a-3f442f57f52e",
+                                        "description": 0
+                                    },
+                                    {
+                                        "statement-id": "CMMC Practice Level",
+                                        "uuid": "c814b8f9-0cf6-4134-a8e6-4fd8959659a8",
+                                        "description": ""
+                                    },
+                                    {
+                                        "statement-id": "CMMC Process Level",
+                                        "uuid": "840de720-dbb3-4945-86bc-893bb627e5d0",
+                                        "description": ""
+                                    },
+                                    {
+                                        "statement-id": "Control Owner",
+                                        "uuid": "2b267b48-52d2-4104-bd3f-9b133472c898",
+                                        "description": "Bruce, Brandon"
+                                    },
+                                    {
+                                        "statement-id": "Created By",
+                                        "uuid": "baefa613-4a3f-4160-8fe6-46037974ef70",
+                                        "description": "Easley, Juliette"
+                                    },
+                                    {
+                                        "statement-id": "Last Updated By",
+                                        "uuid": "20bf5e9e-51b8-4edc-a999-13862ac50312",
+                                        "description": "Easley, Juliette"
+                                    }
+                                ]
+                            }
+                        ]
+                    },
+                    {
+                        "uuid": "6499c69c-4b5b-45e2-9982-cfc8c7a53f55",
+                        "source": "https://atlas-dev.c2labs.com//catalogues/form/6",
+                        "description": "RS.AN-2: The impact of the incident is understood",
+                        "implemented-requirements": [
+                            {
+                                "uuid": "6358A70B-7F1A-47F0-BD3B-090ABBA95515",
+                                "description": "Policy: ",
+                                "statements": [
+                                    {
+                                        "statement-id": "Implementation",
+                                        "uuid": "40dfbaf8-1d9f-415a-8914-cfe603b8a187",
+                                        "description": ""
+                                    },
+                                    {
+                                        "statement-id": "Status",
+                                        "uuid": "ca2a213a-a693-43e7-a2ab-b43783012b86",
+                                        "description": "Not Implemented"
+                                    },
+                                    {
+                                        "statement-id": "Weight",
+                                        "uuid": "bf48a163-704c-4c97-84a0-8c51486c0eaa",
+                                        "description": 0
+                                    },
+                                    {
+                                        "statement-id": "CMMC Practice Level",
+                                        "uuid": "91fe1b4e-cd6a-4817-9b71-22cdb02b2f17",
+                                        "description": ""
+                                    },
+                                    {
+                                        "statement-id": "CMMC Process Level",
+                                        "uuid": "298c5154-6884-42f2-828c-c23e754fb52b",
+                                        "description": ""
+                                    },
+                                    {
+                                        "statement-id": "Control Owner",
+                                        "uuid": "4a50775e-3b68-4ed9-b681-ffbac678173e",
+                                        "description": "Bruce, Brandon"
+                                    },
+                                    {
+                                        "statement-id": "Created By",
+                                        "uuid": "826b2d0a-c7d0-42ea-a788-3b9c50899d0d",
+                                        "description": "Easley, Juliette"
+                                    },
+                                    {
+                                        "statement-id": "Last Updated By",
+                                        "uuid": "75d8210a-ccb9-4d6f-b626-2b8783835593",
+                                        "description": "Easley, Juliette"
+                                    }
+                                ]
+                            }
+                        ]
+                    },
+                    {
+                        "uuid": "a3d5151d-c256-42db-8ccf-032fcbd23d00",
+                        "source": "https://atlas-dev.c2labs.com//catalogues/form/6",
+                        "description": "RS.AN-3: Forensics are performed",
+                        "implemented-requirements": [
+                            {
+                                "uuid": "94A8DD3A-819B-4E57-A33E-98FEA4298F82",
+                                "description": "Policy: ",
+                                "statements": [
+                                    {
+                                        "statement-id": "Implementation",
+                                        "uuid": "2831b3bc-b23c-45c9-a848-fdeffb1dcb95",
+                                        "description": ""
+                                    },
+                                    {
+                                        "statement-id": "Status",
+                                        "uuid": "daa6f621-4af1-414b-a203-9d16bd58a10d",
+                                        "description": "Not Implemented"
+                                    },
+                                    {
+                                        "statement-id": "Weight",
+                                        "uuid": "ce99bf3c-546c-4f0a-aa19-9ffecfd741e9",
+                                        "description": 0
+                                    },
+                                    {
+                                        "statement-id": "CMMC Practice Level",
+                                        "uuid": "8e1a950d-2f8d-4617-977e-60e6bea781fd",
+                                        "description": ""
+                                    },
+                                    {
+                                        "statement-id": "CMMC Process Level",
+                                        "uuid": "5eebdedc-6834-4cda-a008-f0d4b2f4568c",
+                                        "description": ""
+                                    },
+                                    {
+                                        "statement-id": "Control Owner",
+                                        "uuid": "0cfa5bae-1d4d-467b-af9b-21fa74eeed1c",
+                                        "description": "Bruce, Brandon"
+                                    },
+                                    {
+                                        "statement-id": "Created By",
+                                        "uuid": "9080070f-35cd-47ee-9046-c140b155b023",
+                                        "description": "Easley, Juliette"
+                                    },
+                                    {
+                                        "statement-id": "Last Updated By",
+                                        "uuid": "64020451-bd0f-41ad-ac71-d9443c77ad88",
+                                        "description": "Easley, Juliette"
+                                    }
+                                ]
+                            }
+                        ]
+                    },
+                    {
+                        "uuid": "93132081-7aa8-4b8c-9a69-a3df4b170197",
+                        "source": "https://atlas-dev.c2labs.com//catalogues/form/6",
+                        "description": "RS.AN-4: Incidents are categorized consistent with response plans",
+                        "implemented-requirements": [
+                            {
+                                "uuid": "073359E9-B9A0-49FE-BF8E-D90B66BDE4A6",
+                                "description": "Policy: ",
+                                "statements": [
+                                    {
+                                        "statement-id": "Implementation",
+                                        "uuid": "61a20366-2511-4580-84ef-2dd4f4557679",
+                                        "description": ""
+                                    },
+                                    {
+                                        "statement-id": "Status",
+                                        "uuid": "397bfb23-0a6e-4c8b-a960-2445fc0b8b27",
+                                        "description": "Not Implemented"
+                                    },
+                                    {
+                                        "statement-id": "Weight",
+                                        "uuid": "b8cae525-eecf-49c9-a9a0-163073da323e",
+                                        "description": 0
+                                    },
+                                    {
+                                        "statement-id": "CMMC Practice Level",
+                                        "uuid": "ca407464-8624-4a37-af8b-e1f216b65031",
+                                        "description": ""
+                                    },
+                                    {
+                                        "statement-id": "CMMC Process Level",
+                                        "uuid": "6a6a3381-b78e-4e29-a78a-3747a643529a",
+                                        "description": ""
+                                    },
+                                    {
+                                        "statement-id": "Control Owner",
+                                        "uuid": "18062b00-696c-4690-b91a-61da0a94555a",
+                                        "description": "Bruce, Brandon"
+                                    },
+                                    {
+                                        "statement-id": "Created By",
+                                        "uuid": "46181169-6a2e-447e-994a-f8043c2635d7",
+                                        "description": "Easley, Juliette"
+                                    },
+                                    {
+                                        "statement-id": "Last Updated By",
+                                        "uuid": "05eeec83-7ec8-47b3-9176-66a94097f2e5",
+                                        "description": "Easley, Juliette"
+                                    }
+                                ]
+                            }
+                        ]
+                    },
+                    {
+                        "uuid": "0bf8252c-521a-44c3-94ff-acd01bf8c9f5",
+                        "source": "https://atlas-dev.c2labs.com//catalogues/form/6",
+                        "description": "RS.AN-5: Processes are established to receive, analyze and respond to vulnerabilities disclosed to the organization from internal and external sources",
+                        "implemented-requirements": [
+                            {
+                                "uuid": "F25C8E11-A31D-40E1-A619-F239BBA1B933",
+                                "description": "Policy: ",
+                                "statements": [
+                                    {
+                                        "statement-id": "Implementation",
+                                        "uuid": "496ece7f-8f97-4db8-96e4-d6039611c2d0",
+                                        "description": ""
+                                    },
+                                    {
+                                        "statement-id": "Status",
+                                        "uuid": "ee84f7e5-5927-4b9c-9e78-a873bfacd5af",
+                                        "description": "Not Implemented"
+                                    },
+                                    {
+                                        "statement-id": "Weight",
+                                        "uuid": "1699165b-6b09-4d86-9fb0-c924bf282261",
+                                        "description": 0
+                                    },
+                                    {
+                                        "statement-id": "CMMC Practice Level",
+                                        "uuid": "d5284212-4f1d-4f97-a170-0a51d398de20",
+                                        "description": ""
+                                    },
+                                    {
+                                        "statement-id": "CMMC Process Level",
+                                        "uuid": "5f81ecfc-7a23-4e7e-a74b-de3ca9ffe0ee",
+                                        "description": ""
+                                    },
+                                    {
+                                        "statement-id": "Control Owner",
+                                        "uuid": "cd18a255-d73f-472f-8b9a-1acf1bf1d060",
+                                        "description": "Bruce, Brandon"
+                                    },
+                                    {
+                                        "statement-id": "Created By",
+                                        "uuid": "6f35414a-e294-4e8e-9317-7008e6e129d3",
+                                        "description": "Easley, Juliette"
+                                    },
+                                    {
+                                        "statement-id": "Last Updated By",
+                                        "uuid": "800dc81c-c7ea-428c-9058-365ad67f332f",
+                                        "description": "Easley, Juliette"
+                                    }
+                                ]
+                            }
+                        ]
+                    },
+                    {
+                        "uuid": "94f5df3c-0f82-4809-9d44-ed8c57ebfa76",
+                        "source": "https://atlas-dev.c2labs.com//catalogues/form/64",
+                        "description": "Multi-Factor Authentication",
+                        "implemented-requirements": [
+                            {
+                                "uuid": "9ec8026e-d609-491b-97d1-7ae84f3f6fde",
+                                "control-id": "C2-AC-01",
+                                "description": "Policy: ",
+                                "statements": [
+                                    {
+                                        "statement-id": "Implementation",
+                                        "uuid": "b978b45a-4caf-45dd-bcc5-37e3ab890555",
+                                        "description": ""
+                                    },
+                                    {
+                                        "statement-id": "Status",
+                                        "uuid": "ce493441-6f41-425f-8331-e6005f1a4882",
+                                        "description": "Not Implemented"
+                                    },
+                                    {
+                                        "statement-id": "Weight",
+                                        "uuid": "83bd9c6e-27c0-4c2f-8872-2fa2ea030c65",
+                                        "description": 0
+                                    },
+                                    {
+                                        "statement-id": "CMMC Practice Level",
+                                        "uuid": "f3e2f9ae-4e7c-462d-8648-9ebb2d4f6f8b",
+                                        "description": ""
+                                    },
+                                    {
+                                        "statement-id": "CMMC Process Level",
+                                        "uuid": "e4f16ace-a198-4b3d-afa2-ab27100f2f67",
+                                        "description": ""
+                                    },
+                                    {
+                                        "statement-id": "Control Owner",
+                                        "uuid": "0ca858c8-92df-4a6c-9d3a-8158fd287218",
+                                        "description": "Bruce, Brandon"
+                                    },
+                                    {
+                                        "statement-id": "Created By",
+                                        "uuid": "a147c436-e2a8-4288-b4a5-109c06387f45",
+                                        "description": "Easley, Juliette"
+                                    },
+                                    {
+                                        "statement-id": "Last Updated By",
+                                        "uuid": "93293340-152e-4119-9393-2f3328cc48c0",
+                                        "description": "Easley, Juliette"
+                                    }
+                                ]
+                            }
+                        ]
+                    },
+                    {
+                        "uuid": "1ed49751-2362-4276-9661-05d1dbcc0d5f",
+                        "source": "https://atlas-dev.c2labs.com//catalogues/form/107",
+                        "description": "Edgar",
+                        "implemented-requirements": [
+                            {
+                                "uuid": "46954225-6f9c-40de-a3e0-a2369c7355b0",
+                                "control-id": "",
+                                "description": "Policy: ",
+                                "statements": [
+                                    {
+                                        "statement-id": "Implementation",
+                                        "uuid": "aa2c45f3-7aad-4df1-bbb1-9b28bc950545",
+                                        "description": ""
+                                    },
+                                    {
+                                        "statement-id": "Status",
+                                        "uuid": "93aa16d8-497b-4830-ab5a-c79971f2f5bb",
+                                        "description": "Not Implemented"
+                                    },
+                                    {
+                                        "statement-id": "Weight",
+                                        "uuid": "d989ceae-3e09-4a73-b113-d9cae284059f",
+                                        "description": 0
+                                    },
+                                    {
+                                        "statement-id": "CMMC Practice Level",
+                                        "uuid": "5c5480dd-b842-4e01-a2b8-f004e7c8d38f",
+                                        "description": ""
+                                    },
+                                    {
+                                        "statement-id": "CMMC Process Level",
+                                        "uuid": "a01ce524-baf1-448c-b516-c032bf12b08c",
+                                        "description": ""
+                                    },
+                                    {
+                                        "statement-id": "Control Owner",
+                                        "uuid": "0634422c-1541-475c-8de5-083cac21298a",
+                                        "description": "Bruce, Brandon"
+                                    },
+                                    {
+                                        "statement-id": "Created By",
+                                        "uuid": "df4037bd-a179-4209-a484-152b45dc0ce9",
+                                        "description": "Easley, Juliette"
+                                    },
+                                    {
+                                        "statement-id": "Last Updated By",
+                                        "uuid": "871d50ca-090e-4ed7-92fc-fab62a0b3aa4",
+                                        "description": "Easley, Juliette"
+                                    }
+                                ]
+                            }
+                        ]
+                    },
+                    {
+                        "uuid": "a5cc06a5-28d9-4922-ac9d-49b0c03e47b1",
+                        "source": "https://atlas-dev.c2labs.com//catalogues/form/107",
+                        "description": "My Doordash Driver Ate My Macaroni",
+                        "implemented-requirements": [
+                            {
+                                "uuid": "e4e7e484-6318-4de7-8dde-a37c7de58b4d",
+                                "control-id": "",
+                                "description": "Policy: ",
+                                "statements": [
+                                    {
+                                        "statement-id": "Implementation",
+                                        "uuid": "284a2fe9-b288-447f-a991-4703188550ee",
+                                        "description": ""
+                                    },
+                                    {
+                                        "statement-id": "Status",
+                                        "uuid": "767d7421-ea8e-4f78-a7d5-8224c3f4ea8f",
+                                        "description": "Not Implemented"
+                                    },
+                                    {
+                                        "statement-id": "Weight",
+                                        "uuid": "def3719b-f3af-49b7-9ed9-0dd28d5329e3",
+                                        "description": 0
+                                    },
+                                    {
+                                        "statement-id": "CMMC Practice Level",
+                                        "uuid": "435835c1-8b34-43bf-a1f8-be11372d9c31",
+                                        "description": ""
+                                    },
+                                    {
+                                        "statement-id": "CMMC Process Level",
+                                        "uuid": "b213cd4b-d6d0-48c3-8299-9b7dc8609b2b",
+                                        "description": ""
+                                    },
+                                    {
+                                        "statement-id": "Control Owner",
+                                        "uuid": "12d44200-dab7-4365-8119-c9593f9c723c",
+                                        "description": "Bruce, Brandon"
+                                    },
+                                    {
+                                        "statement-id": "Created By",
+                                        "uuid": "ac1b7692-6bcf-48ba-94bf-a4b4848167ae",
+                                        "description": "Easley, Juliette"
+                                    },
+                                    {
+                                        "statement-id": "Last Updated By",
+                                        "uuid": "a50c13b6-45d3-4ae8-b5d5-e0c401b39bd8",
+                                        "description": "Easley, Juliette"
+                                    }
+                                ]
+                            }
+                        ]
+                    },
+                    {
+                        "uuid": "982e237d-f930-44f1-beea-f977d93191db",
+                        "source": "https://atlas-dev.c2labs.com//catalogues/form/107",
+                        "description": "The Quadratic Formula",
+                        "implemented-requirements": [
+                            {
+                                "uuid": "d4571778-5280-4d3f-a221-249cbbc3c3cd",
+                                "control-id": "",
+                                "description": "Policy: ",
+                                "statements": [
+                                    {
+                                        "statement-id": "Implementation",
+                                        "uuid": "c19ae26d-2a57-4626-b6e3-de090adeec13",
+                                        "description": ""
+                                    },
+                                    {
+                                        "statement-id": "Status",
+                                        "uuid": "37378046-c2df-40bc-8ab5-5f390a6b0b13",
+                                        "description": "Not Implemented"
+                                    },
+                                    {
+                                        "statement-id": "Weight",
+                                        "uuid": "a6ca29e2-4117-4e6a-962e-82eef70f4120",
+                                        "description": 0
+                                    },
+                                    {
+                                        "statement-id": "CMMC Practice Level",
+                                        "uuid": "4c8f5b21-ff21-4b18-9435-ff2fb942487c",
+                                        "description": ""
+                                    },
+                                    {
+                                        "statement-id": "CMMC Process Level",
+                                        "uuid": "76f50cae-1c81-4b53-a7c7-b51d469b9ccb",
+                                        "description": ""
+                                    },
+                                    {
+                                        "statement-id": "Control Owner",
+                                        "uuid": "3da54ee4-93a2-4093-96c9-5adf5de3901e",
+                                        "description": "Bruce, Brandon"
+                                    },
+                                    {
+                                        "statement-id": "Created By",
+                                        "uuid": "091e2f93-87eb-4d85-a5eb-3fb2a0c7f2d9",
+                                        "description": "Easley, Juliette"
+                                    },
+                                    {
+                                        "statement-id": "Last Updated By",
+                                        "uuid": "380a5ab7-aca4-4564-8a9e-aaa98f4f839e",
+                                        "description": "Easley, Juliette"
+                                    }
+                                ]
+                            }
+                        ]
+                    },
+                    {
+                        "uuid": "cdd9057e-fe2f-4a94-8fe7-681f9f70671c",
+                        "source": "https://atlas-dev.c2labs.com//catalogues/form/31",
+                        "description": "1798.100",
+                        "implemented-requirements": [
+                            {
+                                "uuid": "F958BB9D-F7A4-4B10-BE78-EF61817A8172",
+                                "description": "Policy: ",
+                                "statements": [
+                                    {
+                                        "statement-id": "Implementation",
+                                        "uuid": "498ebf43-b016-409b-a0c7-3dba7134ec2d",
+                                        "description": ""
+                                    },
+                                    {
+                                        "statement-id": "Status",
+                                        "uuid": "f35864ea-4d6a-40f3-8b65-981b8be7cdda",
+                                        "description": "Not Implemented"
+                                    },
+                                    {
+                                        "statement-id": "Weight",
+                                        "uuid": "fa9c0850-bde3-41fc-8d86-13109125e5e0",
+                                        "description": 0
+                                    },
+                                    {
+                                        "statement-id": "CMMC Practice Level",
+                                        "uuid": "f28930b0-fe44-4c64-9dbf-1f2d7c824f5b",
+                                        "description": ""
+                                    },
+                                    {
+                                        "statement-id": "CMMC Process Level",
+                                        "uuid": "43e328be-f8e8-4bd0-b8e2-8e6923dad312",
+                                        "description": ""
+                                    },
+                                    {
+                                        "statement-id": "Control Owner",
+                                        "uuid": "8b4e6c43-21f9-4b4e-bcfa-6044de24fc2d",
+                                        "description": "Bruce, Brandon"
+                                    },
+                                    {
+                                        "statement-id": "Created By",
+                                        "uuid": "72f1f9f1-f6ff-4386-a167-7c41652f70f4",
+                                        "description": "Easley, Juliette"
+                                    },
+                                    {
+                                        "statement-id": "Last Updated By",
+                                        "uuid": "40e084a3-06ab-4b72-a655-1cfbe481913e",
+                                        "description": "Easley, Juliette"
+                                    }
+                                ]
+                            }
+                        ]
+                    },
+                    {
+                        "uuid": "0ce16c9d-998f-429a-8ad7-81a314d3835c",
+                        "source": "https://atlas-dev.c2labs.com//catalogues/form/3",
+                        "description": "AIS-01 Application & Interface Security\nApplication Security",
+                        "implemented-requirements": [
+                            {
+                                "uuid": "A89B8A8D-35D5-4BE1-B40C-F0757EA0B6C5",
+                                "description": "Policy: ",
+                                "statements": [
+                                    {
+                                        "statement-id": "Implementation",
+                                        "uuid": "fb0ca7b1-5112-4f42-b1b2-07d762f0fb2a",
+                                        "description": ""
+                                    },
+                                    {
+                                        "statement-id": "Status",
+                                        "uuid": "f83814f0-e0d8-40a9-aea9-b3364c9fa376",
+                                        "description": "Not Implemented"
+                                    },
+                                    {
+                                        "statement-id": "Weight",
+                                        "uuid": "a2c5656d-232e-4443-8c18-a13613f2736a",
+                                        "description": 0
+                                    },
+                                    {
+                                        "statement-id": "CMMC Practice Level",
+                                        "uuid": "74848b6a-5813-4a24-8a1a-31167bf97e28",
+                                        "description": ""
+                                    },
+                                    {
+                                        "statement-id": "CMMC Process Level",
+                                        "uuid": "af82629f-c7b3-4597-8bd6-2f796cb485e8",
+                                        "description": ""
+                                    },
+                                    {
+                                        "statement-id": "Control Owner",
+                                        "uuid": "dbd6b09d-c3d0-49b6-8f2a-f61258739594",
+                                        "description": "Bruce, Brandon"
+                                    },
+                                    {
+                                        "statement-id": "Created By",
+                                        "uuid": "abc39f58-fd2f-408c-bdd4-63d4af4e2c6b",
+                                        "description": "Easley, Juliette"
+                                    },
+                                    {
+                                        "statement-id": "Last Updated By",
+                                        "uuid": "90fb4af7-0e9d-4843-ab7a-99a5948fc82e",
+                                        "description": "Easley, Juliette"
+                                    }
+                                ]
+                            }
+                        ]
+                    },
+                    {
+                        "uuid": "8fe21b9f-4dc9-4f57-b00d-60101b9eb7a3",
+                        "source": "https://atlas-dev.c2labs.com//catalogues/form/32",
+                        "description": "My Security Control",
+                        "implemented-requirements": [
+                            {
+                                "uuid": "14186B54-92F1-425F-A8E6-C0F2997824A1",
+                                "description": "Policy: ",
+                                "statements": [
+                                    {
+                                        "statement-id": "Implementation",
+                                        "uuid": "ecd13fbc-8ed0-4194-ace6-431cdb4549fb",
+                                        "description": ""
+                                    },
+                                    {
+                                        "statement-id": "Status",
+                                        "uuid": "837a9333-3d53-4400-81b6-7028ad150aea",
+                                        "description": "Not Implemented"
+                                    },
+                                    {
+                                        "statement-id": "Weight",
+                                        "uuid": "de7c9958-9621-469b-bc8d-f924a22e426e",
+                                        "description": 0
+                                    },
+                                    {
+                                        "statement-id": "CMMC Practice Level",
+                                        "uuid": "686b7c54-3e9a-478a-ae95-f47f8a021097",
+                                        "description": ""
+                                    },
+                                    {
+                                        "statement-id": "CMMC Process Level",
+                                        "uuid": "eec1e3f4-94f5-479d-9ef4-c18be2118399",
+                                        "description": ""
+                                    },
+                                    {
+                                        "statement-id": "Control Owner",
+                                        "uuid": "9b250bfb-c035-41e4-91cd-1943bcbcb7de",
+                                        "description": "Bruce, Brandon"
+                                    },
+                                    {
+                                        "statement-id": "Created By",
+                                        "uuid": "a6c6234f-cc4b-4c1b-bfa9-a337fd143dc5",
+                                        "description": "Easley, Juliette"
+                                    },
+                                    {
+                                        "statement-id": "Last Updated By",
+                                        "uuid": "f1d16cb9-715c-4f44-bdda-74ebe6dfe39f",
+                                        "description": "Easley, Juliette"
+                                    }
+                                ]
+                            }
+                        ]
+                    },
+                    {
+                        "uuid": "b8ae6e86-f773-414a-b72c-80473a0d6a05",
+                        "source": "https://atlas-dev.c2labs.com//catalogues/form/9",
+                        "description": "AC.1.003",
+                        "implemented-requirements": [
+                            {
+                                "uuid": "E2ECD4E6-4CD5-4159-BF24-BF1158436827",
+                                "description": "Policy: ",
+                                "statements": [
+                                    {
+                                        "statement-id": "Implementation",
+                                        "uuid": "de821285-c3f9-4279-82f7-41eb5c5c8bb1",
+                                        "description": ""
+                                    },
+                                    {
+                                        "statement-id": "Status",
+                                        "uuid": "29a41786-421c-4e07-b122-69b91ba9eb35",
+                                        "description": "Not Implemented"
+                                    },
+                                    {
+                                        "statement-id": "Weight",
+                                        "uuid": "7a488421-efd4-4b89-bb0b-6388292df315",
+                                        "description": 0
+                                    },
+                                    {
+                                        "statement-id": "CMMC Practice Level",
+                                        "uuid": "92ec718e-3796-4141-90de-d0c97d4d3f61",
+                                        "description": ""
+                                    },
+                                    {
+                                        "statement-id": "CMMC Process Level",
+                                        "uuid": "6aef64fa-4856-4b73-a8c6-9f4ee86c9bdb",
+                                        "description": ""
+                                    },
+                                    {
+                                        "statement-id": "Control Owner",
+                                        "uuid": "92d8aeef-9c3b-45a4-8179-5c30c8ee9553",
+                                        "description": "Bruce, Brandon"
+                                    },
+                                    {
+                                        "statement-id": "Created By",
+                                        "uuid": "fe85a223-9868-4d41-98a5-f04e3f4a1736",
+                                        "description": "Easley, Juliette"
+                                    },
+                                    {
+                                        "statement-id": "Last Updated By",
+                                        "uuid": "4975f5f7-e354-4bac-a627-fb9c4ca5b16f",
+                                        "description": "Easley, Juliette"
+                                    }
+                                ]
+                            }
+                        ]
+                    },
+                    {
+                        "uuid": "2905c2d8-2cd1-4626-bf19-e97585d46100",
+                        "source": "https://atlas-dev.c2labs.com//catalogues/form/9",
+                        "description": "AC.2.005",
+                        "implemented-requirements": [
+                            {
+                                "uuid": "1DE19989-CE8D-4981-AC98-72E7D64440EA",
+                                "description": "Policy: ",
+                                "statements": [
+                                    {
+                                        "statement-id": "Implementation",
+                                        "uuid": "3dfde79e-6e25-407d-b9e1-dd50e02c47be",
+                                        "description": ""
+                                    },
+                                    {
+                                        "statement-id": "Status",
+                                        "uuid": "d75f0027-d6ae-4e40-8883-af93d42f2d61",
+                                        "description": "Not Implemented"
+                                    },
+                                    {
+                                        "statement-id": "Weight",
+                                        "uuid": "8d432881-9174-4d1a-b1c3-da1b43517184",
+                                        "description": 0
+                                    },
+                                    {
+                                        "statement-id": "CMMC Practice Level",
+                                        "uuid": "c8822a53-de5e-4a09-8105-fca2b17ceae3",
+                                        "description": ""
+                                    },
+                                    {
+                                        "statement-id": "CMMC Process Level",
+                                        "uuid": "f2920251-d3b7-4b47-8266-8d1483c51c4a",
+                                        "description": ""
+                                    },
+                                    {
+                                        "statement-id": "Control Owner",
+                                        "uuid": "6d2ed8aa-2939-45c2-b875-561b065c1f87",
+                                        "description": "Bruce, Brandon"
+                                    },
+                                    {
+                                        "statement-id": "Created By",
+                                        "uuid": "18342934-94ff-485f-a579-cb9d8b49f4a8",
+                                        "description": "Easley, Juliette"
+                                    },
+                                    {
+                                        "statement-id": "Last Updated By",
+                                        "uuid": "84e71b88-bdbe-433e-b001-262917aec416",
+                                        "description": "Easley, Juliette"
+                                    }
+                                ]
+                            }
+                        ]
+                    },
+                    {
+                        "uuid": "7843fdbf-12fc-46c8-a884-b2ed13788532",
+                        "source": "https://atlas-dev.c2labs.com//catalogues/form/3",
+                        "description": "AIS-04 Application & Interface Security\nData Security / Integrity",
+                        "implemented-requirements": [
+                            {
+                                "uuid": "70791872-323C-4A84-9DD5-5B1A65F3E6ED",
+                                "description": "Policy: ",
+                                "statements": [
+                                    {
+                                        "statement-id": "Implementation",
+                                        "uuid": "bc204ada-04d5-40d3-a9ee-41afc20ae565",
+                                        "description": ""
+                                    },
+                                    {
+                                        "statement-id": "Status",
+                                        "uuid": "c4ade76c-6954-4460-8404-97ba42d8f7dc",
+                                        "description": "Not Implemented"
+                                    },
+                                    {
+                                        "statement-id": "Weight",
+                                        "uuid": "f1b967ce-c60d-4807-b2ae-fcc0396183d3",
+                                        "description": 0
+                                    },
+                                    {
+                                        "statement-id": "CMMC Practice Level",
+                                        "uuid": "5f813238-45fd-42c1-8d54-b2839479af38",
+                                        "description": ""
+                                    },
+                                    {
+                                        "statement-id": "CMMC Process Level",
+                                        "uuid": "8e9b7264-4889-4772-ba04-23033f201123",
+                                        "description": ""
+                                    },
+                                    {
+                                        "statement-id": "Control Owner",
+                                        "uuid": "b85fc138-c203-41db-a84b-a0bcdd17aaa5",
+                                        "description": "Bruce, Brandon"
+                                    },
+                                    {
+                                        "statement-id": "Created By",
+                                        "uuid": "9822d368-cd37-4d8d-bbb4-a42179b5c3a4",
+                                        "description": "Easley, Juliette"
+                                    },
+                                    {
+                                        "statement-id": "Last Updated By",
+                                        "uuid": "3d64789f-ad61-4b00-a849-35336bd735e5",
+                                        "description": "Easley, Juliette"
+                                    }
+                                ]
+                            }
+                        ]
+                    },
+                    {
+                        "uuid": "60bcff03-0e12-4ce5-91a2-be6048049ea6",
+                        "source": "https://atlas-dev.c2labs.com//catalogues/form/3",
+                        "description": "AAC-01 Audit Assurance & Compliance\nAudit Planning",
+                        "implemented-requirements": [
+                            {
+                                "uuid": "8D32430D-B829-4BDA-B5BD-84BC1C12B18B",
+                                "description": "Policy: ",
+                                "statements": [
+                                    {
+                                        "statement-id": "Implementation",
+                                        "uuid": "f89fba40-c151-474d-992d-57f6b34c9e05",
+                                        "description": ""
+                                    },
+                                    {
+                                        "statement-id": "Status",
+                                        "uuid": "a1fecb74-a034-4586-8947-b01557b7ecc8",
+                                        "description": "Not Implemented"
+                                    },
+                                    {
+                                        "statement-id": "Weight",
+                                        "uuid": "4d1d2afc-b31e-4a88-b81c-46eacffb85a2",
+                                        "description": 0
+                                    },
+                                    {
+                                        "statement-id": "CMMC Practice Level",
+                                        "uuid": "f2506f06-183f-4bbc-a3e5-6c8b39d0a849",
+                                        "description": ""
+                                    },
+                                    {
+                                        "statement-id": "CMMC Process Level",
+                                        "uuid": "6e12d559-3517-439a-b7ea-682d2489d327",
+                                        "description": ""
+                                    },
+                                    {
+                                        "statement-id": "Control Owner",
+                                        "uuid": "cad43dff-5bd3-4634-9e31-488fa140c7b9",
+                                        "description": "Bruce, Brandon"
+                                    },
+                                    {
+                                        "statement-id": "Created By",
+                                        "uuid": "26824793-69b0-4496-8b48-cca06723c344",
+                                        "description": "Easley, Juliette"
+                                    },
+                                    {
+                                        "statement-id": "Last Updated By",
+                                        "uuid": "e32d5ec7-ddc5-49a9-baef-868c7065960d",
+                                        "description": "Easley, Juliette"
+                                    }
+                                ]
+                            }
+                        ]
+                    },
+                    {
+                        "uuid": "2268241c-8416-4a45-85a6-8f55af576881",
+                        "source": "https://atlas-dev.c2labs.com//catalogues/form/3",
+                        "description": "AIS-01 Application & Interface Security\nApplication Security",
+                        "implemented-requirements": [
+                            {
+                                "uuid": "A89B8A8D-35D5-4BE1-B40C-F0757EA0B6C5",
+                                "description": "Policy: ",
+                                "statements": [
+                                    {
+                                        "statement-id": "Implementation",
+                                        "uuid": "2f3998a6-f977-429e-944a-019df642fc1e",
+                                        "description": ""
+                                    },
+                                    {
+                                        "statement-id": "Status",
+                                        "uuid": "8f38b57e-ee8a-4e37-9743-2bf80e3bf61a",
+                                        "description": "Not Implemented"
+                                    },
+                                    {
+                                        "statement-id": "Weight",
+                                        "uuid": "732c8a21-5f68-4e39-8b43-bb5071260f15",
+                                        "description": 0
+                                    },
+                                    {
+                                        "statement-id": "CMMC Practice Level",
+                                        "uuid": "6b658d56-5245-4f67-9a50-a32326b62bb7",
+                                        "description": ""
+                                    },
+                                    {
+                                        "statement-id": "CMMC Process Level",
+                                        "uuid": "1b2b316d-3033-474c-aadf-644e09e23d6b",
+                                        "description": ""
+                                    },
+                                    {
+                                        "statement-id": "Control Owner",
+                                        "uuid": "f4e62039-e1d3-4f28-92d0-e5dce23f00ab",
+                                        "description": "Bruce, Brandon"
+                                    },
+                                    {
+                                        "statement-id": "Created By",
+                                        "uuid": "f08bcea3-99c5-466f-9afa-028edacf0da0",
+                                        "description": "Easley, Juliette"
+                                    },
+                                    {
+                                        "statement-id": "Last Updated By",
+                                        "uuid": "2329f46d-d1b7-43d3-9a82-f25db72ce0da",
+                                        "description": "Easley, Juliette"
+                                    }
+                                ]
+                            }
+                        ]
+                    },
+                    {
+                        "uuid": "f8c01a63-08c8-4585-8283-4a55919cd168",
+                        "source": "https://atlas-dev.c2labs.com//catalogues/form/3",
+                        "description": "AIS-02 Application & Interface Security\nCustomer Access Requirements",
+                        "implemented-requirements": [
+                            {
+                                "uuid": "1139D005-F81B-49B7-A4BF-5CE89F55EB24",
+                                "description": "Policy: ",
+                                "statements": [
+                                    {
+                                        "statement-id": "Implementation",
+                                        "uuid": "b5ee1921-cb81-4bdf-ad17-93820769b381",
+                                        "description": ""
+                                    },
+                                    {
+                                        "statement-id": "Status",
+                                        "uuid": "4d1c1885-9b34-434e-8f06-7bc269431aee",
+                                        "description": "Not Implemented"
+                                    },
+                                    {
+                                        "statement-id": "Weight",
+                                        "uuid": "aa295fc2-4236-46a1-a658-bc4e53fe260c",
+                                        "description": 0
+                                    },
+                                    {
+                                        "statement-id": "CMMC Practice Level",
+                                        "uuid": "bdb9ece1-2924-445f-8f78-a0d52fe69feb",
+                                        "description": ""
+                                    },
+                                    {
+                                        "statement-id": "CMMC Process Level",
+                                        "uuid": "8c6f8719-9138-4803-a9d4-7b86d7e87cab",
+                                        "description": ""
+                                    },
+                                    {
+                                        "statement-id": "Control Owner",
+                                        "uuid": "c6c76545-1b44-492c-b0ad-dbd8f92b41e0",
+                                        "description": "Bruce, Brandon"
+                                    },
+                                    {
+                                        "statement-id": "Created By",
+                                        "uuid": "24c72095-179a-44f2-b682-dbfdc3126e50",
+                                        "description": "Easley, Juliette"
+                                    },
+                                    {
+                                        "statement-id": "Last Updated By",
+                                        "uuid": "9c6ac99d-d104-4448-bc29-95357b142c84",
+                                        "description": "Easley, Juliette"
+                                    }
+                                ]
+                            }
+                        ]
+                    },
+                    {
+                        "uuid": "aa19ccab-1eb0-4a36-b37b-167d74383020",
+                        "source": "https://atlas-dev.c2labs.com//catalogues/form/3",
+                        "description": "AIS-03 Application & Interface Security\nData Integrity",
+                        "implemented-requirements": [
+                            {
+                                "uuid": "7A491C1D-0176-4EA9-903A-58F45846841A",
+                                "description": "Policy: ",
+                                "statements": [
+                                    {
+                                        "statement-id": "Implementation",
+                                        "uuid": "79b2b44d-026f-4590-9c8e-f00b8ffcc17a",
+                                        "description": ""
+                                    },
+                                    {
+                                        "statement-id": "Status",
+                                        "uuid": "85a21a8c-7808-466c-8008-df17098df5b6",
+                                        "description": "Not Implemented"
+                                    },
+                                    {
+                                        "statement-id": "Weight",
+                                        "uuid": "ae8a2b9f-fab9-4f74-addf-60b52bf24fb4",
+                                        "description": 0
+                                    },
+                                    {
+                                        "statement-id": "CMMC Practice Level",
+                                        "uuid": "63f76953-5c21-4103-857c-f8b14f431e01",
+                                        "description": ""
+                                    },
+                                    {
+                                        "statement-id": "CMMC Process Level",
+                                        "uuid": "be12f83b-e865-4380-b9b3-5c367719e0ca",
+                                        "description": ""
+                                    },
+                                    {
+                                        "statement-id": "Control Owner",
+                                        "uuid": "6029f54c-a8eb-4d03-890c-78f8ec9c0be1",
+                                        "description": "Bruce, Brandon"
+                                    },
+                                    {
+                                        "statement-id": "Created By",
+                                        "uuid": "bc01bc06-be5a-49e5-8df3-bd3521839ce8",
+                                        "description": "Easley, Juliette"
+                                    },
+                                    {
+                                        "statement-id": "Last Updated By",
+                                        "uuid": "95aa1cde-d680-4b16-8a00-c4fccdfb19b6",
+                                        "description": "Easley, Juliette"
+                                    }
+                                ]
+                            }
+                        ]
+                    },
+                    {
+                        "uuid": "39df4bd5-d6b3-4fd7-b7d6-fc4ae07e589d",
+                        "source": "https://atlas-dev.c2labs.com//catalogues/form/3",
+                        "description": "AIS-04 Application & Interface Security\nData Security / Integrity",
+                        "implemented-requirements": [
+                            {
+                                "uuid": "70791872-323C-4A84-9DD5-5B1A65F3E6ED",
+                                "description": "Policy: ",
+                                "statements": [
+                                    {
+                                        "statement-id": "Implementation",
+                                        "uuid": "375e6208-03a7-4aec-9144-126d9973aa61",
+                                        "description": ""
+                                    },
+                                    {
+                                        "statement-id": "Status",
+                                        "uuid": "1632f63b-5a36-4421-b5e1-dc6cfcadf50d",
+                                        "description": "Not Implemented"
+                                    },
+                                    {
+                                        "statement-id": "Weight",
+                                        "uuid": "7169a510-ccf5-4a0a-8d4e-7d3369edd529",
+                                        "description": 0
+                                    },
+                                    {
+                                        "statement-id": "CMMC Practice Level",
+                                        "uuid": "4e04f8ba-03b8-4669-bb05-e2e42f786915",
+                                        "description": ""
+                                    },
+                                    {
+                                        "statement-id": "CMMC Process Level",
+                                        "uuid": "b4a0a7c8-c1d5-4849-b6c4-da19eda614a3",
+                                        "description": ""
+                                    },
+                                    {
+                                        "statement-id": "Control Owner",
+                                        "uuid": "29239d9f-9e11-47ed-9b53-295beb5248ce",
+                                        "description": "Bruce, Brandon"
+                                    },
+                                    {
+                                        "statement-id": "Created By",
+                                        "uuid": "71bf3ef8-a8f0-4bd8-9a3d-42df40b92f71",
+                                        "description": "Easley, Juliette"
+                                    },
+                                    {
+                                        "statement-id": "Last Updated By",
+                                        "uuid": "a6b845fe-957b-483c-996f-94dd1bea109f",
+                                        "description": "Easley, Juliette"
+                                    }
+                                ]
+                            }
+                        ]
+                    }
+                ]
+            }
+        ],
+        "back-matter": {
+            "resources": [
+                {
+                    "uuid": "b18188f3-dde2-438c-a487-956ff208c117",
+                    "title": "Atlasity Component URL",
+                    "description": "https://atlas-dev.c2labs.com//components/form/44"
+                },
+                {
+                    "uuid": "2d72034e-52a6-4a5f-9e83-4961d1faccdc",
+                    "title": "Atlasity System Security Plan (SSP) URL",
+                    "description": "https://atlas-dev.c2labs.com//securityplans/form/39"
+                }
+            ]
+        }
+    }
+}

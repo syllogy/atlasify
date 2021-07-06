@@ -564,7 +564,7 @@ for i in ctrls:
             break
     #break loop if no match
     if bMatch == False:
-        print(Logger.ERROR + i["control-id"] + " has no match" + Logger.END)
+        print(Logger.WARNING + i["control-id"] + " has no match" + Logger.END)
         intMisses += 1
         break
 
@@ -748,7 +748,7 @@ for i in ctrls:
 
 #troubleshooting
 if intMisses > 0:
-    print(Logger.ERROR + str(intMisses) + " total controls missing in this catalog." + Logger.END)
+    print(Logger.WARNING + str(intMisses) + " total controls missing in this catalog/profile." + Logger.END)
 print(Logger.OK + "SUCCESS: " + str(intTotal) + " controls were found and mapped correctly for this SSP." + Logger.END)
 print(Logger.OK + "SUCCESS: " + str(intCompTotal) + " components were uploaded for this SSP." + Logger.END)
 print(Logger.OK + "SUCCESS: " + str(intParamTotal) + " parameters were uploaded for this SSP." + Logger.END)
