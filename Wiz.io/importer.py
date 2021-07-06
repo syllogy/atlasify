@@ -119,8 +119,11 @@ for sc in nistCSFData["securityFrameworks"]["nodes"]:
 wizCTRLS = open('wiz-results/controls_result_file.json', 'r', encoding='utf-8-sig')
 wisCTRLSData = json.load(wizCTRLS)
 
-#loop through the Wiz controls
+#container for control data
 wizControls = []
+fullControls = []
+
+#loop through each Wiz control
 for sc in wisCTRLSData["controls"]["nodes"]:
     # new model for controls
     wizCTRLModel = {
@@ -140,6 +143,19 @@ for sc in wisCTRLSData["controls"]["nodes"]:
         "cis-71-id": '',
         "iso-27001-id": '',
         "cis-gcp-110-id": ''
+    }
+
+    #capture all control information in a new matrix
+    fullCTRLModel = {
+        "id": '',
+        "externalId": '',
+        "title": '',
+        "description": '',
+        "categoryId": '',
+        "categoryExternalId": '',
+        "categoryName": '',
+        "frameworkId": '',
+        "frameworkName": ''
     }
 
     # map fields
@@ -185,8 +201,20 @@ for sc in wisCTRLSData["controls"]["nodes"]:
         if scat["category"]["framework"]["id"] == "wf-id-9":
             wizCTRLModel["cis-gcp-110-id"]= scat["category"]["id"]
 
+        # map the full control list
+        fullCTRLModel["frameworkId"] = scat["category"]["framework"]["id"]
+        fullCTRLModel["frameworkName"] = scat["category"]["framework"]["name"]
+        fullCTRLModel["categoryId"] = scat["category"]["id"]
+        fullCTRLModel["categoryExternalId"] = scat["category"]["externalId"]
+        fullCTRLModel["categoryName"] = scat["category"]["name"]
+        fullCTRLModel["id"] = scat["id"]
+        fullCTRLModel["externalId"] = scat["externalId"]
+        fullCTRLModel["title"] = scat["title"]
+        fullCTRLModel["description"] = scat["description"]
+
     #add to the array
     wizControls.append(wizCTRLModel)
+    fullControls.append(fullCTRLModel)
 
 # get the Wiz issues
 wizISS = open('wiz-results/issues_result_file.json', 'r', encoding='utf-8-sig')
@@ -352,6 +380,8 @@ with open("wiz-results/consolidatedFrameworks.json", "w") as outfile:
     outfile.write(json.dumps(ctrlList, indent=4)) 
 with open("wiz-results/wizControls.json", "w") as outfile: 
     outfile.write(json.dumps(wizControls, indent=4)) 
+with open("wiz-results/fullControls.json", "w") as outfile: 
+    outfile.write(json.dumps(fullControls, indent=4)) 
 with open("wiz-results/wizIssues.json", "w") as outfile: 
     outfile.write(json.dumps(wizIssueList, indent=4)) 
 with open("wiz-results/atlasityIssues.json", "w") as outfile: 
