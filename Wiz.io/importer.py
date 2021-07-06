@@ -292,8 +292,11 @@ intLoop = 0
 intL1 = 0
 intL2 = 0
 intL3 = 0
+intTotalIssues = 0
 atlasityIssues = []
 for iss in wizIssueList:
+    #increment the counter
+    intTotalIssues += 1
     #get the record based on control ID
     found = list(filter(lambda x: x["id"] == iss["controlId"], wizControls))
     #get first item in the list
@@ -354,14 +357,8 @@ for iss in wizIssueList:
         # add to the list
         atlasityIssues.append(atlasityIssueModel)
 
-# output the result
-print(Logger.OK + "SUCCESS: " + str(intLoop) + " issues related to NIST CSF were identified." + Logger.END)
-print(Logger.OK + "SUCCESS: " + str(intL1) + " Level 1 issues related to NIST CSF were identified." + Logger.END)
-print(Logger.OK + "SUCCESS: " + str(intL2) + " Level 2 issues related to NIST CSF were identified." + Logger.END)
-print(Logger.OK + "SUCCESS: " + str(intL3) + " Level 3 issues related to NIST CSF were identified." + Logger.END)
-
 # loop through Atlasity issues
-url_issues = "http://localhost:5000/api/issues"
+url_issues = "https://atlas-dev.c2labs.com/api/issues"
 intControlCount = 0
 for iss in atlasityIssues:
     if iss["severityLevel"] == "I - High - Significant Deficiency":
@@ -380,6 +377,13 @@ for iss in atlasityIssues:
             print (Logger.ERROR + "Timeout Error:",errt + Logger.END)
         except requests.exceptions.RequestException as err:
             print (Logger.ERROR + "OOps: Something Else", err + Logger.END)
+
+# output the result
+print(Logger.OK + "SUCCESS: " + str(intLoop) + " issues related to NIST CSF were identified." + Logger.END)
+print(Logger.OK + "SUCCESS: " + str(intL1) + " Level 1 issues related to NIST CSF were identified." + Logger.END)
+print(Logger.OK + "SUCCESS: " + str(intL2) + " Level 2 issues related to NIST CSF were identified." + Logger.END)
+print(Logger.OK + "SUCCESS: " + str(intL3) + " Level 3 issues related to NIST CSF were identified." + Logger.END)
+print(Logger.OK + "INFO: " + str(intTotalIssues) + " total issues are in this Wiz.io set." + Logger.END)
 
 #artifacts for troubleshooting/verifications
 with open("wiz-results/frameworkList.json", "w") as outfile: 
