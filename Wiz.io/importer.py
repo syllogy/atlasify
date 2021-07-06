@@ -155,7 +155,12 @@ for sc in wisCTRLSData["controls"]["nodes"]:
         "categoryExternalId": '',
         "categoryName": '',
         "frameworkId": '',
-        "frameworkName": ''
+        "frameworkName": '',
+        "wizId": '',
+        "wizName": '',
+        "wizDescription": '',
+        "wizType": '',
+        "wizSeverity": ''
     }
 
     # map fields
@@ -211,6 +216,11 @@ for sc in wisCTRLSData["controls"]["nodes"]:
         fullCTRLModel["externalId"] = scat["externalId"]
         fullCTRLModel["title"] = scat["title"]
         fullCTRLModel["description"] = scat["description"]
+        fullCTRLModel["wizId"] = sc["id"]
+        fullCTRLModel["wizName"] = sc["name"]
+        fullCTRLModel["wizDescription"] = sc["description"]
+        fullCTRLModel["wizType"] = sc["type"]
+        fullCTRLModel["wizSeverity"] = sc["severity"]
 
     #add to the array
     wizControls.append(wizCTRLModel)
