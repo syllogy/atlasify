@@ -7,6 +7,9 @@ import json
 import argparse
 import datetime
 
+# HTML table creator
+from json2html import *
+
 class Logger:
     OK = '\033[92m'
     WARNING = '\033[93m'
@@ -119,8 +122,11 @@ for sc in nistCSFData["securityFrameworks"]["nodes"]:
 wizCTRLS = open('wiz-results/controls_result_file.json', 'r', encoding='utf-8-sig')
 wisCTRLSData = json.load(wizCTRLS)
 
-#loop through the Wiz controls
+#container for control data
 wizControls = []
+fullControls = []
+
+#loop through each Wiz control
 for sc in wisCTRLSData["controls"]["nodes"]:
     # new model for controls
     wizCTRLModel = {
@@ -184,6 +190,41 @@ for sc in wisCTRLSData["controls"]["nodes"]:
         # match CIS GCP 1.1.0
         if scat["category"]["framework"]["id"] == "wf-id-9":
             wizCTRLModel["cis-gcp-110-id"]= scat["category"]["id"]
+
+        #capture all control information in a new matrix
+        fullCTRLModel = {
+            "id": '',
+            "externalId": '',
+            "title": '',
+            "description": '',
+            "categoryId": '',
+            "categoryExternalId": '',
+            "categoryName": '',
+            "frameworkId": '',
+            "frameworkName": '',
+            "wizId": '',
+            "wizName": '',
+            "wizDescription": '',
+            "wizType": '',
+            "wizSeverity": ''
+        }
+
+        # map the full control list
+        fullCTRLModel["frameworkId"] = scat["category"]["framework"]["id"]
+        fullCTRLModel["frameworkName"] = scat["category"]["framework"]["name"]
+        fullCTRLModel["categoryId"] = scat["category"]["id"]
+        fullCTRLModel["categoryExternalId"] = scat["category"]["externalId"]
+        fullCTRLModel["categoryName"] = scat["category"]["name"]
+        fullCTRLModel["id"] = scat["id"]
+        fullCTRLModel["externalId"] = scat["externalId"]
+        fullCTRLModel["title"] = scat["title"]
+        fullCTRLModel["description"] = scat["description"]
+        fullCTRLModel["wizId"] = sc["id"]
+        fullCTRLModel["wizName"] = sc["name"]
+        fullCTRLModel["wizDescription"] = sc["description"]
+        fullCTRLModel["wizType"] = sc["type"]
+        fullCTRLModel["wizSeverity"] = sc["severity"]
+        fullControls.append(fullCTRLModel)
 
     #add to the array
     wizControls.append(wizCTRLModel)
@@ -249,91 +290,114 @@ for iss in wisIssues["issues"]["nodes"]:
             wizIssueModel["ticketURL"] = iss["serviceTicket"]["url"]
     wizIssueList.append(wizIssueModel)
 
-#loop through issues and see which ones relate to NIST CSF
-intLoop = 0
+#loop through issues 
 intL1 = 0
 intL2 = 0
 intL3 = 0
+intTotalIssues = 0
 atlasityIssues = []
 for iss in wizIssueList:
-    #get the record based on control ID
-    found = list(filter(lambda x: x["id"] == iss["controlId"], wizControls))
-    #get first item in the list
-    found = found[0]
-    #see if it has a corresponding NIST CSF ID (ignore others)
-    if (found["nist-csf-id"] != ""):
-        # increment counter for number of issues
-        intLoop += 1
-        # create an issue
-        atlasityIssueModel = {
-            "id": 0,
-            "uuid": '',
-            "title": '',
-            "description": '',
-            "severityLevel": '',
-            "issueOwnerId": userId,
-            "orgId": None,
-            "facilityId": None,
-            "costEstimate": 0,
-            "dueDate": None,
-            "identification": 'Security Control Assessment',
-            "sourceReport": '',
-            "status": 'Open',
-            "dateCompleted": None,
-            "createdById": userId,
-            "dateCreated": None,
-            "lastUpdatedById": userId,
-            "dateLastUpdated": '',
-            "parentId": intPlan,
-            "parentModule": 'securityplans'
+    #increment the counter
+    intTotalIssues += 1
+    # create an issue
+    atlasityIssueModel = {
+        "id": 0,
+        "uuid": '',
+        "title": '',
+        "description": '',
+        "severityLevel": '',
+        "issueOwnerId": userId,
+        "orgId": None,
+        "facilityId": None,
+        "costEstimate": 0,
+        "dueDate": None,
+        "identification": 'Security Control Assessment',
+        "sourceReport": '',
+        "status": 'Open',
+        "dateCompleted": None,
+        "createdById": userId,
+        "dateCreated": None,
+        "lastUpdatedById": userId,
+        "dateLastUpdated": '',
+        "parentId": intPlan,
+        "parentModule": 'securityplans'
+    }
+    # map attributes to the issue
+    atlasityIssueModel["title"] = iss["entityName"] + " - " + iss["controlName"]
+    atlasityIssueModel["description"] = "Wiz Control ID: " + iss["controlId"] + "<br/>"
+    atlasityIssueModel["description"] += "First Detected: " + iss["createdAt"] + "<br/>"
+    atlasityIssueModel["description"] += "Last Scanned: " + iss["updatedAt"] + "<br/>"
+    atlasityIssueModel["description"] += "Wiz Severity: " + iss["severity"] + "<br/>"
+    atlasityIssueModel["description"] += "Wiz Entity ID: " + iss["entityId"] + "<br/>"
+    atlasityIssueModel["description"] += "Wiz Entity Type: " + iss["entityType"] + "<br/>"
+    if iss["ticketId"] != '':
+        atlasityIssueModel["description"] += "Jira Ticket #: " + iss["ticketId"] + "<br/>"
+    if iss["ticketURL"] != '':
+        atlasityIssueModel["description"] += "Jira Ticket URL: " + iss["ticketURL"] + "<br/>"
+    atlasityIssueModel["sourceReport"] = "Wiz.io Issue #: " + iss["id"]
+    # status mapping
+    if iss["severity"] == 'CRITICAL':
+        atlasityIssueModel["dueDate"] = (datetime.date.today() + datetime.timedelta(days=30)).strftime("%m/%d/%Y")
+        atlasityIssueModel["severityLevel"] = "I - High - Significant Deficiency"
+        intL1 += 1
+    elif iss["severity"] == "HIGH":
+        atlasityIssueModel["dueDate"] = (datetime.date.today() + datetime.timedelta(days=90)).strftime("%m/%d/%Y")
+        atlasityIssueModel["severityLevel"] = "II - Moderate - Reportable Condition"
+        intL2 += 1
+    else:
+        atlasityIssueModel["dueDate"] = (datetime.date.today() + datetime.timedelta(days=365)).strftime("%m/%d/%Y")
+        atlasityIssueModel["severityLevel"] = "III - Low - Other Weakness"
+        intL3 += 1
+
+    #loop through the full controls to find matches
+    ctrlMatches = []
+    intLoop = 0
+    for full in fullControls:
+        # see if the Wiz ID matches
+        if full["wizId"] == iss["controlId"]:
+            # add all matching controls to the array (one Wiz ID could be mapped to many control frameworks)
+            ctrlMatches.append(full)
+            intLoop += 1
+    
+    #clean the results (only show a limited set of columns)
+    ctrlClean = []
+    for ele in ctrlMatches:
+        clean = {
+            "Framework": "",
+            "Control ID": "",
+            "Title": "",
+            "Category": "",
+            "Description": ""
         }
-        #map attributes to the issue
-        atlasityIssueModel["title"] = iss["entityName"] + " - " + iss["controlName"]
-        atlasityIssueModel["description"] = "Wiz Control ID: " + iss["controlId"] + "<br/>"
-        atlasityIssueModel["description"] += "First Detected: " + iss["createdAt"] + "<br/>"
-        atlasityIssueModel["description"] += "Last Scanned: " + iss["updatedAt"] + "<br/>"
-        atlasityIssueModel["description"] += "Wiz Severity: " + iss["severity"] + "<br/>"
-        atlasityIssueModel["description"] += "Wiz Entity ID: " + iss["entityId"] + "<br/>"
-        atlasityIssueModel["description"] += "Wiz Entity Type: " + iss["entityType"] + "<br/>"
-        if iss["ticketId"] != '':
-            atlasityIssueModel["description"] += "Jira Ticket #: " + iss["ticketId"] + "<br/>"
-        if iss["ticketURL"] != '':
-            atlasityIssueModel["description"] += "Jira Ticket URL: " + iss["ticketURL"] + "<br/>"
-        atlasityIssueModel["sourceReport"] = "Wiz.io Issue #: " + iss["id"]
-        #status mapping
-        if iss["severity"] == 'CRITICAL':
-            atlasityIssueModel["dueDate"] = (datetime.date.today() + datetime.timedelta(days=30)).strftime("%m/%d/%Y")
-            atlasityIssueModel["severityLevel"] = "I - High - Significant Deficiency"
-            intL1 += 1
-        elif iss["severity"] == "HIGH":
-            atlasityIssueModel["dueDate"] = (datetime.date.today() + datetime.timedelta(days=90)).strftime("%m/%d/%Y")
-            atlasityIssueModel["severityLevel"] = "II - Moderate - Reportable Condition"
-            intL2 += 1
+        # map
+        clean["Framework"] = ele["frameworkName"]
+        clean["Category"] = ele["categoryName"]
+        if (clean["Framework"] == "Wiz"):
+            clean["Control ID"] = ele["wizId"]
+            clean["Title"] = ele["wizName"]
+            clean["Description"] = ele["wizDescription"]
         else:
-            atlasityIssueModel["dueDate"] = (datetime.date.today() + datetime.timedelta(days=365)).strftime("%m/%d/%Y")
-            atlasityIssueModel["severityLevel"] = "III - Low - Other Weakness"
-            intL3 += 1
-        # add to the list
-        atlasityIssues.append(atlasityIssueModel)
+            clean["Control ID"] = ele["externalId"]
+            clean["Title"] = ele["title"]
+            clean["Description"] = ele["description"]
+        ctrlClean.append(clean)
 
-# output the result
-print(Logger.OK + "SUCCESS: " + str(intLoop) + " issues related to NIST CSF were identified." + Logger.END)
-print(Logger.OK + "SUCCESS: " + str(intL1) + " Level 1 issues related to NIST CSF were identified." + Logger.END)
-print(Logger.OK + "SUCCESS: " + str(intL2) + " Level 2 issues related to NIST CSF were identified." + Logger.END)
-print(Logger.OK + "SUCCESS: " + str(intL3) + " Level 3 issues related to NIST CSF were identified." + Logger.END)
-
+    # turn the table into HTML
+    atlasityIssueModel["description"] += "<br/><h3>Control Mappings</h3><br/>" + json2html.convert(json = ctrlClean)
+    # add to the list
+    atlasityIssues.append(atlasityIssueModel)
+        
 # loop through Atlasity issues
-url_issues = "http://localhost:5000/api/issues"
+url_issues = "https://atlas-dev.c2labs.com/api/issues"
 intControlCount = 0
 for iss in atlasityIssues:
     if iss["severityLevel"] == "I - High - Significant Deficiency":
         # create the control
         try:
-            #response = requests.request("POST", url_issues, headers=headers, json=iss)
-            #scJsonResponse = response.json()
-            #print(Logger.OK + "Success - " + str(scJsonResponse["id"]) + Logger.END)
+            response = requests.request("POST", url_issues, headers=headers, json=iss)
+            scJsonResponse = response.json()
+            print(Logger.OK + "Success - " + str(scJsonResponse["id"]) + Logger.END)
             intControlCount += 1
-            print(Logger.OK + "Success - " + str(intControlCount) + Logger.END)
         except requests.exceptions.HTTPError as errh:
             print (Logger.ERROR + "Http Error:", errh  + Logger.END)
         except requests.exceptions.ConnectionError as errc:
@@ -342,6 +406,12 @@ for iss in atlasityIssues:
             print (Logger.ERROR + "Timeout Error:",errt + Logger.END)
         except requests.exceptions.RequestException as err:
             print (Logger.ERROR + "OOps: Something Else", err + Logger.END)
+
+# output the result
+print(Logger.OK + "SUCCESS: " + str(intL1) + " Level 1 issues were identified." + Logger.END)
+print(Logger.OK + "SUCCESS: " + str(intL2) + " Level 2 issues were identified." + Logger.END)
+print(Logger.OK + "SUCCESS: " + str(intL3) + " Level 3 issues were identified." + Logger.END)
+print(Logger.OK + "INFO: " + str(intTotalIssues) + " total issues are in this Wiz.io set." + Logger.END)
 
 #artifacts for troubleshooting/verifications
 with open("wiz-results/frameworkList.json", "w") as outfile: 
@@ -352,6 +422,8 @@ with open("wiz-results/consolidatedFrameworks.json", "w") as outfile:
     outfile.write(json.dumps(ctrlList, indent=4)) 
 with open("wiz-results/wizControls.json", "w") as outfile: 
     outfile.write(json.dumps(wizControls, indent=4)) 
+with open("wiz-results/fullControls.json", "w") as outfile: 
+    outfile.write(json.dumps(fullControls, indent=4)) 
 with open("wiz-results/wizIssues.json", "w") as outfile: 
     outfile.write(json.dumps(wizIssueList, indent=4)) 
 with open("wiz-results/atlasityIssues.json", "w") as outfile: 
