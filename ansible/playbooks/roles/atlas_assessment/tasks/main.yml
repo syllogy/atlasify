@@ -1,0 +1,35 @@
+- name: API - Create Assessment
+  uri:
+    url: "{{ api_baseurl }}/api/assessments"
+    method: POST
+    headers:
+      Authorization: Bearer {{ bearer_token }}
+      accept: application/json
+    return_content: yes
+    # status_code: 200
+    body_format: json
+    body:
+      "leadAssessorId": "{{ assessor_id }}"
+      "title": "{{ control_id }} Assessment Test - {{ ansible_date_time.iso8601 }}"
+      "assessmentType": "Script/DevOps Check"
+      "assessmentResult": "{{ overall_result }}"
+      "plannedStart": "{{ ansible_date_time.iso8601 }}"
+      "plannedFinish": "{{ ansible_date_time.iso8601 }}"
+      "status": "Complete"
+      "actualFinish": "{{ ansible_date_time.iso8601 }}"
+      "assessmentReport": "{{ total_pass + assessment_report_total }}"
+      "parentId": "{{ control_id }}"
+      "parentModule": "controls"
+      "createdById": "{{ assessor_id }}"
+      "dateCreated": "{{ ansible_date_time.iso8601 }}"
+      "lastUpdatedById": "{{ assessor_id }}"
+      "dateLastUpdated": "{{ ansible_date_time.iso8601 }}"
+  register: assessment
+  delegate_to: localhost
+  run_once: true
+
+- name: Return Record ID
+  debug:
+    msg: "Record ID: {{ assessment.json.id }}"
+  delegate_to: localhost
+  run_once: true

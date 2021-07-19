@@ -1,0 +1,79 @@
+---
+
+- name: Getting Started First Playbook
+  gather_facts: true
+  hosts: managed-hosts
+  
+  # vars:
+  #   assessment_report_total: []
+  vars:
+    HOST_COUNT: "{{ ansible_play_hosts | length }}"
+
+  tasks:
+
+    - name: Get hostname
+      shell: hostname
+      register: hn
+    
+    - name: Set Host Fact
+      set_fact:
+        assessment_report: "{{ hn.stdout }}"
+        cacheable: yes
+
+    # - name: Update Total Fact
+    #   set_fact:
+    #     assessment_report_total: "{{ assessment_report_total }} + [ ' {{ item.assessment_report }}' ]"
+    #     # cacheable: yes
+    #   with items: "{{ hostvars.ansible_facts }}"
+    #   run_once: true
+
+    # - debug: msg="{{ hn.stdout }}"
+
+    # - name: Debug - Total Report
+    #   debug: var=assessment_report_total
+    #   run_once: true
+
+    - name: Debug - Loop
+      debug:
+    # msg: "OUTPUT: {{ item }}"
+        msg: "{{ hostvars[item]['ansible_facts']['assessment_report'] }}"
+      loop: "{{ ansible_play_hosts }}"
+      run_once: true
+
+    - name: Ansible create file if it doesn't exist example
+      file:
+        path: "/tmp/output.txt"
+        state: touch
+      delegate_to: localhost
+
+    - name: Ansible insert lineinfile example
+      lineinfile:
+        dest: /tmp/output.txt
+        line: "{{ hostvars[item]['ansible_facts']['assessment_report'] }}"
+        state: present
+        create: yes
+      loop: "{{ ansible_play_hosts }}"
+      delegate_to: localhost
+      run_once: true
+
+    - name: Debug - Host Count
+      debug:
+        msg: "{{ HOST_COUNT }}"
+      run_once: true
+
+
+    # - name: Set Hopeful Fact
+    #   set_fact:
+    #     hopeful: "{{ hostvars[item]['ansible_facts']['assessment_report'] }}"
+    #     cacheable: yes
+    #   loop: "{{ ansible_play_batch }}"
+    #   run_once: true
+
+    # - name: Concatenate the list
+    #   set_fact:
+    #     my_joined_list: "{{ hopeful | join('\n') }}"
+
+    # - name: Debug - Hopeful as registered
+    #   debug:
+    #     msg: " {{ my_joined_list }}"
+    #   run_once: true
