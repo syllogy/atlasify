@@ -16,4 +16,8 @@ Check back often as our list of example code for integrations is expanding rapid
 - Parser for NIST 800-171
 - OSCAL Parser for NIST 800-53 Rev5
 - Integration for JIRA
+- Parser for CMMC with Objectives
+- Parser for NIST Privacy Framework
+- Integration with Wiz.io
+- OSCAL SSP Importer for GovReady
 - Ansible Playbooks to read in a list of assets, run compliance checks against those assets, and log an assessment against a given security plan.
