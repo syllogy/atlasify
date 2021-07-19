@@ -1,0 +1,1930 @@
+{
+    "Controls2Objectives": [
+        {
+            "CMMC": "AC.1.001",
+            "CUI": "3.1.1",
+            "Practice Requirement": "Limit information system access to authorized users, processes acting on behalf of authorized users, or devices (including other information systems).",
+            "Assessment Objective ID": "AC.1.001[a]",
+            "Assessment Objective": "authorized users are identified;"
+        },
+        {
+            "Assessment Objective ID": "AC.1.001[b]",
+            "Assessment Objective": "processes acting on behalf of authorized users are identified;"
+        },
+        {
+            "Assessment Objective ID": "AC.1.001[c]",
+            "Assessment Objective": "devices (and other systems) authorized to connect to the system are identified;"
+        },
+        {
+            "Assessment Objective ID": "AC.1.001[d]",
+            "Assessment Objective": "system access is limited to authorized users;"
+        },
+        {
+            "Assessment Objective ID": "AC.1.001[e]",
+            "Assessment Objective": "system access is limited to processes acting on behalf of authorized users; and"
+        },
+        {
+            "Assessment Objective ID": "AC.1.001[f]",
+            "Assessment Objective": "system access is limited to authorized devices (including other systems)."
+        },
+        {
+            "CMMC": "AC.1.002",
+            "CUI": "3.1.2",
+            "Practice Requirement": "Limit information system access to the types of transactions and functions that authorized users are permitted to execute.",
+            "Assessment Objective ID": "AC.1.002[a]",
+            "Assessment Objective": "the types of transactions and functions that authorized users are permitted to execute are defined; and"
+        },
+        {
+            "Assessment Objective ID": "AC.1.002[b]",
+            "Assessment Objective": "system access is limited to the defined types of transactions and functions for authorized users."
+        },
+        {
+            "CMMC": "AC.1.003",
+            "CUI": "3.1.20",
+            "Practice Requirement": "Verify and control/limit connections to and use of external information systems.",
+            "Assessment Objective ID": "AC.1.003[a]",
+            "Assessment Objective": "connections to external systems are identified;"
+        },
+        {
+            "Assessment Objective ID": "AC.1.003[c]",
+            "Assessment Objective": "connections to external systems are verified;"
+        },
+        {
+            "Assessment Objective ID": "AC.1.003[e]",
+            "Assessment Objective": "connections to external systems are controlled/limited; and"
+        },
+        {
+            "Assessment Objective ID": "AC.1.003[b]",
+            "Assessment Objective": "the use of external systems is identified;"
+        },
+        {
+            "Assessment Objective ID": "AC.1.003[d]",
+            "Assessment Objective": "the use of external systems is verified;"
+        },
+        {
+            "Assessment Objective ID": "AC.1.003[f]",
+            "Assessment Objective": "the use of external systems is controlled/limited."
+        },
+        {
+            "CMMC": "AC.1.004",
+            "CUI": "3.1.22",
+            "Practice Requirement": "Control information posted or processed on publicly accessible information systems.",
+            "Assessment Objective ID": "AC.1.004[a]",
+            "Assessment Objective": "individuals authorized to post or process information on publicly accessible systems are identified;"
+        },
+        {
+            "Assessment Objective ID": "AC.1.004[b]",
+            "Assessment Objective": "procedures to ensure FCI is not posted or processed on publicly accessible systems are identified;"
+        },
+        {
+            "Assessment Objective ID": "AC.1.004[c]",
+            "Assessment Objective": "a review process is in place prior to posting of any content to publicly accessible systems;"
+        },
+        {
+            "Assessment Objective ID": "AC.1.004[d]",
+            "Assessment Objective": "content on publicly accessible systems is reviewed to ensure that it does not include FCI; and"
+        },
+        {
+            "Assessment Objective ID": "AC.1.004[e]",
+            "Assessment Objective": "mechanisms are in place to remove and address improper posting of FCI."
+        },
+        {
+            "CMMC": "AC.2.005",
+            "CUI": "3.1.9",
+            "Practice Requirement": "Provide privacy and security notices consistent with applicable CUI rules.",
+            "Assessment Objective ID": "AC.2.005[a]",
+            "Assessment Objective": "privacy and security notices required by CUI-specified rules are identified, consistent, and associated with the specific CUI category; and"
+        },
+        {
+            "Assessment Objective ID": "AC.2.005[b]",
+            "Assessment Objective": "privacy and security notices are displayed."
+        },
+        {
+            "CMMC": "AC.2.006",
+            "CUI": "3.1.21",
+            "Practice Requirement": "Limit use of portable storage devices on external systems.",
+            "Assessment Objective ID": "AC.2.006[a]",
+            "Assessment Objective": "the use of portable storage devices containing CUI on external systems is identified and documented."
+        },
+        {
+            "Assessment Objective ID": "AC.2.006[b]",
+            "Assessment Objective": "limits on the use of portable storage devices containing CUI on external systems are defined."
+        },
+        {
+            "Assessment Objective ID": "AC.2.006[c]",
+            "Assessment Objective": "the use of portable storage devices containing CUI on external systems is limited as defined."
+        },
+        {
+            "CMMC": "AC.2.007",
+            "CUI": "3.1.5",
+            "Practice Requirement": "Employ the principle of least privilege, including for specific security functions and privileged accounts.",
+            "Assessment Objective ID": "AC.2.007[a]",
+            "Assessment Objective": "privileged accounts are identified."
+        },
+        {
+            "Assessment Objective ID": "AC.2.007[b]",
+            "Assessment Objective": "access to privileged accounts is authorized in accordance with the principle of least privilege."
+        },
+        {
+            "Assessment Objective ID": "AC.2.007[c]",
+            "Assessment Objective": "security functions are identified."
+        },
+        {
+            "Assessment Objective ID": "AC.2.007[d]",
+            "Assessment Objective": "access to security functions is authorized in accordance with the principle of least privilege."
+        },
+        {
+            "CMMC": "AC.2.008",
+            "CUI": "3.1.6",
+            "Practice Requirement": "Use non-privileged accounts or roles when accessing nonsecurity functions",
+            "Assessment Objective ID": "AC.2.008[a]",
+            "Assessment Objective": "Requirement to Use non-privileged accounts or roles when accessing nonsecurity functions is defined."
+        },
+        {
+            "Assessment Objective ID": "AC.2.008[c]",
+            "Assessment Objective": "users are required to use non-privileged accounts or roles when accessing nonsecurity functions."
+        },
+        {
+            "Assessment Objective ID": "AC.2.008[b]",
+            "Assessment Objective": "nonsecurity functions are identified."
+        },
+        {
+            "CMMC": "AC.2.009",
+            "CUI": "3.1.8",
+            "Practice Requirement": "Limit unsuccessful logon attempts",
+            "Assessment Objective ID": "AC.2.009[a]",
+            "Assessment Objective": "the means of limiting unsuccessful logon attempts is defined."
+        },
+        {
+            "Assessment Objective ID": "AC.2.009[b]",
+            "Assessment Objective": "the defined means of limiting unsuccessful logon attempts is implemented."
+        },
+        {
+            "CMMC": "AC.2.010",
+            "CUI": "3.1.10",
+            "Practice Requirement": "Use session lock with pattern-hiding displays to prevent access and viewing of data after a period of inactivity.",
+            "Assessment Objective ID": "AC.2.010[a]",
+            "Assessment Objective": "Requirement to Use session lock with pattern-hiding displays to prevent access and viewing of data after a period of inactivity is defined."
+        },
+        {
+            "Assessment Objective ID": "AC.2.010[b]",
+            "Assessment Objective": "the period of inactivity after which the system initiates a session lock is defined."
+        },
+        {
+            "Assessment Objective ID": "AC.2.010[c]",
+            "Assessment Objective": "access to the system and viewing of data is prevented by initiating a session lock after the defined period of inactivity."
+        },
+        {
+            "Assessment Objective ID": "AC.2.010[d]",
+            "Assessment Objective": "previously visible information is concealed via a pattern-hiding display after the defined period of inactivity."
+        },
+        {
+            "CMMC": "AC.2.011",
+            "CUI": "3.1.16",
+            "Practice Requirement": "Authorize wireless access prior to allowing such connections.",
+            "Assessment Objective ID": "AC.2.011[a]",
+            "Assessment Objective": "wireless access points are identified."
+        },
+        {
+            "Assessment Objective ID": "AC.2.011[b]",
+            "Assessment Objective": "wireless access is authorized prior to allowing such connections."
+        },
+        {
+            "CMMC": "AC.2.013",
+            "CUI": "3.1.12",
+            "Practice Requirement": "Monitor and control remote access sessions.",
+            "Assessment Objective ID": "AC.2.013[a]",
+            "Assessment Objective": "remote access sessions are permitted."
+        },
+        {
+            "Assessment Objective ID": "AC.2.013[c]",
+            "Assessment Objective": "remote access sessions are controlled."
+        },
+        {
+            "Assessment Objective ID": "AC.2.013[d]",
+            "Assessment Objective": "remote access sessions are monitored."
+        },
+        {
+            "Assessment Objective ID": "AC.2.013[b]",
+            "Assessment Objective": "the types of permitted remote access are identified."
+        },
+        {
+            "CMMC": "AC.2.015",
+            "CUI": "3.1.14",
+            "Practice Requirement": "Route remote access via managed access control points.",
+            "Assessment Objective ID": "AC.2.015[a]",
+            "Assessment Objective": "managed access control points are identified and implemented."
+        },
+        {
+            "Assessment Objective ID": "AC.2.015[b]",
+            "Assessment Objective": "remote access is routed through managed network access control points."
+        },
+        {
+            "CMMC": "AC.2.016",
+            "CUI": "3.1.3",
+            "Practice Requirement": "Control the flow of CUI in accordance with approved authorizations.",
+            "Assessment Objective ID": "AC.2.016[a]",
+            "Assessment Objective": "information flow control policies are defined."
+        },
+        {
+            "Assessment Objective ID": "AC.2.016[b]",
+            "Assessment Objective": "methods and enforcement mechanisms for controlling the flow of CUI are defined."
+        },
+        {
+            "Assessment Objective ID": "AC.2.016[c]",
+            "Assessment Objective": "designated sources and destinations (e.g., networks, individuals, and devices) for CUI within the system and between interconnected systems are identified."
+        },
+        {
+            "Assessment Objective ID": "AC.2.016[d]",
+            "Assessment Objective": "authorizations for controlling the flow of CUI are defined."
+        },
+        {
+            "Assessment Objective ID": "AC.2.016[e]",
+            "Assessment Objective": "approved authorizations for controlling the flow of CUI are enforced."
+        },
+        {
+            "CMMC": "AC.3.012",
+            "CUI": "3.1.17",
+            "Practice Requirement": "Protect wireless access using authentication and encryption.\r",
+            "Assessment Objective ID": "AC.3.012[a]",
+            "Assessment Objective": "wireless access to the system is protected using authentication."
+        },
+        {
+            "Assessment Objective ID": "AC.3.012[b]",
+            "Assessment Objective": "wireless access to the system is protected using encryption."
+        },
+        {
+            "CMMC": "AC.3.014",
+            "CUI": "3.1.13",
+            "Practice Requirement": "Employ cryptographic mechanisms to protect the confidentiality of remote access sessions.",
+            "Assessment Objective ID": "AC.3.014[a]",
+            "Assessment Objective": "cryptographic mechanisms to protect the confidentiality of remote access sessions are identified."
+        },
+        {
+            "Assessment Objective ID": "AC.3.014[b]",
+            "Assessment Objective": "cryptographic mechanisms to protect the confidentiality of remote access sessions are implemented."
+        },
+        {
+            "CMMC": "AC.3.017",
+            "CUI": "3.1.4",
+            "Practice Requirement": "Separate the duties of individuals to reduce the risk of malevolent activity without collusion",
+            "Assessment Objective ID": "AC.3.017[a]",
+            "Assessment Objective": "the duties of individuals requiring separation are defined."
+        },
+        {
+            "Assessment Objective ID": "AC.3.017[c]",
+            "Assessment Objective": "access privileges that enable individuals to exercise the duties that require separation are granted to separate individuals."
+        },
+        {
+            "Assessment Objective ID": "AC.3.017[b]",
+            "Assessment Objective": "responsibilities for duties that require separation are assigned to separate individuals."
+        },
+        {
+            "CMMC": "AC.3.018",
+            "CUI": "3.1.7",
+            "Practice Requirement": "Prevent non-privileged users from executing privileged functions and capture the execution of such functions in audit logs.",
+            "Assessment Objective ID": "AC.3.018[a]",
+            "Assessment Objective": "privileged functions are defined."
+        },
+        {
+            "Assessment Objective ID": "AC.3.018[c]",
+            "Assessment Objective": "non-privileged users are prevented from executing privileged functions."
+        },
+        {
+            "Assessment Objective ID": "AC.3.018[b]",
+            "Assessment Objective": "non-privileged users are defined."
+        },
+        {
+            "Assessment Objective ID": "AC.3.018[d]",
+            "Assessment Objective": "the execution of privileged functions is captured in audit logs."
+        },
+        {
+            "CMMC": "AC.3.019",
+            "CUI": "3.1.11",
+            "Practice Requirement": "Terminate (automatically) a user session after a defined condition.",
+            "Assessment Objective ID": "AC.3.019[a]",
+            "Assessment Objective": "conditions requiring a user session to terminate are defined."
+        },
+        {
+            "Assessment Objective ID": "AC.3.019[b]",
+            "Assessment Objective": "a user session is automatically terminated after any of the defined conditions occur."
+        },
+        {
+            "CMMC": "AC.3.020",
+            "CUI": "3.1.18",
+            "Practice Requirement": "Control connection of mobile devices.",
+            "Assessment Objective ID": "AC.3.020[a]",
+            "Assessment Objective": "mobile devices that process, store, or transmit CUI are identified."
+        },
+        {
+            "Assessment Objective ID": "AC.3.020[b]",
+            "Assessment Objective": "mobile device connections are authorized."
+        },
+        {
+            "Assessment Objective ID": "AC.3.020[c]",
+            "Assessment Objective": "mobile device connections are monitored and logged."
+        },
+        {
+            "CMMC": "AC.3.021",
+            "CUI": "3.1.15",
+            "Practice Requirement": "Authorize remote execution of privileged commands and remote access to security-relevant information.",
+            "Assessment Objective ID": "AC.3.021[a]",
+            "Assessment Objective": "privileged commands authorized for remote execution are identified."
+        },
+        {
+            "Assessment Objective ID": "AC.3.021[c]",
+            "Assessment Objective": "the execution of the identified privileged commands via remote access is authorized."
+        },
+        {
+            "Assessment Objective ID": "AC.3.021[d]",
+            "Assessment Objective": "access to the identified security-relevant information via remote access is authorized."
+        },
+        {
+            "Assessment Objective ID": "AC.3.021[b]",
+            "Assessment Objective": "security-relevant information authorized to be accessed remotely is identified."
+        },
+        {
+            "CMMC": "AC.3.022",
+            "CUI": "3.1.19",
+            "Practice Requirement": "Encrypt CUI on mobile devices and mobile computing platforms",
+            "Assessment Objective ID": "AC.3.022[a]",
+            "Assessment Objective": "mobile devices and mobile computing platforms that process, store, or transmit CUI are identified."
+        },
+        {
+            "Assessment Objective ID": "AC.3.022[b]",
+            "Assessment Objective": "encryption is employed to protect CUI on identified mobile devices and mobile computing platforms."
+        },
+        {
+            "CMMC": "AM.3.036",
+            "CUI": "N/A",
+            "Practice Requirement": "Define procedures for the handling of CUI data.",
+            "Assessment Objective ID": "AM.3.036[a]",
+            "Assessment Objective": "the organization establishes and maintains one or more processes or procedures for handling CUI data."
+        },
+        {
+            "CMMC": " AT.2.056 ",
+            "CUI": " 3.2.1 ",
+            "Practice Requirement": "Ensure that managers, systems administrators, and users of organizational systems are made aware of the security risks associated with their activities and of the applicable policies, standards, and procedures related to the security of those systems.",
+            "Assessment Objective ID": " AT.2.056[a]",
+            "Assessment Objective": "security risks associated with organizational activities involving CUI are identified."
+        },
+        {
+            "Assessment Objective ID": " AT.2.056[b]",
+            "Assessment Objective": "policies, standards, and procedures related to the security of the system are identified."
+        },
+        {
+            "Assessment Objective ID": " AT.2.056[c]",
+            "Assessment Objective": "managers, systems administrators, and users of the system are made aware of the security risks associated with their activities."
+        },
+        {
+            "Assessment Objective ID": " AT.2.056[d]",
+            "Assessment Objective": "managers, systems administrators, and users of the system are made aware of the applicable policies, standards, and procedures related to the security of the system."
+        },
+        {
+            "CMMC": "AT.2.057",
+            "CUI": "3.2.2",
+            "Practice Requirement": "Ensure that personnel are trained to carry out their assigned information security-related duties and responsibilities.",
+            "Assessment Objective ID": "AT.2.057[a]",
+            "Assessment Objective": "information security-related duties, roles, and responsibilities are defined."
+        },
+        {
+            "Assessment Objective ID": "AT.2.057[b]",
+            "Assessment Objective": "information security-related duties, roles, and responsibilities are assigned to designated personnel."
+        },
+        {
+            "Assessment Objective ID": "AT.2.057[c]",
+            "Assessment Objective": "personnel are adequately trained to carry out their assigned information security-related duties, roles, and responsibilities."
+        },
+        {
+            "CMMC": "AT.3.058",
+            "CUI": "3.2.3",
+            "Practice Requirement": "Provide security awareness training on recognizing and reporting potential indicators of insider threat.",
+            "Assessment Objective ID": "AT.3.058[a]",
+            "Assessment Objective": "potential indicators associated with insider threats are identified."
+        },
+        {
+            "Assessment Objective ID": "AT.3.058[b]",
+            "Assessment Objective": "security awareness training on recognizing and reporting potential indicators of insider threat is provided to managers and employees."
+        },
+        {
+            "CMMC": "AU.2.041",
+            "CUI": "3.3.2",
+            "Practice Requirement": "Ensure that the actions of individual system users can be uniquely traced to those users so they can be held accountable for their actions.",
+            "Assessment Objective ID": "AU.2.041[a]",
+            "Assessment Objective": "the content of the audit records needed to support the ability to uniquely trace users to their actions is defined."
+        },
+        {
+            "Assessment Objective ID": "AU.2.041[b]",
+            "Assessment Objective": "audit records, once created, contain the defined content."
+        },
+        {
+            "CMMC": "AU.2.042",
+            "CUI": "3.3.1",
+            "Practice Requirement": "Create and retain system audit logs and records to the extent needed to enable the monitoring, analysis, investigation, and reporting of unlawful or unauthorized system activity.",
+            "Assessment Objective ID": "AU.2.042[a]",
+            "Assessment Objective": "audit logs needed (i.e., event types to be logged) to enable the monitoring, analysis, investigation, and reporting of unlawful or unauthorized system activity are specified."
+        },
+        {
+            "Assessment Objective ID": "AU.2.042[b]",
+            "Assessment Objective": "the content of audit records needed to support monitoring, analysis, investigation, and reporting of unlawful or unauthorized system activity is defined."
+        },
+        {
+            "Assessment Objective ID": "AU.2.042[e]",
+            "Assessment Objective": "retention requirements for audit records are defined."
+        },
+        {
+            "Assessment Objective ID": "AU.2.042[f]",
+            "Assessment Objective": "audit records are retained as defined."
+        },
+        {
+            "Assessment Objective ID": "AU.2.042[c]",
+            "Assessment Objective": "audit records are created (generated)."
+        },
+        {
+            "Assessment Objective ID": "AU.2.042[d]",
+            "Assessment Objective": "audit records, once created, contain the defined content."
+        },
+        {
+            "CMMC": "AU.2.043",
+            "CUI": "3.3.7",
+            "Practice Requirement": "Provide a system capability that compares and synchronizes internal system clocks with an authoritative source to generate time stamps for audit records.",
+            "Assessment Objective ID": "AU.2.043[b]",
+            "Assessment Objective": "an authoritative source with which to compare and synchronize internal system clocks is specified."
+        },
+        {
+            "Assessment Objective ID": "AU.2.043[a]",
+            "Assessment Objective": "internal system clocks are used to generate time stamps for audit records."
+        },
+        {
+            "Assessment Objective ID": "AU.2.043[c]",
+            "Assessment Objective": "internal system clocks used to generate time stamps for audit records are compared to and synchronized with the specified authoritative time source."
+        },
+        {
+            "CMMC": "AU.2.044",
+            "CUI": "N/A",
+            "Practice Requirement": "Review audit logs.",
+            "Assessment Objective ID": "AU.2.044[a]",
+            "Assessment Objective": "the organization defines one or more policies and/or procedures for the event types to look for when information system audit records are reviewed and analyzed;"
+        },
+        {
+            "Assessment Objective ID": "AU.2.044[b]",
+            "Assessment Objective": "the organization defines one or more policies and/or procedures for the frequency to review and analyze information system audit records for indications of organizationally defined events; and"
+        },
+        {
+            "Assessment Objective ID": "AU.2.044[c]",
+            "Assessment Objective": "the organization reviews and analyzes information system audit records for indications of organizationally defined events with the organization-defined frequency."
+        },
+        {
+            "CMMC": "AU.3.045",
+            "CUI": "3.3.3",
+            "Practice Requirement": "Review and update logged events.",
+            "Assessment Objective ID": "AU.3.045[a]",
+            "Assessment Objective": "a process for determining when to review logged events is defined."
+        },
+        {
+            "Assessment Objective ID": "AU.3.045[b]",
+            "Assessment Objective": "event types being logged are reviewed in accordance with the defined review process."
+        },
+        {
+            "Assessment Objective ID": "AU.3.045[c]",
+            "Assessment Objective": "event types being logged are updated based on the review."
+        },
+        {
+            "CMMC": "AU.3.046",
+            "CUI": "3.3.4",
+            "Practice Requirement": "Alert in the event of an audit logging process failure.",
+            "Assessment Objective ID": "AU.3.046[a]",
+            "Assessment Objective": "personnel or roles to be alerted in the event of an audit logging process failure are identified."
+        },
+        {
+            "Assessment Objective ID": "AU.3.046[b]",
+            "Assessment Objective": "types of audit logging process failures for which alert will be generated are defined."
+        },
+        {
+            "Assessment Objective ID": "AU.3.046[c]",
+            "Assessment Objective": "identified personnel or roles are alerted in the event of an audit logging process failure."
+        },
+        {
+            "CMMC": "AU.3.048",
+            "CUI": "N/A",
+            "Practice Requirement": "Collect audit information (e.g., logs) into one or more central repositories.",
+            "Assessment Objective ID": "AU.3.048[a]",
+            "Assessment Objective": "the organization defines information system components that generate audit records whose content is to be centrally managed and configured;"
+        },
+        {
+            "Assessment Objective ID": "AU.3.048[c]",
+            "Assessment Objective": "the central repositories have the appropriate infrastructure and capacity to meet the organizationally defined logging requirements."
+        },
+        {
+            "Assessment Objective ID": "AU.3.048[b]",
+            "Assessment Objective": "the organization manages audit information in centralized repositories; and"
+        },
+        {
+            "CMMC": "AU.3.049",
+            "CUI": "3.3.8",
+            "Practice Requirement": "Protect audit information and audit logging tools from unauthorized access, modification, and deletion.",
+            "Assessment Objective ID": "AU.3.049[a]",
+            "Assessment Objective": "audit information is protected from unauthorized access."
+        },
+        {
+            "Assessment Objective ID": "AU.3.049[b]",
+            "Assessment Objective": "audit information is protected from unauthorized modification."
+        },
+        {
+            "Assessment Objective ID": "AU.3.049[c]",
+            "Assessment Objective": "audit information is protected from unauthorized deletion."
+        },
+        {
+            "Assessment Objective ID": "AU.3.049[d]",
+            "Assessment Objective": "audit logging tools are protected from unauthorized access."
+        },
+        {
+            "Assessment Objective ID": "AU.3.049[e]",
+            "Assessment Objective": "audit logging tools are protected from unauthorized modification."
+        },
+        {
+            "Assessment Objective ID": "AU.3.049[f]",
+            "Assessment Objective": "audit logging tools are protected from unauthorized deletion."
+        },
+        {
+            "CMMC": "AU.3.050",
+            "CUI": "3.3.9",
+            "Practice Requirement": "Limit management of audit logging functionality to a subset of privileged users.",
+            "Assessment Objective ID": "AU.3.050[a]",
+            "Assessment Objective": "a subset of privileged users granted access to manage audit logging functionality is defined."
+        },
+        {
+            "Assessment Objective ID": "AU.3.050[b]",
+            "Assessment Objective": "management of audit logging functionality is limited to the defined subset of privileged users."
+        },
+        {
+            "CMMC": "AU.3.051",
+            "CUI": "3.3.5",
+            "Practice Requirement": "Correlate audit record review, analysis, and reporting processes for investigation and response to indications of unlawful, unauthorized, suspicious, or unusual activity.",
+            "Assessment Objective ID": "AU.3.051[a]",
+            "Assessment Objective": "audit record review, analysis, and reporting processes for investigation and response to indications of unlawful, unauthorized, suspicious, or unusual activity are defined."
+        },
+        {
+            "Assessment Objective ID": "AU.3.051[b]",
+            "Assessment Objective": "defined audit record review, analysis, and reporting processes are correlated."
+        },
+        {
+            "CMMC": "AU.3.052",
+            "CUI": "3.3.6",
+            "Practice Requirement": "Provide audit record reduction and report generation to support on-demand analysis and reporting.",
+            "Assessment Objective ID": "AU.3.052[a]",
+            "Assessment Objective": "an audit record reduction capability that supports on-demand analysis is provided."
+        },
+        {
+            "Assessment Objective ID": "AU.3.052[b]",
+            "Assessment Objective": "a report generation capability that supports on-demand reporting is provided."
+        },
+        {
+            "CMMC": "CA.2.157",
+            "CUI": "3.12.4",
+            "Practice Requirement": "Develop, document, and periodically update system security plans that describe system boundaries, system environments of operation, how security requirements are\r\nimplemented, and the relationships with or connections to other systems.",
+            "Assessment Objective ID": "CA.2.157[a]",
+            "Assessment Objective": "a system security plan is developed."
+        },
+        {
+            "Assessment Objective ID": "CA.2.157[b]",
+            "Assessment Objective": "the system boundary is described and documented in the system security plan."
+        },
+        {
+            "Assessment Objective ID": "CA.2.157[c]",
+            "Assessment Objective": "the system environment of operation is described and documented in the system security plan."
+        },
+        {
+            "Assessment Objective ID": "CA.2.157[d]",
+            "Assessment Objective": "the security requirements identified and approved by the designated authority as non-applicable are identified."
+        },
+        {
+            "Assessment Objective ID": "CA.2.157[e]",
+            "Assessment Objective": "the method of security requirement implementation is described and documented in the system security plan."
+        },
+        {
+            "Assessment Objective ID": "CA.2.157[f]",
+            "Assessment Objective": "the relationship with or connection to other systems is described and documented in the system security plan."
+        },
+        {
+            "Assessment Objective ID": "CA.2.157[h]",
+            "Assessment Objective": "system security plan is updated with the defined frequency."
+        },
+        {
+            "Assessment Objective ID": "CA.2.157[g]",
+            "Assessment Objective": "the frequency to update the system security plan is defined."
+        },
+        {
+            "CMMC": "CA.2.158",
+            "CUI": "3.12.1",
+            "Practice Requirement": "Periodically assess the security controls in organizational systems to determine if the controls are effective in their application.",
+            "Assessment Objective ID": "CA.2.158[a]",
+            "Assessment Objective": "the frequency of security control assessments is defined."
+        },
+        {
+            "Assessment Objective ID": "CA.2.158[b]",
+            "Assessment Objective": "security controls are assessed with the defined frequency to determine if the controls are effective in their application."
+        },
+        {
+            "CMMC": "CA.2.159",
+            "CUI": "3.12.2",
+            "Practice Requirement": "Develop and implement plans of action designed to correct deficiencies and reduce or eliminate vulnerabilities in organizational systems.",
+            "Assessment Objective ID": "CA.2.159[a]",
+            "Assessment Objective": "deficiencies and vulnerabilities to be addressed by the plan of action are identified."
+        },
+        {
+            "Assessment Objective ID": "CA.2.159[b]",
+            "Assessment Objective": "a plan of action is developed to correct identified deficiencies and reduce or eliminate identified vulnerabilities."
+        },
+        {
+            "Assessment Objective ID": "CA.2.159[c]",
+            "Assessment Objective": "the plan of action is implemented to correct identified deficiencies and reduce or eliminate identified vulnerabilities."
+        },
+        {
+            "CMMC": "CA.3.161",
+            "CUI": "3.12.3",
+            "Practice Requirement": "Monitor security controls on an ongoing basis to ensure the continued effectiveness of the controls.",
+            "Assessment Objective ID": "CA.3.161",
+            "Assessment Objective": "Determine if security controls are monitored on an ongoing basis to ensure the continued effectiveness of those controls."
+        },
+        {
+            "CMMC": "CA.3.162",
+            "CUI": "N/A",
+            "Practice Requirement": "Employ a security assessment of enterprise software that has been developed internally, for internal use, and that has been organizationally defined as an area of risk.",
+            "Assessment Objective ID": "CA.3.162[a]",
+            "Assessment Objective": "the organization reviews internally developed software for risks;"
+        },
+        {
+            "Assessment Objective ID": "CA.3.162[b]",
+            "Assessment Objective": "for the code that is defined as an area of risk, the organization has documented the security assessment process which may include one or more of the following: manual code review, static analysis, and/or dynamic analysis;"
+        },
+        {
+            "Assessment Objective ID": "CA.3.162[c]",
+            "Assessment Objective": "the organization has the ability to demonstrate their security assessment process; and"
+        },
+        {
+            "Assessment Objective ID": "CA.3.162[d]",
+            "Assessment Objective": "the security assessment process is integrated with the change management process."
+        },
+        {
+            "CMMC": "CM.2.061",
+            "CUI": "3.4.1",
+            "Practice Requirement": "Establish and maintain baseline configurations and inventories of organizational systems (including hardware, software, firmware, and documentation) throughout the respective system development life cycles.",
+            "Assessment Objective ID": "CM.2.061[a]",
+            "Assessment Objective": "a baseline configuration is established."
+        },
+        {
+            "Assessment Objective ID": "CM.2.061[b]",
+            "Assessment Objective": "the baseline configuration includes hardware, software, firmware, and documentation."
+        },
+        {
+            "Assessment Objective ID": "CM.2.061[c]",
+            "Assessment Objective": "the baseline configuration is maintained (reviewed and updated) throughout the system development life cycle."
+        },
+        {
+            "Assessment Objective ID": "CM.2.061[d]",
+            "Assessment Objective": "a system inventory is established."
+        },
+        {
+            "Assessment Objective ID": "CM.2.061[e]",
+            "Assessment Objective": "the system inventory includes hardware, software, firmware, and documentation."
+        },
+        {
+            "Assessment Objective ID": "CM.2.061[f]",
+            "Assessment Objective": "the inventory is maintained (reviewed and updated) throughout the system development life cycle."
+        },
+        {
+            "CMMC": "CM.2.062",
+            "CUI": "3.4.6",
+            "Practice Requirement": "Employ the principle of least functionality by configuring organizational systems to provide only essential capabilities.",
+            "Assessment Objective ID": "CM.2.062[a]",
+            "Assessment Objective": "essential system capabilities are defined based on the principle of least functionality."
+        },
+        {
+            "Assessment Objective ID": "CM.2.062[b]",
+            "Assessment Objective": "the system is configured to provide only the defined essential capabilities."
+        },
+        {
+            "CMMC": "CM.2.063",
+            "CUI": "3.4.9",
+            "Practice Requirement": "Control and monitor user-installed software.",
+            "Assessment Objective ID": "CM.2.063[a]",
+            "Assessment Objective": "a policy for controlling the installation of software by users is established."
+        },
+        {
+            "Assessment Objective ID": "CM.2.063[b]",
+            "Assessment Objective": "installation of software by users is controlled based on the established policy."
+        },
+        {
+            "Assessment Objective ID": "CM.2.063[c]",
+            "Assessment Objective": "installation of software by users is monitored."
+        },
+        {
+            "CMMC": "CM.2.064",
+            "CUI": "3.4.2",
+            "Practice Requirement": "Establish and enforce security configuration settings for information technology products employed in organizational systems.",
+            "Assessment Objective ID": "CM.2.064[a]",
+            "Assessment Objective": "security configuration settings for information technology products employed in the system are established and included in the baseline configuration."
+        },
+        {
+            "Assessment Objective ID": "CM.2.064[b]",
+            "Assessment Objective": "security configuration settings for information technology products employed in the system are enforced."
+        },
+        {
+            "CMMC": "CM.2.065",
+            "CUI": "3.4.3",
+            "Practice Requirement": "Track, review, approve or disapprove, and log changes to organizational systems.",
+            "Assessment Objective ID": "CM.2.065[a]",
+            "Assessment Objective": "changes to the system are tracked."
+        },
+        {
+            "Assessment Objective ID": "CM.2.065[b]",
+            "Assessment Objective": "changes to the system are reviewed."
+        },
+        {
+            "Assessment Objective ID": "CM.2.065[c]",
+            "Assessment Objective": "changes to the system are approved or disapproved."
+        },
+        {
+            "Assessment Objective ID": "CM.2.065[d]",
+            "Assessment Objective": "changes to the system are logged."
+        },
+        {
+            "CMMC": "CM.2.066",
+            "CUI": "3.4.4",
+            "Practice Requirement": "Analyze the security impact of changes prior to implementation.",
+            "Assessment Objective ID": "CM.2.066",
+            "Assessment Objective": "Determine if the security impact of changes to the system is analyzed prior to implementation."
+        },
+        {
+            "CMMC": "CM.3.067",
+            "CUI": "3.4.5",
+            "Practice Requirement": "Define, document, approve, and enforce physical and logical access restrictions associated with changes to organizational systems.",
+            "Assessment Objective ID": "CM.3.067[a]",
+            "Assessment Objective": "physical access restrictions associated with changes to the system are defined."
+        },
+        {
+            "Assessment Objective ID": "CM.3.067[b]",
+            "Assessment Objective": "physical access restrictions associated with changes to the system are documented."
+        },
+        {
+            "Assessment Objective ID": "CM.3.067[c]",
+            "Assessment Objective": "physical access restrictions associated with changes to the system are approved."
+        },
+        {
+            "Assessment Objective ID": "CM.3.067[d]",
+            "Assessment Objective": "physical access restrictions associated with changes to the system are enforced."
+        },
+        {
+            "Assessment Objective ID": "CM.3.067[e]",
+            "Assessment Objective": "logical access restrictions associated with changes to the system are defined."
+        },
+        {
+            "Assessment Objective ID": "CM.3.067[f]",
+            "Assessment Objective": "logical access restrictions associated with changes to the system are documented."
+        },
+        {
+            "Assessment Objective ID": "CM.3.067[g]",
+            "Assessment Objective": "logical access restrictions associated with changes to the system are approved."
+        },
+        {
+            "Assessment Objective ID": "CM.3.067[h]",
+            "Assessment Objective": "logical access restrictions associated with changes to the system are enforced."
+        },
+        {
+            "CMMC": "CM.3.068",
+            "CUI": "3.4.7",
+            "Practice Requirement": "Restrict, disable, or prevent the use of nonessential programs, functions, ports, protocols, and services.\r",
+            "Assessment Objective ID": "CM.3.068[a]",
+            "Assessment Objective": "essential programs are defined."
+        },
+        {
+            "Assessment Objective ID": "CM.3.068[d]",
+            "Assessment Objective": "essential functions are defined."
+        },
+        {
+            "Assessment Objective ID": "CM.3.068[g]",
+            "Assessment Objective": "essential ports are defined."
+        },
+        {
+            "Assessment Objective ID": "CM.3.068[j]",
+            "Assessment Objective": "essential protocols are defined."
+        },
+        {
+            "Assessment Objective ID": "CM.3.068[m]",
+            "Assessment Objective": "essential services are defined."
+        },
+        {
+            "Assessment Objective ID": "CM.3.068[b]",
+            "Assessment Objective": "the use of nonessential programs is defined."
+        },
+        {
+            "Assessment Objective ID": "CM.3.068[c]",
+            "Assessment Objective": "the use of nonessential programs is restricted, disabled, or prevented as defined."
+        },
+        {
+            "Assessment Objective ID": "CM.3.068[e]",
+            "Assessment Objective": "the use of nonessential functions is defined."
+        },
+        {
+            "Assessment Objective ID": "CM.3.068[f]",
+            "Assessment Objective": "the use of nonessential functions is restricted, disabled, or prevented as defined."
+        },
+        {
+            "Assessment Objective ID": "CM.3.068[h]",
+            "Assessment Objective": "the use of nonessential ports is defined."
+        },
+        {
+            "Assessment Objective ID": "CM.3.068[i]",
+            "Assessment Objective": "the use of nonessential ports is restricted, disabled, or prevented as defined."
+        },
+        {
+            "Assessment Objective ID": "CM.3.068[k]",
+            "Assessment Objective": "the use of nonessential protocols is defined."
+        },
+        {
+            "Assessment Objective ID": "CM.3.068[l]",
+            "Assessment Objective": "the use of nonessential protocols is restricted, disabled, or prevented as defined."
+        },
+        {
+            "Assessment Objective ID": "CM.3.068[n]",
+            "Assessment Objective": "the use of nonessential services is defined."
+        },
+        {
+            "Assessment Objective ID": "CM.3.068[o]",
+            "Assessment Objective": "the use of nonessential services is restricted, disabled, or prevented as defined."
+        },
+        {
+            "CMMC": "CM.3.069",
+            "CUI": "3.4.8",
+            "Practice Requirement": "Apply deny-by-exception (blacklisting) policy to prevent the use of unauthorized software or deny-all, permit-by-exception (whitelisting) policy to allow the execution of authorized software.",
+            "Assessment Objective ID": "CM.3.069[a]",
+            "Assessment Objective": "a policy specifying whether whitelisting or blacklisting is to be implemented is specified."
+        },
+        {
+            "Assessment Objective ID": "CM.3.069[b]",
+            "Assessment Objective": "the software allowed to execute under whitelisting or denied use under blacklisting is specified."
+        },
+        {
+            "Assessment Objective ID": "CM.3.069[c]",
+            "Assessment Objective": "whitelisting to allow the execution of authorized software or blacklisting to prevent the use of unauthorized software is implemented as specified."
+        },
+        {
+            "CMMC": "IA.1.076",
+            "CUI": "3.5.1",
+            "Practice Requirement": "Identify information system users, processes acting on behalf of users, or devices.",
+            "Assessment Objective ID": "IA.1.076[a]",
+            "Assessment Objective": "system users are identified."
+        },
+        {
+            "Assessment Objective ID": "IA.1.076[b]",
+            "Assessment Objective": "processes acting on behalf of users are identified."
+        },
+        {
+            "Assessment Objective ID": "IA.1.076[c]",
+            "Assessment Objective": "devices accessing the system are identified."
+        },
+        {
+            "CMMC": "IA.1.077",
+            "CUI": "3.5.2",
+            "Practice Requirement": "Authenticate (or verify) the identities of those users, processes, or devices, as a prerequisite to allowing access to organizational information systems.",
+            "Assessment Objective ID": "IA.1.077[a]",
+            "Assessment Objective": "the identity of each user is authenticated or verified as a prerequisite to system access."
+        },
+        {
+            "Assessment Objective ID": "IA.1.077[b]",
+            "Assessment Objective": "the identity of each process acting on behalf of a user is authenticated or verified as a prerequisite to system access."
+        },
+        {
+            "Assessment Objective ID": "IA.1.077[c]",
+            "Assessment Objective": "the identity of each device accessing or connecting to the system is authenticated or verified as a prerequisite to system access."
+        },
+        {
+            "CMMC": "IA.2.078",
+            "CUI": "3.5.7",
+            "Practice Requirement": "Enforce a minimum password complexity and change of characters when new passwords are created.",
+            "Assessment Objective ID": "IA.2.078[a]",
+            "Assessment Objective": "password complexity requirements are defined."
+        },
+        {
+            "Assessment Objective ID": "IA.2.078[b]",
+            "Assessment Objective": "password change of character requirements are defined."
+        },
+        {
+            "Assessment Objective ID": "IA.2.078[c]",
+            "Assessment Objective": "minimum password complexity requirements as defined are enforced when new passwords are created."
+        },
+        {
+            "Assessment Objective ID": "IA.2.078[d]",
+            "Assessment Objective": "minimum password change of character requirements as defined are enforced when new passwords are created."
+        },
+        {
+            "CMMC": "IA.2.079",
+            "CUI": "3.5.8",
+            "Practice Requirement": "Prohibit password reuse for a specified number of generations.",
+            "Assessment Objective ID": "IA.2.079[a]",
+            "Assessment Objective": "the number of generations during which a password cannot be reused is specified."
+        },
+        {
+            "Assessment Objective ID": "IA.2.079[b]",
+            "Assessment Objective": "reuse of passwords is prohibited during the specified number of generations."
+        },
+        {
+            "CMMC": "IA.2.080",
+            "CUI": "3.5.9",
+            "Practice Requirement": "Allow temporary password use for system logons with an immediate change to a permanent password.",
+            "Assessment Objective ID": "IA.2.080",
+            "Assessment Objective": "Determine if an immediate change to a permanent password is required when a temporary password is used for system logon."
+        },
+        {
+            "CMMC": "IA.2.081",
+            "CUI": "3.5.10",
+            "Practice Requirement": "Store and transmit only  cryptographically-protected passwords",
+            "Assessment Objective ID": "IA.2.081[a]",
+            "Assessment Objective": "passwords are cryptographically protected in storage."
+        },
+        {
+            "Assessment Objective ID": "IA.2.081[b]",
+            "Assessment Objective": "passwords are cryptographically protected in transit."
+        },
+        {
+            "CMMC": "IA.2.082",
+            "CUI": "3.5.11",
+            "Practice Requirement": "Obscure feedback of authentication information.",
+            "Assessment Objective ID": "IA.2.082",
+            "Assessment Objective": "Determine if authentication information is obscured during the authentication process."
+        },
+        {
+            "CMMC": "IA.3.083",
+            "CUI": "3.5.3",
+            "Practice Requirement": "Use multifactor authentication for local and network access to privileged accounts and for network access to non-privileged accounts.",
+            "Assessment Objective ID": "IA.3.083[a]",
+            "Assessment Objective": "privileged accounts are identified."
+        },
+        {
+            "Assessment Objective ID": "IA.3.083[b]",
+            "Assessment Objective": "multifactor authentication is implemented for local access to privileged accounts."
+        },
+        {
+            "Assessment Objective ID": "IA.3.083[c]",
+            "Assessment Objective": "multifactor authentication is implemented for network access to privileged accounts."
+        },
+        {
+            "Assessment Objective ID": "IA.3.083[d]",
+            "Assessment Objective": "multifactor authentication is implemented for network access to non-privileged accounts."
+        },
+        {
+            "CMMC": "IA.3.084",
+            "CUI": "3.5.4",
+            "Practice Requirement": "Employ replay-resistant authentication mechanisms for network access to privileged and non-privileged accounts.\r",
+            "Assessment Objective ID": "IA.3.084",
+            "Assessment Objective": "Determine if replay-resistant authentication mechanisms are implemented for network account access to privileged and non-privileged accounts."
+        },
+        {
+            "CMMC": "IA.3.085",
+            "CUI": "3.5.5",
+            "Practice Requirement": "Prevent reuse of identifiers for a defined period.",
+            "Assessment Objective ID": "IA.3.085[a]",
+            "Assessment Objective": "a period within which identifiers cannot be reused is defined."
+        },
+        {
+            "Assessment Objective ID": "IA.3.085[b]",
+            "Assessment Objective": "reuse of identifiers is prevented within the defined period."
+        },
+        {
+            "CMMC": "IA.3.086",
+            "CUI": "3.5.6",
+            "Practice Requirement": "Disable identifiers after a defined period of inactivity",
+            "Assessment Objective ID": "IA.3.086[a]",
+            "Assessment Objective": "a period of inactivity after which an identifier is disabled is defined."
+        },
+        {
+            "Assessment Objective ID": "IA.3.086[b]",
+            "Assessment Objective": "identifiers are disabled after the defined period of inactivity."
+        },
+        {
+            "CMMC": "IR.2.092",
+            "CUI": "3.6.1",
+            "Practice Requirement": "Establish an operational incident-handling capability for organizational systems that includes preparation, detection, analysis, containment, recovery, and user response activities.",
+            "Assessment Objective ID": "IR.2.092[a]",
+            "Assessment Objective": "an operational incident-handling capability is established."
+        },
+        {
+            "Assessment Objective ID": "IR.2.092[b]",
+            "Assessment Objective": "the operational incident-handling capability includes preparation."
+        },
+        {
+            "Assessment Objective ID": "IR.2.092[c]",
+            "Assessment Objective": "the operational incident-handling capability includes detection."
+        },
+        {
+            "Assessment Objective ID": "IR.2.092[d]",
+            "Assessment Objective": "the operational incident-handling capability includes analysis."
+        },
+        {
+            "Assessment Objective ID": "IR.2.092[e]",
+            "Assessment Objective": "the operational incident-handling capability includes containment."
+        },
+        {
+            "Assessment Objective ID": "IR.2.092[f]",
+            "Assessment Objective": "the operational incident-handling capability includes recovery."
+        },
+        {
+            "Assessment Objective ID": "IR.2.092[g]",
+            "Assessment Objective": "the operational incident-handling capability includes user response activities."
+        },
+        {
+            "CMMC": "IR.2.093",
+            "CUI": "N/A",
+            "Practice Requirement": "Detect and report events.",
+            "Assessment Objective ID": "IR.2.093[a]",
+            "Assessment Objective": "the organization has a process for identifying methods for event detection; and"
+        },
+        {
+            "Assessment Objective ID": "IR.2.093[b]",
+            "Assessment Objective": "the organization can provide a process for reporting events so that they can be triaged, analyzed, and addressed."
+        },
+        {
+            "CMMC": "IR.2.094",
+            "CUI": "N/A",
+            "Practice Requirement": "Analyze and triage events to support event resolution and incident declaration.",
+            "Assessment Objective ID": "IR.2.094[a]",
+            "Assessment Objective": "the organization analyzes events;"
+        },
+        {
+            "Assessment Objective ID": "IR.2.094[b]",
+            "Assessment Objective": "the organization performs correlation analysis on events;"
+        },
+        {
+            "Assessment Objective ID": "IR.2.094[c]",
+            "Assessment Objective": "the organization assigns a disposition to events;"
+        },
+        {
+            "Assessment Objective ID": "IR.2.094[d]",
+            "Assessment Objective": "the organization provides a process for reporting events so that they can be triaged, analyzed, and addressed; and"
+        },
+        {
+            "Assessment Objective ID": "IR.2.094[e]",
+            "Assessment Objective": "the organization escalates events to the appropriate stakeholders, as needed."
+        },
+        {
+            "CMMC": "IR.2.096",
+            "CUI": "N/A",
+            "Practice Requirement": "Develop and implement responses to declared incidents according to predefined procedures.",
+            "Assessment Objective ID": "IR.2.096[a]",
+            "Assessment Objective": "the organization has an incident declaration process; and"
+        },
+        {
+            "Assessment Objective ID": "IR.2.096[b]",
+            "Assessment Objective": "the organization has predefined procedures that address incident response activities."
+        },
+        {
+            "CMMC": "IR.2.097",
+            "CUI": "N/A",
+            "Practice Requirement": "Perform root cause analysis on incidents to determine underlying causes",
+            "Assessment Objective ID": "IR.2.097[a]",
+            "Assessment Objective": "the organization has a post-incident response activity; and"
+        },
+        {
+            "Assessment Objective ID": "IR.2.097[b]",
+            "Assessment Objective": "the organization determines the root cause of incidents."
+        },
+        {
+            "CMMC": "IR.3.098",
+            "CUI": "3.6.2",
+            "Practice Requirement": "Track, document, and report incidents to designated officials and/or authorities both internal and external to the organization.",
+            "Assessment Objective ID": "IR.3.098[a]",
+            "Assessment Objective": "incidents are tracked."
+        },
+        {
+            "Assessment Objective ID": "IR.3.098[b]",
+            "Assessment Objective": "incidents are documented."
+        },
+        {
+            "Assessment Objective ID": "IR.3.098[c]",
+            "Assessment Objective": "authorities to whom incidents are to be reported are identified."
+        },
+        {
+            "Assessment Objective ID": "IR.3.098[d]",
+            "Assessment Objective": "organizational officials to whom incidents are to be reported are identified."
+        },
+        {
+            "Assessment Objective ID": "IR.3.098[e]",
+            "Assessment Objective": "identified authorities are notified of incidents."
+        },
+        {
+            "Assessment Objective ID": "IR.3.098[f]",
+            "Assessment Objective": "identified organizational officials are notified of incidents."
+        },
+        {
+            "CMMC": "IR.3.099",
+            "CUI": "3.6.3",
+            "Practice Requirement": "Test the organizational incident response capability.",
+            "Assessment Objective ID": "IR.3.099",
+            "Assessment Objective": "Determine if the incident response capability is tested."
+        },
+        {
+            "CMMC": "MA.2.111",
+            "CUI": "3.7.1",
+            "Practice Requirement": "Perform maintenance on organizational systems.",
+            "Assessment Objective ID": "MA.2.111",
+            "Assessment Objective": "Determine if system maintenance is performed."
+        },
+        {
+            "CMMC": "MA.2.112",
+            "CUI": "3.7.2",
+            "Practice Requirement": "Provide controls on the tools, techniques, mechanisms, and personnel used to conduct system maintenance.",
+            "Assessment Objective ID": "MA.2.112[a]",
+            "Assessment Objective": "tools used to conduct system maintenance are controlled."
+        },
+        {
+            "Assessment Objective ID": "MA.2.112[c]",
+            "Assessment Objective": "mechanisms used to conduct system maintenance are controlled."
+        },
+        {
+            "Assessment Objective ID": "MA.2.112[d]",
+            "Assessment Objective": "personnel used to conduct system maintenance are controlled."
+        },
+        {
+            "Assessment Objective ID": "MA.2.112[b]",
+            "Assessment Objective": "techniques used to conduct system maintenance are controlled."
+        },
+        {
+            "CMMC": "MA.2.113",
+            "CUI": "3.7.5",
+            "Practice Requirement": "Require multifactor authentication to establish nonlocal maintenance sessions via external network connections and terminate such connections when nonlocal maintenance is complete.",
+            "Assessment Objective ID": "MA.2.113[a]",
+            "Assessment Objective": "multifactor authentication is used to establish nonlocal maintenance sessions via external network connections."
+        },
+        {
+            "Assessment Objective ID": "MA.2.113[b]",
+            "Assessment Objective": "nonlocal maintenance sessions established via external network connections are terminated when nonlocal maintenance is complete."
+        },
+        {
+            "CMMC": "MA.2.114",
+            "CUI": "3.7.6",
+            "Practice Requirement": "Supervise the maintenance activities of maintenance personnel without required access authorization",
+            "Assessment Objective ID": "MA.2.114",
+            "Assessment Objective": "Determine if maintenance personnel without required access authorization are supervised during maintenance activities."
+        },
+        {
+            "CMMC": "MA.3.115",
+            "CUI": "3.7.3",
+            "Practice Requirement": "Ensure equipment removed for off-site maintenance is sanitized of any CUI.",
+            "Assessment Objective ID": "MA.3.115",
+            "Assessment Objective": "Determine if equipment to be removed from organizational spaces for off-site maintenance is sanitized of any CUI."
+        },
+        {
+            "CMMC": "MA.3.116",
+            "CUI": "3.7.4",
+            "Practice Requirement": "Check media containing diagnostic and test programs for malicious code before the media are used in organizational systems.\r",
+            "Assessment Objective ID": "MA.3.116",
+            "Assessment Objective": "Determine if media containing diagnostic and test programs are checked for malicious code before being used in organizational systems that process, store, or transmit CUI."
+        },
+        {
+            "CMMC": "MP.1.118",
+            "CUI": "3.8.3",
+            "Practice Requirement": "Sanitize or destroy information system media containing Federal Contract Information before disposal or release for reuse.",
+            "Assessment Objective ID": "MP.1.118[a]",
+            "Assessment Objective": "system media containing CUI is sanitized or destroyed before disposal."
+        },
+        {
+            "Assessment Objective ID": "MP.1.118[b]",
+            "Assessment Objective": "system media containing CUI is sanitized before it is released for reuse."
+        },
+        {
+            "CMMC": "MP.2.119",
+            "CUI": "3.8.1",
+            "Practice Requirement": "Protect (i.e., physically control and securely store) system media containing CUI, both paper and digital.",
+            "Assessment Objective ID": "MP.2.119[a]",
+            "Assessment Objective": "paper media containing CUI is physically controlled."
+        },
+        {
+            "Assessment Objective ID": "MP.2.119[b]",
+            "Assessment Objective": "digital media containing CUI is physically controlled."
+        },
+        {
+            "Assessment Objective ID": "MP.2.119[c]",
+            "Assessment Objective": "paper media containing CUI is securely stored."
+        },
+        {
+            "Assessment Objective ID": "MP.2.119[d]",
+            "Assessment Objective": "digital media containing CUI is securely stored."
+        },
+        {
+            "CMMC": "MP.2.120",
+            "CUI": "3.8.2",
+            "Practice Requirement": "Limit access to CUI on system media to authorized users.",
+            "Assessment Objective ID": "MP.2.120",
+            "Assessment Objective": "Determine if access to CUI on system media is limited to authorized users."
+        },
+        {
+            "CMMC": "MP.2.121",
+            "CUI": "3.8.7",
+            "Practice Requirement": "Control the use of removable media on system components.",
+            "Assessment Objective ID": "MP.2.121",
+            "Assessment Objective": "Determine if the use of removable media on system components is controlled."
+        },
+        {
+            "CMMC": "MP.3.122",
+            "CUI": "3.8.4",
+            "Practice Requirement": "Mark media with necessary CUI markings and distribution limitations.",
+            "Assessment Objective ID": "MP.3.122[a]",
+            "Assessment Objective": "media containing CUI is marked with applicable CUI markings."
+        },
+        {
+            "Assessment Objective ID": "MP.3.122[b]",
+            "Assessment Objective": "media containing CUI is marked with distribution limitations."
+        },
+        {
+            "CMMC": "MP.3.123",
+            "CUI": "3.8.8",
+            "Practice Requirement": "Prohibit the use of portable storage devices when such devices have no identifiable owner",
+            "Assessment Objective ID": "MP.3.123",
+            "Assessment Objective": "Determine if the use of portable storage devices is prohibited when such devices have no identifiable owner."
+        },
+        {
+            "CMMC": "MP.3.124",
+            "CUI": "3.8.5",
+            "Practice Requirement": "Control access to media containing CUI and maintain accountability for media during transport outside of controlled areas.",
+            "Assessment Objective ID": "MP.3.124[a]",
+            "Assessment Objective": "access to media containing CUI is controlled."
+        },
+        {
+            "Assessment Objective ID": "MP.3.124[b]",
+            "Assessment Objective": "accountability for media containing CUI is maintained during transport outside of controlled areas."
+        },
+        {
+            "CMMC": "MP.3.125",
+            "CUI": "3.8.6",
+            "Practice Requirement": "Implement cryptographic mechanisms to protect the confidentiality of CUI stored on digital media during transport unless otherwise protected by alternative physical safeguards.",
+            "Assessment Objective ID": "MP.3.125",
+            "Assessment Objective": "Determine if the confidentiality of CUI stored on digital media is protected during transport using cryptographic mechanisms or alternative physical safeguards."
+        },
+        {
+            "CMMC": "PE.1.131",
+            "CUI": "3.10.1",
+            "Practice Requirement": "Limit physical access to organizational information systems, equipment, and the respective operating environments to authorized individuals.",
+            "Assessment Objective ID": "PE.1.131[a]",
+            "Assessment Objective": "authorized individuals allowed physical access are identified."
+        },
+        {
+            "Assessment Objective ID": "PE.1.131[b]",
+            "Assessment Objective": "physical access to organizational systems is limited to authorized individuals."
+        },
+        {
+            "Assessment Objective ID": "PE.1.131[c]",
+            "Assessment Objective": "physical access to equipment is limited to authorized individuals."
+        },
+        {
+            "Assessment Objective ID": "PE.1.131[d]",
+            "Assessment Objective": "physical access to operating environments is limited to authorized individuals."
+        },
+        {
+            "CMMC": "PE.1.132",
+            "CUI": "3.10.3",
+            "Practice Requirement": "Escort visitors and monitor visitor activity",
+            "Assessment Objective ID": "PE.1.132[a]",
+            "Assessment Objective": "visitors are escorted."
+        },
+        {
+            "Assessment Objective ID": "PE.1.132[b]",
+            "Assessment Objective": "visitor activity is monitored."
+        },
+        {
+            "CMMC": "PE.1.133",
+            "CUI": "3.10.4",
+            "Practice Requirement": "Maintain audit logs of physical access.",
+            "Assessment Objective ID": "PE.1.133",
+            "Assessment Objective": "Determine if audit logs of physical access are maintained."
+        },
+        {
+            "CMMC": "PE.1.134",
+            "CUI": "3.10.5",
+            "Practice Requirement": "Control and manage physical access devices.\r",
+            "Assessment Objective ID": "PE.1.134[a]",
+            "Assessment Objective": "physical access devices are identified."
+        },
+        {
+            "Assessment Objective ID": "PE.1.134[b]",
+            "Assessment Objective": "physical access devices are controlled."
+        },
+        {
+            "Assessment Objective ID": "PE.1.134[c]",
+            "Assessment Objective": "physical access devices are managed."
+        },
+        {
+            "CMMC": "PE.2.135",
+            "CUI": "3.10.2",
+            "Practice Requirement": "Protect and monitor the physical facility and support infrastructure for organizational systems.",
+            "Assessment Objective ID": "PE.2.135[a]",
+            "Assessment Objective": "the physical facility where organizational systems reside is protected."
+        },
+        {
+            "Assessment Objective ID": "PE.2.135[b]",
+            "Assessment Objective": "the support infrastructure for organizational systems is protected."
+        },
+        {
+            "Assessment Objective ID": "PE.2.135[c]",
+            "Assessment Objective": "the physical facility where organizational systems reside is monitored."
+        },
+        {
+            "Assessment Objective ID": "PE.2.135[d]",
+            "Assessment Objective": "the support infrastructure for organizational systems is monitored."
+        },
+        {
+            "CMMC": "PE.3.136",
+            "CUI": "3.10.6",
+            "Practice Requirement": "Enforce safeguarding measures for CUI at alternate work sites.",
+            "Assessment Objective ID": "PE.3.136[a]",
+            "Assessment Objective": "safeguarding measures for CUI are defined for alternate work sites."
+        },
+        {
+            "Assessment Objective ID": "PE.3.136[b]",
+            "Assessment Objective": "safeguarding measures for CUI are enforced for alternate work sites."
+        },
+        {
+            "CMMC": "PS.2.127",
+            "CUI": "3.9.1",
+            "Practice Requirement": "Screen individuals prior to authorizing access to organizational systems containing CUI.",
+            "Assessment Objective ID": "PS.2.127",
+            "Assessment Objective": "Determine if individuals are screened prior to authorizing access to organizational systems containing CUI."
+        },
+        {
+            "CMMC": "PS.2.128",
+            "CUI": "3.9.2",
+            "Practice Requirement": "Ensure that organizational systems containing CUI are protected during and after personnel actions such as terminations and transfers",
+            "Assessment Objective ID": "PS.2.128[a]",
+            "Assessment Objective": "a policy and/or process for terminating system access and any credentials coincident with personnel actions is established."
+        },
+        {
+            "Assessment Objective ID": "PS.2.128[c]",
+            "Assessment Objective": "the system is protected during and after personnel transfer actions."
+        },
+        {
+            "Assessment Objective ID": "PS.2.128[b]",
+            "Assessment Objective": "system access and credentials are terminated consistent with personnel actions such as termination or transfer."
+        },
+        {
+            "CMMC": "RE.2.137",
+            "CUI": "N/A",
+            "Practice Requirement": "Regularly perform and test data backups.",
+            "Assessment Objective ID": "RE.2.137[a]",
+            "Assessment Objective": "a frequency to perform backups has been defined;"
+        },
+        {
+            "Assessment Objective ID": "RE.2.137[c]",
+            "Assessment Objective": "a frequency to test backups has been defined;"
+        },
+        {
+            "Assessment Objective ID": "RE.2.137[b]",
+            "Assessment Objective": "backups are performed according to the defined backup schedule;"
+        },
+        {
+            "Assessment Objective ID": "RE.2.137[d]",
+            "Assessment Objective": "backups are tested according to a defined test schedule;"
+        },
+        {
+            "Assessment Objective ID": "RE.2.137[e]",
+            "Assessment Objective": "tests of backups include performing a restore that ensures a successful recovery; and"
+        },
+        {
+            "Assessment Objective ID": "RE.2.137[f]",
+            "Assessment Objective": "backup data is protected from a direct attack and from corruption by an attack against the primary data source."
+        },
+        {
+            "CMMC": "RE.2.138",
+            "CUI": "3.8.9",
+            "Practice Requirement": "Protect the confidentiality of backup CUI at storage locations.",
+            "Assessment Objective ID": "RE.2.138",
+            "Assessment Objective": "Determine if the confidentiality of backup CUI is protected at storage locations."
+        },
+        {
+            "CMMC": "RE.3.139",
+            "CUI": "N/A",
+            "Practice Requirement": "Regularly perform complete, comprehensive, and resilient data backups as organizationally\r\ndefined.\r",
+            "Assessment Objective ID": "RE.3.139[a]",
+            "Assessment Objective": "the organization automates its backups where feasible;"
+        },
+        {
+            "Assessment Objective ID": "RE.3.139[b]",
+            "Assessment Objective": "the organization has defined its requirements for the length of time needed to restore resources from backup (recovery time objectives (RTO)), the amount of time between backups (recovery point objectives (RPO)), and the length of time backups need to be retained;"
+        },
+        {
+            "Assessment Objective ID": "RE.3.139[c]",
+            "Assessment Objective": "backup schedules and selection lists reflect documented organization requirements; and"
+        },
+        {
+            "Assessment Objective ID": "RE.3.139[d]",
+            "Assessment Objective": "key systems are backed up in a manner that enables rapid recovery, such as imaging"
+        },
+        {
+            "CMMC": "RM.2.141",
+            "CUI": "3.11.1",
+            "Practice Requirement": "Periodically assess the risk to organizational operations (including mission, functions, image,\r\nor reputation), organizational assets, and individuals, resulting from the operation of organizational systems and the associated processing, storage, or transmission of CUI.",
+            "Assessment Objective ID": "RM.2.141[a]",
+            "Assessment Objective": "the frequency to assess risk to organizational operations, organizational assets, and individuals is defined."
+        },
+        {
+            "Assessment Objective ID": "RM.2.141[b]",
+            "Assessment Objective": "risk to organizational operations, organizational assets, and individuals resulting from the operation of an organizational system that processes, stores, or transmits CUI is assessed with the defined frequency."
+        },
+        {
+            "CMMC": "RM.2.142",
+            "CUI": "3.11.2",
+            "Practice Requirement": "Scan for vulnerabilities in organizational systems and applications periodically and when new vulnerabilities affecting those systems and applications are identified.",
+            "Assessment Objective ID": "RM.2.142[a]",
+            "Assessment Objective": "the frequency to scan for vulnerabilities in organizational systems and applications is defined."
+        },
+        {
+            "Assessment Objective ID": "RM.2.142[b]",
+            "Assessment Objective": "vulnerability scans are performed on organizational systems with the defined frequency."
+        },
+        {
+            "Assessment Objective ID": "RM.2.142[d]",
+            "Assessment Objective": "vulnerability scans are performed on organizational systems when new vulnerabilities are identified."
+        },
+        {
+            "Assessment Objective ID": "RM.2.142[c]",
+            "Assessment Objective": "vulnerability scans are performed on applications with the defined frequency."
+        },
+        {
+            "Assessment Objective ID": "RM.2.142[e]",
+            "Assessment Objective": "vulnerability scans are performed on applications when new vulnerabilities are identified."
+        },
+        {
+            "CMMC": "RM.2.143",
+            "CUI": "3.11.3",
+            "Practice Requirement": "Remediate vulnerabilities in accordance with risk assessments.",
+            "Assessment Objective ID": "RM.2.143[a]",
+            "Assessment Objective": "vulnerabilities are identified."
+        },
+        {
+            "Assessment Objective ID": "RM.2.143[b]",
+            "Assessment Objective": "vulnerabilities are remediated in accordance with risk assessments."
+        },
+        {
+            "CMMC": "RM.3.144",
+            "CUI": "N/A",
+            "Practice Requirement": "Periodically perform risk assessments to identify and prioritize risks according to the defined risk categories, risk sources, and risk measurement criteria.",
+            "Assessment Objective ID": "RM.3.144[a]",
+            "Assessment Objective": "the organization maintains a process for performing risk assessments;"
+        },
+        {
+            "Assessment Objective ID": "RM.3.144[b]",
+            "Assessment Objective": "the organization documents and maintains defined risk categories, risk sources, and risk measurement criteria;"
+        },
+        {
+            "Assessment Objective ID": "RM.3.144[c]",
+            "Assessment Objective": "the organization prioritizes risk; and"
+        },
+        {
+            "Assessment Objective ID": "RM.3.144[d]",
+            "Assessment Objective": "the organization performs risk assessment at a frequency defined by the organization."
+        },
+        {
+            "CMMC": "RM.3.146",
+            "CUI": "N/A",
+            "Practice Requirement": "Develop and implement risk mitigation plans.",
+            "Assessment Objective ID": "RM.3.146[a]",
+            "Assessment Objective": "the organization develops an approach for mitigating each identified risk; and"
+        },
+        {
+            "Assessment Objective ID": "RM.3.146[b]",
+            "Assessment Objective": "the organization implements risk mitigation plans for each identified risk."
+        },
+        {
+            "CMMC": "RM.3.147",
+            "CUI": "N/A",
+            "Practice Requirement": "Manage non-vendor-supported products (e.g., end of life) separately and restrict as necessary to reduce risk",
+            "Assessment Objective ID": "RM.3.147[a]",
+            "Assessment Objective": "the organization maintains a list of products the organization is using that are no longer supported by their vendors or do not have any type of vendor support;"
+        },
+        {
+            "Assessment Objective ID": "RM.3.147[b]",
+            "Assessment Objective": "the organization documents how it manages the risk of each such product within the organization; and"
+        },
+        {
+            "Assessment Objective ID": "RM.3.147[c]",
+            "Assessment Objective": "the organization tracks the risks of using non-vendor-supported products."
+        },
+        {
+            "CMMC": "SA.3.169",
+            "CUI": "N/A",
+            "Practice Requirement": "Receive and respond to cyber threat intelligence from information sharing forums and sources and communicate to stakeholders.",
+            "Assessment Objective ID": "SA.3.169[a]",
+            "Assessment Objective": "the organization identifies cyber threat intelligence from information sharing forums and sources;"
+        },
+        {
+            "Assessment Objective ID": "SA.3.169[b]",
+            "Assessment Objective": "the organization responds to cyber threat intelligence from information sharing forums and sources; and"
+        },
+        {
+            "Assessment Objective ID": "SA.3.169[c]",
+            "Assessment Objective": "the organization communicates this information to appropriate stakeholders."
+        },
+        {
+            "CMMC": "SC.1.175",
+            "CUI": "3.13.1",
+            "Practice Requirement": "Monitor, control, and protect organizational communications (i.e., information transmitted\r\nor received by organizational information systems) at the external boundaries and key internal boundaries of the information systems.",
+            "Assessment Objective ID": "SC.1.175[a]",
+            "Assessment Objective": "the external system boundary is defined."
+        },
+        {
+            "Assessment Objective ID": "SC.1.175[b]",
+            "Assessment Objective": "key internal system boundaries are defined."
+        },
+        {
+            "Assessment Objective ID": "SC.1.175[c]",
+            "Assessment Objective": "communications are monitored at the external system boundary."
+        },
+        {
+            "Assessment Objective ID": "SC.1.175[d]",
+            "Assessment Objective": "communications are monitored at key internal boundaries."
+        },
+        {
+            "Assessment Objective ID": "SC.1.175[e]",
+            "Assessment Objective": "communications are controlled at the external system boundary."
+        },
+        {
+            "Assessment Objective ID": "SC.1.175[f]",
+            "Assessment Objective": "communications are controlled at key internal boundaries."
+        },
+        {
+            "Assessment Objective ID": "SC.1.175[g]",
+            "Assessment Objective": "communications are protected at the external system boundary."
+        },
+        {
+            "Assessment Objective ID": "SC.1.175[h]",
+            "Assessment Objective": "communications are protected at key internal boundaries."
+        },
+        {
+            "CMMC": "SC.1.176",
+            "CUI": "3.13.5",
+            "Practice Requirement": "Implement subnetworks for publicly accessible system components that are physically or logically separated from internal networks.\r",
+            "Assessment Objective ID": "SC.1.176[a]",
+            "Assessment Objective": "publicly accessible system components are identified."
+        },
+        {
+            "Assessment Objective ID": "SC.1.176[b]",
+            "Assessment Objective": "subnetworks for publicly accessible system components are physically or logically separated from internal networks."
+        },
+        {
+            "CMMC": "SC.2.178",
+            "CUI": "3.13.12",
+            "Practice Requirement": "Prohibit remote activation of collaborative computing devices and provide indication of devices in use to users present at the device.",
+            "Assessment Objective ID": "SC.2.178[a]",
+            "Assessment Objective": "collaborative computing devices are identified."
+        },
+        {
+            "Assessment Objective ID": "SC.2.178[b]",
+            "Assessment Objective": "collaborative computing devices provide indication to users of devices in use."
+        },
+        {
+            "Assessment Objective ID": "SC.2.178[c]",
+            "Assessment Objective": "remote activation of collaborative computing devices is prohibited."
+        },
+        {
+            "CMMC": "SC.3.177",
+            "CUI": "3.13.11",
+            "Practice Requirement": "Employ FIPS-validated cryptography when used to protect the  confidentiality of CUI.\r",
+            "Assessment Objective ID": "SC.3.177",
+            "Assessment Objective": "Determine if FIPS-validated cryptography is employed to protect the confidentiality of CUI."
+        },
+        {
+            "CMMC": "SC.2.179",
+            "CUI": "N/A",
+            "Practice Requirement": "Use encrypted sessions for the management of network devices.\r",
+            "Assessment Objective ID": "SC.2.179[a]",
+            "Assessment Objective": "the organization has one or more policies and/or procedures for establishing connections to manage network devices; and"
+        },
+        {
+            "Assessment Objective ID": "SC.2.179[b]",
+            "Assessment Objective": "the tools used for establishing remote connections to network devices use encryption."
+        },
+        {
+            "CMMC": "SC.3.180",
+            "CUI": "3.13.2",
+            "Practice Requirement": "Employ architectural designs, software development techniques, and systems engineering principles that promote effective information security within organizational systems.\r",
+            "Assessment Objective ID": "SC.3.180[a]",
+            "Assessment Objective": "architectural designs that promote effective information security are identified."
+        },
+        {
+            "Assessment Objective ID": "SC.3.180[b]",
+            "Assessment Objective": "software development techniques that promote effective information security are identified."
+        },
+        {
+            "Assessment Objective ID": "SC.3.180[c]",
+            "Assessment Objective": "systems engineering principles that promote effective information security are identified."
+        },
+        {
+            "Assessment Objective ID": "SC.3.180[d]",
+            "Assessment Objective": "identified architectural designs that promote effective information security are employed."
+        },
+        {
+            "Assessment Objective ID": "SC.3.180[e]",
+            "Assessment Objective": "identified software development techniques that promote effective information security are employed."
+        },
+        {
+            "Assessment Objective ID": "SC.3.180[f]",
+            "Assessment Objective": "identified systems engineering principles that promote effective information security are employed."
+        },
+        {
+            "CMMC": "SC.3.181",
+            "CUI": "3.13.3",
+            "Practice Requirement": "Separate user functionality from system management functionality.",
+            "Assessment Objective ID": "SC.3.181[a]",
+            "Assessment Objective": "user functionality is identified."
+        },
+        {
+            "Assessment Objective ID": "SC.3.181[b]",
+            "Assessment Objective": "system management functionality is identified."
+        },
+        {
+            "Assessment Objective ID": "SC.3.181[c]",
+            "Assessment Objective": "user functionality is separated from system management functionality."
+        },
+        {
+            "CMMC": "SC.3.182",
+            "CUI": "3.13.4",
+            "Practice Requirement": "Prevent unauthorized and unintended information transfer via shared system resources.",
+            "Assessment Objective ID": "SC.3.182",
+            "Assessment Objective": "Determine if unauthorized and unintended information transfer via shared system resources is prevented."
+        },
+        {
+            "CMMC": "SC.3.183",
+            "CUI": "3.13.6",
+            "Practice Requirement": "Deny network communications traffic by default and allow network communications traffic by exception (i.e., deny all, permit by exception).",
+            "Assessment Objective ID": "SC.3.183[a]",
+            "Assessment Objective": "network communications traffic is denied by default."
+        },
+        {
+            "Assessment Objective ID": "SC.3.183[b]",
+            "Assessment Objective": "network communications traffic is allowed by exception."
+        },
+        {
+            "CMMC": "SC.3.184",
+            "CUI": "3.13.7",
+            "Practice Requirement": "Prevent remote devices from simultaneously establishing non-remote connections with organizational systems and communicating via some other connection to resources in\r\nexternal networks (i.e., split tunneling).",
+            "Assessment Objective ID": "SC.3.184",
+            "Assessment Objective": "Determine if remote devices are prevented from simultaneously establishing non-remote connections with the system and communicating via some other connection to resources in external networks (i.e., split tunneling)."
+        },
+        {
+            "CMMC": "SC.3.185",
+            "CUI": "3.13.8",
+            "Practice Requirement": "Implement cryptographic mechanisms to prevent unauthorized disclosure of CUI during transmission unless otherwise protected by alternative physical safeguards.\r",
+            "Assessment Objective ID": "SC.3.185[a]",
+            "Assessment Objective": "cryptographic mechanisms intended to prevent unauthorized disclosure of CUI are identified."
+        },
+        {
+            "Assessment Objective ID": "SC.3.185[b]",
+            "Assessment Objective": "alternative physical safeguards intended to prevent unauthorized disclosure of CUI are identified."
+        },
+        {
+            "Assessment Objective ID": "SC.3.185[c]",
+            "Assessment Objective": "either cryptographic mechanisms or alternative physical safeguards are implemented to prevent unauthorized disclosure of CUI during transmission."
+        },
+        {
+            "CMMC": "SC.3.186",
+            "CUI": "3.13.9",
+            "Practice Requirement": "Terminate network connections associated with communications sessions at the end of the\r\nsessions or after a defined period of inactivity.",
+            "Assessment Objective ID": "SC.3.186[a]",
+            "Assessment Objective": "a period of inactivity to terminate network connections associated with communications sessions is defined."
+        },
+        {
+            "Assessment Objective ID": "SC.3.186[b]",
+            "Assessment Objective": "network connections associated with communications sessions are terminated at the end of the sessions."
+        },
+        {
+            "Assessment Objective ID": "SC.3.186[c]",
+            "Assessment Objective": "network connections associated with communications sessions are terminated after the defined period of inactivity."
+        },
+        {
+            "CMMC": "SC.3.187",
+            "CUI": "3.13.10",
+            "Practice Requirement": "Establish and manage cryptographic keys for cryptography employed in organizational systems.",
+            "Assessment Objective ID": "SC.3.187[a]",
+            "Assessment Objective": "cryptographic keys are established whenever cryptography is employed."
+        },
+        {
+            "Assessment Objective ID": "SC.3.187[b]",
+            "Assessment Objective": "cryptographic keys are managed whenever cryptography is employed."
+        },
+        {
+            "CMMC": "SC.3.188",
+            "CUI": "3.13.13",
+            "Practice Requirement": "Control and monitor the use of mobile code.",
+            "Assessment Objective ID": "SC.3.188[a]",
+            "Assessment Objective": "use of mobile code is controlled."
+        },
+        {
+            "Assessment Objective ID": "SC.3.188[b]",
+            "Assessment Objective": "use of mobile code is monitored."
+        },
+        {
+            "CMMC": "SC.3.189",
+            "CUI": "3.13.14",
+            "Practice Requirement": "Control and monitor the use of Voice over Internet Protocol (VoIP) technologies.",
+            "Assessment Objective ID": "SC.3.189[a]",
+            "Assessment Objective": "use of Voice over Internet Protocol (VoIP) technologies is controlled."
+        },
+        {
+            "Assessment Objective ID": "SC.3.189[b]",
+            "Assessment Objective": "use of Voice over Internet Protocol (VoIP) technologies is monitored."
+        },
+        {
+            "CMMC": "SC.3.190",
+            "CUI": "3.13.15",
+            "Practice Requirement": "Protect the authenticity of communications sessions.",
+            "Assessment Objective ID": "SC.3.190",
+            "Assessment Objective": "Determine if the authenticity of communications sessions is protected."
+        },
+        {
+            "CMMC": "SC.3.191",
+            "CUI": "3.13.16",
+            "Practice Requirement": "Protect the confidentiality of CUI at rest",
+            "Assessment Objective ID": "SC.3.191",
+            "Assessment Objective": "Determine if the confidentiality of CUI at rest is protected."
+        },
+        {
+            "CMMC": "SC.3.192",
+            "CUI": "N/A",
+            "Practice Requirement": "Implement Domain Name System (DNS) filtering services.",
+            "Assessment Objective ID": "SC.3.192[a]",
+            "Assessment Objective": "the organization uses a DNS filtering service;"
+        },
+        {
+            "Assessment Objective ID": "SC.3.192[b]",
+            "Assessment Objective": "the organization has configured the enterprise to ensure outgoing web access requests utilize the DNS filtering service; and"
+        },
+        {
+            "Assessment Objective ID": "SC.3.192[c]",
+            "Assessment Objective": "the organization monitors the DNS filtering service for effectiveness."
+        },
+        {
+            "CMMC": "SC.3.193",
+            "CUI": "N/A",
+            "Practice Requirement": "Implement a policy restricting the publication of CUI on externally owned, publicly accessible websites (e.g., forums, LinkedIn, Facebook, Twitter).",
+            "Assessment Objective ID": "SC.3.193[a]",
+            "Assessment Objective": "the organization has a security policy which restricts publishing CUI to any externally owned, publicly accessible information system;"
+        },
+        {
+            "Assessment Objective ID": "SC.3.193[b]",
+            "Assessment Objective": "the organization designates individuals authorized to post organization information onto any externally owned, publicly accessible information systems;"
+        },
+        {
+            "Assessment Objective ID": "SC.3.193[d]",
+            "Assessment Objective": "the organization conducts reviews to ensure CUI is not included in proposed content to be posted by the organization on a publicly accessible information system under its control; and"
+        },
+        {
+            "Assessment Objective ID": "SC.3.193[e]",
+            "Assessment Objective": "the organization removes CUI, if discovered, from any publicly accessible information system under its control."
+        },
+        {
+            "Assessment Objective ID": "SC.3.193[c]",
+            "Assessment Objective": "the organization trains authorized individuals to ensure that publicly accessible organization information does not contain CUI;"
+        },
+        {
+            "CMMC": "SI.1.210",
+            "CUI": "3.14.1",
+            "Practice Requirement": "Identify, report, and correct information and information system flaws in a timely manner",
+            "Assessment Objective ID": "SI.1.210[a]",
+            "Assessment Objective": "the time within which to identify system flaws is specified."
+        },
+        {
+            "Assessment Objective ID": "SI.1.210[c]",
+            "Assessment Objective": "the time within which to report system flaws is specified."
+        },
+        {
+            "Assessment Objective ID": "SI.1.210[e]",
+            "Assessment Objective": "the time within which to correct system flaws is specified."
+        },
+        {
+            "Assessment Objective ID": "SI.1.210[b]",
+            "Assessment Objective": "system flaws are identified within the specified time frame."
+        },
+        {
+            "Assessment Objective ID": "SI.1.210[d]",
+            "Assessment Objective": "system flaws are reported within the specified time frame."
+        },
+        {
+            "Assessment Objective ID": "SI.1.210[f]",
+            "Assessment Objective": "system flaws are corrected within the specified time frame."
+        },
+        {
+            "CMMC": "SI.1.211",
+            "CUI": "3.14.2",
+            "Practice Requirement": "Provide protection from malicious code at appropriate locations within organizational information systems.",
+            "Assessment Objective ID": "SI.1.211[a]",
+            "Assessment Objective": "designated locations for malicious code protection are identified."
+        },
+        {
+            "Assessment Objective ID": "SI.1.211[b]",
+            "Assessment Objective": "protection from malicious code at designated locations is provided."
+        },
+        {
+            "CMMC": "SI.1.212",
+            "CUI": "3.14.4",
+            "Practice Requirement": "Update malicious code protection mechanisms when new releases are available.",
+            "Assessment Objective ID": "SI.1.212",
+            "Assessment Objective": "Determine if malicious code protection mechanisms are updated when new releases are available."
+        },
+        {
+            "CMMC": "SI.1.213",
+            "CUI": "3.14.5",
+            "Practice Requirement": "Perform periodic scans of the information system and real-time scans of files from external\r\nsources as files are downloaded, opened, or executed.",
+            "Assessment Objective ID": "SI.1.213[a]",
+            "Assessment Objective": "the frequency for malicious code scans is defined."
+        },
+        {
+            "Assessment Objective ID": "SI.1.213[b]",
+            "Assessment Objective": "malicious code scans are performed with the defined frequency."
+        },
+        {
+            "Assessment Objective ID": "SI.1.213[c]",
+            "Assessment Objective": "real-time malicious code scans of files from external sources as files are downloaded, opened, or executed are performed."
+        },
+        {
+            "CMMC": "SI.2.214",
+            "CUI": "3.14.3",
+            "Practice Requirement": "Monitor system security alerts and advisories and take action in response.",
+            "Assessment Objective ID": "SI.2.214[a]",
+            "Assessment Objective": "response actions to system security alerts and advisories are identified."
+        },
+        {
+            "Assessment Objective ID": "SI.2.214[b]",
+            "Assessment Objective": "system security alerts and advisories are monitored."
+        },
+        {
+            "Assessment Objective ID": "SI.2.214[c]",
+            "Assessment Objective": "actions in response to system security alerts and advisories are taken."
+        },
+        {
+            "CMMC": "SI.2.216",
+            "CUI": "3.14.6",
+            "Practice Requirement": "Monitor organizational systems, including inbound and outbound communications traffic, to\r\ndetect attacks and indicators of potential attacks.",
+            "Assessment Objective ID": "SI.2.216[a]",
+            "Assessment Objective": "the system is monitored to detect attacks and indicators of potential attacks."
+        },
+        {
+            "Assessment Objective ID": "SI.2.216[b]",
+            "Assessment Objective": "inbound communications traffic is monitored to detect attacks and indicators of potential attacks."
+        },
+        {
+            "Assessment Objective ID": "SI.2.216[c]",
+            "Assessment Objective": "outbound communications traffic is monitored to detect attacks and indicators of potential attacks."
+        },
+        {
+            "CMMC": "SI.2.217",
+            "CUI": "3.14.7",
+            "Practice Requirement": "Identify unauthorized use of organizational systems.",
+            "Assessment Objective ID": "SI.2.217[a]",
+            "Assessment Objective": "authorized use of the system is defined."
+        },
+        {
+            "Assessment Objective ID": "SI.2.217[b]",
+            "Assessment Objective": "unauthorized use of the system is identified."
+        },
+        {
+            "CMMC": "SI.3.218",
+            "CUI": "N/A",
+            "Practice Requirement": "Employ spam protection mechanisms at information system access entry and exit points",
+            "Assessment Objective ID": "SI.3.218[a]",
+            "Assessment Objective": "the organization employs spam protection mechanisms at information system entry points to detect unsolicited messages;"
+        },
+        {
+            "Assessment Objective ID": "SI.3.218[b]",
+            "Assessment Objective": "the organization employs spam protection mechanisms at information system entry points to take organizationally defined actions on unsolicited messages;"
+        },
+        {
+            "Assessment Objective ID": "SI.3.218[c]",
+            "Assessment Objective": "the organization employs spam protection mechanisms at information system exit points to detect unsolicited messages;"
+        },
+        {
+            "Assessment Objective ID": "SI.3.218[d]",
+            "Assessment Objective": "the organization employs spam protection mechanisms at information system exit points to take organizationally defined actions on unsolicited messages; and"
+        },
+        {
+            "Assessment Objective ID": "SI.3.218[e]",
+            "Assessment Objective": "the organization updates spam protection mechanisms when new releases are available in accordance with organizational configuration management policy and procedures."
+        },
+        {
+            "CMMC": "SI.3.219",
+            "CUI": "N/A",
+            "Practice Requirement": "Implement email forgery protections.",
+            "Assessment Objective ID": "SI.3.219",
+            "Assessment Objective": "the organization implements email forgery protections."
+        },
+        {
+            "CMMC": "SI.3.220",
+            "CUI": "N/A",
+            "Practice Requirement": "Utilize sandboxing to detect or block potentially malicious email.",
+            "Assessment Objective ID": "SI.3.220[a]",
+            "Assessment Objective": "the organization defines information system, system component, or location where a sandbox capability to detect or block potentially malicious email is employed; and"
+        },
+        {
+            "Assessment Objective ID": "SI.3.220[b]",
+            "Assessment Objective": "the organization employs a sandbox capability within organization-defined information system, system component, or location to detect or block potentially malicious email."
+        }
+    ]
+}
