@@ -1,0 +1,396 @@
+{
+    "CIS Checklist": [
+        {
+            "Family": "Identity and Access Management",
+            "Control ID": "1.1",
+            "Title": "1.1 Avoid the use of the \"root\" account (Scored)",
+            "Description": "This control is implemented using the AWS CloudWatch Alarm and  custom Log Metric Filter defined for control 3.3 which  reports if the root account is being used. ",
+            "Guidance": "We recommend that Root accounts should not be used and that the credentials not be shared with anyone else. As a best practice, customers should leverage IAM Groups, Roles and Users to grant access to specific AWS resources. Refer to IAM Best Practices at  the following link:\r\nhttp://docs.aws.amazon.com/IAM/latest/UserGuide/best-practices.html",
+            "Responsibility": "Customer"
+        },
+        {
+            "Family": "Identity and Access Management",
+            "Control ID": "1.2",
+            "Title": "1.2 Ensure multi-factor authentication (MFA) is enabled for all IAM users that have a password (Scored)",
+            "Description": "This control is implemented as a Config rule backed by a custom lambda function. The config rule reports back the compliance status of IAM users against this control. The Config rule DOES NOT enforce this control by enabling MFA for any of the IAM users.",
+            "Guidance": "For extra security, we recommend that customers enable multi-factor authentication (MFA) for  IAM users based on the compliance reported by the config rule.\r\nRefer to IAM Best Practices at the following link:\r\nhttp://docs.aws.amazon.com/IAM/latest/UserGuide/best-practices.html\r\n\r\nIf the Config rule reports NonCompliance, ensure that IAM Users with a password have MFA enabled. For remediation, refer to control 1.2 in the document  https://d0.awsstatic.com/whitepapers/compliance/AWS_CIS_Foundations_Benchmark.pdf",
+            "Responsibility": "Shared (Config Rule and Customer)"
+        },
+        {
+            "Family": "Identity and Access Management",
+            "Control ID": "1.3",
+            "Title": "1.3 Ensure credentials unused for 90 days or greater are disabled (Scored)",
+            "Description": "This control is implemented as a Config rule backed by a custom lambda function. The config rule reports back the compliance status of IAM users credentials against this control. The Config rule  DOES NOT enforce this control by disabling credentials.",
+            "Guidance": "We recommend that unused credentials be disabled by customers based on the Compliance reported by the Config rule.\r\nRefer to IAM Best Practices at the following link:\r\nhttp://docs.aws.amazon.com/IAM/latest/UserGuide/best-practices.html\r\n\r\nIf the Config rule reports NonCompliance, ensure that credentials unused for 90 days or greater are disabled. For remediation, refer to control 1.3 in the document  https://d0.awsstatic.com/whitepapers/compliance/AWS_CIS_Foundations_Benchmark.pdf",
+            "Responsibility": "Shared (Config Rule and Customer)"
+        },
+        {
+            "Family": "Identity and Access Management",
+            "Control ID": "1.4",
+            "Title": "1.4 Ensure access keys are rotated every 90 days or less (Scored)",
+            "Description": "This control is implemented as a Config rule backed by a custom lambda function. The config rule reports back the compliance status of IAM users with active access keys against this control. The Config rule  DOES NOT enforce this control by rotating the access keys.",
+            "Guidance": "We recommend that access keys  be rotated by customers based on the Compliance reported by the Config rule. Refer to IAM Best Practices at\r\nhttp://docs.aws.amazon.com/IAM/latest/UserGuide/best-practices.html\r\n\r\nIf the Config rule reports NonCompliance, ensure that Access keys are rotated every 90 days or less. For remediation, refer to control 1.4 in the document  https://d0.awsstatic.com/whitepapers/compliance/AWS_CIS_Foundations_Benchmark.pdf",
+            "Responsibility": "Shared (Config Rule and Customer)"
+        },
+        {
+            "Family": "Identity and Access Management",
+            "Control ID": "1.5",
+            "Title": "1.5 Ensure IAM password policy requires at least one uppercase letter (Scored)",
+            "Description": "The Quick Start creates an AWS Managed Config Rule to check the compliance status of the policy password against these specific CIS controls. The Config rule  does not enforce any security controls.",
+            "Guidance": "We recommend that a strong password policy be set for IAM users.\r\nRefer to IAM Best Practices at the following link:\r\nhttp://docs.aws.amazon.com/IAM/latest/UserGuide/best-practices.html\r\n\r\nIf the Config rule reports NonCompliance, ensure that the password policy meets the controls requirements. For remediation, refer to controls 1.5 through 1.11 in the document  https://d0.awsstatic.com/whitepapers/compliance/AWS_CIS_Foundations_Benchmark.pdf",
+            "Responsibility": "Shared (Config Rule and Customer)"
+        },
+        {
+            "Family": "Identity and Access Management",
+            "Control ID": "1.6",
+            "Title": "1.6 Ensure IAM password policy require at least one lowercase letter (Scored)",
+            "Description": "The Quick Start creates an AWS Managed Config Rule to check the compliance status of the policy password against these specific CIS controls. The Config rule  does not enforce any security controls.",
+            "Guidance": "We recommend that a strong password policy be set for IAM users.\r\nRefer to IAM Best Practices at the following link:\r\nhttp://docs.aws.amazon.com/IAM/latest/UserGuide/best-practices.html\r\n\r\nIf the Config rule reports NonCompliance, ensure that the password policy meets the controls requirements. For remediation, refer to controls 1.5 through 1.11 in the document  https://d0.awsstatic.com/whitepapers/compliance/AWS_CIS_Foundations_Benchmark.pdf",
+            "Responsibility": "Shared (Config Rule and Customer)"
+        },
+        {
+            "Family": "Identity and Access Management",
+            "Control ID": "1.7",
+            "Title": "1.7 Ensure IAM password policy require at least one symbol (Scored)",
+            "Description": "The Quick Start creates an AWS Managed Config Rule to check the compliance status of the policy password against these specific CIS controls. The Config rule  does not enforce any security controls.",
+            "Guidance": "We recommend that a strong password policy be set for IAM users.\r\nRefer to IAM Best Practices at the following link:\r\nhttp://docs.aws.amazon.com/IAM/latest/UserGuide/best-practices.html\r\n\r\nIf the Config rule reports NonCompliance, ensure that the password policy meets the controls requirements. For remediation, refer to controls 1.5 through 1.11 in the document  https://d0.awsstatic.com/whitepapers/compliance/AWS_CIS_Foundations_Benchmark.pdf",
+            "Responsibility": "Shared (Config Rule and Customer)"
+        },
+        {
+            "Family": "Identity and Access Management",
+            "Control ID": "1.8",
+            "Title": "1.8 Ensure IAM password policy require at least one number (Scored)",
+            "Description": "The Quick Start creates an AWS Managed Config Rule to check the compliance status of the policy password against these specific CIS controls. The Config rule  does not enforce any security controls.",
+            "Guidance": "We recommend that a strong password policy be set for IAM users.\r\nRefer to IAM Best Practices at the following link:\r\nhttp://docs.aws.amazon.com/IAM/latest/UserGuide/best-practices.html\r\n\r\nIf the Config rule reports NonCompliance, ensure that the password policy meets the controls requirements. For remediation, refer to controls 1.5 through 1.11 in the document  https://d0.awsstatic.com/whitepapers/compliance/AWS_CIS_Foundations_Benchmark.pdf",
+            "Responsibility": "Shared (Config Rule and Customer)"
+        },
+        {
+            "Family": "Identity and Access Management",
+            "Control ID": "1.9",
+            "Title": "1.9 Ensure IAM password policy requires minimum length of 14 or greater (Scored)",
+            "Description": "The Quick Start creates an AWS Managed Config Rule to check the compliance status of the policy password against these specific CIS controls. The Config rule  does not enforce any security controls.",
+            "Guidance": "We recommend that a strong password policy be set for IAM users.\r\nRefer to IAM Best Practices at the following link:\r\nhttp://docs.aws.amazon.com/IAM/latest/UserGuide/best-practices.html\r\n\r\nIf the Config rule reports NonCompliance, ensure that the password policy meets the controls requirements. For remediation, refer to controls 1.5 through 1.11 in the document  https://d0.awsstatic.com/whitepapers/compliance/AWS_CIS_Foundations_Benchmark.pdf",
+            "Responsibility": "Shared (Config Rule and Customer)"
+        },
+        {
+            "Family": "Identity and Access Management",
+            "Control ID": "1.10",
+            "Title": "1.10 Ensure IAM password policy prevents password reuse (Scored)",
+            "Description": "The Quick Start creates an AWS Managed Config Rule to check the compliance status of the policy password against these specific CIS controls. The Config rule  does not enforce any security controls.",
+            "Guidance": "We recommend that a strong password policy be set for IAM users.\r\nRefer to IAM Best Practices at the following link:\r\nhttp://docs.aws.amazon.com/IAM/latest/UserGuide/best-practices.html\r\n\r\nIf the Config rule reports NonCompliance, ensure that the password policy meets the controls requirements. For remediation, refer to controls 1.5 through 1.11 in the document  https://d0.awsstatic.com/whitepapers/compliance/AWS_CIS_Foundations_Benchmark.pdf",
+            "Responsibility": "Shared (Config Rule and Customer)"
+        },
+        {
+            "Family": "Identity and Access Management",
+            "Control ID": "1.11",
+            "Title": "1.11 Ensure IAM password policy expires passwords within 90 days or less (Scored)",
+            "Description": "The Quick Start creates an AWS Managed Config Rule to check the compliance status of the policy password against these specific CIS controls. The Config rule  does not enforce any security controls.",
+            "Guidance": "We recommend that a strong password policy be set for IAM users.\r\nRefer to IAM Best Practices at the following link:\r\nhttp://docs.aws.amazon.com/IAM/latest/UserGuide/best-practices.html\r\n\r\nIf the Config rule reports NonCompliance, ensure that the password policy meets the controls requirements. For remediation, refer to controls 1.5 through 1.11 in the document  https://d0.awsstatic.com/whitepapers/compliance/AWS_CIS_Foundations_Benchmark.pdf",
+            "Responsibility": "Shared (Config Rule and Customer)"
+        },
+        {
+            "Family": "Identity and Access Management",
+            "Control ID": "1.12",
+            "Title": "1.12 Ensure no root account access key exists (Scored)",
+            "Description": "This control is implemented as a Config rule backed by a custom lambda function. The config rule reports back the compliance status of root account access keys and MFA settings for root account. The Config rule  DOES NOT enforce this control by changing any root account information.",
+            "Guidance": "We recommend you that create an IAM user for yourself that has administrative privileges and avoid generating Access Keys for the root account.\r\nRefer to IAM Best Practices at the following link:\r\nhttp://docs.aws.amazon.com/IAM/latest/UserGuide/best-practices.html\r\n\r\nIf the Config rule reports NonCompliance, ensure that no root account access key exists. For remediation, refer to control 1.12 in the document  https://d0.awsstatic.com/whitepapers/compliance/AWS_CIS_Foundations_Benchmark.pdf",
+            "Responsibility": "Shared (Config Rule and Customer)"
+        },
+        {
+            "Family": "Identity and Access Management",
+            "Control ID": "1.13",
+            "Title": "1.13 Ensure  MFA is enabled for the \"root\" account (Scored)",
+            "Description": "This control is implemented as a Config rule backed by a custom lambda function. The config rule reports back the compliance status of root account access keys and MFA settings for root account. The Config rule  DOES NOT enforce this control by changing any root account information.",
+            "Guidance": "We recommend that MFA be enabled for the root account\r\nRefer to IAM Best Practices at the following link:\r\nhttp://docs.aws.amazon.com/IAM/latest/UserGuide/best-practices.html\r\n\r\nIf the Config rule reports NonCompliance, ensure MFA is enabled for root account. For remediation, refer to control 1.13 in the document  https://d0.awsstatic.com/whitepapers/compliance/AWS_CIS_Foundations_Benchmark.pdf",
+            "Responsibility": "Shared (Config Rule and Customer)"
+        },
+        {
+            "Family": "Identity and Access Management",
+            "Control ID": "1.14",
+            "Title": "1.14 Ensure hardware MFA is enabled for the \"root\" account (Scored)",
+            "Description": "This control is implemented as a Config rule backed by a custom lambda function. The config rule reports back the compliance status of root account access keys and MFA settings for root account. The Config rule  DOES NOT enforce this control by changing any root account information.",
+            "Guidance": "We recommend that MFA be enabled for the root account\r\nRefer to IAM Best Practices at the following link:\r\nhttp://docs.aws.amazon.com/IAM/latest/UserGuide/best-practices.html\r\n\r\nIf the Config rule reports NonCompliance, ensure hardware MFA is enabled for root account. For remediation, refer to control 1.14 in the document  https://d0.awsstatic.com/whitepapers/compliance/AWS_CIS_Foundations_Benchmark.pdf",
+            "Responsibility": "Shared (Config Rule and Customer)"
+        },
+        {
+            "Family": "Identity and Access Management",
+            "Control ID": "1.15",
+            "Title": "1.15 Ensure security questions are registered in the AWS account (Not Scored)",
+            "Description": "The Quick start does not provide any implementation for this control due to the lack of APIs to automate this.",
+            "Guidance": "Security Questions are highly recommended to be setup to help you recover root login access, if lost. For remediation, refer to control 1.15 in the document  https://d0.awsstatic.com/whitepapers/compliance/AWS_CIS_Foundations_Benchmark.pdf",
+            "Responsibility": "Customer"
+        },
+        {
+            "Family": "Identity and Access Management",
+            "Control ID": "1.16",
+            "Title": "1.16 Ensure IAM policies are attached only to groups or roles (Scored)",
+            "Description": "This control is implemented as a Config rule backed by a custom lambda function. The config rule reports back the compliance status of IAM policies attached only to IAM Groups or Roles. The Config rule  DOES NOT enforce this control by attaching IAM policies to either IAM Groups or Roles",
+            "Guidance": "We recommend that you assign IAM Policies to either IAM Groups or IAM Roles to reduce the complexity of access management as the number of users grow.\r\nIf the Config rule reports NonCompliance, ensure IAM policies are attached only to Groups or Roles. For remediation, refer to control 1.16 in the document  https://d0.awsstatic.com/whitepapers/compliance/AWS_CIS_Foundations_Benchmark.pdf",
+            "Responsibility": "Shared (Config Rule and Customer)"
+        },
+        {
+            "Family": "Identity and Access Management",
+            "Control ID": "1.17",
+            "Title": "1.17 Maintain Current contact details (Not Scored)",
+            "Description": "The Quick start does not provide any implementation for this control due to the lack of APIs to automate this.",
+            "Guidance": "We recommend that current contact details be maintained. AWS Uses this contact the account owner when prohibitive or suspicious activities are observed within an account.\r\nFor remediation, refer to control 1.17 in the document  https://d0.awsstatic.com/whitepapers/compliance/AWS_CIS_Foundations_Benchmark.pdf",
+            "Responsibility": "Customer"
+        },
+        {
+            "Family": "Identity and Access Management",
+            "Control ID": "1.18",
+            "Title": "1.18 Ensure Security contact information is registered (Not Scored)",
+            "Description": "The Quick start does not provide any implementation for this control due to the lack of APIs to automate this.",
+            "Guidance": "We recommend that the Security contact information be kept current. Specifying security-specific contact information will help ensure that security advisories sent by AWS reach the team in your organization that is best equipped to respond to them.\r\n\r\nFor remediation, refer to control 1.18 in the document  https://d0.awsstatic.com/whitepapers/compliance/AWS_CIS_Foundations_Benchmark.pdf",
+            "Responsibility": "Customer"
+        },
+        {
+            "Family": "Identity and Access Management",
+            "Control ID": "1.19",
+            "Title": "1.19 Ensure IAM instance roles are used for AWS resource access from instances (Not Scored)",
+            "Description": "This control is implemented as a Config rule backed by a custom lambda function. The config rule reports back the compliance status of EC2 Instances which do not have an Instance Profile attached to them. The Config rule DOES NOT enforce this control by attaching Instance profiles to EC2 Instances.",
+            "Guidance": "We recommend that IAM Roles be attached to an EC2 Instance to provide temporary credentials for the applications running on the EC2 Instances\r\nRefer to IAM Best Practices at the following link:\r\nhttp://docs.aws.amazon.com/IAM/latest/UserGuide/best-practices.html\r\n\r\nIf the Config rule reports NonCompliance, ensure IAM Instance roles are used for EC2 Instances. For remediation, refer to control 1.19 in the document  https://d0.awsstatic.com/whitepapers/compliance/AWS_CIS_Foundations_Benchmark.pdf\r\n\r\nNote: IAM Roles can be atached to running Instances. See this documentation \r\nhttps://aws.amazon.com/blogs/security/new-attach-an-aws-iam-role-to-an-existing-amazon-ec2-instance-by-using-the-aws-cli/?sc_channel=sm&sc_campaign=rolesforrunninginstances&sc_publisher=tw&sc_medium=social&sc_content=read-post&sc_country=global&sc_geo=global&sc_category=ec2&sc_outcome=launch\r\n",
+            "Responsibility": "Shared (Config Rule and Customer)"
+        },
+        {
+            "Family": "Identity and Access Management",
+            "Control ID": "1.20",
+            "Title": "1.20 Ensure a support role has been created to manage incidents with AWS Support (Scored)",
+            "Description": "This control is implemented as a Config rule backed by a custom lambda function. The config rule reports back the compliance status on whether a Support role exists or not. The Config rule  DOES NOT enforce this control by creating a Support role.When the \"AWSSupportAccess\" managed policy is not assigned to any IAM User, Role or Group the config rule will not list any resources.When the \"AWSSupportAccess\" managed policy is assigned to any IAM User, Role or Group the config rule will list the resources as being compliant.",
+            "Guidance": "It is recommended that customers create an IAM Role to allow authorized users to manage incidents with AWS Support.\r\n\r\nIf the Config rule reports NonCompliance, ensure that atleast 1 IAM Role,User,Group has the AWSSupportAccess policy assigned to it. For remediation, refer to control 1.20 in the document  https://d0.awsstatic.com/whitepapers/compliance/AWS_CIS_Foundations_Benchmark.pdf",
+            "Responsibility": "Shared (Config Rule and Customer)"
+        },
+        {
+            "Family": "Identity and Access Management",
+            "Control ID": "1.21",
+            "Title": "1.21 Do not setup access keys during initial user setup for all IAM users that have a console password (Not Scored)",
+            "Description": "The Quick start does not provide any implementation for this control.",
+            "Guidance": "It is recommended that additional steps be taken by their user upon profile creation to understand the intent of usage and storage of keys.\r\n\r\nFor remediation, refer to control 1.21 in the document  https://d0.awsstatic.com/whitepapers/compliance/AWS_CIS_Foundations_Benchmark.pdf",
+            "Responsibility": "Customer"
+        },
+        {
+            "Family": "Identity and Access Management",
+            "Control ID": "1.22",
+            "Title": "1.22 Ensure IAM policies that allow full \"*:*\" administrative privileges are not created (Scored)",
+            "Description": "This control is implemented as a Config rule backed by a custom lambda function. The config rule reports back the compliance status on IAM Policies allowing Admin privileges. The Config rule  DOES NOT enforce this control by deleting such Policies.",
+            "Guidance": "It is recommended that IAM policies do not allow full administrative privileges and that the policies follow the principle of least previlige.\r\n\r\nIf the Config rule reports NonCompliance, ensure that IAM Policies provide least previlige access to AWS resources. For remediation, refer to control 1.22 in the document  https://d0.awsstatic.com/whitepapers/compliance/AWS_CIS_Foundations_Benchmark.pdf",
+            "Responsibility": "Shared (Config Rule and Customer)"
+        },
+        {
+            "Family": "Logging",
+            "Control ID": "2.1",
+            "Title": "2.1 Ensure CloudTrail is enabled in all regions (Scored)",
+            "Description": "This quickstart provides customers an option to automatically configure CloudTrail in the AWS region where this Quick Start is being run. Cloudtrail is not enabled in all regions. This is because CloudTrail Logs need to be delivered to CloudWatch Logs within each region.\r\n \r\nThis control is also implemented as a Config rule backed by a custom lambda function. The config rule reports back the compliance status on whether CloudTrail is enabled in all regions. The Config rule  DOES NOT enforce this control by enabling CloudTrail in all regions.",
+            "Guidance": "This quickstart provides customers an option to automatically configure CloudTrail in the AWS region where this Quick Start is being run. AWS accounts which do not have Cloudtrail configured, should choose this option for the CIS Cloudformation template to execute successfully. \r\n\r\nIf the Config rule reports NonCompliance, customers can choose to enable Cloudtrail in all regions and configure CloudWatch log delivery. For remediation, refer to control 2.1 in the document  https://d0.awsstatic.com/whitepapers/compliance/AWS_CIS_Foundations_Benchmark.pdf\r\n",
+            "Responsibility": "Shared (Cloudformation template, Config rule and Customer)"
+        },
+        {
+            "Family": "Logging",
+            "Control ID": "2.2",
+            "Title": "2.2 Ensure CloudTrail log file validation is enabled (Scored)",
+            "Description": "This quickstart enables Cloudtrail log file validation when customers choose the to automatically configure CloudTrail via the template. \r\n\r\nThis control is also implemented as a Config rule backed by a custom lambda function. The config rule reports back the compliance status on whether CloudTrail log file validation is enabled. The Config rule DOES NOT enforce this control by enabling CloudTrail log file validation.",
+            "Guidance": "\r\nIf the Config rule reports NonCompliance, ensure Cloudtrail log file validation is enabled. For remediation, refer to control 2.2 in the document  https://d0.awsstatic.com/whitepapers/compliance/AWS_CIS_Foundations_Benchmark.pdf\r\n",
+            "Responsibility": "Shared (Cloudformation template, Config rule and Customer)"
+        },
+        {
+            "Family": "Logging",
+            "Control ID": "2.3",
+            "Title": "2.3 Ensure the S3 bucket used to store CloudTrail logs is not publicly accessible (Scored)",
+            "Description": "This quickstart ensures that S3 Bucket for Cloudtrail is not publicly accessible when customers choose to automatically configure Cloudtrail via the template.\r\n\r\nThis control is also implemented as a Config rule backed by a custom lambda function. The config rule reports back the compliance status on whether CloudTrail log file S3 Bucket is publicly accessible. The Config rule  DOES NOT enforce this control by changing S3 Bucket ACLs.",
+            "Guidance": "\r\n\r\nIf the Config rule reports NonCompliance, ensure S3 Bucket configured for Cloudtrail to log to is not publicly accessible . For remediation, refer to control 2.3 in the document  https://d0.awsstatic.com/whitepapers/compliance/AWS_CIS_Foundations_Benchmark.pdf\r\n",
+            "Responsibility": "Shared (Cloudformation template, Config rule and Customer)"
+        },
+        {
+            "Family": "Logging",
+            "Control ID": "2.4",
+            "Title": "2.4 Ensure CloudTrail trails are integrated with CloudWatch Logs (Scored)",
+            "Description": "This quickstart ensures that Cloudtrail trails are integrated with CloudWatch Logs when customers choose to automatically configure Cloudtrail via the template.\r\n\r\nThis control is also implemented as a Config rule backed by a custom lambda function. The config rule reports back the compliance status on whether CloudTrail logs are integrated with CloudWatch logs. The Config rule  DOES NOT enforce this control by configuring CloudTrail to deliver logs to CloudWatch Logs.",
+            "Guidance": "\r\nIf the Config rule reports NonCompliance, ensure that Cloudtrail trails are integrated with Cloudwatch logs. For remediation, refer to control 2.4 in the document  https://d0.awsstatic.com/whitepapers/compliance/AWS_CIS_Foundations_Benchmark.pdf\r\n",
+            "Responsibility": "Shared (Cloudformation template, Config rule and Customer)"
+        },
+        {
+            "Family": "Logging",
+            "Control ID": "2.5",
+            "Title": "2.5 Ensure AWS Config is enabled in all regions (Scored)",
+            "Description": "This quickstart provides customers an option to automatically configure Config at a regional level via the template.",
+            "Guidance": "This quickstart provides customers an option to automatically configure AWS Config at a regional level. Customer AWS accounts which do not have Config configured, should choose this option for the CIS Cloudformation template to execute successfully. \r\n\r\nFor manual remediation, refer to control 2.5 in the document  https://d0.awsstatic.com/whitepapers/compliance/AWS_CIS_Foundations_Benchmark.pdf\r\n",
+            "Responsibility": "Shared (Cloudformation Template and Customer)"
+        },
+        {
+            "Family": "Logging",
+            "Control ID": "2.6",
+            "Title": "2.6 Ensure S3 bucket access logging is enabled on the CloudTrail S3 bucket (Scored)",
+            "Description": "This quickstart ensures that S3 bucket access logging is enabled on the Cloudtrail S3 bucket when customers choose to automatically configure Cloudtrail via the template.\r\n\r\nThis control is also implemented as a Config rule backed by a custom lambda function. The config rule reports back the compliance status on whether all S3 Buckets have logging enabled. The Config rule  DOES NOT enforce this control by configuring logging on any S3 bucket.",
+            "Guidance": "It is recommended that Logging be enabled for all S3 Buckets. Configuring logs to be placed in a separate bucket allows access to log information which can be useful in security and incident response workflows. \r\n\r\nIf the Config rule reports NonCompliance, enable Cloudtrail S3 bucket access logging. For remediation, refer to control 2.6 in the document  https://d0.awsstatic.com/whitepapers/compliance/AWS_CIS_Foundations_Benchmark.pdf",
+            "Responsibility": "Shared (Cloudformation template, Config rule and Customer)"
+        },
+        {
+            "Family": "Logging",
+            "Control ID": "2.7",
+            "Title": "2.7 Ensure CloudTrail logs are encrypted at rest using KMS CMKs (Scored)",
+            "Description": "This quickstart ensures that Cloudtrail logs are encrypted at rest using KMS CMKs when customers choose to automatically configure Cloudtrail via the template.\r\n\r\nThis control is also implemented as a Config rule backed by a custom lambda function. The config rule reports back the compliance status on whether CloudTrail logs are encrypted . The Config rule  DOES NOT enforce this control by enabling CloudTrail log file validation.",
+            "Guidance": "Configuring CloudTrail to use SSE-KMS provides additional confidentiality controls on log data as a given user must have S3 read permission on the corresponding log bucket and must be granted decrypt permission by the CMK policy.\r\n\r\nIf the Config rule reports NonCompliance, ensure Cloudtrail logs are encrypted at rest using KMS CMKs. For remediation, refer to control 2.7 in the document  https://d0.awsstatic.com/whitepapers/compliance/AWS_CIS_Foundations_Benchmark.pdf",
+            "Responsibility": "Shared (Cloudformation template, Config rule and Customer)"
+        },
+        {
+            "Family": "Logging",
+            "Control ID": "2.8",
+            "Title": "2.8 Ensure rotation for customer created CMKs is enabled (Scored)",
+            "Description": "This control is implemented as a Config Rule backed by a custom Lambda function. The Config Rule reports back the compliance status on whether the rotation for any CMKs is enabled. The Config rule  DOES NOT enforce this control by enabling CMKs rotation.",
+            "Guidance": "It is recommended to rotate encryption keys to reduce the potential impact of a compromised key as data encrypted with a new key cannot be accessed with a previous key that may have been exposed.\r\n\r\nIf the Config rule reports NonCompliance, ensure rotation of customer created CMKs are enabled. For remediation, refer to control 2.8 in the document  https://d0.awsstatic.com/whitepapers/compliance/AWS_CIS_Foundations_Benchmark.pdf",
+            "Responsibility": "Shared (Config rule and Customer)"
+        },
+        {
+            "Family": "Logging",
+            "Control ID": "2.9",
+            "Title": "2.9 Ensure VPC flow logging is enabled in all VPCs (Scored) ",
+            "Description": "This control is implemented as a Config rule backed by a custom lambda function. The config rule reports back the compliance status on whether VPC Flow Logging is enabled. The Config rule  DOES NOT enforce this control by enabling VPC Flow Logging.",
+            "Guidance": "It is recommended to have VPC Flow Logs enabled to provide visibility into network traffic that traverses the VPC and to detect anomalous traffic or insight during security workflows.\r\n\r\nIf the Config rule reports NonCompliance, ensure VPC Flow logging is enabled in all VPCs. For remediation, refer to control 2.9 in the document  https://d0.awsstatic.com/whitepapers/compliance/AWS_CIS_Foundations_Benchmark.pdf",
+            "Responsibility": "Shared (Config rule and Customer)"
+        },
+        {
+            "Family": "Monitoring",
+            "Control ID": "3.1",
+            "Title": "3.1 Ensure a log metric filter and alarm exist for unauthorized API calls (Scored)",
+            "Description": "The Quick Start creates an AWS CloudWatch Alarm and a custom Log Metric Filter to report on multiple unauthorized action or login attempts.",
+            "Guidance": "It is recommended that customers monitor unauthorized API calls which will help reveal application errors and may reduce time to detect malicious activity.",
+            "Responsibility": "Shared (CloudWatch Alarm and Customer)"
+        },
+        {
+            "Family": "Monitoring",
+            "Control ID": "3.2",
+            "Title": "3.2 Ensure a log metric filter and alarm exist for Management Console sign-in without MFA (Scored)",
+            "Description": "The Quick Start creates an AWS CloudWatch Alarm and a custom Log Metric Filter to report on Management Console logins without MFA. ",
+            "Guidance": "It is recommended that customers monitor for single-factor console logins. This will increase visibility into accounts that are not protected by MFA.",
+            "Responsibility": "Shared (CloudWatch Alarm and Customer)"
+        },
+        {
+            "Family": "Monitoring",
+            "Control ID": "3.3",
+            "Title": "3.3 Ensure a log metric filter and alarm exist for usage of \"root\" account  (Scored) ",
+            "Description": "The Quick Start creates an AWS CloudWatch Alarm and a custom Log Metric Filter to report if the root account is used. ",
+            "Guidance": "It is recommended that customers monitor for root account logins which will provide visibility into the use of a fully privileged account and an opportunity to reduce the use of it.",
+            "Responsibility": "Shared (CloudWatch Alarm and Customer)"
+        },
+        {
+            "Family": "Monitoring",
+            "Control ID": "3.4",
+            "Title": "3.4 Ensure a log metric filter and alarm exist for IAM policy changes (Scored) ",
+            "Description": "The Quick Start creates an AWS CloudWatch Rule that matches incoming CloudWatch Events for IAM policy changes and publishes the changes to an SNS topic. ",
+            "Guidance": "It is recommended that customers monitor changes to IAM policies which will help ensure authentication and authorization controls remain intact.",
+            "Responsibility": "Shared (CloudWatch Rule and Customer)"
+        },
+        {
+            "Family": "Monitoring",
+            "Control ID": "3.5",
+            "Title": "3.5 Ensure a log metric filter and alarm exist for CloudTrail configuration changes (Scored) ",
+            "Description": "The Quick Start creates an AWS CloudWatch Rule that matches incoming CloudWatch Events for CloudTrail changes and publishes the changes to an SNS topic.",
+            "Guidance": "It is recommended that customers monitor changes to CloudTrail's configuration which will help ensure sustained visibility to activities performed in the AWS account.",
+            "Responsibility": "Shared (CloudWatch Rule and Customer)"
+        },
+        {
+            "Family": "Monitoring",
+            "Control ID": "3.6",
+            "Title": "3.6 Ensure a log metric filter and alarm exist for AWS Management Console authentication failures (Scored) ",
+            "Description": "The Quick Start creates an AWS CloudWatch Alarm and a custom Log Metric Filter to report if there are multiple management console logins failures. ",
+            "Guidance": "It is recommended that customers monitor failed console logins. This may decrease lead time to detect an attempt to brute force a credential, which may provide an indicator, such as source IP, that can be used in other event correlation.",
+            "Responsibility": "Shared (CloudWatch Alarm and Customer)"
+        },
+        {
+            "Family": "Monitoring",
+            "Control ID": "3.7",
+            "Title": "3.7 Ensure a log metric filter and alarm exist for disabling or scheduled deletion of customer created CMKs (Scored) ",
+            "Description": "The Quick Start creates an AWS CloudWatch Alarm and a custom Log Metric Filter to report if customer created CMKs get disabled or scheduled for deletion. ",
+            "Guidance": "It is recommended that customers monitor deletion or disabling of CMKs. Data encrypted with disabled or deleted keys will no longer be accessible.",
+            "Responsibility": "Shared (CloudWatch Alarm and Customer)"
+        },
+        {
+            "Family": "Monitoring",
+            "Control ID": "3.8",
+            "Title": "3.8 Ensure a log metric filter and alarm exist for S3 bucket policy changes (Scored) ",
+            "Description": "The Quick Start creates an AWS CloudWatch Rule that matches incoming CloudWatch Events for S3 bucket policy changes and publishes the changes to an SNS topic. ",
+            "Guidance": "It is recommended that customers monitor changes to S3 bucket policies to reduce time to detect and correct permissive policies on sensitive S3 buckets.",
+            "Responsibility": "Shared (CloudWatch Rule and Customer)"
+        },
+        {
+            "Family": "Monitoring",
+            "Control ID": "3.9",
+            "Title": "3.9 Ensure a log metric filter and alarm exist for AWS Config configuration changes (Scored) ",
+            "Description": "The Quick Start creates an AWS CloudWatch Rule that matches incoming CloudWatch Events for Config changes and publishes the changes to an SNS topic. ",
+            "Guidance": "It is recommended that customers monitor changes to AWS Config configuration which will help ensure sustained visibility of configuration items within the AWS account.",
+            "Responsibility": "Shared (CloudWatch Rule and Customer)"
+        },
+        {
+            "Family": "Monitoring",
+            "Control ID": "3.10",
+            "Title": "3.10 Ensure a log metric filter and alarm exist for security group changes (Scored) ",
+            "Description": "The Quick Start creates an AWS CloudWatch Rule that matches incoming CloudWatch Events for security groups changes and publishes the changes to an SNS topic. ",
+            "Guidance": "It is recommended that customers monitor changes to security group which will help ensure that resources and services are not unintentionally exposed.",
+            "Responsibility": "Shared (CloudWatch Rule and Customer)"
+        },
+        {
+            "Family": "Monitoring",
+            "Control ID": "3.11",
+            "Title": "3.11 Ensure a log metric filter and alarm exist for changes to Network Access Control Lists (NACL) (Scored) ",
+            "Description": "The Quick Start creates an AWS CloudWatch Rule that matches incoming CloudWatch Events for network access control lists changes and publishes the changes to an SNS topic.",
+            "Guidance": "It is recommended that customers monitor changes to NACLs to help ensure that AWS resources and services are not unintentionally exposed.",
+            "Responsibility": "Shared (CloudWatch Rule and Customer)"
+        },
+        {
+            "Family": "Monitoring",
+            "Control ID": "3.12",
+            "Title": "3.12 Ensure a log metric filter and alarm exist for changes to network gateways (Scored) ",
+            "Description": "The Quick Start creates an AWS CloudWatch Rule that matches incoming CloudWatch Events for network gateways, route tables and VPC changes and publishes the changes to an SNS topic. ",
+            "Guidance": "It is recommended that customers monitor changes to network gateways which will help ensure that all ingress/egress traffic traverses the VPC border via a controlled path.\r\nMonitoring changes to route tables will help ensure that all VPC traffic flows through an expected path.Monitoring changes to VPC configuration will help ensure that all VPCs remain intact.",
+            "Responsibility": "Shared (CloudWatch Rule and Customer)"
+        },
+        {
+            "Family": "Monitoring",
+            "Control ID": "3.13",
+            "Title": "3.13 Ensure a log metric filter and alarm exist for route table changes (Scored) ",
+            "Description": "The Quick Start creates an AWS CloudWatch Rule that matches incoming CloudWatch Events for network gateways, route tables and VPC changes and publishes the changes to an SNS topic. ",
+            "Guidance": "It is recommended that customers monitor changes to network gateways which will help ensure that all ingress/egress traffic traverses the VPC border via a controlled path. Monitoring changes to route tables will help ensure that all VPC traffic flows through an expected path.Monitoring changes to VPC configuration will help ensure that all VPCs remain intact.",
+            "Responsibility": "Shared (CloudWatch Rule and Customer)"
+        },
+        {
+            "Family": "Monitoring",
+            "Control ID": "3.14",
+            "Title": "3.14 Ensure a log metric filter and alarm exist for VPC changes (Scored) ",
+            "Description": "The Quick Start creates an AWS CloudWatch Rule that matches incoming CloudWatch Events for network gateways, route tables and VPC changes and publishes the changes to an SNS topic. ",
+            "Guidance": "It is recommended that customers monitor changes to network gateways which will help ensure that all ingress/egress traffic traverses the VPC border via a controlled path.  Monitoring changes to route tables will help ensure that all VPC traffic flows through an expected path.Monitoring changes to VPC configuration will help ensure that all VPCs remain intact.",
+            "Responsibility": "Shared (CloudWatch Rule and Customer)"
+        },
+        {
+            "Family": "Networking",
+            "Control ID": "4.1",
+            "Title": "4.1 Ensure no security groups allow ingress from 0.0.0.0/0 to port 22 (Scored) ",
+            "Description": "This control is implemented as an AWS Managed Config Rule to report back the compliance status on whether security groups allow ingress from 0.0.0.0/0 to port 22. The Config rule  DOES NOT enforce this control by restricting security groups ingress traffic from 0.0.0.0/0 to port 22.",
+            "Guidance": "It is recommended that customers remove unfettered connectivity to remote console services, such as SSH, reduces a server's exposure to risk.\r\n\r\nIf the Config rule reports NonCompliance, ensure no security groups allow Ingress from 0.0.0.0/0 to port 22. For remediation, refer to control 4.1 in the document  https://d0.awsstatic.com/whitepapers/compliance/AWS_CIS_Foundations_Benchmark.pdf",
+            "Responsibility": "Shared (Config rule and Customer)"
+        },
+        {
+            "Family": "Networking",
+            "Control ID": "4.2",
+            "Title": "4.2 Ensure no security groups allow ingress from 0.0.0.0/0 to port 3389 (Scored) ",
+            "Description": "This control is implemented as an AWS Managed Config Rule to report back the compliance status on whether security groups allow ingress from 0.0.0.0/0 to port 3389. The Config rule  DOES NOT enforce this control by restricting security groups ingress traffic from 0.0.0.0/0 to port 3389.",
+            "Guidance": "It is recommended that customers remove unfettered connectivity to remote console services, such as RDP, reduces a server's exposure to risk.\r\n\r\nIf the Config rule reports NonCompliance, ensure no security groups allow Ingress from 0.0.0.0/0 to port 3389. For remediation, refer to control 4.2 in the document  https://d0.awsstatic.com/whitepapers/compliance/AWS_CIS_Foundations_Benchmark.pdf",
+            "Responsibility": "Shared (Config rule and Customer)"
+        },
+        {
+            "Family": "Networking",
+            "Control ID": "4.3",
+            "Title": "4.3 Ensure the default security group of every VPC restricts all traffic (Scored) ",
+            "Description": "This control is implemented as a Config rule backed by a custom lambda function. The config rule reports back the compliance status on whether the default security groups restrict all traffic. The Config rule  DOES NOT enforce this control by configuring the default security groups.",
+            "Guidance": "It is recommended to configure all VPC default security groups to restrict all traffic. This will encourage least privilege security group development and mindful placement of AWS resources into security groups which will in-turn reduce the exposure of those resources.\r\n\r\nIf the Config rule reports NonCompliance, ensure that the default security group of every VPC restricts all traffic. For remediation, refer to control 4.3 in the document  https://d0.awsstatic.com/whitepapers/compliance/AWS_CIS_Foundations_Benchmark.pdf",
+            "Responsibility": "Shared (Config rule and Customer)"
+        },
+        {
+            "Family": "Networking",
+            "Control ID": "4.4",
+            "Title": "4.4 Ensure routing tables for VPC peering are \"least access\" (Not Scored)",
+            "Description": "This control is implemented as a Config rule backed by a custom lambda function. The config rule reports back the compliance status on whether the VPC routing tables are configured with \"least access\". The Config rule  DOES NOT enforce this control by configuring routing tables for VPC peering.",
+            "Guidance": "Being highly selective in peering routing tables is a very effective way of minimizing the impact of breach as resources outside of these routes are inaccessible to the peered VPC.\r\n\r\nIf the Config rule reports NonCompliance, ensure that the routing tables for VPC peering are \"least access\". For remediation, refer to control 4.4 in the document  https://d0.awsstatic.com/whitepapers/compliance/AWS_CIS_Foundations_Benchmark.pdf",
+            "Responsibility": "Shared (Config rule and Customer)"
+        }
+    ]
+}
