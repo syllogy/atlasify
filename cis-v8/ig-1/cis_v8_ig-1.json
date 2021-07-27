@@ -1,0 +1,441 @@
+﻿{
+    "CIS Controls Version 8 Implementation Group 1": [
+        {
+            "ControlId": "1.1",
+            "Family": "Inventory and Control of Enterprise Assets",
+            "Title": "Establish and Maintain Detailed Enterprise Asset Inventory",
+            "NIST CSF Maapings": "ID.AM-1, PR.DS-3",
+            "References": "CIS Control 1 - Inventory and Control of Enterprise Assets:\r\nActively manage (inventory, track, and correct) all enterprise assets (end-user devices, including portable and mobile; network devices; non-computing/Internet of Things (IoT) devices; and servers) connected to the infrastructure physically, virtually, remotely, and those within cloud environments, to accurately know the totality of assets that need to be monitored and protected within the enterprise. This will also support identifying unauthorized and unmanaged assets to remove or remediate.",
+            "Full Description": "Establish and maintain an accurate, detailed, and up-to-date inventory of all enterprise assets with the potential to store or process data, to include: end-user devices (including portable and mobile), network devices, non-computing/IoT devices, and servers. Ensure the inventory records the network address (if static), hardware address, machine name, enterprise asset owner, department for each asset, and whether the asset has been approved to connect to the network. For mobile end-user devices,MDM type tools can support this process, where appropriate. This inventory includes assetsconnected to the infrastructure physically, virtually, remotely, and those within cloud environments. Additionally, it includes assets that are regularly connected to the enterprise's network infrastructure, even if they are not under control of the enterprise. Review and update the inventory of all enterprise assets bi-annually, or more frequently.\r\nSecurity Function: Identify\r\nAsset Type: Devices"
+        },
+        {
+            "ControlId": "1.2",
+            "Family": "Inventory and Control of Enterprise Assets",
+            "Title": "Address Unauthorized Assets",
+            "References": "CIS Control 1 - Inventory and Control of Enterprise Assets:\r\nActively manage (inventory, track, and correct) all enterprise assets (end-user devices, including portable and mobile; network devices; non-computing/Internet of Things (IoT) devices; and servers) connected to the infrastructure physically, virtually, remotely, and those within cloud environments, to accurately know the totality of assets that need to be monitored and protected within the enterprise. This will also support identifying unauthorized and unmanaged assets to remove or remediate.",
+            "Full Description": "Ensure that a process exists to address unauthorized assets on a weekly basis. The enterprise may choose to remove the asset from the network, deny the asset from connecting remotely to the network, or quarantine the asset.\r\nSecurity Function: Respond\r\nAsset Type: Devices"
+        },
+        {
+            "ControlId": "2.1",
+            "Family": "Inventory and Control of Software Assets",
+            "Title": "Establish and Maintain a Software Inventory",
+            "NIST CSF Maapings": "ID.AM-2",
+            "References": "CIS Control 2 - Inventory and Control of Software Assets:\r\nActively manage (inventory, track, and correct) all software (operating systems and applications) on the network so that only authorized software is installed and can execute, and that unauthorized and unmanaged software is found and prevented from installation or execution.",
+            "Full Description": "Establish and maintain a detailed inventory of all licensed software installed on enterprise assets. The software inventory must document the title, publisher, initial install/use date, and business purpose for each entry; where appropriate, include the Uniform Resource Locator (URL), app store(s), version(s), deployment mechanism, and decommission date. Review and update the software inventory bi-annually, or more frequently.\r\nSecurity Function: Identify\r\nAsset Type: Applications"
+        },
+        {
+            "ControlId": "2.2",
+            "Family": "Inventory and Control of Software Assets",
+            "Title": "Ensure Authorized Software is Currently Supported",
+            "NIST CSF Maapings": "ID.AM-2",
+            "References": "CIS Control 2 - Inventory and Control of Software Assets:\r\nActively manage (inventory, track, and correct) all software (operating systems and applications) on the network so that only authorized software is installed and can execute, and that unauthorized and unmanaged software is found and prevented from installation or execution.",
+            "Full Description": "Ensure that only currently supported software is designated as authorized in the software inventory for enterprise assets. If software is unsupported, yet necessary for the fulfillment of the enterprise's mission, document an exception detailing mitigating controls and residual risk acceptance. For any unsupported software without an exception documentation, designate as unauthorized. Review the software list to verify software support at least monthly, or more frequently.\r\nSecurity Function: Identify\r\nAsset Type: Applications"
+        },
+        {
+            "ControlId": "2.3",
+            "Family": "Inventory and Control of Software Assets",
+            "Title": "Address Unauthorized Software",
+            "NIST CSF Maapings": "DE.CM-7",
+            "References": "CIS Control 2 - Inventory and Control of Software Assets:\r\nActively manage (inventory, track, and correct) all software (operating systems and applications) on the network so that only authorized software is installed and can execute, and that unauthorized and unmanaged software is found and prevented from installation or execution.",
+            "Full Description": "Ensure that unauthorized software is either removed from use on enterprise assets or receives a documented exception. Review monthly, or more frequently.\r\nSecurity Function: Respond\r\nAsset Type: Applications"
+        },
+        {
+            "ControlId": "3.1",
+            "Family": "Data Protection",
+            "Title": "Establish and Maintain a Data Management Process",
+            "NIST CSF Maapings": "PR.IP-6",
+            "References": "CIS Control 3 - Data Protection:\r\nDevelop processes and technical controls to identify, classify, securely handle, retain, and dispose of data.",
+            "Full Description": "Establish and maintain a data management process. In the process, address data sensitivity, data owner, handling of data, data retention limits, and disposal requirements, based on sensitivity and retention standards for the enterprise. Review and update documentation annually, or when significant enterprise changes occur that could impact this Safeguard.\r\nSecurity Function: Identify\r\nAsset Type: Data"
+        },
+        {
+            "ControlId": "3.2",
+            "Family": "Data Protection",
+            "Title": "Establish and Maintain a Data Inventory",
+            "NIST CSF Maapings": "ID.AM-5",
+            "References": "CIS Control 3 - Data Protection:\r\nDevelop processes and technical controls to identify, classify, securely handle, retain, and dispose of data.",
+            "Full Description": "Establish and maintain a data inventory, based on the enterprise's data management process. Inventory sensitive data, at a minimum. Review and update inventory annually, at a minimum, with a priority on sensitive data.\r\nSecurity Function: Identify\r\nAsset Type: Data"
+        },
+        {
+            "ControlId": "3.3",
+            "Family": "Data Protection",
+            "Title": "Configure Data Access Control Lists",
+            "NIST CSF Maapings": "PR.AC-4",
+            "References": "CIS Control 3 - Data Protection:\r\nDevelop processes and technical controls to identify, classify, securely handle, retain, and dispose of data.",
+            "Full Description": "Configure data access control lists based on a user's need to know. Apply data access control lists, also known as access permissions, to local and remote file systems, databases, and applications.\r\nSecurity Function: Protect\r\nAsset Type: Data"
+        },
+        {
+            "ControlId": "3.4",
+            "Family": "Data Protection",
+            "Title": "Enforce Data Retention",
+            "References": "CIS Control 3 - Data Protection:\r\nDevelop processes and technical controls to identify, classify, securely handle, retain, and dispose of data.",
+            "Full Description": "Retain data according to the enterprise's data management process. Data retention must include both minimum and maximum timelines.\r\nSecurity Function: Protect\r\nAsset Type: Data"
+        },
+        {
+            "ControlId": "3.5",
+            "Family": "Data Protection",
+            "Title": "Securely Dispose of Data",
+            "NIST CSF Maapings": "PR.DS-3, PR.IP-6",
+            "References": "CIS Control 3 - Data Protection:\r\nDevelop processes and technical controls to identify, classify, securely handle, retain, and dispose of data.",
+            "Full Description": "Securely dispose of data as outlined in the enterprise's data management process. Ensure the disposal process and method are commensurate with the data sensitivity.\r\nSecurity Function: Protect\r\nAsset Type: Data"
+        },
+        {
+            "ControlId": "3.6",
+            "Family": "Data Protection",
+            "Title": "Encrypt Data on End-User Devices",
+            "References": "CIS Control 3 - Data Protection:\r\nDevelop processes and technical controls to identify, classify, securely handle, retain, and dispose of data.",
+            "Full Description": "Encrypt data on end-user devices containing sensitive data. Example implementations can include: Windows BitLocker, Apple FileVault, Linux dm-crypt.\r\nSecurity Function: Protect\r\nAsset Type: Devices"
+        },
+        {
+            "ControlId": "4.1",
+            "Family": "Secure Configuration of Enterprise Assets and Software",
+            "Title": "Establish and Maintain a Secure Configuration Process",
+            "NIST CSF Maapings": "PR.IP-1",
+            "References": "CIS Control 4 - Secure Configuration of Enterprise Assets and Software:\r\nEstablish and maintain the secure configuration of enterprise assets (end-user devices, including portable and mobile; network devices; non-computing/IoT devices; and servers) and software (operating systems and applications).",
+            "Full Description": "Establish and maintain a secure configuration process for enterprise assets (end-user devices, including portable and mobile; non-computing/IoT devices; and servers) and software (operating systems and applications). Review and update documentation annually, or when significant enterprise changes occur that could impact this Safeguard.\r\nSecurity Function: Protect\r\nAsset Type: Applications"
+        },
+        {
+            "ControlId": "4.2",
+            "Family": "Secure Configuration of Enterprise Assets and Software",
+            "Title": "Establish and Maintain a Secure Configuration Process for Network Infrastructure",
+            "NIST CSF Maapings": "PR.IP-1",
+            "References": "CIS Control 4 - Secure Configuration of Enterprise Assets and Software:\r\nEstablish and maintain the secure configuration of enterprise assets (end-user devices, including portable and mobile; network devices; non-computing/IoT devices; and servers) and software (operating systems and applications).",
+            "Full Description": "Establish and maintain a secure configuration process for network devices. Review and update documentation annually, or when significant enterprise changes occur that could impact this Safeguard.\r\nSecurity Function: Protect\r\nAsset Type: Network"
+        },
+        {
+            "ControlId": "4.3",
+            "Family": "Secure Configuration of Enterprise Assets and Software",
+            "Title": "Configure Automatic Session Locking on Enterprise Assets",
+            "NIST CSF Maapings": "PR.IP-1",
+            "References": "CIS Control 4 - Secure Configuration of Enterprise Assets and Software:\r\nEstablish and maintain the secure configuration of enterprise assets (end-user devices, including portable and mobile; network devices; non-computing/IoT devices; and servers) and software (operating systems and applications).",
+            "Full Description": "Configure automatic session locking on enterprise assets after a defined period of inactivity. For general purpose operating systems, the period must not exceed 15 minutes. For mobile end-user devices, the period must not exceed 2 minutes.\r\nSecurity Function: Protect\r\nAsset Type: Users"
+        },
+        {
+            "ControlId": "4.4",
+            "Family": "Secure Configuration of Enterprise Assets and Software",
+            "Title": "Implement and Manage a Firewall on Servers",
+            "References": "CIS Control 4 - Secure Configuration of Enterprise Assets and Software:\r\nEstablish and maintain the secure configuration of enterprise assets (end-user devices, including portable and mobile; network devices; non-computing/IoT devices; and servers) and software (operating systems and applications).",
+            "Full Description": "Implement and manage a firewall on servers, where supported. Example implementations include a virtual firewall, operating system firewall, or a third-party firewall agent.\r\nSecurity Function: Protect\r\nAsset Type: Devices"
+        },
+        {
+            "ControlId": "4.5",
+            "Family": "Secure Configuration of Enterprise Assets and Software",
+            "Title": "Implement and Manage a Firewall on End-User Devices",
+            "References": "CIS Control 4 - Secure Configuration of Enterprise Assets and Software:\r\nEstablish and maintain the secure configuration of enterprise assets (end-user devices, including portable and mobile; network devices; non-computing/IoT devices; and servers) and software (operating systems and applications).",
+            "Full Description": "Implement and manage a host-based firewall or port-filtering tool on end-user devices, with a default-deny rule that drops all traffic except those services and ports that are explicitly allowed.\r\nSecurity Function: Protect\r\nAsset Type: Devices"
+        },
+        {
+            "ControlId": "4.6",
+            "Family": "Secure Configuration of Enterprise Assets and Software",
+            "Title": "Securely Manage Enterprise Assets and Software",
+            "References": "CIS Control 4 - Secure Configuration of Enterprise Assets and Software:\r\nEstablish and maintain the secure configuration of enterprise assets (end-user devices, including portable and mobile; network devices; non-computing/IoT devices; and servers) and software (operating systems and applications).",
+            "Full Description": "Securely manage enterprise assets and software. Example implementations include managing configuration through version-controlled-infrastructure-as-code and accessing administrative interfaces over secure network protocols, such as Secure Shell (SSH) and Hypertext Transfer Protocol Secure (HTTPS). Do not use insecure management protocols, such as Telnet (Teletype Network) and HTTP, unless operationally essential.\r\nSecurity Function: Protect\r\nAsset Type: Network"
+        },
+        {
+            "ControlId": "4.7",
+            "Family": "Secure Configuration of Enterprise Assets and Software",
+            "Title": "Manage Default Accounts on Enterprise Assets and Software",
+            "NIST CSF Maapings": "PR.AC-1",
+            "References": "CIS Control 4 - Secure Configuration of Enterprise Assets and Software:\r\nEstablish and maintain the secure configuration of enterprise assets (end-user devices, including portable and mobile; network devices; non-computing/IoT devices; and servers) and software (operating systems and applications).",
+            "Full Description": "Manage default accounts on enterprise assets and software, such as root, administrator, and other pre-configured vendor accounts. Example implementations can include: disabling default accounts or making them unusable.\r\nSecurity Function: Protect\r\nAsset Type: Users"
+        },
+        {
+            "ControlId": "5.1",
+            "Family": "Account Management",
+            "Title": "Establish and Maintain an Inventory of Accounts",
+            "NIST CSF Maapings": "PR.AC-1",
+            "References": "CIS Control 5 - Account Management:\r\nUse processes and tools to assign and manage authorization to credentials for user accounts, including administrator accounts, as well as service accounts, to enterprise assets and software.",
+            "Full Description": "Establish and maintain an inventory of all accounts managed in the enterprise. The inventory must include both user and administrator accounts. The inventory, at a minimum, should contain the person's name, username, start/stop dates, and department. Validate that all active accounts are authorized, on a recurring schedule at a minimum quarterly, or more frequently.\r\nSecurity Function: Identify\r\nAsset Type: Users"
+        },
+        {
+            "ControlId": "5.2",
+            "Family": "Account Management",
+            "Title": "Use Unique Passwords",
+            "References": "CIS Control 5 - Account Management:\r\nUse processes and tools to assign and manage authorization to credentials for user accounts, including administrator accounts, as well as service accounts, to enterprise assets and software.",
+            "Full Description": "Use unique passwords for all enterprise assets. Best practice implementation includes, at a minimum, an 8-character password for accounts using MFA and a 14-character password for accounts not using MFA.\r\nSecurity Function: Protect\r\nAsset Type: Users"
+        },
+        {
+            "ControlId": "5.3",
+            "Family": "Account Management",
+            "Title": "Disable Dormant Accounts",
+            "NIST CSF Maapings": "PR.AC-1",
+            "References": "CIS Control 5 - Account Management:\r\nUse processes and tools to assign and manage authorization to credentials for user accounts, including administrator accounts, as well as service accounts, to enterprise assets and software.",
+            "Full Description": "Delete or disable any dormant accounts after a period of 45 days of inactivity, where supported.\r\nSecurity Function: Respond\r\nAsset Type: Users"
+        },
+        {
+            "ControlId": "5.4",
+            "Family": "Account Management",
+            "Title": "Restrict Administrator Privileges to Dedicated Administrator Accounts",
+            "NIST CSF Maapings": "PR.AC-4",
+            "References": "CIS Control 5 - Account Management:\r\nUse processes and tools to assign and manage authorization to credentials for user accounts, including administrator accounts, as well as service accounts, to enterprise assets and software.",
+            "Full Description": "Restrict administrator privileges to dedicated administrator accounts on enterprise assets. Conduct general computing activities, such as internet browsing, email, and productivity suite use, from the user's primary, non-privileged account.\r\nSecurity Function: Protect\r\nAsset Type: Users"
+        },
+        {
+            "ControlId": "6.1",
+            "Family": "Access Control Management",
+            "Title": "Establish an Access Granting Process",
+            "NIST CSF Maapings": "PR.AC-1",
+            "References": "CIS Control 6 - Access Control Management:\r\nUse processes and tools to create, assign, manage, and revoke access credentials and privileges for user, administrator, and service accounts for enterprise assets and software.",
+            "Full Description": "Establish and follow a process, preferably automated, for granting access to enterprise assets upon new hire, rights grant, or role change of a user.\r\nSecurity Function: Protect\r\nAsset Type: Users"
+        },
+        {
+            "ControlId": "6.2",
+            "Family": "Access Control Management",
+            "Title": "Establish an Access Revoking Process",
+            "NIST CSF Maapings": "PR.AC-1, PR.IP-11",
+            "References": "CIS Control 6 - Access Control Management:\r\nUse processes and tools to create, assign, manage, and revoke access credentials and privileges for user, administrator, and service accounts for enterprise assets and software.",
+            "Full Description": "Establish and follow a process, preferably automated, for revoking access to enterprise assets, through disabling accounts immediately upon termination, rights revocation, or role change of a user. Disabling accounts, instead of deleting accounts, may be necessary to preserve audit trails.\r\nSecurity Function: Protect\r\nAsset Type: Users"
+        },
+        {
+            "ControlId": "6.3",
+            "Family": "Access Control Management",
+            "Title": "Require MFA for Externally-Exposed Applications",
+            "NIST CSF Maapings": "PR.AC-7",
+            "References": "CIS Control 6 - Access Control Management:\r\nUse processes and tools to create, assign, manage, and revoke access credentials and privileges for user, administrator, and service accounts for enterprise assets and software.",
+            "Full Description": "Require all externally-exposed enterprise or third-party applications to enforce MFA, where supported. Enforcing MFA through a directory service or SSO provider is a satisfactory implementation of this Safeguard.\r\nSecurity Function: Protect\r\nAsset Type: Users"
+        },
+        {
+            "ControlId": "6.4",
+            "Family": "Access Control Management",
+            "Title": "Require MFA for Remote Network Access",
+            "NIST CSF Maapings": "PR.AC-7, PR.AC-3",
+            "References": "CIS Control 6 - Access Control Management:\r\nUse processes and tools to create, assign, manage, and revoke access credentials and privileges for user, administrator, and service accounts for enterprise assets and software.",
+            "Full Description": "Require MFA for remote network access.\r\nSecurity Function: Protect\r\nAsset Type: Users"
+        },
+        {
+            "ControlId": "6.5",
+            "Family": "Access Control Management",
+            "Title": "Require MFA for Administrative Access",
+            "NIST CSF Maapings": "PR.AC-7",
+            "References": "CIS Control 6 - Access Control Management:\r\nUse processes and tools to create, assign, manage, and revoke access credentials and privileges for user, administrator, and service accounts for enterprise assets and software.",
+            "Full Description": "Require MFA for all administrative access accounts, where supported, on all enterprise assets, whether managed on-site or through a third-party provider.\r\nSecurity Function: Protect\r\nAsset Type: Users"
+        },
+        {
+            "ControlId": "7.1",
+            "Family": "Continuous Vulnerability Management",
+            "Title": "Establish and Maintain a Vulnerability Management Process",
+            "NIST CSF Maapings": "ID.RA-1",
+            "References": "CIS Control 7 - Continuous Vulnerability Management:\r\nDevelop a plan to continuously assess and track vulnerabilities on all enterprise assets within the enterprise's infrastructure, in order to remediate, and minimize, the window of opportunity for attackers. Monitor public and private industry sources for new threat and vulnerability information.",
+            "Full Description": "Establish and maintain a documented vulnerability management process for enterprise assets. Review and update documentation annually, or when significant enterprise changes occur that could impact this Safeguard.\r\nSecurity Function: Protect\r\nAsset Type: Applications"
+        },
+        {
+            "ControlId": "7.2",
+            "Family": "Continuous Vulnerability Management",
+            "Title": "Establish and Maintain a Remediation Process",
+            "NIST CSF Maapings": "ID.RA-1",
+            "References": "CIS Control 7 - Continuous Vulnerability Management:\r\nDevelop a plan to continuously assess and track vulnerabilities on all enterprise assets within the enterprise's infrastructure, in order to remediate, and minimize, the window of opportunity for attackers. Monitor public and private industry sources for new threat and vulnerability information.",
+            "Full Description": "Establish and maintain a risk-based remediation strategy documented in a remediation process, with monthly, or more frequent, reviews.\r\nSecurity Function: Respond\r\nAsset Type: Applications"
+        },
+        {
+            "ControlId": "7.3",
+            "Family": "Continuous Vulnerability Management",
+            "Title": "Perform Automated Operating System Patch Management",
+            "References": "CIS Control 7 - Continuous Vulnerability Management:\r\nDevelop a plan to continuously assess and track vulnerabilities on all enterprise assets within the enterprise's infrastructure, in order to remediate, and minimize, the window of opportunity for attackers. Monitor public and private industry sources for new threat and vulnerability information.",
+            "Full Description": "Perform operating system updates on enterprise assets through automated patch management on a monthly, or more frequent, basis.\r\nSecurity Function: Protect\r\nAsset Type: Applications"
+        },
+        {
+            "ControlId": "7.4",
+            "Family": "Continuous Vulnerability Management",
+            "Title": "Perform Automated Application Patch Management",
+            "NIST CSF Maapings": "ID.RA-1",
+            "References": "CIS Control 7 - Continuous Vulnerability Management:\r\nDevelop a plan to continuously assess and track vulnerabilities on all enterprise assets within the enterprise's infrastructure, in order to remediate, and minimize, the window of opportunity for attackers. Monitor public and private industry sources for new threat and vulnerability information.",
+            "Full Description": "Perform application updates on enterprise assets through automated patch management on a monthly, or more frequent, basis.\r\nSecurity Function: Protect\r\nAsset Type: Applications"
+        },
+        {
+            "ControlId": "8.1",
+            "Family": "Audit Log Management",
+            "Title": "Establish and Maintain an Audit Log Management Process",
+            "References": "CIS Control 7 - Continuous Vulnerability Management:\r\nDevelop a plan to continuously assess and track vulnerabilities on all enterprise assets within the enterprise's infrastructure, in order to remediate, and minimize, the window of opportunity for attackers. Monitor public and private industry sources for new threat and vulnerability information.",
+            "Full Description": "Establish and maintain an audit log management process that defines the enterprise's logging requirements. At a minimum, address the collection, review, and retention of audit logs for enterprise assets. Review and update documentation annually, or when significant enterprise changes occur that could impact this Safeguard.\r\nSecurity Function: Protect\r\nAsset Type: Network"
+        },
+        {
+            "ControlId": "8.2",
+            "Family": "Audit Log Management",
+            "Title": "Collect Audit Logs",
+            "NIST CSF Maapings": "PR.PT-1, DE.AE-3",
+            "References": "CIS Control 8 - Audit Log Management:\r\nCollect, alert, review, and retain audit logs of events that could help detect, understand, or recover from an attack.",
+            "Full Description": "Collect audit logs. Ensure that logging, per the enterprise's audit log management process, has been enabled across enterprise assets.\r\nSecurity Function: Detect\r\nAsset Type: Network"
+        },
+        {
+            "ControlId": "8.3",
+            "Family": "Audit Log Management",
+            "Title": "Ensure Adequate Audit Log Storage",
+            "References": "CIS Control 8 - Audit Log Management:\r\nCollect, alert, review, and retain audit logs of events that could help detect, understand, or recover from an attack.",
+            "Full Description": "Ensure that logging destinations maintain adequate storage to comply with the enterprise's audit log management process.\r\nSecurity Function: Protect\r\nAsset Type: Network"
+        },
+        {
+            "ControlId": "9.1",
+            "Family": "Email and Web Browser Protections",
+            "Title": "Ensure Use of Only Fully Supported Browsers and Email Clients",
+            "NIST CSF Maapings": "PR.IP-1",
+            "References": "CIS Control 9 - Email and Web Browser Protections:\r\nImprove protections and detections of threats from email and web vectors, as these are opportunities for attackers to manipulate human behavior through direct engagement.",
+            "Full Description": "Ensure only fully supported browsers and email clients are allowed to execute in the enterprise, only using the latest version of browsers and email clients provided through the vendor.\r\nSecurity Function: Protect\r\nAsset Type: Applications"
+        },
+        {
+            "ControlId": "9.2",
+            "Family": "Email and Web Browser Protections",
+            "Title": "Use DNS Filtering Services",
+            "NIST CSF Maapings": "PR.AC-5",
+            "References": "CIS Control 9 - Email and Web Browser Protections:\r\nImprove protections and detections of threats from email and web vectors, as these are opportunities for attackers to manipulate human behavior through direct engagement.",
+            "Full Description": "Use DNS filtering services on all enterprise assets to block access to known malicious domains.\r\nSecurity Function: Protect\r\nAsset Type: Network"
+        },
+        {
+            "ControlId": "10.1",
+            "Family": "Malware Defenses",
+            "Title": "Deploy and Maintain Anti-Malware Software",
+            "NIST CSF Maapings": "DE.CM-4",
+            "References": "CIS Control 10 - Malware Defenses:\r\nPrevent or control the installation, spread, and execution of malicious applications, code, or scripts on enterprise assets.",
+            "Full Description": "Deploy and maintain anti-malware software on all enterprise assets.\r\nSecurity Function: Protect\r\nAsset Type: Devices"
+        },
+        {
+            "ControlId": "10.2",
+            "Family": "Malware Defenses",
+            "Title": "Configure Automatic Anti-Malware Signature Updates",
+            "NIST CSF Maapings": "DE.CM-4",
+            "References": "CIS Control 10 - Malware Defenses:\r\nPrevent or control the installation, spread, and execution of malicious applications, code, or scripts on enterprise assets.",
+            "Full Description": "Configure automatic updates for anti-malware signature files on all enterprise assets.\r\nSecurity Function: Protect\r\nAsset Type: Devices"
+        },
+        {
+            "ControlId": "10.3",
+            "Family": "Malware Defenses",
+            "Title": "Disable Autorun and Autoplay for Removable Media",
+            "NIST CSF Maapings": "PR.PT-2",
+            "References": "CIS Control 10 - Malware Defenses:\r\nPrevent or control the installation, spread, and execution of malicious applications, code, or scripts on enterprise assets.",
+            "Full Description": "Disable autorun and autoplay auto-execute functionality for removable media.\r\nSecurity Function: Protect\r\nAsset Type: Devices"
+        },
+        {
+            "ControlId": "11.1",
+            "Family": "Data Recovery",
+            "Title": "Establish and Maintain a Data Recovery Process",
+            "NIST CSF Maapings": "PR.IP-9, ID.SC-5",
+            "References": "CIS Control 11 - Data Recovery:\r\nEstablish and maintain data recovery practices sufficient to restore in-scope enterprise assets to a pre-incident and trusted state.",
+            "Full Description": "Establish and maintain a data recovery process. In the process, address the scope of data recovery activities, recovery prioritization, and the security of backup data. Review and update documentation annually, or when significant enterprise changes occur that could impact this Safeguard.\r\nSecurity Function: Recover\r\nAsset Type: Data"
+        },
+        {
+            "ControlId": "11.2",
+            "Family": "Data Recovery",
+            "Title": "Perform Automated Backups",
+            "NIST CSF Maapings": "PR.IP-4",
+            "References": "CIS Control 11 - Data Recovery:\r\nEstablish and maintain data recovery practices sufficient to restore in-scope enterprise assets to a pre-incident and trusted state.",
+            "Full Description": "Perform automated backups of in-scope enterprise assets. Run backups weekly, or more frequently, based on the sensitivity of the data.\r\nSecurity Function: Recover\r\nAsset Type: Data"
+        },
+        {
+            "ControlId": "11.3",
+            "Family": "Data Recovery",
+            "Title": "Protect Recovery Data",
+            "NIST CSF Maapings": "PR.IP-4",
+            "References": "CIS Control 11 - Data Recovery:\r\nEstablish and maintain data recovery practices sufficient to restore in-scope enterprise assets to a pre-incident and trusted state.",
+            "Full Description": "Protect recovery data with equivalent controls to the original data. Reference encryption or data separation, based on requirements.\r\nSecurity Function: Protect\r\nAsset Type: Data"
+        },
+        {
+            "ControlId": "11.4",
+            "Family": "Data Recovery",
+            "Title": "Establish and Maintain an Isolated Instance of Recovery Data",
+            "NIST CSF Maapings": "PR.PT-5",
+            "References": "CIS Control 11 - Data Recovery:\r\nEstablish and maintain data recovery practices sufficient to restore in-scope enterprise assets to a pre-incident and trusted state.",
+            "Full Description": "Establish and maintain an isolated instance of recovery data. Example implementations include version controlling backup destinations through offline, cloud, or off-site systems or services.\r\nSecurity Function: Recover\r\nAsset Type: Data"
+        },
+        {
+            "ControlId": "12.1",
+            "Family": "Network Infrastructure Management",
+            "Title": "Ensure Network Infrastructure is Up-to-Date",
+            "References": "CIS Control 12 - Network Infrastructure Management:\r\nEstablish, implement, and actively manage (track, report, correct) network devices, in order to prevent attackers from exploiting vulnerable network services and access points.",
+            "Full Description": "Ensure network infrastructure is kept up-to-date. Example implementations include running the latest stable release of software and/or using currently supported network-as-a-service (NaaS) offerings. Review software versions monthly, or more frequently, to verify software support.\r\nSecurity Function: Protect\r\nAsset Type: Network"
+        },
+        {
+            "ControlId": "14.1",
+            "Family": "Security Awareness and Skills Training",
+            "Title": "Establish and Maintain a Security Awareness Program",
+            "NIST CSF Maapings": "ID.AM-6, ID.GV-1, PR.AT-1",
+            "References": "CIS Control 14 - Security Awareness and Skills Training:\r\nEstablish and maintain a security awareness program to influence behavior among the workforce to be security conscious and properly skilled to reduce cybersecurity risks to the enterprise.",
+            "Full Description": "Establish and maintain a security awareness program. The purpose of a security awareness program is to educate the enterprise's workforce on how to interact with enterprise assets and data in a secure manner. Conduct training at hire and, at a minimum, annually. Review and update content annually, or when significant enterprise changes occur that could impact this Safeguard.\r\nSecurity Function: Protect\r\nAsset Type: N/A"
+        },
+        {
+            "ControlId": "14.2",
+            "Family": "Security Awareness and Skills Training",
+            "Title": "Train Workforce Members to Recognize Social Engineering Attacks",
+            "NIST CSF Maapings": "PR.AT-1",
+            "References": "CIS Control 14 - Security Awareness and Skills Training:\r\nEstablish and maintain a security awareness program to influence behavior among the workforce to be security conscious and properly skilled to reduce cybersecurity risks to the enterprise.",
+            "Full Description": "Train workforce members to recognize social engineering attacks, such as phishing, pre-texting, and tailgating.\r\nSecurity Function: Protect\r\nAsset Type: N/A"
+        },
+        {
+            "ControlId": "14.3",
+            "Family": "Security Awareness and Skills Training",
+            "Title": "Train Workforce Members on Authentication Best Practices",
+            "NIST CSF Maapings": "PR.AT-1",
+            "References": "CIS Control 14 - Security Awareness and Skills Training:\r\nEstablish and maintain a security awareness program to influence behavior among the workforce to be security conscious and properly skilled to reduce cybersecurity risks to the enterprise.",
+            "Full Description": "Train workforce members on authentication best practices. Example topics include MFA, password composition, and credential management.\r\nSecurity Function: Protect\r\nAsset Type: N/A"
+        },
+        {
+            "ControlId": "14.4",
+            "Family": "Security Awareness and Skills Training",
+            "Title": "Train Workforce on Data Handling Best Practices",
+            "NIST CSF Maapings": "PR.AT-1",
+            "References": "CIS Control 14 - Security Awareness and Skills Training:\r\nEstablish and maintain a security awareness program to influence behavior among the workforce to be security conscious and properly skilled to reduce cybersecurity risks to the enterprise.",
+            "Full Description": "Train workforce members on how to identify and properly store, transfer, archive, and destroy sensitive data. This also includes training workforce members on clear screen and desk best practices, such as locking their screen when they step away from their enterprise asset, erasing physical and virtual whiteboards at the end of meetings, and storing data and assets securely.\r\nSecurity Function: Protect\r\nAsset Type: N/A"
+        },
+        {
+            "ControlId": "14.5",
+            "Family": "Security Awareness and Skills Training",
+            "Title": "Train Workforce Members on Causes of Unintentional Data Exposure",
+            "NIST CSF Maapings": "PR.AT-1",
+            "References": "CIS Control 14 - Security Awareness and Skills Training:\r\nEstablish and maintain a security awareness program to influence behavior among the workforce to be security conscious and properly skilled to reduce cybersecurity risks to the enterprise.",
+            "Full Description": "Train workforce members to be aware of causes for unintentional data exposure. Example topics include mis-delivery of sensitive data, losing a portable end-user device, or publishing data to unintended audiences.\r\nSecurity Function: Protect\r\nAsset Type: N/A"
+        },
+        {
+            "ControlId": "14.6",
+            "Family": "Security Awareness and Skills Training",
+            "Title": "Train Workforce Members on Recognizing and Reporting Security Incidents,Train workforce members to be able to recognize a potential incident and be able to report such an incident.",
+            "NIST CSF Maapings": "PR.AT-1",
+            "References": "CIS Control 14 - Security Awareness and Skills Training:\r\nEstablish and maintain a security awareness program to influence behavior among the workforce to be security conscious and properly skilled to reduce cybersecurity risks to the enterprise.",
+            "Full Description": "x\r\nSecurity Function: Protect\r\nAsset Type: N/A"
+        },
+        {
+            "ControlId": "14.7",
+            "Family": "Security Awareness and Skills Training",
+            "Title": "Train Workforce on How to Identify and Report if Their Enterprise Assets are Missing Security Updates",
+            "NIST CSF Maapings": "PR.AT-1",
+            "References": "CIS Control 14 - Security Awareness and Skills Training:\r\nEstablish and maintain a security awareness program to influence behavior among the workforce to be security conscious and properly skilled to reduce cybersecurity risks to the enterprise.",
+            "Full Description": "Train workforce to understand how to verify and report out-of-date software patches or any failures in automated processes and tools. Part of this training should include notifying IT personnel of any failures in automated processes and tools.\r\nSecurity Function: Protect\r\nAsset Type: N/A"
+        },
+        {
+            "ControlId": "14.8",
+            "Family": "Security Awareness and Skills Training",
+            "Title": "Train Workforce on the Dangers of Connecting to and Transmitting Enterprise Data Over Insecure Networks",
+            "NIST CSF Maapings": "PR.AT-1",
+            "References": "CIS Control 14 - Security Awareness and Skills Training:\r\nEstablish and maintain a security awareness program to influence behavior among the workforce to be security conscious and properly skilled to reduce cybersecurity risks to the enterprise.",
+            "Full Description": "Train workforce members on the dangers of connecting to, and transmitting data over, insecure networks for enterprise activities. If the enterprise has remote workers, training must include guidance to ensure that all users securely configure their home network infrastructure.\r\nSecurity Function: Protect\r\nAsset Type: N/A"
+        },
+        {
+            "ControlId": "15.1",
+            "Family": "Service Provider Management",
+            "Title": "Establish and Maintain an Inventory of Service Providers",
+            "NIST CSF Maapings": "ID.SC-2",
+            "References": "CIS Control 15 - Service Provider Management:\r\nDevelop a process to evaluate service providers who hold sensitive data, or are responsible for an enterprise's critical IT platforms or processes, to ensure these providers are protecting those platforms and data appropriately.",
+            "Full Description": "Establish and maintain an inventory of service providers. The inventory is to list all known service providers, include classification(s), and designate an enterprise contact for each service provider. Review and update the inventory annually, or when significant enterprise changes occur that could impact this Safeguard.\r\nSecurity Function: Identify\r\nAsset Type: N/A"
+        },
+        {
+            "ControlId": "17.1",
+            "Family": "Incident Response Management",
+            "Title": "Designate Personnel to Manage Incident Handling",
+            "NIST CSF Maapings": "PR.IP-9, DE.DP-1",
+            "References": "CIS Control 17 - Incident Response Management:\r\nEstablish a program to develop and maintain an incident response capability (e.g., policies, plans, procedures, defined roles, training, and communications) to prepare, detect, and quickly respond to an attack.",
+            "Full Description": "Designate one key person, and at least one backup, who will manage the enterprise's incident handling process. Management personnel are responsible for the coordination and documentation of incident response and recovery efforts and can consist of employees internal to the enterprise, third-party vendors, or a hybrid approach. If using a third-party vendor, designate at least one person internal to the enterprise to oversee any third-party work. Review annually, or when significant enterprise changes occur that could impact this Safeguard.\r\nSecurity Function: Respond\r\nAsset Type: N/A"
+        },
+        {
+            "ControlId": "17.2",
+            "Family": "Incident Response Management",
+            "Title": "Establish and Maintain Contact Information for Reporting Security Incidents",
+            "NIST CSF Maapings": "RS.CO-1",
+            "References": "CIS Control 17 - Incident Response Management:\r\nEstablish a program to develop and maintain an incident response capability (e.g., policies, plans, procedures, defined roles, training, and communications) to prepare, detect, and quickly respond to an attack.",
+            "Full Description": "Establish and maintain contact information for parties that need to be informed of security incidents. Contacts may include internal staff, third-party vendors, law enforcement, cyber insurance providers, relevant government agencies, Information Sharing and Analysis Center (ISAC) partners, or other stakeholders. Verify contacts annually to ensure that information is up-to-date.\r\nSecurity Function: Respond\r\nAsset Type: N/A"
+        },
+        {
+            "ControlId": "17.3",
+            "Family": "Incident Response Management",
+            "Title": "Establish and Maintain an Enterprise Process for Reporting Incidents",
+            "NIST CSF Maapings": "PR.IP-9, PR.AT-1",
+            "References": "CIS Control 17 - Incident Response Management:\r\nEstablish a program to develop and maintain an incident response capability (e.g., policies, plans, procedures, defined roles, training, and communications) to prepare, detect, and quickly respond to an attack.",
+            "Full Description": "Establish and maintain an enterprise process for the workforce to report security incidents. The process includes reporting timeframe, personnel to report to, mechanism for reporting, and the minimum information to be reported. Ensure the process is publicly available to all of the workforce. Review annually, or when significant enterprise changes occur that could impact this Safeguard.\r\nSecurity Function: Respond\r\nAsset Type: N/A"
+        }
+    ]
+}
