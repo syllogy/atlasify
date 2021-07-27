@@ -13,7 +13,7 @@ class Logger:
     END = '\033[0m'
 
 # setup parser for command line arguments
-parser = argparse.ArgumentParser(description='Atlasity parser for the CIS Version 8 IG-3')
+parser = argparse.ArgumentParser(description='Atlasity parser for the CIS Version 8 IG-1')
 parser.add_argument('--user', metavar='path', type=str, help='Atlasity username')
 parser.add_argument('--pwd', metavar='path', type=str, help='Atlasity password')
 
@@ -32,6 +32,7 @@ else:
 
 # login to your Atlasity instance
 url_login = "https://atlas-dev.c2labs.com/api/authentication/login"
+# url_login = "https://atlas-dev.c2labs.com/login"
 
 # set the catalog URL for your Atlasity instance
 url_cats = "https://atlas-dev.c2labs.com/api/catalogues"
@@ -42,6 +43,7 @@ auth = {
     "password": strPWD,
     "oldPassword": ""
 }
+
 # login and get token
 response = requests.request("POST", url_login, json=auth)
 authResponse = response.json()
@@ -53,9 +55,9 @@ headers = {
 
 # setup catalog data
 cat = {
-    "title": "CIS Controls Version 8 - Implementation Group 3",
+    "title": "CIS Controls Version 8 - Implementation Group 1",
     "description": "The CIS Controls are a recommended set of actions for cyber defense that provide specific and actionable ways to thwart the most pervasive attacks. The CIS Controls are a relatively short list of high-priority, highly effective defensive actions that provide a 'must-do, do-first' starting point for every enterprise seeking to improve their cyber defense."
-    + "<br /> IG3 assists enterprises with IT security experts secure sensitive and confidential data. IG3 aims to prevent and/or lessen the impact of sophisticated attacks.",
+    + "<br />IG1 is the definition of basic cyber hygiene and represents a minimum standard of information security for all enterprises. IG1 assists enterprises with limited cybersecurity expertise thwart general, non-targeted attacks.",
     "datePublished": "5/18/2021",
     "lastRevisionDate": "5/18/2021",
     "url": "https://www.cisecurity.org/controls/cis-controls-navigator/",
@@ -64,7 +66,7 @@ cat = {
     "createdById": "52f86957-eb18-4ec5-bddd-ae54d93bfcce",
     "lastUpdatedById": "52f86957-eb18-4ec5-bddd-ae54d93bfcce" }
 
-# create the catalog and print success result
+# create the catalog and printe success result
 response = requests.request("POST", url_cats, headers=headers, json=cat)
 jsonResponse = response.json()
 print("\n\nAtlasity Output\n")
@@ -75,7 +77,7 @@ print("\nCatalog ID: " + str(jsonResponse["id"]))
 intCat = jsonResponse["id"]
 
 # load local json
-f = open('ig-3.json', 'r', encoding='utf-8-sig')
+f = open('cis_v8_ig-1.json', 'r', encoding='utf-8-sig')
 data = json.load(f)
 
 # create controls array
@@ -88,7 +90,7 @@ intTotal = 0
 url_sc = "https://atlas-dev.c2labs.com/api/securitycontrols"
 
 #loop through and print the results
-for i in data["CIS Controls Version 8 Implementation Group 3"]:
+for i in data["CIS Controls Version 8 Implementation Group 1"]:
     mappings = ""
     if ("NIST CSF Mappings" in i):
         mappings = "NIST CSF Mappings: " + i["NIST CSF Mappings"]
