@@ -1,0 +1,1931 @@
+{
+    "catalog": {
+        "uuid": "e5acface-fb63-4d06-b230-7c6699ca906a",
+        "metadata": {
+            "remarks": "Document most recently revised in Atlasity on Tue Oct 26 2021 14:27:16 GMT-0400 (Eastern Daylight Time).\rDocument created in Atlasity on Tue Oct 26 2021 14:27:16 GMT-0400 (Eastern Daylight Time)\r",
+            "title": "Trusted Internet Connection (TIC) 3.0 Security Capabilities Catalogue (Volume 3)",
+            "last-modified": "2021-10-01T00:00:00-04:00",
+            "oscal-version": "1.0.0",
+            "links": [
+                {
+                    "href": "https://www.cisa.gov/publication/tic-30-core-guidance-documents"
+                }
+            ],
+            "roles": [
+                {
+                    "id": "creator",
+                    "title": "Document Creator"
+                }
+            ],
+            "responsible-parties": [
+                {
+                    "role-id": "creator",
+                    "party-uuids": [
+                        "8d8d5468-74f8-499d-976c-bca671e19b14"
+                    ]
+                }
+            ],
+            "props": [
+                {
+                    "name": "Description",
+                    "value": "Trusted Internet Connections (TIC), originally established in 2007, is a federal cybersecurity initiative intended to enhance network and boundary security across the Federal Government. The Office of Management and Budget (OMB), the Department of Homeland Security (DHS) Cybersecurity and Infrastructure Security Agency (CISA), and the General Services Administration (GSA) oversee the TIC initiative through a robust program that sets guidance and an execution framework for agencies to implement a baseline boundary security standard."
+                },
+                {
+                    "name": "Abstract",
+                    "value": "The scope of the TIC 3.0 guidance encompasses the TIC initiative and other federal program artifacts and publications necessary to explain key elements, goals, and objectives of TIC 3.0."
+                },
+                {
+                    "name": "Keywords",
+                    "value": "TIC; 3.0; DHS;"
+                }
+            ],
+            "published": "2021-10-01T00:00:00-04:00",
+            "version": "Version 1"
+        },
+        "groups": [
+            {
+                "title": "Universal Security Capabilities",
+                "class": "family",
+                "controls": [
+                    {
+                        "id": "3.uni.breco",
+                        "title": "Backup and Recovery",
+                        "class": "Stand-Alone",
+                        "props": [
+                            {
+                                "name": "Atlasity-ID",
+                                "value": "25580"
+                            },
+                            {
+                                "name": "Unique-Identifier-GUID",
+                                "value": "d4b63e4f-f0d6-45a0-a66c-501fe0289e4d"
+                            },
+                            {
+                                "name": "Weight",
+                                "value": "0"
+                            },
+                            {
+                                "name": "Description",
+                                "value": "Backup and recovery entails keeping copies of configuration and data, as needed, to allow for the quick restoration of service in the event of malicious incidents, system failures, or corruption."
+                            }
+                        ]
+                    },
+                    {
+                        "id": "3.uni.clman",
+                        "title": "Central Log Management with Analysis",
+                        "class": "Stand-Alone",
+                        "props": [
+                            {
+                                "name": "Atlasity-ID",
+                                "value": "25581"
+                            },
+                            {
+                                "name": "Unique-Identifier-GUID",
+                                "value": "5fb500eb-27f8-4e4b-931a-4e460e4d4975"
+                            },
+                            {
+                                "name": "Weight",
+                                "value": "0"
+                            },
+                            {
+                                "name": "Description",
+                                "value": "Central log management with analysis is the collection, storage, and analysis of telemetry, where the collection and storage are designed to facilitate data fusion and where the security analysis aids in discovery and response to malicious activity."
+                            }
+                        ]
+                    },
+                    {
+                        "id": "3.uni.cmana",
+                        "title": "Configuration Management",
+                        "class": "Stand-Alone",
+                        "props": [
+                            {
+                                "name": "Atlasity-ID",
+                                "value": "25582"
+                            },
+                            {
+                                "name": "Unique-Identifier-GUID",
+                                "value": "1d3c5e7c-b482-4f3c-a6c5-db7dd9f1b46f"
+                            },
+                            {
+                                "name": "Weight",
+                                "value": "0"
+                            },
+                            {
+                                "name": "Description",
+                                "value": "Configuration management is the implementation of a formal plan for documenting and managing changes to the environment, and monitoring for deviations, preferably automated."
+                            }
+                        ]
+                    },
+                    {
+                        "id": "3.uni.irpih",
+                        "title": "Incident Response Planning and Incident Handling",
+                        "class": "Stand-Alone",
+                        "props": [
+                            {
+                                "name": "Atlasity-ID",
+                                "value": "25583"
+                            },
+                            {
+                                "name": "Unique-Identifier-GUID",
+                                "value": "2b0d6202-7521-4acf-84bc-7ea1e4b91191"
+                            },
+                            {
+                                "name": "Weight",
+                                "value": "0"
+                            },
+                            {
+                                "name": "Description",
+                                "value": "Incident response planning and incident handling is the documentation and implementation of a set of instructions, procedures, or technical capabilities to sense and detect, respond to, limit consequences of malicious cyberattacks, and restore the integrity of the network and associated systems."
+                            }
+                        ]
+                    },
+                    {
+                        "id": "3.uni.invent",
+                        "title": "Inventory",
+                        "class": "Stand-Alone",
+                        "props": [
+                            {
+                                "name": "Atlasity-ID",
+                                "value": "25584"
+                            },
+                            {
+                                "name": "Unique-Identifier-GUID",
+                                "value": "bef89f23-f3c8-4ae2-8163-952b24c68883"
+                            },
+                            {
+                                "name": "Weight",
+                                "value": "0"
+                            },
+                            {
+                                "name": "Description",
+                                "value": "Inventory entails developing, documenting, and maintaining a current inventory of all systems, networks, and components so that only authorized devices are given access, and unauthorized and unmanaged devices are found and restricted from gaining access."
+                            }
+                        ]
+                    },
+                    {
+                        "id": "3.uni.lpriv",
+                        "title": "Least Privilege",
+                        "class": "Stand-Alone",
+                        "props": [
+                            {
+                                "name": "Atlasity-ID",
+                                "value": "25585"
+                            },
+                            {
+                                "name": "Unique-Identifier-GUID",
+                                "value": "7fa1fffd-cad5-482f-88ad-e446006e4f3d"
+                            },
+                            {
+                                "name": "Weight",
+                                "value": "0"
+                            },
+                            {
+                                "name": "Description",
+                                "value": "Least privilege is a design principle whereby each entity is granted the minimum system resources and authorizations that the entity needs to perform its function."
+                            }
+                        ]
+                    },
+                    {
+                        "id": "3.uni.sadmi",
+                        "title": "Secure Administration",
+                        "class": "Stand-Alone",
+                        "props": [
+                            {
+                                "name": "Atlasity-ID",
+                                "value": "25586"
+                            },
+                            {
+                                "name": "Unique-Identifier-GUID",
+                                "value": "8509e8b3-378b-43b7-8193-cedd36d0aadf"
+                            },
+                            {
+                                "name": "Weight",
+                                "value": "0"
+                            },
+                            {
+                                "name": "Description",
+                                "value": "Secure administration entails performing administrative tasks in a secure manner, using secure protocols."
+                            }
+                        ]
+                    },
+                    {
+                        "id": "3.uni.sauth",
+                        "title": "Strong Authentication",
+                        "class": "Stand-Alone",
+                        "props": [
+                            {
+                                "name": "Atlasity-ID",
+                                "value": "25587"
+                            },
+                            {
+                                "name": "Unique-Identifier-GUID",
+                                "value": "dadc703e-123a-4789-98a9-2b88884b52d5"
+                            },
+                            {
+                                "name": "Weight",
+                                "value": "0"
+                            },
+                            {
+                                "name": "Description",
+                                "value": "Strong authentication verifies the identity of users, devices, or other entities through rigorous means (e.g., multi-factor authentication) before granting access."
+                            }
+                        ]
+                    },
+                    {
+                        "id": "3.uni.tsync",
+                        "title": "Time Synchronization",
+                        "class": "Stand-Alone",
+                        "props": [
+                            {
+                                "name": "Atlasity-ID",
+                                "value": "25588"
+                            },
+                            {
+                                "name": "Unique-Identifier-GUID",
+                                "value": "6ff539a5-1ec6-41d9-9f2a-39cc9ce8d4e0"
+                            },
+                            {
+                                "name": "Weight",
+                                "value": "0"
+                            },
+                            {
+                                "name": "Description",
+                                "value": "Time synchronization is the coordination of system (e.g., servers, workstations, network devices) clocks to minimize the difference between system clock times and enable accurate comparison of timestamps between systems."
+                            }
+                        ]
+                    },
+                    {
+                        "id": "3.uni.vmang",
+                        "title": "Vulnerability Management",
+                        "class": "Stand-Alone",
+                        "props": [
+                            {
+                                "name": "Atlasity-ID",
+                                "value": "25589"
+                            },
+                            {
+                                "name": "Unique-Identifier-GUID",
+                                "value": "ce702809-a857-4baf-803d-96b8568bf3af"
+                            },
+                            {
+                                "name": "Weight",
+                                "value": "0"
+                            },
+                            {
+                                "name": "Description",
+                                "value": "Vulnerability management is the practice of proactively working to discover vulnerabilities by including the use of both active and passive means of discovery and by taking action to mitigate discovered vulnerabilities."
+                            }
+                        ]
+                    },
+                    {
+                        "id": "3.uni.pmana",
+                        "title": "Patch Management",
+                        "class": "Stand-Alone",
+                        "props": [
+                            {
+                                "name": "Atlasity-ID",
+                                "value": "25590"
+                            },
+                            {
+                                "name": "Unique-Identifier-GUID",
+                                "value": "2d0beb8f-ed60-409e-9281-9e474866d95b"
+                            },
+                            {
+                                "name": "Weight",
+                                "value": "0"
+                            },
+                            {
+                                "name": "Description",
+                                "value": "Patch management is the identification, acquisition, installation, and verification of patches for products and systems."
+                            }
+                        ]
+                    },
+                    {
+                        "id": "3.uni.aacco",
+                        "title": "Auditing and Accounting",
+                        "class": "Stand-Alone",
+                        "props": [
+                            {
+                                "name": "Atlasity-ID",
+                                "value": "25591"
+                            },
+                            {
+                                "name": "Unique-Identifier-GUID",
+                                "value": "3489ea35-5ced-4421-ba70-dc88565b3bb8"
+                            },
+                            {
+                                "name": "Weight",
+                                "value": "0"
+                            },
+                            {
+                                "name": "Description",
+                                "value": "Auditing and accounting includes capturing business records (e.g., logs and other telemetry), making them available for auditing and accounting as required, and designing an auditing system that considers insider threat (e.g., separation of duties violation tracking) such that insider abuse or misuse can be detected."
+                            }
+                        ]
+                    },
+                    {
+                        "id": "3.uni.resil",
+                        "title": "Resilience",
+                        "class": "Stand-Alone",
+                        "props": [
+                            {
+                                "name": "Atlasity-ID",
+                                "value": "25592"
+                            },
+                            {
+                                "name": "Unique-Identifier-GUID",
+                                "value": "bb1bf5b0-d8df-40ed-946d-9a3e9b84aefa"
+                            },
+                            {
+                                "name": "Weight",
+                                "value": "0"
+                            },
+                            {
+                                "name": "Description",
+                                "value": "Resilience entails ensuring that systems, services, and protections maintain acceptable performance under adverse conditions."
+                            }
+                        ]
+                    },
+                    {
+                        "id": "3.uni.etint",
+                        "title": "Enterprise Threat Intelligence",
+                        "class": "Stand-Alone",
+                        "props": [
+                            {
+                                "name": "Atlasity-ID",
+                                "value": "25593"
+                            },
+                            {
+                                "name": "Unique-Identifier-GUID",
+                                "value": "a3b58e6c-79ca-42d3-9ede-eac519e5f86e"
+                            },
+                            {
+                                "name": "Weight",
+                                "value": "0"
+                            },
+                            {
+                                "name": "Description",
+                                "value": "Enterprise threat intelligence is the usage of threat intelligence from private or government sources to implement mitigations for the identified risks."
+                            }
+                        ]
+                    },
+                    {
+                        "id": "3.uni.sawar",
+                        "title": "Situational Awareness",
+                        "class": "Stand-Alone",
+                        "props": [
+                            {
+                                "name": "Atlasity-ID",
+                                "value": "25594"
+                            },
+                            {
+                                "name": "Unique-Identifier-GUID",
+                                "value": "b8da7bfe-e265-4108-8288-1505d84767dd"
+                            },
+                            {
+                                "name": "Weight",
+                                "value": "0"
+                            },
+                            {
+                                "name": "Description",
+                                "value": "Situational awareness is maintaining effective awareness, both current and historical, across all components."
+                            }
+                        ]
+                    },
+                    {
+                        "id": "3.uni.dtdis",
+                        "title": "Dynamic Threat Discovery",
+                        "class": "Stand-Alone",
+                        "props": [
+                            {
+                                "name": "Atlasity-ID",
+                                "value": "25595"
+                            },
+                            {
+                                "name": "Unique-Identifier-GUID",
+                                "value": "e6bf3a56-d4e7-4405-a7ad-544547f75bf0"
+                            },
+                            {
+                                "name": "Weight",
+                                "value": "0"
+                            },
+                            {
+                                "name": "Description",
+                                "value": "Dynamic threat discovery is the practice of using dynamic approaches (e.g., heuristics, baselining, etc.) to discover new malicious activity."
+                            }
+                        ]
+                    },
+                    {
+                        "id": "3.uni.pepar",
+                        "title": "Policy Enforcement Parity",
+                        "class": "Stand-Alone",
+                        "props": [
+                            {
+                                "name": "Atlasity-ID",
+                                "value": "25596"
+                            },
+                            {
+                                "name": "Unique-Identifier-GUID",
+                                "value": "f723a68b-bdf7-46ec-99d7-95279643e04e"
+                            },
+                            {
+                                "name": "Weight",
+                                "value": "0"
+                            },
+                            {
+                                "name": "Description",
+                                "value": "Policy enforcement parity entails consistently applying security protections and other policies, independent of the communication mechanism, forwarding path, or endpoints used."
+                            }
+                        ]
+                    },
+                    {
+                        "id": "3.uni.eusse",
+                        "title": "Effective Use of Shared Services",
+                        "class": "Stand-Alone",
+                        "props": [
+                            {
+                                "name": "Atlasity-ID",
+                                "value": "25597"
+                            },
+                            {
+                                "name": "Unique-Identifier-GUID",
+                                "value": "48e7401e-bb30-45db-9c23-0669387a07b5"
+                            },
+                            {
+                                "name": "Weight",
+                                "value": "0"
+                            },
+                            {
+                                "name": "Description",
+                                "value": "Effective use of shared services means that shared services are employed, where applicable, and individually tailored and measured to independently validate service conformance, and offer effective protections for tenants against malicious actors, both external and internal to the service provider."
+                            }
+                        ]
+                    },
+                    {
+                        "id": "3.uni.idmrp",
+                        "title": "Integrated Desktop, Mobile, and Remote Policies",
+                        "class": "Stand-Alone",
+                        "props": [
+                            {
+                                "name": "Atlasity-ID",
+                                "value": "25598"
+                            },
+                            {
+                                "name": "Unique-Identifier-GUID",
+                                "value": "420dc3d2-275d-4ec5-8626-9ced398f8e15"
+                            },
+                            {
+                                "name": "Weight",
+                                "value": "0"
+                            },
+                            {
+                                "name": "Description",
+                                "value": "This entails the definition and enforcement of policies that apply to a given agency entity independent of its location."
+                            }
+                        ]
+                    },
+                    {
+                        "id": "3.uni.uatra",
+                        "title": "User Awareness and Training",
+                        "class": "Stand-Alone",
+                        "props": [
+                            {
+                                "name": "Atlasity-ID",
+                                "value": "25599"
+                            },
+                            {
+                                "name": "Unique-Identifier-GUID",
+                                "value": "df3e3da5-f2af-4bb9-b932-f304ca869e13"
+                            },
+                            {
+                                "name": "Weight",
+                                "value": "0"
+                            },
+                            {
+                                "name": "Description",
+                                "value": "User awareness and training entails that all users are informed of their roles and responsibilities and appropriate cybersecurity education is provisioned to enable users to perform their duties in a secure manner."
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                "title": "Files PEP Security Capabilities",
+                "class": "family",
+                "controls": [
+                    {
+                        "id": "3.pep.fi.amalw",
+                        "title": "Anti-malware",
+                        "class": "Stand-Alone",
+                        "props": [
+                            {
+                                "name": "Atlasity-ID",
+                                "value": "25600"
+                            },
+                            {
+                                "name": "Unique-Identifier-GUID",
+                                "value": "d5b45969-b72b-4657-8c74-ebfffc7c01eb"
+                            },
+                            {
+                                "name": "Weight",
+                                "value": "0"
+                            },
+                            {
+                                "name": "Description",
+                                "value": "Anti-malware protections detect the presence of malicious code and facilitate its quarantine or removal."
+                            }
+                        ]
+                    },
+                    {
+                        "id": "3.pep.fi.cdrec",
+                        "title": "Content Disarm and Reconstruction",
+                        "class": "Stand-Alone",
+                        "props": [
+                            {
+                                "name": "Atlasity-ID",
+                                "value": "25601"
+                            },
+                            {
+                                "name": "Unique-Identifier-GUID",
+                                "value": "18d528ab-14be-47c5-88ee-d20109e03292"
+                            },
+                            {
+                                "name": "Weight",
+                                "value": "0"
+                            },
+                            {
+                                "name": "Description",
+                                "value": "Content disarm and reconstruction technology detects the presence of unapproved active content and facilitates its removal."
+                            }
+                        ]
+                    },
+                    {
+                        "id": "3.pep.fi.dcham",
+                        "title": "Detonation Chamber",
+                        "class": "Stand-Alone",
+                        "props": [
+                            {
+                                "name": "Atlasity-ID",
+                                "value": "25602"
+                            },
+                            {
+                                "name": "Unique-Identifier-GUID",
+                                "value": "e5a299d5-773d-4129-99ee-9b872610c32a"
+                            },
+                            {
+                                "name": "Weight",
+                                "value": "0"
+                            },
+                            {
+                                "name": "Description",
+                                "value": "Detonation chambers facilitate the detection of malicious code using protected and isolated execution environments to analyze the files."
+                            }
+                        ]
+                    },
+                    {
+                        "id": "3.pep.fi.dlpre",
+                        "title": "Data Loss Prevention",
+                        "class": "Stand-Alone",
+                        "props": [
+                            {
+                                "name": "Atlasity-ID",
+                                "value": "25603"
+                            },
+                            {
+                                "name": "Unique-Identifier-GUID",
+                                "value": "2737fc04-6607-4494-963b-df77480bf171"
+                            },
+                            {
+                                "name": "Weight",
+                                "value": "0"
+                            },
+                            {
+                                "name": "Description",
+                                "value": "Data loss prevention (DLP) technologies detect instances of the exfiltration, either malicious or accidental, of agency data."
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                "title": "Email PEP Security Capabilities",
+                "class": "family",
+                "controls": [
+                    {
+                        "id": "3.pep.em.appro",
+                        "title": "Anti-phishing Protections",
+                        "class": "Stand-Alone",
+                        "props": [
+                            {
+                                "name": "Atlasity-ID",
+                                "value": "25604"
+                            },
+                            {
+                                "name": "Unique-Identifier-GUID",
+                                "value": "7647bd4d-93b4-4af0-9a4d-772f6c4c9c96"
+                            },
+                            {
+                                "name": "Weight",
+                                "value": "0"
+                            },
+                            {
+                                "name": "Description",
+                                "value": "Anti-phishing protections detect instances of phishing and prevent users from accessing them."
+                            }
+                        ]
+                    },
+                    {
+                        "id": "3.pep.em.aspro",
+                        "title": "Anti-spam Protections",
+                        "class": "Stand-Alone",
+                        "props": [
+                            {
+                                "name": "Atlasity-ID",
+                                "value": "25605"
+                            },
+                            {
+                                "name": "Unique-Identifier-GUID",
+                                "value": "8cddb763-3048-4b90-b383-89992248b9e1"
+                            },
+                            {
+                                "name": "Weight",
+                                "value": "0"
+                            },
+                            {
+                                "name": "Description",
+                                "value": "Anti-spam protections detect and quarantine instances of spam."
+                            }
+                        ]
+                    },
+                    {
+                        "id": "3.pep.em.archa",
+                        "title": "Authenticated Received Chain",
+                        "class": "Stand-Alone",
+                        "props": [
+                            {
+                                "name": "Atlasity-ID",
+                                "value": "25606"
+                            },
+                            {
+                                "name": "Unique-Identifier-GUID",
+                                "value": "ae2db28b-5114-4858-9dff-f6372e031da3"
+                            },
+                            {
+                                "name": "Weight",
+                                "value": "0"
+                            },
+                            {
+                                "name": "Description",
+                                "value": "Authenticated received chain allows for an intermediary, like a mailing list or forwarding service, to sign its own authentication of the original email, allowing downstream entities to accept the intermediary’s authentication even if the email was changed."
+                            }
+                        ]
+                    },
+                    {
+                        "id": "3.pep.em.dlpre",
+                        "title": "Data Loss Prevention",
+                        "class": "Stand-Alone",
+                        "props": [
+                            {
+                                "name": "Atlasity-ID",
+                                "value": "25607"
+                            },
+                            {
+                                "name": "Unique-Identifier-GUID",
+                                "value": "f60473eb-e260-41b7-be1a-df7e39d665c2"
+                            },
+                            {
+                                "name": "Weight",
+                                "value": "0"
+                            },
+                            {
+                                "name": "Description",
+                                "value": "DLP technologies detect instances of the exfiltration, either malicious or accidental, of agency data."
+                            }
+                        ]
+                    },
+                    {
+                        "id": "3.pep.em.dsvie",
+                        "title": "Domain Signature Verification for Incoming Email",
+                        "class": "Stand-Alone",
+                        "props": [
+                            {
+                                "name": "Atlasity-ID",
+                                "value": "25608"
+                            },
+                            {
+                                "name": "Unique-Identifier-GUID",
+                                "value": "af17891e-ca0b-4793-ab22-75d8dd418e97"
+                            },
+                            {
+                                "name": "Weight",
+                                "value": "0"
+                            },
+                            {
+                                "name": "Description",
+                                "value": "Domain signature verification protections authenticate incoming email according to the Domain-based Message Authentication Reporting and Conformance (DMARC) email authentication protocol defined in Request for Comments (RFC) 7489 5."
+                            }
+                        ]
+                    },
+                    {
+                        "id": "3.pep.em.dsoem",
+                        "title": "Domain Signatures for Outgoing Email",
+                        "class": "Stand-Alone",
+                        "props": [
+                            {
+                                "name": "Atlasity-ID",
+                                "value": "25609"
+                            },
+                            {
+                                "name": "Unique-Identifier-GUID",
+                                "value": "5d36b7bc-2043-4108-a2be-6424354c8dbf"
+                            },
+                            {
+                                "name": "Weight",
+                                "value": "0"
+                            },
+                            {
+                                "name": "Description",
+                                "value": "Domain signature protections facilitate the authentication of outgoing email by signing the emails and ensuring that external parties may validate the email signatures according to the DMARC email authentication protocol that is defined in RFC 7489."
+                            }
+                        ]
+                    },
+                    {
+                        "id": "3.pep.em.eetra",
+                        "title": "Encryption for Email Transmission",
+                        "class": "Stand-Alone",
+                        "props": [
+                            {
+                                "name": "Atlasity-ID",
+                                "value": "25610"
+                            },
+                            {
+                                "name": "Unique-Identifier-GUID",
+                                "value": "e5146395-bf78-4b7f-85ee-d7920e4cbddc"
+                            },
+                            {
+                                "name": "Weight",
+                                "value": "0"
+                            },
+                            {
+                                "name": "Description",
+                                "value": "Email services are configured to use encrypted connections, when possible, for communications between clients and other email servers."
+                            }
+                        ]
+                    },
+                    {
+                        "id": "3.pep.em.mlpro",
+                        "title": "Malicious Link Protections",
+                        "class": "Stand-Alone",
+                        "props": [
+                            {
+                                "name": "Atlasity-ID",
+                                "value": "25611"
+                            },
+                            {
+                                "name": "Unique-Identifier-GUID",
+                                "value": "9d7931e4-0b03-4d35-b57d-aa993da2fc0f"
+                            },
+                            {
+                                "name": "Weight",
+                                "value": "0"
+                            },
+                            {
+                                "name": "Description",
+                                "value": "Malicious link protections detect malicious links in emails and prevent users from accessing them."
+                            }
+                        ]
+                    },
+                    {
+                        "id": "3.pep.em.lctpr",
+                        "title": "Link Click- through Protection",
+                        "class": "Stand-Alone",
+                        "props": [
+                            {
+                                "name": "Atlasity-ID",
+                                "value": "25612"
+                            },
+                            {
+                                "name": "Unique-Identifier-GUID",
+                                "value": "dc57dc50-a470-4a1a-a0c8-ccf811486946"
+                            },
+                            {
+                                "name": "Weight",
+                                "value": "0"
+                            },
+                            {
+                                "name": "Description",
+                                "value": "Link click-through protections ensure that when a link from an email is clicked, the requester is directed to a protection that verifies the security of the link destination before permitting access."
+                            }
+                        ]
+                    },
+                    {
+                        "id": "3.pep.em.e3aep",
+                        "title": "EINSTEIN 3 Accelerated Email Protections",
+                        "class": "Stand-Alone",
+                        "props": [
+                            {
+                                "name": "Atlasity-ID",
+                                "value": "25613"
+                            },
+                            {
+                                "name": "Unique-Identifier-GUID",
+                                "value": "fae24b24-3491-4e46-9fe3-3a4e13f659f2"
+                            },
+                            {
+                                "name": "Weight",
+                                "value": "0"
+                            },
+                            {
+                                "name": "Description",
+                                "value": "EINSTEIN 3 Accelerated (E3A) 6 is an intrusion prevention capability offered by NCPS, provided by CISA, that includes an email filtering security service."
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                "title": "Web PEP Security Capabilities",
+                "class": "family",
+                "controls": [
+                    {
+                        "id": "3.pep.we.binsp",
+                        "title": "Break and Inspect",
+                        "class": "Stand-Alone",
+                        "props": [
+                            {
+                                "name": "Atlasity-ID",
+                                "value": "25614"
+                            },
+                            {
+                                "name": "Unique-Identifier-GUID",
+                                "value": "3026990b-5527-42c5-b8c2-7da96ee174c4"
+                            },
+                            {
+                                "name": "Weight",
+                                "value": "0"
+                            },
+                            {
+                                "name": "Description",
+                                "value": "Break and Inspect systems, or encryption proxies, terminate encrypted traffic, logging or performing policy enforcement against the plaintext, and re- encrypting the traffic, if applicable, before transmitting to the final destination."
+                            }
+                        ]
+                    },
+                    {
+                        "id": "3.pep.we.acmit",
+                        "title": "Active Content Mitigation",
+                        "class": "Stand-Alone",
+                        "props": [
+                            {
+                                "name": "Atlasity-ID",
+                                "value": "25615"
+                            },
+                            {
+                                "name": "Unique-Identifier-GUID",
+                                "value": "f215ea24-9ec2-4a35-acfe-08da63e51526"
+                            },
+                            {
+                                "name": "Weight",
+                                "value": "0"
+                            },
+                            {
+                                "name": "Description",
+                                "value": "Active content mitigation protections detect the presence of unapproved active content and facilitate its removal."
+                            }
+                        ]
+                    },
+                    {
+                        "id": "3.pep.we.cdeny",
+                        "title": "Certificate Denylisting",
+                        "class": "Stand-Alone",
+                        "props": [
+                            {
+                                "name": "Atlasity-ID",
+                                "value": "25616"
+                            },
+                            {
+                                "name": "Unique-Identifier-GUID",
+                                "value": "c2f0c33f-014c-44c7-acf0-f2ea465b6348"
+                            },
+                            {
+                                "name": "Weight",
+                                "value": "0"
+                            },
+                            {
+                                "name": "Description",
+                                "value": "Certificate denylisting protections prevent communication with entities that use a set of known bad certificates."
+                            }
+                        ]
+                    },
+                    {
+                        "id": "3.pep.we.cfilt",
+                        "title": "Content Filtering",
+                        "class": "Stand-Alone",
+                        "props": [
+                            {
+                                "name": "Atlasity-ID",
+                                "value": "25617"
+                            },
+                            {
+                                "name": "Unique-Identifier-GUID",
+                                "value": "f1a2cfdd-145c-4e3e-938a-49baf676b262"
+                            },
+                            {
+                                "name": "Weight",
+                                "value": "0"
+                            },
+                            {
+                                "name": "Description",
+                                "value": "Content filtering protections detect the presence of unapproved content and facilitate its removal or denial of access."
+                            }
+                        ]
+                    },
+                    {
+                        "id": "3.pep.we.aprox",
+                        "title": "Authenticated Proxy",
+                        "class": "Stand-Alone",
+                        "props": [
+                            {
+                                "name": "Atlasity-ID",
+                                "value": "25618"
+                            },
+                            {
+                                "name": "Unique-Identifier-GUID",
+                                "value": "bfb744fa-80b2-46e4-b91e-fb31ccb6af9e"
+                            },
+                            {
+                                "name": "Weight",
+                                "value": "0"
+                            },
+                            {
+                                "name": "Description",
+                                "value": "Authenticated proxies require entities to authenticate with the proxy before making use of it, enabling user, group, and location-aware security controls."
+                            }
+                        ]
+                    },
+                    {
+                        "id": "3.pep.we.dlpre",
+                        "title": "Data Loss Prevention",
+                        "class": "Stand-Alone",
+                        "props": [
+                            {
+                                "name": "Atlasity-ID",
+                                "value": "25619"
+                            },
+                            {
+                                "name": "Unique-Identifier-GUID",
+                                "value": "797078aa-1f87-4126-9fe3-c4c1af950778"
+                            },
+                            {
+                                "name": "Weight",
+                                "value": "0"
+                            },
+                            {
+                                "name": "Description",
+                                "value": "DLP technologies detect instances of the exfiltration, either malicious or accidental, of agency data."
+                            }
+                        ]
+                    },
+                    {
+                        "id": "3.pep.we.dresf",
+                        "title": "Domain Resolution Filtering",
+                        "class": "Stand-Alone",
+                        "props": [
+                            {
+                                "name": "Atlasity-ID",
+                                "value": "25620"
+                            },
+                            {
+                                "name": "Unique-Identifier-GUID",
+                                "value": "6b686272-8f40-40b1-96bf-6bc8b2e158d6"
+                            },
+                            {
+                                "name": "Weight",
+                                "value": "0"
+                            },
+                            {
+                                "name": "Description",
+                                "value": "Domain resolution filtering prevents entities from using the DNS-over- Hypertext Transfer Protocol Secure (HTTPS), or DoH, domain resolution protocol, possibly evading DNS-based protections."
+                            }
+                        ]
+                    },
+                    {
+                        "id": "3.pep.we.pcenf",
+                        "title": "Protocol Compliance Enforcement",
+                        "class": "Stand-Alone",
+                        "props": [
+                            {
+                                "name": "Atlasity-ID",
+                                "value": "25621"
+                            },
+                            {
+                                "name": "Unique-Identifier-GUID",
+                                "value": "68f77ee6-4052-48a4-be99-4739f1ff5616"
+                            },
+                            {
+                                "name": "Weight",
+                                "value": "0"
+                            },
+                            {
+                                "name": "Description",
+                                "value": "Protocol compliance enforcement technologies ensure that traffic complies with protocol definitions, documented by the Internet Engineering Task Force (IETF) 7."
+                            }
+                        ]
+                    },
+                    {
+                        "id": "3.pep.we.dcfil",
+                        "title": "Domain Category Filtering",
+                        "class": "Stand-Alone",
+                        "props": [
+                            {
+                                "name": "Atlasity-ID",
+                                "value": "25622"
+                            },
+                            {
+                                "name": "Unique-Identifier-GUID",
+                                "value": "462de9c6-31bb-4ac3-8067-3278ef1f0e6b"
+                            },
+                            {
+                                "name": "Weight",
+                                "value": "0"
+                            },
+                            {
+                                "name": "Description",
+                                "value": "Domain category filtering technologies allow for classes of domains (e.g., banking, medical) to receive a different set of security protections."
+                            }
+                        ]
+                    },
+                    {
+                        "id": "3.pep.we.drepf",
+                        "title": "Domain Reputation Filtering",
+                        "class": "Stand-Alone",
+                        "props": [
+                            {
+                                "name": "Atlasity-ID",
+                                "value": "25623"
+                            },
+                            {
+                                "name": "Unique-Identifier-GUID",
+                                "value": "88af3e6d-e645-412c-bd6f-10c20e43cd89"
+                            },
+                            {
+                                "name": "Weight",
+                                "value": "0"
+                            },
+                            {
+                                "name": "Description",
+                                "value": "Domain reputation filtering protections are a form of domain denylisting based on a domain’s reputation, as defined by either the agency or an external entity."
+                            }
+                        ]
+                    },
+                    {
+                        "id": "3.pep.we.bcont",
+                        "title": "Bandwidth Control",
+                        "class": "Stand-Alone",
+                        "props": [
+                            {
+                                "name": "Atlasity-ID",
+                                "value": "25624"
+                            },
+                            {
+                                "name": "Unique-Identifier-GUID",
+                                "value": "0f234d18-1585-415c-a27a-75b24a2e0ef4"
+                            },
+                            {
+                                "name": "Weight",
+                                "value": "0"
+                            },
+                            {
+                                "name": "Description",
+                                "value": "Bandwidth control technologies allow for limiting the amount of bandwidth used by different classes of domains."
+                            }
+                        ]
+                    },
+                    {
+                        "id": "3.pep.we.mcfil",
+                        "title": "Malicious Content Filtering",
+                        "class": "Stand-Alone",
+                        "props": [
+                            {
+                                "name": "Atlasity-ID",
+                                "value": "25625"
+                            },
+                            {
+                                "name": "Unique-Identifier-GUID",
+                                "value": "0ae6472b-cdb5-4de9-8b26-444fcdc67ed4"
+                            },
+                            {
+                                "name": "Weight",
+                                "value": "0"
+                            },
+                            {
+                                "name": "Description",
+                                "value": "Malicious content filtering protections detect the presence of malicious content and facilitate its removal."
+                            }
+                        ]
+                    },
+                    {
+                        "id": "3.pep.we.acont",
+                        "title": "Access Control",
+                        "class": "Stand-Alone",
+                        "props": [
+                            {
+                                "name": "Atlasity-ID",
+                                "value": "25626"
+                            },
+                            {
+                                "name": "Unique-Identifier-GUID",
+                                "value": "4da30415-6006-4994-a813-549065f5f8a0"
+                            },
+                            {
+                                "name": "Weight",
+                                "value": "0"
+                            },
+                            {
+                                "name": "Description",
+                                "value": "Access control technologies allow an agency to define policies limiting what actions may be performed by connected users and entities."
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                "title": "Networking PEP Security Capabilities",
+                "class": "family",
+                "controls": [
+                    {
+                        "id": "3.pep.ne.acont",
+                        "title": "Access Control",
+                        "class": "Stand-Alone",
+                        "props": [
+                            {
+                                "name": "Atlasity-ID",
+                                "value": "25627"
+                            },
+                            {
+                                "name": "Unique-Identifier-GUID",
+                                "value": "19f8860a-8b13-46b2-9d6e-3b38fa01f9fa"
+                            },
+                            {
+                                "name": "Weight",
+                                "value": "0"
+                            },
+                            {
+                                "name": "Description",
+                                "value": "Access control protections prevent the ingress, egress, or transmission of unauthorized network traffic."
+                            }
+                        ]
+                    },
+                    {
+                        "id": "3.pep.ne.iaden",
+                        "title": "Internet Address Denylisting",
+                        "class": "Stand-Alone",
+                        "props": [
+                            {
+                                "name": "Atlasity-ID",
+                                "value": "25628"
+                            },
+                            {
+                                "name": "Unique-Identifier-GUID",
+                                "value": "1928b0d6-218c-47e4-811b-b0e7cea86303"
+                            },
+                            {
+                                "name": "Weight",
+                                "value": "0"
+                            },
+                            {
+                                "name": "Description",
+                                "value": "Internet address denylisting protections prevent the ingest or transiting of traffic received from or destined to a denylisted internet address."
+                            }
+                        ]
+                    },
+                    {
+                        "id": "3.pep.ne.hcont",
+                        "title": "Host Containment",
+                        "class": "Stand-Alone",
+                        "props": [
+                            {
+                                "name": "Atlasity-ID",
+                                "value": "25629"
+                            },
+                            {
+                                "name": "Unique-Identifier-GUID",
+                                "value": "cd3dd374-4e47-46f5-ab05-257689f8a13f"
+                            },
+                            {
+                                "name": "Weight",
+                                "value": "0"
+                            },
+                            {
+                                "name": "Description",
+                                "value": "Host containment protections enable a network to revoke or quarantine a host’s access to the network."
+                            }
+                        ]
+                    },
+                    {
+                        "id": "3.pep.ne.nsegm",
+                        "title": "Network Segmentation",
+                        "class": "Stand-Alone",
+                        "props": [
+                            {
+                                "name": "Atlasity-ID",
+                                "value": "25630"
+                            },
+                            {
+                                "name": "Unique-Identifier-GUID",
+                                "value": "d9752fb0-f8c2-480d-a525-72ef0aa2e631"
+                            },
+                            {
+                                "name": "Weight",
+                                "value": "0"
+                            },
+                            {
+                                "name": "Description",
+                                "value": "Network segmentation separates a given network into subnetworks, facilitating security controls between the subnetworks, and decreasing the attack surface of the network."
+                            }
+                        ]
+                    },
+                    {
+                        "id": "3.pep.ne.micro",
+                        "title": "Micro- segmentation",
+                        "class": "Stand-Alone",
+                        "props": [
+                            {
+                                "name": "Atlasity-ID",
+                                "value": "25631"
+                            },
+                            {
+                                "name": "Unique-Identifier-GUID",
+                                "value": "568164f7-430f-493f-936e-ce567d50680a"
+                            },
+                            {
+                                "name": "Weight",
+                                "value": "0"
+                            },
+                            {
+                                "name": "Description",
+                                "value": "Microsegmentation divides the network, either physically or virtually, according to the communication needs of application and data workflows, facilitating security controls to protect the data."
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                "title": "Resiliency PEP Security Capabilities",
+                "class": "family",
+                "controls": [
+                    {
+                        "id": "3.pep.re.ddspr",
+                        "title": "Distributed Denial of Service Protections",
+                        "class": "Stand-Alone",
+                        "props": [
+                            {
+                                "name": "Atlasity-ID",
+                                "value": "25632"
+                            },
+                            {
+                                "name": "Unique-Identifier-GUID",
+                                "value": "2b1896c0-d90f-4342-b635-169e039f2ace"
+                            },
+                            {
+                                "name": "Weight",
+                                "value": "0"
+                            },
+                            {
+                                "name": "Description",
+                                "value": "Distributed Denial of Service (DDoS) protections mitigate the effects of distributed denial of service attacks."
+                            }
+                        ]
+                    },
+                    {
+                        "id": "3.pep.re.eexps",
+                        "title": "Elastic Expansion",
+                        "class": "Stand-Alone",
+                        "props": [
+                            {
+                                "name": "Atlasity-ID",
+                                "value": "25633"
+                            },
+                            {
+                                "name": "Unique-Identifier-GUID",
+                                "value": "9a9532e2-7faa-42a9-bfcb-8b73e709ce8e"
+                            },
+                            {
+                                "name": "Weight",
+                                "value": "0"
+                            },
+                            {
+                                "name": "Description",
+                                "value": "Elastic expansion enables agencies to dynamically expand the resources available for services as conditions require."
+                            }
+                        ]
+                    },
+                    {
+                        "id": "3.pep.re.rdeli",
+                        "title": "Regional Delivery",
+                        "class": "Stand-Alone",
+                        "props": [
+                            {
+                                "name": "Atlasity-ID",
+                                "value": "25634"
+                            },
+                            {
+                                "name": "Unique-Identifier-GUID",
+                                "value": "c7eadba0-ebc9-41f9-9168-a41477eb2ea5"
+                            },
+                            {
+                                "name": "Weight",
+                                "value": "0"
+                            },
+                            {
+                                "name": "Description",
+                                "value": "Regional delivery technologies enable the deployment of agency services across geographically diverse locations."
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                "title": "DNS PEP Security Capabilities",
+                "class": "family",
+                "controls": [
+                    {
+                        "id": "3.pep.do.dnsin",
+                        "title": "Domain Name Sinkholing",
+                        "class": "Stand-Alone",
+                        "props": [
+                            {
+                                "name": "Atlasity-ID",
+                                "value": "25635"
+                            },
+                            {
+                                "name": "Unique-Identifier-GUID",
+                                "value": "2918dc52-ed65-4f2b-8083-6a69a2d024db"
+                            },
+                            {
+                                "name": "Weight",
+                                "value": "0"
+                            },
+                            {
+                                "name": "Description",
+                                "value": "Domain name sinkholing protections are a form of denylisting that protect clients from accessing malicious domains by responding to DNS queries for those domains."
+                            }
+                        ]
+                    },
+                    {
+                        "id": "3.pep.do.dnvac",
+                        "title": "Domain Name Verification for Agency Clients",
+                        "class": "Stand-Alone",
+                        "props": [
+                            {
+                                "name": "Atlasity-ID",
+                                "value": "25636"
+                            },
+                            {
+                                "name": "Unique-Identifier-GUID",
+                                "value": "9d107515-5d57-4a1b-baf8-5f9cbe2d77fb"
+                            },
+                            {
+                                "name": "Weight",
+                                "value": "0"
+                            },
+                            {
+                                "name": "Description",
+                                "value": "Domain name verification protections ensure that domain name lookups from agency clients, whether for internal or external domains, are validated according to Domain Name System Security Extensions (DNSSEC)."
+                            }
+                        ]
+                    },
+                    {
+                        "id": "3.pep.do.dnvad",
+                        "title": "Domain Name Validation for Agency Domains",
+                        "class": "Stand-Alone",
+                        "props": [
+                            {
+                                "name": "Atlasity-ID",
+                                "value": "25637"
+                            },
+                            {
+                                "name": "Unique-Identifier-GUID",
+                                "value": "7efc4530-ac97-4518-af39-6b8ae42ea2c9"
+                            },
+                            {
+                                "name": "Weight",
+                                "value": "0"
+                            },
+                            {
+                                "name": "Description",
+                                "value": "Domain name validation protections ensure that all agency domain names are secured using DNSSEC, enabling external entities to validate their resolution to the domain names."
+                            }
+                        ]
+                    },
+                    {
+                        "id": "3.pep.do.dnmon",
+                        "title": "Domain Name Monitoring",
+                        "class": "Stand-Alone",
+                        "props": [
+                            {
+                                "name": "Atlasity-ID",
+                                "value": "25638"
+                            },
+                            {
+                                "name": "Unique-Identifier-GUID",
+                                "value": "54782ee7-c99b-43d0-bea2-67ea168e180b"
+                            },
+                            {
+                                "name": "Weight",
+                                "value": "0"
+                            },
+                            {
+                                "name": "Description",
+                                "value": "Domain name monitoring allows agencies to discover the creation of or changes to agency domains."
+                            }
+                        ]
+                    },
+                    {
+                        "id": "3.pep.do.e3adn",
+                        "title": "EINSTEIN 3 - Accelerated Domain Name Protections",
+                        "class": "Stand-Alone",
+                        "props": [
+                            {
+                                "name": "Atlasity-ID",
+                                "value": "25639"
+                            },
+                            {
+                                "name": "Unique-Identifier-GUID",
+                                "value": "50c3739b-8e7d-4add-bbfc-624d11cb6ba6"
+                            },
+                            {
+                                "name": "Weight",
+                                "value": "0"
+                            },
+                            {
+                                "name": "Description",
+                                "value": "E3A is an intrusion prevention capability offered by NCPS, provided by CISA, that includes a DNS sinkholing security service."
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                "title": "Intrusion Detection PEP Security Capabilities",
+                "class": "family",
+                "controls": [
+                    {
+                        "id": "3.pep.in.edres",
+                        "title": "Endpoint Detection and Response",
+                        "class": "Stand-Alone",
+                        "props": [
+                            {
+                                "name": "Atlasity-ID",
+                                "value": "25640"
+                            },
+                            {
+                                "name": "Unique-Identifier-GUID",
+                                "value": "881202de-89be-4a10-90ff-a47ddd777207"
+                            },
+                            {
+                                "name": "Weight",
+                                "value": "0"
+                            },
+                            {
+                                "name": "Description",
+                                "value": "Endpoint detection and response (EDR) tools combine endpoint and network event data to aid in the detection of malicious activity."
+                            }
+                        ]
+                    },
+                    {
+                        "id": "3.pep.in.idsy",
+                        "title": "Intrusion Detection and Prevention Systems",
+                        "class": "Stand-Alone",
+                        "props": [
+                            {
+                                "name": "Atlasity-ID",
+                                "value": "25641"
+                            },
+                            {
+                                "name": "Unique-Identifier-GUID",
+                                "value": "dce3e242-1d11-40f9-b013-f3a7bda4cfb5"
+                            },
+                            {
+                                "name": "Weight",
+                                "value": "0"
+                            },
+                            {
+                                "name": "Description",
+                                "value": "Intrusion detection systems detect and report malicious activity. Intrusion prevention systems attempt to stop the activity."
+                            }
+                        ]
+                    },
+                    {
+                        "id": "3.pep.in.aacon",
+                        "title": "Adaptive Access Control",
+                        "class": "Stand-Alone",
+                        "props": [
+                            {
+                                "name": "Atlasity-ID",
+                                "value": "25642"
+                            },
+                            {
+                                "name": "Unique-Identifier-GUID",
+                                "value": "427edcb2-1566-4a01-8d87-b97115ee472c"
+                            },
+                            {
+                                "name": "Weight",
+                                "value": "0"
+                            },
+                            {
+                                "name": "Description",
+                                "value": "Adaptive access control technologies factor in additional context, like security risk, operational needs, and other heuristics, when evaluating access control decisions."
+                            }
+                        ]
+                    },
+                    {
+                        "id": "3.pep.in.dplat",
+                        "title": "Deception Platforms",
+                        "class": "Stand-Alone",
+                        "props": [
+                            {
+                                "name": "Atlasity-ID",
+                                "value": "25643"
+                            },
+                            {
+                                "name": "Unique-Identifier-GUID",
+                                "value": "82228110-5fc0-4819-b36b-2407178893d6"
+                            },
+                            {
+                                "name": "Weight",
+                                "value": "0"
+                            },
+                            {
+                                "name": "Description",
+                                "value": "Deception platform technologies provide decoy environments, from individual machines to entire networks, that can be used to deflect attacks away from the operational systems supporting agency missions/business functions."
+                            }
+                        ]
+                    },
+                    {
+                        "id": "3.pep.in.ctlmo",
+                        "title": "Certificate Transparency Log Monitoring",
+                        "class": "Stand-Alone",
+                        "props": [
+                            {
+                                "name": "Atlasity-ID",
+                                "value": "25644"
+                            },
+                            {
+                                "name": "Unique-Identifier-GUID",
+                                "value": "0cf66f37-8d5d-4254-aabd-c9251d8aae06"
+                            },
+                            {
+                                "name": "Weight",
+                                "value": "0"
+                            },
+                            {
+                                "name": "Description",
+                                "value": "Certificate transparency log monitoring allows agencies to discover when new certificates are issued for agency domains."
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                "title": "Enterprise PEP Security Capabilities",
+                "class": "family",
+                "controls": [
+                    {
+                        "id": "3.pep.en.soare",
+                        "title": "Security Orchestration, Automation, and Response",
+                        "class": "Stand-Alone",
+                        "props": [
+                            {
+                                "name": "Atlasity-ID",
+                                "value": "25645"
+                            },
+                            {
+                                "name": "Unique-Identifier-GUID",
+                                "value": "60b4bd65-8078-4e57-b465-ead0915104f8"
+                            },
+                            {
+                                "name": "Weight",
+                                "value": "0"
+                            },
+                            {
+                                "name": "Description",
+                                "value": "Security Orchestration, Automation, and Response (SOAR) tools define, prioritize, and automate the response to security incidents."
+                            }
+                        ]
+                    },
+                    {
+                        "id": "3.pep.en.sitde",
+                        "title": "Shadow Information Technology Detection",
+                        "class": "Stand-Alone",
+                        "props": [
+                            {
+                                "name": "Atlasity-ID",
+                                "value": "25646"
+                            },
+                            {
+                                "name": "Unique-Identifier-GUID",
+                                "value": "4a591fec-f697-4d26-b646-4e9f7034f614"
+                            },
+                            {
+                                "name": "Weight",
+                                "value": "0"
+                            },
+                            {
+                                "name": "Description",
+                                "value": "Shadow information technology (IT) detection systems detect the presence of unauthorized software and systems in use by an agency."
+                            }
+                        ]
+                    },
+                    {
+                        "id": "3.pep.en.vpnet",
+                        "title": "Virtual Private Network",
+                        "class": "Stand-Alone",
+                        "props": [
+                            {
+                                "name": "Atlasity-ID",
+                                "value": "25647"
+                            },
+                            {
+                                "name": "Unique-Identifier-GUID",
+                                "value": "0bbfd0d2-2056-4df6-a000-cee6b65f1ee0"
+                            },
+                            {
+                                "name": "Weight",
+                                "value": "0"
+                            },
+                            {
+                                "name": "Description",
+                                "value": "Virtual private network (VPN) solutions provide a secure communications mechanism between networks that may traverse across unprotected or public networks."
+                            }
+                        ]
+                    },
+                    {
+                        "id": "3.pep.en.acont",
+                        "title": "Application Container",
+                        "class": "Stand-Alone",
+                        "props": [
+                            {
+                                "name": "Atlasity-ID",
+                                "value": "25648"
+                            },
+                            {
+                                "name": "Unique-Identifier-GUID",
+                                "value": "394a19ca-142b-467e-bc0b-c8f72fb065cb"
+                            },
+                            {
+                                "name": "Weight",
+                                "value": "0"
+                            },
+                            {
+                                "name": "Description",
+                                "value": "A virtualization approach in which applications are isolated to a known set of dependencies, access methods, and interfaces."
+                            }
+                        ]
+                    },
+                    {
+                        "id": "3.pep.en.rdacc",
+                        "title": "Remote Desktop Access",
+                        "class": "Stand-Alone",
+                        "props": [
+                            {
+                                "name": "Atlasity-ID",
+                                "value": "25649"
+                            },
+                            {
+                                "name": "Unique-Identifier-GUID",
+                                "value": "e07d3b9d-9031-4d1b-8738-8eb82a0648a6"
+                            },
+                            {
+                                "name": "Weight",
+                                "value": "0"
+                            },
+                            {
+                                "name": "Description",
+                                "value": "Remote desktop access solutions provide a mechanism for connecting to and controlling a remote physical or virtual computer."
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                "title": "Unified Communications and Collaboration PEP Security Capabilities",
+                "class": "family",
+                "controls": [
+                    {
+                        "id": "3.pep.un.iveri",
+                        "title": "Identity Verification",
+                        "class": "Stand-Alone",
+                        "props": [
+                            {
+                                "name": "Atlasity-ID",
+                                "value": "25650"
+                            },
+                            {
+                                "name": "Unique-Identifier-GUID",
+                                "value": "204868b7-fc64-4490-aac0-34512761c436"
+                            },
+                            {
+                                "name": "Weight",
+                                "value": "0"
+                            },
+                            {
+                                "name": "Description",
+                                "value": "Identity verification ensures that access to the virtual meeting is limited to appropriate individuals. Waiting room features, where the meeting host authorizes vetted individuals to join the meeting, can also be utilized."
+                            }
+                        ]
+                    },
+                    {
+                        "id": "3.pep.un.ecomm",
+                        "title": "Encrypted Communication",
+                        "class": "Stand-Alone",
+                        "props": [
+                            {
+                                "name": "Atlasity-ID",
+                                "value": "25651"
+                            },
+                            {
+                                "name": "Unique-Identifier-GUID",
+                                "value": "cf6218ef-65dd-4493-8d18-32594005c2c1"
+                            },
+                            {
+                                "name": "Weight",
+                                "value": "0"
+                            },
+                            {
+                                "name": "Description",
+                                "value": "Communication between virtual meeting participants and any data exchanged is encrypted at rest and in transit. Some UCC offerings support end- to-end encryption, where encryption is performed on the clients and can only be decrypted by the other authenticated participants and cannot be decrypted by the UCC vendor."
+                            }
+                        ]
+                    },
+                    {
+                        "id": "3.pep.un.cterm",
+                        "title": "Connection Termination",
+                        "class": "Stand-Alone",
+                        "props": [
+                            {
+                                "name": "Atlasity-ID",
+                                "value": "25652"
+                            },
+                            {
+                                "name": "Unique-Identifier-GUID",
+                                "value": "a3df710a-34d0-4602-8a3d-e811b918fc0b"
+                            },
+                            {
+                                "name": "Weight",
+                                "value": "0"
+                            },
+                            {
+                                "name": "Description",
+                                "value": "Connection termination mechanisms ensure the meeting host can positively control participation through inactivity timeouts, on-demand prompts, unique access codes for each meeting, host participant eviction, and even meeting duration limits."
+                            }
+                        ]
+                    },
+                    {
+                        "id": "3.pep.un.dlpre",
+                        "title": "Data Loss Prevention",
+                        "class": "Stand-Alone",
+                        "props": [
+                            {
+                                "name": "Atlasity-ID",
+                                "value": "25653"
+                            },
+                            {
+                                "name": "Unique-Identifier-GUID",
+                                "value": "d96eff86-5556-4560-8f24-ab5d74d75443"
+                            },
+                            {
+                                "name": "Weight",
+                                "value": "0"
+                            },
+                            {
+                                "name": "Description",
+                                "value": "Mechanisms should be implemented to control the sharing of information between UCC participants, intentional or incidental. This may be integrated into additional agency DLP technologies and can include keyword matching, attachment file type or existence prohibitions, attachment size limitations, or even audio/visual filters."
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                "title": "Data Protection PEP Security Capabilities",
+                "class": "family",
+                "controls": [
+                    {
+                        "id": "3.pep.da.acont",
+                        "title": "Access Control",
+                        "class": "Stand-Alone",
+                        "props": [
+                            {
+                                "name": "Atlasity-ID",
+                                "value": "25654"
+                            },
+                            {
+                                "name": "Unique-Identifier-GUID",
+                                "value": "268df9bd-a75e-4b26-aa95-1b6736ef0050"
+                            },
+                            {
+                                "name": "Weight",
+                                "value": "0"
+                            },
+                            {
+                                "name": "Description",
+                                "value": "Access control technologies allow an agency to define policies concerning the allowable activities of users and entities to data and resources."
+                            }
+                        ]
+                    },
+                    {
+                        "id": "3.pep.da.pdres",
+                        "title": "Protections for Data at Rest",
+                        "class": "Stand-Alone",
+                        "props": [
+                            {
+                                "name": "Atlasity-ID",
+                                "value": "25655"
+                            },
+                            {
+                                "name": "Unique-Identifier-GUID",
+                                "value": "534b7e32-ffe7-44cb-bc50-72e5a3019a74"
+                            },
+                            {
+                                "name": "Weight",
+                                "value": "0"
+                            },
+                            {
+                                "name": "Description",
+                                "value": "Data protection at rest aims to secure data stored on any device or storage medium."
+                            }
+                        ]
+                    },
+                    {
+                        "id": "3.pep.da.pdtra",
+                        "title": "Protections for Data in Transit",
+                        "class": "Stand-Alone",
+                        "props": [
+                            {
+                                "name": "Atlasity-ID",
+                                "value": "25656"
+                            },
+                            {
+                                "name": "Unique-Identifier-GUID",
+                                "value": "5b19b54a-6d48-4028-a87f-66bc8c7d59df"
+                            },
+                            {
+                                "name": "Weight",
+                                "value": "0"
+                            },
+                            {
+                                "name": "Description",
+                                "value": "Data protection in transit, or data in motion, aims to secure data that is actively moving from one location to another, such as across the internet or through a private enterprise network."
+                            }
+                        ]
+                    },
+                    {
+                        "id": "3.pep.da.dlpre",
+                        "title": "Data Loss Prevention",
+                        "class": "Stand-Alone",
+                        "props": [
+                            {
+                                "name": "Atlasity-ID",
+                                "value": "25657"
+                            },
+                            {
+                                "name": "Unique-Identifier-GUID",
+                                "value": "3ebd6939-2dcc-4407-a9ab-8e0542dab15d"
+                            },
+                            {
+                                "name": "Weight",
+                                "value": "0"
+                            },
+                            {
+                                "name": "Description",
+                                "value": "DLP technologies detect instances of the exfiltration, either malicious or accidental, of agency data."
+                            }
+                        ]
+                    },
+                    {
+                        "id": "3.pep.da.daute",
+                        "title": "Data Access and Use Telemetry",
+                        "class": "Stand-Alone",
+                        "props": [
+                            {
+                                "name": "Atlasity-ID",
+                                "value": "25658"
+                            },
+                            {
+                                "name": "Unique-Identifier-GUID",
+                                "value": "dcef63f1-71cd-4198-94c8-7126ebc2ee99"
+                            },
+                            {
+                                "name": "Weight",
+                                "value": "0"
+                            },
+                            {
+                                "name": "Description",
+                                "value": "This entails identifying agency sensitive data stored, processed, or transmitted, including those located at a service provider and enforcing detailed logging for access or changes to sensitive data."
+                            }
+                        ]
+                    }
+                ]
+            }
+        ]
+    }
+}
