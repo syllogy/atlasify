@@ -1,0 +1,478 @@
+﻿{
+    "Sheet1": [
+        {
+            "Capability": "Backup and Recovery",
+            "ID": "3.UNI.BRECO",
+            "Description": "Backup and recovery entails keeping copies of configuration and data, as needed, to allow for the quick restoration of service in the event of malicious incidents, system failures, or corruption.",
+            "Family": "Universal Security Capabilities"
+        },
+        {
+            "Capability": "Central Log Management with Analysis",
+            "ID": "3.UNI.CLMAN",
+            "Description": "Central log management with analysis is the collection, storage, and analysis of telemetry, where the collection and storage are designed to facilitate data fusion and where the security analysis aids in discovery and response to malicious activity.",
+            "Family": "Universal Security Capabilities"
+        },
+        {
+            "Capability": "Configuration Management",
+            "ID": "3.UNI.CMANA",
+            "Description": "Configuration management is the implementation of a formal plan for documenting and managing changes to the environment, and monitoring for deviations, preferably automated.",
+            "Family": "Universal Security Capabilities"
+        },
+        {
+            "Capability": "Incident Response Planning and Incident Handling",
+            "ID": "3.UNI.IRPIH",
+            "Description": "Incident response planning and incident handling is the documentation and implementation of a set of instructions, procedures, or technical capabilities to sense and detect, respond to, limit consequences of malicious cyberattacks, and restore the integrity of the network and associated systems.",
+            "Family": "Universal Security Capabilities"
+        },
+        {
+            "Capability": "Inventory",
+            "ID": "3.UNI.INVENT",
+            "Description": "Inventory entails developing, documenting, and maintaining a current inventory of all systems, networks, and components so that only authorized devices are given access, and unauthorized and unmanaged devices are found and restricted from gaining access.",
+            "Family": "Universal Security Capabilities"
+        },
+        {
+            "Capability": "Least Privilege",
+            "ID": "3.UNI.LPRIV",
+            "Description": "Least privilege is a design principle whereby each entity is granted the minimum system resources and authorizations that the entity needs to perform its function.",
+            "Family": "Universal Security Capabilities"
+        },
+        {
+            "Capability": "Secure Administration",
+            "ID": "3.UNI.SADMI",
+            "Description": "Secure administration entails performing administrative tasks in a secure manner, using secure protocols.",
+            "Family": "Universal Security Capabilities"
+        },
+        {
+            "Capability": "Strong Authentication",
+            "ID": "3.UNI.SAUTH",
+            "Description": "Strong authentication verifies the identity of users, devices, or other entities through rigorous means (e.g., multi-factor authentication) before granting access.",
+            "Family": "Universal Security Capabilities"
+        },
+        {
+            "Capability": "Time Synchronization",
+            "ID": "3.UNI.TSYNC",
+            "Description": "Time synchronization is the coordination of system (e.g., servers, workstations, network devices) clocks to minimize the difference between system clock times and enable accurate comparison of timestamps between systems.",
+            "Family": "Universal Security Capabilities"
+        },
+        {
+            "Capability": "Vulnerability Management",
+            "ID": "3.UNI.VMANG",
+            "Description": "Vulnerability management is the practice of proactively working to discover vulnerabilities by including the use of both active and passive means of discovery and by taking action to mitigate discovered vulnerabilities.",
+            "Family": "Universal Security Capabilities"
+        },
+        {
+            "Capability": "Patch Management",
+            "ID": "3.UNI.PMANA",
+            "Description": "Patch management is the identification, acquisition, installation, and verification of patches for products and systems.",
+            "Family": "Universal Security Capabilities"
+        },
+        {
+            "Capability": "Auditing and Accounting",
+            "ID": "3.UNI.AACCO",
+            "Description": "Auditing and accounting includes capturing business records (e.g., logs and other telemetry), making them available for auditing and accounting as required, and designing an auditing system that considers insider threat (e.g., separation of duties violation tracking) such that insider abuse or misuse can be detected.",
+            "Family": "Universal Security Capabilities"
+        },
+        {
+            "Capability": "Resilience",
+            "ID": "3.UNI.RESIL",
+            "Description": "Resilience entails ensuring that systems, services, and protections maintain acceptable performance under adverse conditions.",
+            "Family": "Universal Security Capabilities"
+        },
+        {
+            "Capability": "Enterprise Threat Intelligence",
+            "ID": "3.UNI.ETINT",
+            "Description": "Enterprise threat intelligence is the usage of threat intelligence from private or government sources to implement mitigations for the identified risks.",
+            "Family": "Universal Security Capabilities"
+        },
+        {
+            "Capability": "Situational Awareness",
+            "ID": "3.UNI.SAWAR",
+            "Description": "Situational awareness is maintaining effective awareness, both current and historical, across all components.",
+            "Family": "Universal Security Capabilities"
+        },
+        {
+            "Capability": "Dynamic Threat Discovery",
+            "ID": "3.UNI.DTDIS",
+            "Description": "Dynamic threat discovery is the practice of using dynamic approaches (e.g., heuristics, baselining, etc.) to discover new malicious activity.",
+            "Family": "Universal Security Capabilities"
+        },
+        {
+            "Capability": "Policy Enforcement Parity",
+            "ID": "3.UNI.PEPAR",
+            "Description": "Policy enforcement parity entails consistently applying security protections and other policies, independent of the communication mechanism, forwarding path, or endpoints used.",
+            "Family": "Universal Security Capabilities"
+        },
+        {
+            "Capability": "Effective Use of Shared Services",
+            "ID": "3.UNI.EUSSE",
+            "Description": "Effective use of shared services means that shared services are employed, where applicable, and individually tailored and measured to independently validate service conformance, and offer effective protections for tenants against malicious actors, both external and internal to the service provider.",
+            "Family": "Universal Security Capabilities"
+        },
+        {
+            "Capability": "Integrated Desktop, Mobile, and Remote Policies",
+            "ID": "3.UNI.IDMRP",
+            "Description": "This entails the definition and enforcement of policies that apply to a given agency entity independent of its location.",
+            "Family": "Universal Security Capabilities"
+        },
+        {
+            "Capability": "User Awareness and Training",
+            "ID": "3.UNI.UATRA",
+            "Description": "User awareness and training entails that all users are informed of their roles and responsibilities and appropriate cybersecurity education is provisioned to enable users to perform their duties in a secure manner.",
+            "Family": "Universal Security Capabilities"
+        },
+        {
+            "Capability": "Anti-malware",
+            "ID": "3.PEP.FI.AMALW",
+            "Description": "Anti-malware protections detect the presence of malicious code and facilitate its quarantine or removal.",
+            "Family": "Files PEP Security Capabilities"
+        },
+        {
+            "Capability": "Content Disarm and Reconstruction",
+            "ID": "3.PEP.FI.CDREC",
+            "Description": "Content disarm and reconstruction technology detects the presence of unapproved active content and facilitates its removal.",
+            "Family": "Files PEP Security Capabilities"
+        },
+        {
+            "Capability": "Detonation Chamber",
+            "ID": "3.PEP.FI.DCHAM",
+            "Description": "Detonation chambers facilitate the detection of malicious code using protected and isolated execution environments to analyze the files.",
+            "Family": "Files PEP Security Capabilities"
+        },
+        {
+            "Capability": "Data Loss Prevention",
+            "ID": "3.PEP.FI.DLPRE",
+            "Description": "Data loss prevention (DLP) technologies detect instances of the exfiltration, either malicious or accidental, of agency data.",
+            "Family": "Files PEP Security Capabilities"
+        },
+        {
+            "Capability": "Anti-phishing Protections",
+            "ID": "3.PEP.EM.APPRO",
+            "Description": "Anti-phishing protections detect instances of phishing and prevent users from accessing them.",
+            "Family": "Email PEP Security Capabilities"
+        },
+        {
+            "Capability": "Anti-spam Protections",
+            "ID": "3.PEP.EM.ASPRO",
+            "Description": "Anti-spam protections detect and quarantine instances of spam.",
+            "Family": "Email PEP Security Capabilities"
+        },
+        {
+            "Capability": "Authenticated Received Chain",
+            "ID": "3.PEP.EM.ARCHA",
+            "Description": "Authenticated received chain allows for an intermediary, like a mailing list or forwarding service, to sign its own authentication of the original email, allowing downstream entities to accept the intermediary’s authentication even if the email was changed.",
+            "Family": "Email PEP Security Capabilities"
+        },
+        {
+            "Capability": "Data Loss Prevention",
+            "ID": "3.PEP.EM.DLPRE",
+            "Description": "DLP technologies detect instances of the exfiltration, either malicious or accidental, of agency data.",
+            "Family": "Email PEP Security Capabilities"
+        },
+        {
+            "Capability": "Domain Signature Verification for Incoming Email",
+            "ID": "3.PEP.EM.DSVIE",
+            "Description": "Domain signature verification protections authenticate incoming email according to the Domain-based Message Authentication Reporting and Conformance (DMARC) email authentication protocol defined in Request for Comments (RFC) 7489 5.",
+            "Family": "Email PEP Security Capabilities"
+        },
+        {
+            "Capability": "Domain Signatures for Outgoing Email",
+            "ID": "3.PEP.EM.DSOEM",
+            "Description": "Domain signature protections facilitate the authentication of outgoing email by signing the emails and ensuring that external parties may validate the email signatures according to the DMARC email authentication protocol that is defined in RFC 7489.",
+            "Family": "Email PEP Security Capabilities"
+        },
+        {
+            "Capability": "Encryption for Email Transmission",
+            "ID": "3.PEP.EM.EETRA",
+            "Description": "Email services are configured to use encrypted connections, when possible, for communications between clients and other email servers.",
+            "Family": "Email PEP Security Capabilities"
+        },
+        {
+            "Capability": "Malicious Link Protections",
+            "ID": "3.PEP.EM.MLPRO",
+            "Description": "Malicious link protections detect malicious links in emails and prevent users from accessing them.",
+            "Family": "Email PEP Security Capabilities"
+        },
+        {
+            "Capability": "Link Click- through Protection",
+            "ID": "3.PEP.EM.LCTPR",
+            "Description": "Link click-through protections ensure that when a link from an email is clicked, the requester is directed to a protection that verifies the security of the link destination before permitting access.",
+            "Family": "Email PEP Security Capabilities"
+        },
+        {
+            "Capability": "EINSTEIN 3 Accelerated Email Protections",
+            "ID": "3.PEP.EM.E3AEP",
+            "Description": "EINSTEIN 3 Accelerated (E3A) 6 is an intrusion prevention capability offered by NCPS, provided by CISA, that includes an email filtering security service.",
+            "Family": "Email PEP Security Capabilities"
+        },
+        {
+            "Capability": "Break and Inspect",
+            "ID": "3.PEP.WE.BINSP",
+            "Description": "Break and Inspect systems, or encryption proxies, terminate encrypted traffic, logging or performing policy enforcement against the plaintext, and re- encrypting the traffic, if applicable, before transmitting to the final destination.",
+            "Family": "Web PEP Security Capabilities"
+        },
+        {
+            "Capability": "Active Content Mitigation",
+            "ID": "3.PEP.WE.ACMIT",
+            "Description": "Active content mitigation protections detect the presence of unapproved active content and facilitate its removal.",
+            "Family": "Web PEP Security Capabilities"
+        },
+        {
+            "Capability": "Certificate Denylisting",
+            "ID": "3.PEP.WE.CDENY",
+            "Description": "Certificate denylisting protections prevent communication with entities that use a set of known bad certificates.",
+            "Family": "Web PEP Security Capabilities"
+        },
+        {
+            "Capability": "Content Filtering",
+            "ID": "3.PEP.WE.CFILT",
+            "Description": "Content filtering protections detect the presence of unapproved content and facilitate its removal or denial of access.",
+            "Family": "Web PEP Security Capabilities"
+        },
+        {
+            "Capability": "Authenticated Proxy",
+            "ID": "3.PEP.WE.APROX",
+            "Description": "Authenticated proxies require entities to authenticate with the proxy before making use of it, enabling user, group, and location-aware security controls.",
+            "Family": "Web PEP Security Capabilities"
+        },
+        {
+            "Capability": "Data Loss Prevention",
+            "ID": "3.PEP.WE.DLPRE",
+            "Description": "DLP technologies detect instances of the exfiltration, either malicious or accidental, of agency data.",
+            "Family": "Web PEP Security Capabilities"
+        },
+        {
+            "Capability": "Domain Resolution Filtering",
+            "ID": "3.PEP.WE.DRESF",
+            "Description": "Domain resolution filtering prevents entities from using the DNS-over- Hypertext Transfer Protocol Secure (HTTPS), or DoH, domain resolution protocol, possibly evading DNS-based protections.",
+            "Family": "Web PEP Security Capabilities"
+        },
+        {
+            "Capability": "Protocol Compliance Enforcement",
+            "ID": "3.PEP.WE.PCENF",
+            "Description": "Protocol compliance enforcement technologies ensure that traffic complies with protocol definitions, documented by the Internet Engineering Task Force (IETF) 7.",
+            "Family": "Web PEP Security Capabilities"
+        },
+        {
+            "Capability": "Domain Category Filtering",
+            "ID": "3.PEP.WE.DCFIL",
+            "Description": "Domain category filtering technologies allow for classes of domains (e.g., banking, medical) to receive a different set of security protections.",
+            "Family": "Web PEP Security Capabilities"
+        },
+        {
+            "Capability": "Domain Reputation Filtering",
+            "ID": "3.PEP.WE.DREPF",
+            "Description": "Domain reputation filtering protections are a form of domain denylisting based on a domain’s reputation, as defined by either the agency or an external entity.",
+            "Family": "Web PEP Security Capabilities"
+        },
+        {
+            "Capability": "Bandwidth Control",
+            "ID": "3.PEP.WE.BCONT",
+            "Description": "Bandwidth control technologies allow for limiting the amount of bandwidth used by different classes of domains.",
+            "Family": "Web PEP Security Capabilities"
+        },
+        {
+            "Capability": "Malicious Content Filtering",
+            "ID": "3.PEP.WE.MCFIL",
+            "Description": "Malicious content filtering protections detect the presence of malicious content and facilitate its removal.",
+            "Family": "Web PEP Security Capabilities"
+        },
+        {
+            "Capability": "Access Control",
+            "ID": "3.PEP.WE.ACONT",
+            "Description": "Access control technologies allow an agency to define policies limiting what actions may be performed by connected users and entities.",
+            "Family": "Web PEP Security Capabilities"
+        },
+        {
+            "Capability": "Access Control",
+            "ID": "3.PEP.NE.ACONT",
+            "Description": "Access control protections prevent the ingress, egress, or transmission of unauthorized network traffic.",
+            "Family": "Networking PEP Security Capabilities"
+        },
+        {
+            "Capability": "Internet Address Denylisting",
+            "ID": "3.PEP.NE.IADEN",
+            "Description": "Internet address denylisting protections prevent the ingest or transiting of traffic received from or destined to a denylisted internet address.",
+            "Family": "Networking PEP Security Capabilities"
+        },
+        {
+            "Capability": "Host Containment",
+            "ID": "3.PEP.NE.HCONT",
+            "Description": "Host containment protections enable a network to revoke or quarantine a host’s access to the network.",
+            "Family": "Networking PEP Security Capabilities"
+        },
+        {
+            "Capability": "Network Segmentation",
+            "ID": "3.PEP.NE.NSEGM",
+            "Description": "Network segmentation separates a given network into subnetworks, facilitating security controls between the subnetworks, and decreasing the attack surface of the network.",
+            "Family": "Networking PEP Security Capabilities"
+        },
+        {
+            "Capability": "Micro- segmentation",
+            "ID": "3.PEP.NE.MICRO",
+            "Description": "Microsegmentation divides the network, either physically or virtually, according to the communication needs of application and data workflows, facilitating security controls to protect the data.",
+            "Family": "Networking PEP Security Capabilities"
+        },
+        {
+            "Capability": "Distributed Denial of Service Protections",
+            "ID": "3.PEP.RE.DDSPR",
+            "Description": "Distributed Denial of Service (DDoS) protections mitigate the effects of distributed denial of service attacks.",
+            "Family": "Resiliency PEP Security Capabilities"
+        },
+        {
+            "Capability": "Elastic Expansion",
+            "ID": "3.PEP.RE.EEXPS",
+            "Description": "Elastic expansion enables agencies to dynamically expand the resources available for services as conditions require.",
+            "Family": "Resiliency PEP Security Capabilities"
+        },
+        {
+            "Capability": "Regional Delivery",
+            "ID": "3.PEP.RE.RDELI",
+            "Description": "Regional delivery technologies enable the deployment of agency services across geographically diverse locations.",
+            "Family": "Resiliency PEP Security Capabilities"
+        },
+        {
+            "Capability": "Domain Name Sinkholing",
+            "ID": "3.PEP.DO.DNSIN",
+            "Description": "Domain name sinkholing protections are a form of denylisting that protect clients from accessing malicious domains by responding to DNS queries for those domains.",
+            "Family": "DNS PEP Security Capabilities"
+        },
+        {
+            "Capability": "Domain Name Verification for Agency Clients",
+            "ID": "3.PEP.DO.DNVAC",
+            "Description": "Domain name verification protections ensure that domain name lookups from agency clients, whether for internal or external domains, are validated according to Domain Name System Security Extensions (DNSSEC).",
+            "Family": "DNS PEP Security Capabilities"
+        },
+        {
+            "Capability": "Domain Name Validation for Agency Domains",
+            "ID": "3.PEP.DO.DNVAD",
+            "Description": "Domain name validation protections ensure that all agency domain names are secured using DNSSEC, enabling external entities to validate their resolution to the domain names.",
+            "Family": "DNS PEP Security Capabilities"
+        },
+        {
+            "Capability": "Domain Name Monitoring",
+            "ID": "3.PEP.DO.DNMON",
+            "Description": "Domain name monitoring allows agencies to discover the creation of or changes to agency domains.",
+            "Family": "DNS PEP Security Capabilities"
+        },
+        {
+            "Capability": "EINSTEIN 3 - Accelerated Domain Name Protections",
+            "ID": "3.PEP.DO.E3ADN",
+            "Description": "E3A is an intrusion prevention capability offered by NCPS, provided by CISA, that includes a DNS sinkholing security service.",
+            "Family": "DNS PEP Security Capabilities"
+        },
+        {
+            "Capability": "Endpoint Detection and Response",
+            "ID": "3.PEP.IN.EDRES",
+            "Description": "Endpoint detection and response (EDR) tools combine endpoint and network event data to aid in the detection of malicious activity.",
+            "Family": "Intrusion Detection PEP Security Capabilities"
+        },
+        {
+            "Capability": "Intrusion Detection and Prevention Systems",
+            "ID": "3.PEP.IN.IDSY",
+            "Description": "Intrusion detection systems detect and report malicious activity. Intrusion prevention systems attempt to stop the activity.",
+            "Family": "Intrusion Detection PEP Security Capabilities"
+        },
+        {
+            "Capability": "Adaptive Access Control",
+            "ID": "3.PEP.IN.AACON",
+            "Description": "Adaptive access control technologies factor in additional context, like security risk, operational needs, and other heuristics, when evaluating access control decisions.",
+            "Family": "Intrusion Detection PEP Security Capabilities"
+        },
+        {
+            "Capability": "Deception Platforms",
+            "ID": "3.PEP.IN.DPLAT",
+            "Description": "Deception platform technologies provide decoy environments, from individual machines to entire networks, that can be used to deflect attacks away from the operational systems supporting agency missions/business functions.",
+            "Family": "Intrusion Detection PEP Security Capabilities"
+        },
+        {
+            "Capability": "Certificate Transparency Log Monitoring",
+            "ID": "3.PEP.IN.CTLMO",
+            "Description": "Certificate transparency log monitoring allows agencies to discover when new certificates are issued for agency domains.",
+            "Family": "Intrusion Detection PEP Security Capabilities"
+        },
+        {
+            "Capability": "Security Orchestration, Automation, and Response",
+            "ID": "3.PEP.EN.SOARE",
+            "Description": "Security Orchestration, Automation, and Response (SOAR) tools define, prioritize, and automate the response to security incidents.",
+            "Family": "Enterprise PEP Security Capabilities"
+        },
+        {
+            "Capability": "Shadow Information Technology Detection",
+            "ID": "3.PEP.EN.SITDE",
+            "Description": "Shadow information technology (IT) detection systems detect the presence of unauthorized software and systems in use by an agency.",
+            "Family": "Enterprise PEP Security Capabilities"
+        },
+        {
+            "Capability": "Virtual Private Network",
+            "ID": "3.PEP.EN.VPNET",
+            "Description": "Virtual private network (VPN) solutions provide a secure communications mechanism between networks that may traverse across unprotected or public networks.",
+            "Family": "Enterprise PEP Security Capabilities"
+        },
+        {
+            "Capability": "Application Container",
+            "ID": "3.PEP.EN.ACONT",
+            "Description": "A virtualization approach in which applications are isolated to a known set of dependencies, access methods, and interfaces.",
+            "Family": "Enterprise PEP Security Capabilities"
+        },
+        {
+            "Capability": "Remote Desktop Access",
+            "ID": "3.PEP.EN.RDACC",
+            "Description": "Remote desktop access solutions provide a mechanism for connecting to and controlling a remote physical or virtual computer.",
+            "Family": "Enterprise PEP Security Capabilities"
+        },
+        {
+            "Capability": "Identity Verification",
+            "ID": "3.PEP.UN.IVERI",
+            "Description": "Identity verification ensures that access to the virtual meeting is limited to appropriate individuals. Waiting room features, where the meeting host authorizes vetted individuals to join the meeting, can also be utilized.",
+            "Family": "Unified Communications and Collaboration PEP Security Capabilities"
+        },
+        {
+            "Capability": "Encrypted Communication",
+            "ID": "3.PEP.UN.ECOMM",
+            "Description": "Communication between virtual meeting participants and any data exchanged is encrypted at rest and in transit. Some UCC offerings support end- to-end encryption, where encryption is performed on the clients and can only be decrypted by the other authenticated participants and cannot be decrypted by the UCC vendor.",
+            "Family": "Unified Communications and Collaboration PEP Security Capabilities"
+        },
+        {
+            "Capability": "Connection Termination",
+            "ID": "3.PEP.UN.CTERM",
+            "Description": "Connection termination mechanisms ensure the meeting host can positively control participation through inactivity timeouts, on-demand prompts, unique access codes for each meeting, host participant eviction, and even meeting duration limits.",
+            "Family": "Unified Communications and Collaboration PEP Security Capabilities"
+        },
+        {
+            "Capability": "Data Loss Prevention",
+            "ID": "3.PEP.UN.DLPRE",
+            "Description": "Mechanisms should be implemented to control the sharing of information between UCC participants, intentional or incidental. This may be integrated into additional agency DLP technologies and can include keyword matching, attachment file type or existence prohibitions, attachment size limitations, or even audio/visual filters.",
+            "Family": "Unified Communications and Collaboration PEP Security Capabilities"
+        },
+        {
+            "Capability": "Access Control",
+            "ID": "3.PEP.DA.ACONT",
+            "Description": "Access control technologies allow an agency to define policies concerning the allowable activities of users and entities to data and resources.",
+            "Family": "Data Protection PEP Security Capabilities"
+        },
+        {
+            "Capability": "Protections for Data at Rest",
+            "ID": "3.PEP.DA.PDRES",
+            "Description": "Data protection at rest aims to secure data stored on any device or storage medium.",
+            "Family": "Data Protection PEP Security Capabilities"
+        },
+        {
+            "Capability": "Protections for Data in Transit",
+            "ID": "3.PEP.DA.PDTRA",
+            "Description": "Data protection in transit, or data in motion, aims to secure data that is actively moving from one location to another, such as across the internet or through a private enterprise network.",
+            "Family": "Data Protection PEP Security Capabilities"
+        },
+        {
+            "Capability": "Data Loss Prevention",
+            "ID": "3.PEP.DA.DLPRE",
+            "Description": "DLP technologies detect instances of the exfiltration, either malicious or accidental, of agency data.",
+            "Family": "Data Protection PEP Security Capabilities"
+        },
+        {
+            "Capability": "Data Access and Use Telemetry",
+            "ID": "3.PEP.DA.DAUTE",
+            "Description": "This entails identifying agency sensitive data stored, processed, or transmitted, including those located at a service provider and enforcing detailed logging for access or changes to sensitive data.",
+            "Family": "Data Protection PEP Security Capabilities"
+        }
+    ]
+}
